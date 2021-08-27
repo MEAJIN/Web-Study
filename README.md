@@ -53,6 +53,7 @@ p {
   - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set을 가볍게 해서 파일 크기를 줄여야 함
   
 *character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 (http://hell0-world.com/etc/2020/05/09/ChracterSet.html)*
+
 <br>
  
 > ### 특정 스타일 시트에서 또 다른 스타일 시트를 사용한 폰트 사용법 <br>
