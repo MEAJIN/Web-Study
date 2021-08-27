@@ -1,0 +1,18 @@
+#serif{
+  font-family : serif, 'Times New Roman', 궁서체;
+}
+#sans-serif{
+  font-family : sans-serif, Arial, 굴림체;
+}
+#monospace{
+  font-family : monospace, courier, 'Courier New';
+}
+#cursive{
+  font-family : cursive, 'Comic Sans MS', 'Monotype Corsiva';
+}
+#fantasy{
+  font-family : fantasy, Impact, Haettenschweiler;
+}
+#google{
+  font-family: 'Aguafina Script', cursive;
+}

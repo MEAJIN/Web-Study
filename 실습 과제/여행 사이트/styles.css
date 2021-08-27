@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Helvetica, serif;
+  color: #58595B;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#m_blank {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#logo {
+  margin-top: 80px;
+  width: 165px;
+  height: 58px;
+}
+
+#img_size {
+  width: 90%;
+  height: auto;
+}
