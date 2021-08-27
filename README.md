@@ -1,11 +1,11 @@
 # Web_in_codeit
 
 - 21.08.25 ~ html
-- 21.08.25 ~ css <br><br>
+- 21.08.25 ~ css <br>
 
 # CSS 폰트
 
-> ### 기본 폰트
+> ### 기본 폰트<br>
 ```
 - serif
   - 'Times New Roman'
@@ -53,7 +53,7 @@ p {
   
 *character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 (http://hell0-world.com/etc/2020/05/09/ChracterSet.html)* <br>
  
-> ### 특정 스타일 시트에서 또 다른 스타일 시트를 사용한 폰트 사용법
+> ### 특정 스타일 시트에서 또 다른 스타일 시트를 사용한 폰트 사용법 <br>
 ```
 - @import ".css 파일명"; *문자 형식*
 - @import url(".css 파일명"); *url 형식*
@@ -65,7 +65,7 @@ p {
   - A : "link 방식 (외부 스타일) 방식" 이 더 '효율적' 이다.
   - Why?
     - @import 방식의 경우 @import 된 css들을 '직렬' 로딩 방식으로 불러오고,
-    - 외부 스타일 방식의 경우 '병렬' 로딩 방식으로 css를 불러오기 떄문.<br>
+    - 외부 스타일 방식의 경우 '병렬' 로딩 방식으로 css를 불러오기 때문.<br><br>
     
  예를 들어, 아래와 같은 @import 방식의 경우 test1.css를 불러온 뒤에 test2.css, test3.css를 차례로 불러온다.
   ```
@@ -73,7 +73,8 @@ p {
   @import "test2.css";  /* 2번째 */
   @import "test3.css";  /* 3번째 */
   ```
-즉, css를 하나하나 순차적(직렬 로딩)으로 불러오기 때문에 css의 양이 얼마 되지 않는다면 크게 상관이 없겠지만, 'css의 양이 방대해진다면' 페이지 로딩속도가 현저히 '느려질 것'이다. <br>
+즉, css를 하나하나 순차적(직렬 로딩)으로 불러오기 때문에 css의 양이 얼마 되지 않는다면 크게 상관이 없겠지만, 'css의 양이 방대해진다면' 페이지 로딩속도가 현저히 '느려질 것'이다.
+<br><br>
 
 반면 아래의 link 방식 (외부 스타일 방식)의 경우, test1.css와 test2.css, test3.css가 동시에 로딩(병렬 로딩)하여 불러오기 때문에 페이지 로딩 속도가 @import 방식에 비해 빠르고 효율적이다.
   ```
@@ -81,6 +82,7 @@ p {
   <link rel="stylesheet" href="test2.css">
   <link rel="stylesheet" href="test3.css">
   ```
+  <br>
 - 결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다면 link 방식을 사용하자. <br>
 
 
