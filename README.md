@@ -48,6 +48,7 @@ p {
   
     - [^1] : 정보를 표현하기 위한 글자들의 집합을 정의한 것 *http://hell0-world.com/etc/2020/05/09/ChracterSet.html*
 ```
+<br>
 
 > 특정 스타일 시트에서 또 다른 스타일 시트 사용한 폰트 사용법
 ```
@@ -77,7 +78,9 @@ p {
   <link rel="stylesheet" href="test2.css">
   <link rel="stylesheet" href="test3.css">
   ```
+- 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다면 link 방식을 사용하자
 ```
+<br>
 
 > 폰트 참고 사이트
 - <https://fonts.google.com/> *영문체*
