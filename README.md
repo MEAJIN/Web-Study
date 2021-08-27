@@ -48,7 +48,7 @@ p {
   
     - [^1] : 정보를 표현하기 위한 글자들의 집합을 정의한 것 *http://hell0-world.com/etc/2020/05/09/ChracterSet.html*
 ```
-<br>
+
 > 특정 스타일 시트에서 또 다른 스타일 시트 사용한 폰트 사용법
 ```
 - @import ".css 파일명"; *문자 형식*
@@ -78,7 +78,7 @@ p {
   <link rel="stylesheet" href="test3.css">
   ```
 ```
-<br>
+
 > 폰트 참고 사이트
 - <https://fonts.google.com/> *영문체*
 - https://fonts.google.com/earlyaccess *한글체, Ctrl+F > korean*
