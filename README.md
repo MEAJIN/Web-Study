@@ -5,10 +5,10 @@
 
 # CSS 폰트
 
-> ### 기본 폰트 *여백이 있는 폰트는 ' ' 사용, 그외 미사용 (단, 한글 글꼴은 " " 또는 ' '를 넣지 않을 경우 인식하지 못 하는 브라우저도 있음)*
+> ### 기본 폰트
 ```
 - serif
-  - Times New Roman
+  - 'Times New Roman'
   - 궁서체
   
 - sans-serif
@@ -17,11 +17,11 @@
   
 - monospace
   - courier
-  - Courier New
+  - 'Courier New'
   
 - cursive
-  - Comic Sans MS
-  - Monotype Corsiva
+  - 'Comic Sans MS'
+  - 'Monotype Corsiva'
   
 - fantasy
   - Impact
