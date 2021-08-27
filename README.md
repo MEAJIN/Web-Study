@@ -4,8 +4,8 @@
 - 21.08.25 ~ css <br>
 
 # CSS 폰트
-
-> ### 기본 폰트<br>
+<br>
+> ### 기본 폰트
 ```
 - serif
   - 'Times New Roman'
@@ -51,7 +51,8 @@ p {
   - 결과적으로 '웹 사이트 속도가 느려짐'
   - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set을 가볍게 해서 파일 크기를 줄여야 함
   
-*character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 (http://hell0-world.com/etc/2020/05/09/ChracterSet.html)* <br>
+*character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 (http://hell0-world.com/etc/2020/05/09/ChracterSet.html)*
+<br>
  
 > ### 특정 스타일 시트에서 또 다른 스타일 시트를 사용한 폰트 사용법 <br>
 ```
@@ -83,8 +84,9 @@ p {
   <link rel="stylesheet" href="test3.css">
   ```
   <br>
-- 결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다면 link 방식을 사용하자. <br>
-
+  
+- 결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다면 link 방식을 사용하자.
+ <br>
 
 > ### 폰트 참고 사이트
 - <https://fonts.google.com/> *영문체*
