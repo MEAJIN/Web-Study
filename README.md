@@ -5,7 +5,7 @@
 
 # CSS 폰트
 
-> 기본 폰트 /*여백이 있는 폰트는 ' ' 사용, 그외 미사용 (단, 한글 글꼴은 " " 또는 ' '를 넣지 않을 경우 인식하지 못 하는 브라우저도 있음)*/
+> 기본 폰트 *여백이 있는 폰트는 ' ' 사용, 그외 미사용 (단, 한글 글꼴은 " " 또는 ' '를 넣지 않을 경우 인식하지 못 하는 브라우저도 있음)*
 ```
 - serif
   - Times New Roman
@@ -43,15 +43,15 @@ p {
 - 알아두자!
   - @font-face를 사용함으로써 사이트에 추가적인 요청(HTTP)이 들어갈 수도 있음
   - 결과적으로 '웹 사이트 속도가 느려짐'
-  - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set을 가볍게 해서 파일 크기를 줄여야 함
+  - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set[^1]을 가볍게 해서 파일 크기를 줄여야 함
   
-    - character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 /* : http://hell0-world.com/etc/2020/05/09/ChracterSet.html)*/
+    - [^1] : 정보를 표현하기 위한 글자들의 집합을 정의한 것 *http://hell0-world.com/etc/2020/05/09/ChracterSet.html*
 ```
 <br>
 > 특정 스타일 시트에서 또 다른 스타일 시트 사용한 폰트 사용법
 ```
-- @import ".css 파일명"; /*문자 형식*/
-- @import url(".css 파일명"); /*url 형식*/
+- @import ".css 파일명"; *문자 형식*
+- @import url(".css 파일명"); *url 형식*
 
 - 알아두자!
   - @import 방식과 link 방식 중 어떤 방법이 더 효율적일까? 에 대한 답변은 "link 방식 (외부 스타일) 방식" 이 더 '효율적' 이다.
@@ -79,6 +79,6 @@ p {
 ```
 <br>
 > 폰트 참고 사이트
-- <https://fonts.google.com/> /*영문체*/
-- https://fonts.google.com/earlyaccess /*한글체, Ctrl+F > korean*/
+- <https://fonts.google.com/> *영문체*
+- https://fonts.google.com/earlyaccess *한글체, Ctrl+F > korean*
 
