@@ -25,9 +25,8 @@
   - Impact
   - Haettenschweiler  
 ```
-
+<br><br>
 > CSS 폰트 참고 사이트
-```
 - <https://fonts.google.com/> (영문)
-- <https://fonts.google.com/earlyaccess> (한글, Ctrl+F > korean)
-```
+- https://fonts.google.com/earlyaccess (한글, Ctrl+F > korean)
+
