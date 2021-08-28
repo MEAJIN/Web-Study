@@ -65,9 +65,11 @@ p {
 로 사용
 ```
 
-#### `@font-face`, 이것 만은 알아두자!
+<br />
+
+- #### @font-face, 이것 만은 알아두자!
   - `@font-face`를 사용함으로써 사이트에 추가적인 요청(HTTP)이 들어갈 수도 있음
-  - 결과적으로 '웹 사이트 속도가 느려짐'
+  - 결과적으로 `'웹 사이트 속도가 느려짐'`
   
   - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set을 가볍게 해서 파일 크기를 줄여야 함
   
@@ -81,11 +83,12 @@ p {
 1. @import ".css 파일명"; *문자 형식*
 2. @import url(".css 파일명"); *url 형식*
 ```
+
 <br />
 
-- #### @import & link, `이것 만은 알아두자`!
+- #### @import & link, 이것 만은 알아두자!
   - Q : `@import 방식`과 `link 방식` 중 어떤 방법이 더 효율적일까? 
-  - A : `link 방식(외부 스타일)` 방식이 더 '효율적' 이다.
+  - A : `link 방식(외부 스타일)` 방식이 더 `'효율적'` 이다.
   
   - Why?
     - `@import 방식`의 경우 @import 된 css들을 '직렬' 로딩 방식으로 불러오고,
@@ -151,7 +154,9 @@ span {
 #### 출력 화면
 ![inline](https://user-images.githubusercontent.com/75716255/131222899-03886dba-d14c-49c3-a316-62834b1b34f3.png)
 
-> #### `inline`, 이것 만은 알아두자!
+<br />
+
+- #### `inline`, 이것 만은 알아두자!
 - `inline` 엘리먼트는 `width`와 `height` 속성을 지정해도 무시된다.
 
 - Why?
