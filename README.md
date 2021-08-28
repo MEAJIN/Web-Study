@@ -108,6 +108,8 @@ p {
   <link rel="stylesheet" href="test3.css">
   ```
 
+<br />
+
 결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다면 link 방식을 사용하자.
 
 - #### @import & link, 이것 만은 알아두자!
