@@ -60,11 +60,11 @@ p {
 
 로 사용
 ```
-<br>
-
-- @font-face, 이것 만은 알아두자!
+<br />
+- #### @font-face, 이것 만은 알아두자!
   - @font-face를 사용함으로써 사이트에 추가적인 요청(HTTP)이 들어갈 수도 있음
   - 결과적으로 '웹 사이트 속도가 느려짐'
+  
   - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set을 가볍게 해서 파일 크기를 줄여야 함
   
 - *character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 (http://hell0-world.com/etc/2020/05/09/ChracterSet.html)*
@@ -81,6 +81,7 @@ p {
 - @import & link, 이것 만은 알아두자!
   - Q : @import 방식과 link 방식 중 어떤 방법이 더 효율적일까? 
   - A : link 방식 (외부 스타일) 방식이 더 '효율적' 이다.
+  
   - Why?
     - @import 방식의 경우 @import 된 css들을 '직렬' 로딩 방식으로 불러오고,
     - 외부 스타일 방식의 경우 '병렬' 로딩 방식으로 css를 불러오기 때문.<br><br>
