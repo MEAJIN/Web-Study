@@ -43,6 +43,8 @@
   - Haettenschweiler  
 ```
 
+<br />
+
 > ### 폰트 파일 사용법
 ```
 @font-face {
@@ -108,3 +110,8 @@ p {
 > ### 폰트 참고 사이트
 - <https://fonts.google.com/> *영문체*
 - https://fonts.google.com/earlyaccess *한글체, Ctrl+F > korean*
+
+<br />
+
+## CSS display 속성: inline, block, inline-block
+CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
