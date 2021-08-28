@@ -81,10 +81,9 @@ p {
 1. @import ".css 파일명"; *문자 형식*
 2. @import url(".css 파일명"); *url 형식*
 ```
-
 <br />
 
-- #### `@import & link, 이것 만은 알아두자!`
+- #### @import & link, `이것 만은 알아두자`!
   - Q : `@import 방식`과 `link 방식` 중 어떤 방법이 더 효율적일까? 
   - A : `link 방식(외부 스타일)` 방식이 더 '효율적' 이다.
   
