@@ -19,7 +19,7 @@
 - CSS display 속성
 
   - [Inline](#Inline)
-    - [inline, 알아두면 좋은 점](#`inline`, 이것 만은 알아두자!)
+    - [inline, 알아두면 좋은 점](#`inline`,-이것-만은-알아두자!)
 <br />
 
 ## CSS 폰트
