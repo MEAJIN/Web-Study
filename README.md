@@ -10,8 +10,8 @@
 - CSS 폰트
 
   - [기본 폰트(default)](#기본-폰트)
-  - [폰트 파일 사용법](#폰트-파일-사용법)
-  - [스타일 시트를 활용한 폰트 사용법](#특정-스타일-시트에서-또-다른-스타일-시트를-활용한-폰트-사용법)
+  - [폰트 파일 사용법 (@font-face)](#폰트-파일-사용법)
+  - [스타일 시트를 활용한 폰트 사용법 (@import)](#특정-스타일-시트에서-또-다른-스타일-시트를-활용한-폰트-사용법)
   - [폰트 참고 사이트](#폰트-참고-사이트)
 
 - CSS display 속성
@@ -50,19 +50,15 @@
 
 > ### 폰트 파일 사용법
 
-```
+```html (원래 css임, 코드 불키려고 형식만 html로 적어둠)
 @font-face {
   src : url("폰트 파일 경로");
   font-family: "폰트 별명";
 }
 
-입력 후,
-
 p {
   font-family: "폰트 별명";
 }
-
-로 사용
 ```
 
 <br />
@@ -79,7 +75,7 @@ p {
 
 > ### 특정 스타일 시트에서 또 다른 스타일 시트를 활용한 폰트 사용법 <br>
 
-```
+```html (원래 css임, 코드 불키려고 형식만 html로 적어둠)
 1. @import ".css 파일명"; *문자 형식*
 2. @import url(".css 파일명"); *url 형식*
 ```
@@ -88,7 +84,7 @@ p {
     
  예를 들어, 아래와 같은 `@import 방식` 의 경우 test1.css를 불러온 뒤에 test2.css, test3.css를 차례로 불러온다.
  
-  ```
+  ```html (원래 css임, 코드 불키려고 형식만 html로 적어둠)
   @import "test1.css";  /* 1번째 */
   @import "test2.css";  /* 2번째 */
   @import "test3.css";  /* 3번째 */
@@ -102,7 +98,7 @@ p {
 
 반면 아래의 `link 방식` 의 경우, test1.css와 test2.css, test3.css가 동시에 로딩(병렬 로딩)하여 불러오기 때문에 페이지 로딩 속도가 @import 방식에 비해 빠르고 효율적이다.
 
-  ```
+  ```html
   <link rel="stylesheet" href="test1.css">
   <link rel="stylesheet" href="test2.css">
   <link rel="stylesheet" href="test3.css">
@@ -138,7 +134,7 @@ CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻�
 
 예를 들어, 여러개의 `inline` 엘리먼트들을 아래와 같이 마크업하면 줄바꿈 없이 순서대로 한 줄에 보이게 된다.
 
-```
+```html, css
 // HTML 
 
 before
