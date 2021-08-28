@@ -94,7 +94,11 @@ p {
   @import "test3.css";  /* 3번째 */
   ```
   
+<br />
+
 즉, css를 하나하나 순차적(직렬 로딩)으로 불러오기 때문에 css의 양이 얼마 되지 않는다면 크게 상관이 없겠지만, __css의 양이 방대해진다면__ 페이지 로딩속도가 현저히 '느려질 것'이다.
+
+<br />
 
 반면 아래의 `link 방식` 의 경우, test1.css와 test2.css, test3.css가 동시에 로딩(병렬 로딩)하여 불러오기 때문에 페이지 로딩 속도가 @import 방식에 비해 빠르고 효율적이다.
 
@@ -103,9 +107,8 @@ p {
   <link rel="stylesheet" href="test2.css">
   <link rel="stylesheet" href="test3.css">
   ```
-  <br />
-  
-- 결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다면 link 방식을 사용하자.
+
+결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다면 link 방식을 사용하자.
 
 - #### @import & link, 이것 만은 알아두자!
   - Q : `@import 방식`과 `link 방식` 중 어떤 방법이 더 효율적일까? 
@@ -155,8 +158,6 @@ span {
 
 #### 출력 화면
 ![inline](https://user-images.githubusercontent.com/75716255/131222899-03886dba-d14c-49c3-a316-62834b1b34f3.png)
-
-<br />
 
 - #### `inline`, 이것 만은 알아두자!
 - `inline` 엘리먼트는 `width`와 `height` 속성을 지정해도 무시된다.
