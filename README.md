@@ -21,6 +21,7 @@
 ## CSS 폰트
 
 > ### 기본 폰트
+
 ```
 - serif
   - 'Times New Roman'
@@ -46,6 +47,7 @@
 <br />
 
 > ### 폰트 파일 사용법
+
 ```
 @font-face {
   src : url("폰트 파일 경로");
@@ -72,11 +74,11 @@ p {
 <br />
 
 > ### 특정 스타일 시트에서 또 다른 스타일 시트를 활용한 폰트 사용법 <br>
+
 ```
 1. @import ".css 파일명"; *문자 형식*
 2. @import url(".css 파일명"); *url 형식*
 ```
-<br />
 
 #### @import & link, 이것 만은 알아두자!
   - Q : @import 방식과 link 방식 중 어떤 방법이 더 효율적일까? 
@@ -87,14 +89,17 @@ p {
     - 외부 스타일 방식의 경우 '병렬' 로딩 방식으로 css를 불러오기 때문.<br><br>
     
  예를 들어, 아래와 같은 __@import 방식__ 의 경우 test1.css를 불러온 뒤에 test2.css, test3.css를 차례로 불러온다.
+ 
   ```
   @import "test1.css";  /* 1번째 */
   @import "test2.css";  /* 2번째 */
   @import "test3.css";  /* 3번째 */
   ```
+  
 즉, css를 하나하나 순차적(직렬 로딩)으로 불러오기 때문에 css의 양이 얼마 되지 않는다면 크게 상관이 없겠지만, __css의 양이 방대해진다면__ 페이지 로딩속도가 현저히 '느려질 것'이다.
 
 반면 아래의 __link 방식 (외부 스타일 방식)__ 의 경우, test1.css와 test2.css, test3.css가 동시에 로딩(병렬 로딩)하여 불러오기 때문에 페이지 로딩 속도가 @import 방식에 비해 빠르고 효율적이다.
+
   ```
   <link rel="stylesheet" href="test1.css">
   <link rel="stylesheet" href="test2.css">
@@ -114,3 +119,31 @@ p {
 
 ## CSS display 속성: inline, block, inline-block
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
+
+> ### Inline
+`display` 속성이 `inline`으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치된다. 대표적인 `inline` 엘리먼트로 `<span>`이나 `<a>`, `<em>` 태그 등이 있다.
+
+예를 들어, 여러개의 `inline` 엘리먼트들을 아래와 같이 마크업하면 줄바꿈 없이 순서대로 한 줄에 보이게 된다.
+
+```
+// HTML 
+
+before
+<a>A</a>
+<span>SPAN</span>
+<em>EM</em>
+after
+
+// CSS
+
+span {
+  background: yellow;
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+  padding: 10px;
+}
+```
+
+#### 출력 화면
+![inline](#Web_in_codeit/README_IMG/inline.png)
