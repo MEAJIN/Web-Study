@@ -146,4 +146,4 @@ span {
 ```
 
 #### 출력 화면
-![131222899-03886dba-d14c-49c3-a316-62834b1b34f3.png](![inline](https://user-images.githubusercontent.com/75716255/131222899-03886dba-d14c-49c3-a316-62834b1b34f3.png)
+![inline](https://user-images.githubusercontent.com/75716255/131222899-03886dba-d14c-49c3-a316-62834b1b34f3.png)
