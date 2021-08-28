@@ -146,4 +146,4 @@ span {
 ```
 
 #### 출력 화면
-![inline](#Web_in_codeit/README_IMG/inline.png)
+![inline](Web_in_codeit/README_IMG/inline.png)
