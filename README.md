@@ -16,7 +16,7 @@
 
 - CSS display 속성
 
-  - [Inline](#Inline)
+  - [inline](#inline)
 
 <br />
 
@@ -131,7 +131,7 @@ CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻�
 
 <br />
 
-> ### Inline
+> ### inline
 `display` 속성이 `inline`으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치된다. 대표적인 `inline` 엘리먼트로 `<span>`이나 `<a>`, `<em>` 태그 등이 있다. 
 
 <br />
@@ -167,3 +167,85 @@ span {
   - Why?
     - 해당 태그가 마크업하고 있는 컨텐츠의 크기 만큼만 공간을 차지하도록 되어 있기 때문이다.
     - 또한, `margin`과 `padding` 속성은 __좌우 간격__ 만 반영이 되고, __상하 간격__ 은 반영 되지 않는다.
+
+<br />
+
+> ### block
+`display` 속성이 `block`으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지한다. 대표적인 `block` 엘리먼트로, `<div>`이나 `<p>`, `<h1>` 태그 등을 들 수 있다.
+
+<br />
+
+예를 들어, 여러 개의 `block` 엘리먼트들을 아래와 같이 마크업하면 매번 줄바꿈 되어 여러 줄에 보이게 된다.
+
+```html, css
+// HTML
+
+before
+<h1>H1</h1>
+<div>DIV</div>
+<p>P</p>
+after
+
+// CSS
+
+div {
+  background: yellow;
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+  padding: 10px;
+}
+```
+
+#### 출력 화면
+![block](https://user-images.githubusercontent.com/75716255/131252531-91c5794b-cb61-4fdb-a310-cf2362949204.png)
+
+- #### `block`, 이것 만은 알아두자!
+  - `block` 엘리먼트는 `inline` 엘리먼트와 달리 `width`, `height`, `margin`, `padding` 속성이 모두 반영 된다.
+
+<br />
+
+> ### unline-block
+`display` 속성이 `inline-block`으로 지정된 엘리먼트는 기본적으로 `inline` 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치된다. 하지만 `inline` 엘리먼트에서 불가능하던 `width`와 `height` 속성 지정 및 `margin`과 `padding` 속성의 상하 간격 지정이 가능해진다.
+
+<br />
+
+대표적인 `inline-block` 엘리먼트로 `<button>`이나 `<input>`, `<select>` 태그 등을 들 수 있다.
+
+```html, css
+// HTML
+
+before
+<a>A</a>
+<span>SPAN</span>
+<em>EM</em>
+after
+
+// CSS
+
+span {
+  display: inline-block;
+  background: yellow;
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+  padding: 10px;
+}
+```
+
+#### 출력 화면
+![inline-block](https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png)
+
+- #### `inline-block`, 이것 만은 알아두자!
+  - `inline-block` 엘리먼트는 위와 같이 명시적으로 헤당 엘리먼트의 스타일을 `display: inline-block`로 지정해줘야 한다.
+  - `inline-block`을 이용하면 여러 개의 엘리먼트를 한 줄에 정확히 원하는 너비만큼 배치할 수 있기 때문에 레이아웃에 활용할 수 있다.
+
+<br />
+
+> ### etc
+`<span>`로 마크업된 엘리먼트가 `inline` 속성값을 가지고, `<div>`로 마크업된 엘리먼트가 `block` 속성값을 가지는 이유는 소위 `user agent stylesheet`라고 불리는 브라우저의 내장 스타일이 적용(관리자 도구에서 확인 가능) 되어서 그렇다. 이렇게 HTML 태그 별로 기본적으로 적용되어 있는 `display` 속성값은 원하는 값으로 CSS를 이용하서 자유롭게 변경이 가능하다.
+
+<br />
+
+> ### display 참고 사이트
+> <https://developer.mozilla.org/en-US/docs/Web/CSS/display>
