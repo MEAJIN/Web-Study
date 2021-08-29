@@ -250,4 +250,4 @@ span {
 <br />
 
 > ### display 참고 사이트
-> <https://developer.mozilla.org/en-US/docs/Web/CSS/display>
+- <https://developer.mozilla.org/en-US/docs/Web/CSS/display>
