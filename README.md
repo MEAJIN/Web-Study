@@ -236,7 +236,7 @@ span {
 ```
 
 #### 출력 화면
-![inline-block](https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png){: img}
+![inline-block](https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png){: .img}
 
 - #### `inline-block`, 이것 만은 알아두자!
   - `inline-block` 엘리먼트는 위와 같이 명시적으로 헤당 엘리먼트의 스타일을 `display: inline-block`로 지정해줘야 한다.
