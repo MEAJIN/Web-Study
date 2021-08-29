@@ -207,7 +207,7 @@ div {
 
 <br />
 
-> ### unline-block
+> ### inline-block
 `display` 속성이 `inline-block`으로 지정된 엘리먼트는 기본적으로 `inline` 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치된다. 하지만 `inline` 엘리먼트에서 불가능하던 `width`와 `height` 속성 지정 및 `margin`과 `padding` 속성의 상하 간격 지정이 가능해진다.
 
 <br />
