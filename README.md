@@ -17,6 +17,8 @@
 - CSS display 속성
 
   - [inline](#inline)
+  - [block](#block)
+  - [inline-block](#inline-block)
 
 <br />
 
