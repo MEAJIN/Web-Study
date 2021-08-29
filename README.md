@@ -19,7 +19,7 @@
   - [inline](#inline)
   - [block](#block)
   - [inline-block](#inline-block)
-[이미지](#https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png)
+[![inline-block](https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png)](#https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png)
 <br />
 
 ## CSS 폰트
