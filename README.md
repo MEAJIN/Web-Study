@@ -251,3 +251,4 @@ span {
 
 > ### display 참고 사이트
 - <https://developer.mozilla.org/en-US/docs/Web/CSS/display>
+  - 해당 링크 `Examples`로 가면 각 `display` 마다 적용 되는 예시를 직접 확인 할 수 있다.
