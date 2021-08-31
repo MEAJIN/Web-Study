@@ -11,9 +11,9 @@
 
 - Tag
 
-  - [Semantic Tags](#Semantic-Tags(or-Semantic-Markup))
+  - [Semantic Tags](#Semantic-Tags-or-Semantic-Markup-)
     - [Semantic Tags의 중요성 3대장](#Semantic-Tags가-중요한-이유-3가지)
-  - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들(Box-Tag))
+  - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들-Box-Tag-)
 
 ## CSS
 
@@ -97,6 +97,8 @@
 웹 사이트를 만들 때, 아래 그림 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
 
 <img src="https://user-images.githubusercontent.com/75716255/131506537-5b763ff4-0a50-4c74-8c9e-9a6af5a4a066.png" width="50%" height="50%">
+
+<br />
 
 그 방법은 아래와 같다.
 
