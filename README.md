@@ -11,9 +11,9 @@
 
 - Tag
 
-  - [Semantic Tags](#Semantic-Tags-or-Semantic-Markup-)
+  - [Semantic Tags(or Semantic Markup)](#Semantic-Tags)
     - [Semantic Tags의 중요성 3대장](#Semantic-Tags가-중요한-이유-3가지)
-  - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들-Box-Tag-)
+  - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들)
 
 ## CSS
 
@@ -36,7 +36,7 @@
 
 ## Tag
 
-> ### Semantic Tags(or Semantic Markup)
+> ### Semantic Tags
 시맨틱(semantic) 태그란? __의미를 전달__ 할 수 있는 태그다. 예를 들어, 시맨틱 태그가 아닌 `<div>`, `<span>` 태그의 경우 그 이름만 들어서는 어떤 내용을 내포하고 있는지 알 수 없다. 그러나 시맨틱 태그인 `<header>`, `<nav>`, `<img>` 태그의 경우 이름만 들어도 `<header>=제목`, `<nav>=내비게이션`, `<img>=그림` 에 대한 내용을 내포 하고 있음을 짐작 할 수 있다. 이와 같이 사람들에게 의미를 전달 할 수 있는 태그를 `시맨틱(semantic) 태그` 라고 한다.
 
 - #### Semantic Tags가 중요한 이유 3가지
@@ -92,7 +92,7 @@
 
 <br />
 
-> ### 웹 사이트 구조를 이루는 태그들(Box Tag)
+> ### 웹 사이트 구조를 이루는 태그들
 
 웹 사이트를 만들 때, 아래 그림 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
 
