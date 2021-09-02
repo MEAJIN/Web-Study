@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  text-align: center;
+  background-color: #F0E8D9;
+}
+
+@font-face {
+  src : url("../fonts/BMJUA_otf.otf");
+  font-family: "BMJUA_otf";
+}
+
+h1 {
+  font-family: "BMJUA_otf";
+  font-size: 64px;
+  color: #58595B;
+  margin: 75px 0 30px 0;
+}
+
+h2 {
+  font-family: "BMJUA_otf";
+  font-size: 32px;
+  color: #58595B;
+  margin: 0 0 75px 0;
+}
+
+a {
+  font-family: "BMJUA_otf";
+  font-size: 16px;
+  color: #0000EE;
+  text-decoration: none;
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+}
+
+.frame {
+  margin: auto;
+  width: 50%;
+}
+
+.food-box {
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.food-content-box {
+  padding: 20px;
+}
+
+.food-name {
+  font-family: "BMJUA_otf";
+  font-size: 32px;
+  color: #58595B;
+  margin: 0;
+}
+
+.food-content {
+  text-align: left;
+  font-family: "BMJUA_otf";
+  font-size: 16px;
+  color: #58595B;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+/*.food-img {*/
+/*  background-image: url("../images/chicken.jpg");*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*  background-position: center center;*/
+/*}*/
