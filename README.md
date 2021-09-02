@@ -32,7 +32,9 @@
 
 - background
 
-  - [배경 이미지](#배경-이미지)
+  - [배경 이미지 반복](#background-repeat)
+  - [배경 이미지 사이즈](#background-size)
+  - [배경 이미지 위치](#background-size)
 
 <br />
 
