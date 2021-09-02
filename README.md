@@ -38,6 +38,14 @@
 
 - Selector(선택자)
 
+  - [자식(children)](#자식)
+  - [직속 자식 (direct children)](#직속-자식)
+  - [복수 선택](#복수-선택)
+  - [여러 조건](#여러-조건)
+  - [Pseudo-class (가상 클래스)](#가상-클래스)
+    - [n번째 자식](#n번째-자식)
+    - [마우스 오버(hover)](#마우스-오버)
+
 <br />
 
 # `HTML`
@@ -449,6 +457,173 @@ background-position: 25% 75%;
 
 /* 픽셀로 지정하기 (가로: 가장 왼쪽 가장자리에서부터 오른쪽으로 100px 이동한 지점, 세로: 가장 상단 가장자리에서 아래로 200px 이동한 지점) */
 background-position: 100px 200px;
+```
+
+<br />
+
+## Selector(선택자)
+CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
+
+> ### 자식
+
+```html, css
+// html
+
+<i>Outside</i>
+<div class="div1">
+  <i>Inside 1</i>
+  <p>Blah blah <i>Inside 2</i></p>
+  <i>Inside 3</i>
+</div>
+
+// css
+/* 'div1' 클래스를 갖고 있는 요소의 자식 중 모든 <i> 태그 */
+.div1 i {
+  color: orange;
+}
+```
+
+<br />
+
+> ### 직속 자식
+
+```html, css
+// html
+
+<i>Outside</i>
+<div class="div1">
+  <i>Inside 1</i>
+  <p>Blah blah <i>Inside 2</i></p>
+  <i>Inside 3</i>
+</div>
+
+// css
+
+/* 'div1' 클래스를 갖고 있는 요소의 직속 자식 중 모든 <i> 태그 */
+.div1 > i {
+  color: orange;
+}
+```
+
+<br />
+
+> ### 복수 선택
+
+```html, css
+// html
+
+<p class="one">Outside 1</p>
+<p class="two">Outside 2</p>
+<div>
+  <p class="one">Inside 1</p>
+  <p class="two">Inside 2</p>
+  <p class="three">Inside 3</p>
+  <p class="four">Inside 4</p>
+  <p class="five">Inside 5</p>
+</div>
+
+// css
+
+/* 'two' 클래스를 가지고 있는 태그 모두와 'four' 클래스를 가지고 있는 태그 모두 선택 */
+.two, .four {
+  color: orange;
+}
+```
+
+<br />
+
+> ### 여러 조건
+
+```html, css
+// html
+
+<p class="outside one">Outside 1</p>
+<p class="outside two">Outside 2</p>
+<div>
+  <p class="inside one">Inside 1</p>
+  <p class="inside two">Inside 2</p>
+  <p class="inside three">Inside 3</p>
+  <p class="inside four">Inside 4</p>
+  <p class="inside five">Inside 5</p>
+</div>
+
+// css
+
+/* 'outside' 클래스를 갖고 있으면서 'one' 클래스도 갖고 있는 태그 */
+.outside.one {
+  color: blue;
+}
+
+/* 'inside' 클래스를 갖고 있으면서 'two' 클래스도 갖고 있는 태그 */
+.inside.two {
+  color: orange;
+}
+```
+
+> ### 가상 클래스
+콜론(:)을 사용하면 몇 가지 '가상 클래스'를 선택할 수 있다.
+
+#### n번째 자식
+
+```html, css
+// html
+
+<div class="div1">
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+  <p>Paragraph 4</p>
+  <p>Paragraph 5</p>
+  <p>Paragraph 6</p>
+</div>
+
+// css
+
+/* .div1의 자식인 <p> 태그 중 3번째 */
+.div1 p:nth-child(3) {
+  color: blue;
+}
+
+/* .div1의 자식인 <p> 태그 중 첫 번째 */
+.div1 p:first-child {
+  color: red;
+}
+
+/* .div1의 자식인 <p> 태그 중 마지막 */
+.div1 p:last-child {
+  color: green;
+}
+
+/* .div1의 자식 중 마지막 자식이 아닌 <p> 태그 */
+.div1 p:not(:last-child) {
+  font-size: 150%;
+}
+
+/* .div1의 자식 중 첫 번째 자식이 아닌 <p> 태그 */
+.div1 p:not(:first-child) {
+  text-decoration: line-through;
+}
+```
+
+<br />
+
+#### 마우스 오버
+
+```html, css
+// html
+
+<h1>Hello World!</h1>
+
+// css
+
+h1 {
+  color: orange;
+}
+
+/* 마우스가 <h1> 태그에 올라갔을 때 */
+h1:hover {
+  color: green;
+}
 ```
 
 <br />
