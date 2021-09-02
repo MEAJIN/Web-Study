@@ -24,11 +24,15 @@
   - [스타일 시트를 활용한 폰트 사용법 (@import)](#특정-스타일-시트에서-또-다른-스타일-시트를-활용한-폰트-사용법)
   - [폰트 참고 사이트](#폰트-참고-사이트)
 
-- CSS display 속성
+- display
 
   - [inline](#inline)
   - [block](#block)
   - [inline-block](#inline-block)
+
+- background
+
+  - [배경 이미지](#배경-이미지)
 
 <br />
 
@@ -244,7 +248,7 @@ __결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다�
 
 <br />
 
-## CSS display 속성
+## display
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
 
 <br />
@@ -368,3 +372,79 @@ span {
 > ### display 참고 사이트
 - <https://developer.mozilla.org/en-US/docs/Web/CSS/display>
   - 해당 링크 `Examples`로 가면 각 `display` 마다 적용 되는 예시를 직접 확인 할 수 있다.
+
+<br />
+
+## background
+
+> ### background-repeat
+background-repeat는 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성이다.
+
+```html, (css임)
+/* 반복하지 않음 */
+background-repeat: no-repeat;
+
+/* 가로 방향으로만 반복 */
+background-repeat: repeat-x;
+
+/* 세로 방향으로만 반복 */
+background-repeat: repeat-y;
+
+/* 가로와 세로 모두 반복 */
+background-repeat: repeat;
+
+/* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 간의 여백으로 배분 */
+background-repeat: space;
+
+/* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 확대를 통해 배분 */
+background-repeat: round;
+```
+
+<br />
+
+> ### background-size
+background-size는 배경 이미지의 사이즈를 정해주는 속성이다.
+
+```html, (css임)
+/* 원래 이미지 사이즈대로 출력 */
+background-size: auto;
+
+/* 화면을 꽉 채우면서, 사진 비율을 유지 */
+background-size: cover;
+
+/* 가로, 세로 중 먼저 채워지는 쪽에 맞추어서 출력 */
+background-size: contain;
+
+/* 픽셀값 지정 (가로: 30px, 세로: 50px로 설정) */
+background-size: 30px 50px;
+
+/* 퍼센트값 지정 (가로: 부모 요소 width의 60%, 세로: 부모 요소 height의 70%로 설정) */
+background-size: 60% 70%;
+```
+
+<br />
+
+> ### background-position
+background-position은 배경 이미지의 위치를 정해주는 속성이다.
+
+```html, (css임)
+/* 단어로 지정해주기 (가로: left, center, right, 세로: top, center, bottom) */
+/* 아래와 같은 총 9개의 조합이 가능 */
+background-position: left top;
+background-position: left center;
+background-position: left bottom;
+background-position: right top;
+background-position: right center;
+background-position: right bottom;
+background-position: center top;
+background-position: center center;
+background-position: center bottom;
+
+/* 퍼센트로 지정해주기 (가로: 전체 width의 25% 지점, 세로: 전체 height의 75% 지점 ) */
+background-position: 25% 75%;
+
+/* 픽셀로 지정하기 (가로: 가장 왼쪽 가장자리에서부터 오른쪽으로 100px 이동한 지점, 세로: 가장 상단 가장자리에서 아래로 200px 이동한 지점) */
+background-position: 100px 200px;
+```
+
+<br />
