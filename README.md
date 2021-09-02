@@ -24,7 +24,7 @@
   - [스타일 시트를 활용한 폰트 사용법 (@import)](#특정-스타일-시트에서-또-다른-스타일-시트를-활용한-폰트-사용법)
   - [폰트 참고 사이트](#폰트-참고-사이트)
 
-- display
+- display property
 
   - [inline](#inline)
   - [block](#block)
@@ -35,6 +35,8 @@
   - [배경 이미지 반복](#background-repeat)
   - [배경 이미지 사이즈](#background-size)
   - [배경 이미지 위치](#background-size)
+
+- Selector(선택자)
 
 <br />
 
@@ -250,7 +252,7 @@ __결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다�
 
 <br />
 
-## display
+## display property
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
 
 <br />
