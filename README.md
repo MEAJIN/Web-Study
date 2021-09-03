@@ -112,13 +112,13 @@
 
 웹 사이트를 만들 때, 아래 그림 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
 
-<img src="https://user-images.githubusercontent.com/75716255/131506537-5b763ff4-0a50-4c74-8c9e-9a6af5a4a066.png" width="8%" height="50%">
+<img src="https://user-images.githubusercontent.com/75716255/131506537-5b763ff4-0a50-4c74-8c9e-9a6af5a4a066.png" width="70%" height="60%">
 
 <br />
 
 그 방법은 아래와 같다.
 
-<img src="https://user-images.githubusercontent.com/75716255/131507581-2e37a1aa-895c-4b6a-ba41-fd8fe0ce7dd7.png" width="80%" height="50%">
+<img src="https://user-images.githubusercontent.com/75716255/131507581-2e37a1aa-895c-4b6a-ba41-fd8fe0ce7dd7.png" width="70%" height="60%">
 
 - `<header>`
   - 소개 및 탐색에 도움을 주는 콘텐츠를 나타낸다. 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함.
