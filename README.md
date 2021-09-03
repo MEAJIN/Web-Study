@@ -464,6 +464,8 @@ background-position: 100px 200px;
 ## Selector(선택자)
 CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
+<br />
+
 > ### 자식
 
 ```html, css
@@ -476,7 +478,10 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
   <i>Inside 3</i>
 </div>
 
+```
+```css
 // css
+
 /* 'div1' 클래스를 갖고 있는 요소의 자식 중 모든 <i> 태그 */
 .div1 i {
   color: orange;
@@ -487,7 +492,7 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 > ### 직속 자식
 
-```html, css
+```html
 // html
 
 <i>Outside</i>
@@ -496,7 +501,8 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
   <p>Blah blah <i>Inside 2</i></p>
   <i>Inside 3</i>
 </div>
-
+```
+```css
 // css
 
 /* 'div1' 클래스를 갖고 있는 요소의 직속 자식 중 모든 <i> 태그 */
@@ -521,7 +527,8 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
   <p class="four">Inside 4</p>
   <p class="five">Inside 5</p>
 </div>
-
+```
+```css
 // css
 
 /* 'two' 클래스를 가지고 있는 태그 모두와 'four' 클래스를 가지고 있는 태그 모두 선택 */
@@ -546,7 +553,8 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
   <p class="inside four">Inside 4</p>
   <p class="inside five">Inside 5</p>
 </div>
-
+```
+```css
 // css
 
 /* 'outside' 클래스를 갖고 있으면서 'one' 클래스도 갖고 있는 태그 */
@@ -578,7 +586,8 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
   <p>Paragraph 5</p>
   <p>Paragraph 6</p>
 </div>
-
+```
+```css
 // css
 
 /* .div1의 자식인 <p> 태그 중 3번째 */
@@ -615,6 +624,8 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 // html
 
 <h1>Hello World!</h1>
+```
+```css
 
 // css
 
