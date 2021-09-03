@@ -272,17 +272,14 @@ CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻�
 
 예를 들어, 여러개의 `inline` 엘리먼트들을 아래와 같이 마크업하면 줄바꿈 없이 순서대로 한 줄에 보이게 된다.
 
-```html, css
-// HTML 
-
+```html
 before
 <a>A</a>
 <span>SPAN</span>
 <em>EM</em>
 after
-
-// CSS
-
+```
+```css
 span {
   background: yellow;
   width: 200px;
@@ -311,17 +308,14 @@ span {
 
 예를 들어, 여러 개의 `block` 엘리먼트들을 아래와 같이 마크업하면 매번 줄바꿈 되어 여러 줄에 보이게 된다.
 
-```html, css
-// HTML
-
+```html
 before
 <h1>H1</h1>
 <div>DIV</div>
 <p>P</p>
 after
-
-// CSS
-
+```
+```css
 div {
   background: yellow;
   width: 200px;
@@ -346,17 +340,14 @@ div {
 
 대표적인 `inline-block` 엘리먼트로 `<button>`이나 `<input>`, `<select>` 태그 등을 들 수 있다.
 
-```html, css
-// HTML
-
+```html
 before
 <a>A</a>
 <span>SPAN</span>
 <em>EM</em>
 after
-
-// CSS
-
+```
+```css
 span {
   display: inline-block;
   background: yellow;
@@ -392,7 +383,7 @@ span {
 > ### background-repeat
 background-repeat는 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성이다.
 
-```html, (css임)
+```css
 /* 반복하지 않음 */
 background-repeat: no-repeat;
 
@@ -417,7 +408,7 @@ background-repeat: round;
 > ### background-size
 background-size는 배경 이미지의 사이즈를 정해주는 속성이다.
 
-```html, (css임)
+```css
 /* 원래 이미지 사이즈대로 출력 */
 background-size: auto;
 
@@ -439,7 +430,7 @@ background-size: 60% 70%;
 > ### background-position
 background-position은 배경 이미지의 위치를 정해주는 속성이다.
 
-```html, (css임)
+```css
 /* 단어로 지정해주기 (가로: left, center, right, 세로: top, center, bottom) */
 /* 아래와 같은 총 9개의 조합이 가능 */
 background-position: left top;
@@ -468,20 +459,15 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 > ### 자식
 
-```html, css
-// html
-
+```html
 <i>Outside</i>
 <div class="div1">
   <i>Inside 1</i>
   <p>Blah blah <i>Inside 2</i></p>
   <i>Inside 3</i>
 </div>
-
 ```
 ```css
-// css
-
 /* 'div1' 클래스를 갖고 있는 요소의 자식 중 모든 <i> 태그 */
 .div1 i {
   color: orange;
@@ -493,8 +479,6 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 > ### 직속 자식
 
 ```html
-// html
-
 <i>Outside</i>
 <div class="div1">
   <i>Inside 1</i>
@@ -503,8 +487,6 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 </div>
 ```
 ```css
-// css
-
 /* 'div1' 클래스를 갖고 있는 요소의 직속 자식 중 모든 <i> 태그 */
 .div1 > i {
   color: orange;
@@ -516,8 +498,6 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 > ### 복수 선택
 
 ```html, css
-// html
-
 <p class="one">Outside 1</p>
 <p class="two">Outside 2</p>
 <div>
@@ -529,8 +509,6 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 </div>
 ```
 ```css
-// css
-
 /* 'two' 클래스를 가지고 있는 태그 모두와 'four' 클래스를 가지고 있는 태그 모두 선택 */
 .two, .four {
   color: orange;
@@ -541,9 +519,7 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 > ### 여러 조건
 
-```html, css
-// html
-
+```html
 <p class="outside one">Outside 1</p>
 <p class="outside two">Outside 2</p>
 <div>
@@ -555,8 +531,6 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 </div>
 ```
 ```css
-// css
-
 /* 'outside' 클래스를 갖고 있으면서 'one' 클래스도 갖고 있는 태그 */
 .outside.one {
   color: blue;
@@ -576,7 +550,6 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 #### n번째 자식
 
 ```html, css
-// html
 
 <div class="div1">
   <p>Paragraph 1</p>
@@ -588,8 +561,6 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 </div>
 ```
 ```css
-// css
-
 /* .div1의 자식인 <p> 태그 중 3번째 */
 .div1 p:nth-child(3) {
   color: blue;
@@ -621,14 +592,9 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 #### 마우스 오버
 
 ```html, css
-// html
-
 <h1>Hello World!</h1>
 ```
 ```css
-
-// css
-
 h1 {
   color: orange;
 }
