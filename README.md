@@ -24,7 +24,7 @@
   - [스타일 시트를 활용한 폰트 사용법 (@import)](#특정-스타일-시트에서-또-다른-스타일-시트를-활용한-폰트-사용법)
   - [폰트 참고 사이트](#폰트-참고-사이트)
 
-- display
+- display property
 
   - [inline](#inline)
   - [block](#block)
@@ -35,6 +35,16 @@
   - [배경 이미지 반복](#background-repeat)
   - [배경 이미지 사이즈](#background-size)
   - [배경 이미지 위치](#background-size)
+
+- Selector(선택자)
+
+  - [자식(children)](#자식)
+  - [직속 자식 (direct children)](#직속-자식)
+  - [복수 선택](#복수-선택)
+  - [여러 조건](#여러-조건)
+  - [Pseudo-class (가상 클래스)](#가상-클래스)
+    - [n번째 자식](#n번째-자식)
+    - [마우스 오버(hover)](#마우스-오버)
 
 <br />
 
@@ -102,13 +112,13 @@
 
 웹 사이트를 만들 때, 아래 그림 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
 
-<img src="https://user-images.githubusercontent.com/75716255/131506537-5b763ff4-0a50-4c74-8c9e-9a6af5a4a066.png" width="60%" height="50%">
+<img src="https://user-images.githubusercontent.com/75716255/131506537-5b763ff4-0a50-4c74-8c9e-9a6af5a4a066.png" width="70%" height="60%">
 
 <br />
 
 그 방법은 아래와 같다.
 
-<img src="https://user-images.githubusercontent.com/75716255/131507581-2e37a1aa-895c-4b6a-ba41-fd8fe0ce7dd7.png" width="60%" height="50%">
+<img src="https://user-images.githubusercontent.com/75716255/131507581-2e37a1aa-895c-4b6a-ba41-fd8fe0ce7dd7.png" width="70%" height="60%">
 
 - `<header>`
   - 소개 및 탐색에 도움을 주는 콘텐츠를 나타낸다. 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함.
@@ -174,7 +184,9 @@
 
 > ### 폰트 파일 사용법
 
-```html (원래 css임, 코드 불키려고 형식만 html로 적어둠)
+```css
+/* css */
+
 @font-face {
   src : url("폰트 파일 경로");
   font-family: "폰트 별명";
@@ -201,7 +213,9 @@ p {
 
 <br />
 
-```html (원래 css임, 코드 불키려고 형식만 html로 적어둠)
+```css
+/* css */
+
 1. @import ".css 파일명"; *문자 형식*
 2. @import url(".css 파일명"); *url 형식*
 ```
@@ -210,7 +224,9 @@ p {
     
  예를 들어, 아래와 같은 `@import 방식` 의 경우 test1.css를 불러온 뒤에 test2.css, test3.css를 차례로 불러온다.
  
-  ```html (원래 css임, 코드 불키려고 형식만 html로 적어둠)
+  ```css
+  /* css */
+  
   @import "test1.css";  /* 1번째 */
   @import "test2.css";  /* 2번째 */
   @import "test3.css";  /* 3번째 */
@@ -225,6 +241,8 @@ p {
 반면 아래의 `link 방식` 의 경우, test1.css와 test2.css, test3.css가 동시에 로딩(병렬 로딩)하여 불러오기 때문에 페이지 로딩 속도가 @import 방식에 비해 빠르고 효율적이다.
 
   ```html
+  /* html */ 
+
   <link rel="stylesheet" href="test1.css">
   <link rel="stylesheet" href="test2.css">
   <link rel="stylesheet" href="test3.css">
@@ -250,7 +268,7 @@ __결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다�
 
 <br />
 
-## display
+## display property
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
 
 <br />
@@ -262,16 +280,17 @@ CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻�
 
 예를 들어, 여러개의 `inline` 엘리먼트들을 아래와 같이 마크업하면 줄바꿈 없이 순서대로 한 줄에 보이게 된다.
 
-```html, css
-// HTML 
+```html
+/* html */
 
 before
 <a>A</a>
 <span>SPAN</span>
 <em>EM</em>
 after
-
-// CSS
+```
+```css
+/* css */
 
 span {
   background: yellow;
@@ -301,16 +320,16 @@ span {
 
 예를 들어, 여러 개의 `block` 엘리먼트들을 아래와 같이 마크업하면 매번 줄바꿈 되어 여러 줄에 보이게 된다.
 
-```html, css
-// HTML
-
+```html
+/* html */
 before
 <h1>H1</h1>
 <div>DIV</div>
 <p>P</p>
 after
-
-// CSS
+```
+```css
+/* css */
 
 div {
   background: yellow;
@@ -336,16 +355,17 @@ div {
 
 대표적인 `inline-block` 엘리먼트로 `<button>`이나 `<input>`, `<select>` 태그 등을 들 수 있다.
 
-```html, css
-// HTML
+```html
+/* html */
 
 before
 <a>A</a>
 <span>SPAN</span>
 <em>EM</em>
 after
-
-// CSS
+```
+```css
+/* css */
 
 span {
   display: inline-block;
@@ -382,7 +402,9 @@ span {
 > ### background-repeat
 background-repeat는 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성이다.
 
-```html, (css임)
+```css
+/* css */
+
 /* 반복하지 않음 */
 background-repeat: no-repeat;
 
@@ -407,7 +429,9 @@ background-repeat: round;
 > ### background-size
 background-size는 배경 이미지의 사이즈를 정해주는 속성이다.
 
-```html, (css임)
+```css
+/* css */
+
 /* 원래 이미지 사이즈대로 출력 */
 background-size: auto;
 
@@ -429,7 +453,9 @@ background-size: 60% 70%;
 > ### background-position
 background-position은 배경 이미지의 위치를 정해주는 속성이다.
 
-```html, (css임)
+```css
+/* css */
+
 /* 단어로 지정해주기 (가로: left, center, right, 세로: top, center, bottom) */
 /* 아래와 같은 총 9개의 조합이 가능 */
 background-position: left top;
@@ -447,6 +473,184 @@ background-position: 25% 75%;
 
 /* 픽셀로 지정하기 (가로: 가장 왼쪽 가장자리에서부터 오른쪽으로 100px 이동한 지점, 세로: 가장 상단 가장자리에서 아래로 200px 이동한 지점) */
 background-position: 100px 200px;
+```
+
+<br />
+
+## Selector(선택자)
+CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
+
+<br />
+
+> ### 자식
+
+```html
+/* html */
+
+<i>Outside</i>
+<div class="div1">
+  <i>Inside 1</i>
+  <p>Blah blah <i>Inside 2</i></p>
+  <i>Inside 3</i>
+</div>
+```
+```css
+/* css */
+
+/* 'div1' 클래스를 갖고 있는 요소의 자식 중 모든 <i> 태그 */
+.div1 i {
+  color: orange;
+}
+```
+
+<br />
+
+> ### 직속 자식
+
+```html
+/* html */
+
+<i>Outside</i>
+<div class="div1">
+  <i>Inside 1</i>
+  <p>Blah blah <i>Inside 2</i></p>
+  <i>Inside 3</i>
+</div>
+```
+```css
+/* css */
+
+/* 'div1' 클래스를 갖고 있는 요소의 직속 자식 중 모든 <i> 태그 */
+.div1 > i {
+  color: orange;
+}
+```
+
+<br />
+
+> ### 복수 선택
+
+```html
+/* html */
+
+<p class="one">Outside 1</p>
+<p class="two">Outside 2</p>
+<div>
+  <p class="one">Inside 1</p>
+  <p class="two">Inside 2</p>
+  <p class="three">Inside 3</p>
+  <p class="four">Inside 4</p>
+  <p class="five">Inside 5</p>
+</div>
+```
+```css
+/* css */
+
+/* 'two' 클래스를 가지고 있는 태그 모두와 'four' 클래스를 가지고 있는 태그 모두 선택 */
+.two, .four {
+  color: orange;
+}
+```
+
+<br />
+
+> ### 여러 조건
+
+```html
+/* html */
+
+<p class="outside one">Outside 1</p>
+<p class="outside two">Outside 2</p>
+<div>
+  <p class="inside one">Inside 1</p>
+  <p class="inside two">Inside 2</p>
+  <p class="inside three">Inside 3</p>
+  <p class="inside four">Inside 4</p>
+  <p class="inside five">Inside 5</p>
+</div>
+```
+```css
+/* css */
+
+/* 'outside' 클래스를 갖고 있으면서 'one' 클래스도 갖고 있는 태그 */
+.outside.one {
+  color: blue;
+}
+
+/* 'inside' 클래스를 갖고 있으면서 'two' 클래스도 갖고 있는 태그 */
+.inside.two {
+  color: orange;
+}
+```
+
+<br />
+
+> ### 가상 클래스
+콜론(:)을 사용하면 몇 가지 '가상 클래스'를 선택할 수 있다.
+
+#### n번째 자식
+
+```html
+/* html */
+
+<div class="div1">
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+  <p>Paragraph 4</p>
+  <p>Paragraph 5</p>
+  <p>Paragraph 6</p>
+</div>
+```
+```css
+/* css */
+
+/* .div1의 자식인 <p> 태그 중 3번째 */
+.div1 p:nth-child(3) {
+  color: blue;
+}
+
+/* .div1의 자식인 <p> 태그 중 첫 번째 */
+.div1 p:first-child {
+  color: red;
+}
+
+/* .div1의 자식인 <p> 태그 중 마지막 */
+.div1 p:last-child {
+  color: green;
+}
+
+/* .div1의 자식 중 마지막 자식이 아닌 <p> 태그 */
+.div1 p:not(:last-child) {
+  font-size: 150%;
+}
+
+/* .div1의 자식 중 첫 번째 자식이 아닌 <p> 태그 */
+.div1 p:not(:first-child) {
+  text-decoration: line-through;
+}
+```
+
+<br />
+
+#### 마우스 오버
+
+```html
+/* html */
+
+<h1>Hello World!</h1>
+```
+```css
+/* css */
+
+h1 {
+  color: orange;
+}
+
+/* 마우스가 <h1> 태그에 올라갔을 때 */
+h1:hover {
+  color: green;
+}
 ```
 
 <br />
