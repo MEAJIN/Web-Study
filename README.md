@@ -689,7 +689,148 @@ html {
 ```
 
 > ### rem
-`rem` 은 __상대적인 값__ 이다. 하지만 오직 `<html>` 태그의 `font-size`에만 영향을 받는다. 참고로 2rem은 <html> 태그의 font-size의 2배 크기이다
-  
+`rem`은 __상대적인 값__ 이다. 하지만 오직 `<html>` 태그의 `font-size` 에만 영향을 받는다. 참고로, `2rem`은 `<html>` 태그의 `font-size`의 2배 크기이다.
+
 ```html
+/* html */
+
+<div class="container">
+  Codeit
+</div>
 ```
+
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  padding-top: 2rem; /* html의 font-size * 2 = 40px */
+  background-color: lime;
+}
+```
+
+> ### em
+`em`은 __상대적인 값__ 이다. `em`은 자기 자신의 `font-size`를 기준으로 한다. `2em`은 자기 자신의 `font-size`의 2배 크기이다. 자기 자신의 `font-size`를 따로 정해주지 않으 경우, 상위 요소에서 상속받은 값을 기준으로 한다.
+
+```html
+/* html */
+<div class="container">
+  Codeit
+</div>
+```
+
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  /* 자동으로 html의 font-size 20px을 상속받음 */
+  padding-top: 2em; /* 자신의 font-size * 2 = 40px */
+  background-color: lime;
+}
+```
+
+만약 자기 자신에게 정해진 `font-size`가 있다면 그 값을 기준으로 `em`이 결정된다.
+
+```html
+/* html */
+
+<div class="container">
+  Codeit
+</div>
+```
+
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  font-size: 40px;
+  padding-top: 2em; /* 자신의 font-size * 2 = 80px */
+  background-color: lime;
+}
+```
+
+> ### %
+`%`는 __상대적인 값__ 이다. `%` 는 어느 항목에서 쓰이냐에 따라 다른 기준이 적용된다. 예를 들어, `font-size`에서 `%` 가 쓰일 경우, `font-size`에 곱해주는 방식으로 계산한다.
+
+```html
+/* html */
+
+<div class="container">
+  Codeit
+  <p class="text">Codeit</p>
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  font-size: 20px;
+  background-color: lime;
+}
+
+.text {
+  font-size: 180%; /* 상위 요소인 container의 font-size * 1.8 = 36px */
+  background-color: skyblue;
+  margin: 0;
+}
+```
+
+`%`가 `margin`이나 `padding`의 단위로 사용될 경우, 상위 요소의 `width`를 기준으로 계산된다.
+
+```html
+/* html */
+
+<div class="container">
+  <p class="text">Codeit</p>
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 200px;
+  background-color: lime;
+}
+
+.text {
+  padding-left: 30%; /* 상위 요소의 width * 0.3 = 60px */
+}
+```
+
+재미있는 점은 `margin-top` 이나 `padding-bottom` 등 세로(상하) 속성을 조절할 때에도 상위 요소의 `heigth`가 아닌 `width`를 기준으로 계산된다는 것 이다.
+
+```html
+/* html */
+
+<div class="container">
+  <p class="text">Codeit</p>
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 200px;
+  background-color: lime;
+}
+
+.text {
+  padding-top: 30%; /* 상위 요소의 width * 0.3 = 60px */
+}
+```
+
+<br />
