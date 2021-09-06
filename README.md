@@ -46,6 +46,13 @@
     - [n번째 자식](#n번째-자식)
     - [마우스 오버(hover)](#마우스-오버)
 
+- 단위
+
+  - [px](#px)
+  - [rem](#rem)
+  - [em](#em)
+  - [%(퍼센트)](#%)
+
 <br />
 
 # `HTML`
@@ -654,3 +661,35 @@ h1:hover {
 ```
 
 <br />
+
+## 단위
+CSS에는 px, rem, em, % 등 여러 단위가 있다. 폰트 크기 뿐만 아니라 padding, margin, width 등 다양한 속성들에 이 단위들을 사용할 수 있다.
+
+> ### px
+`px`는 __절대적인 값__이다. 다른 요소의 값에 영향을 받지 않는다.
+
+```html
+/* html */
+
+<div class="container">
+  Codeit
+</div>
+```
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  padding-top: 40px;
+  background-color: lime;
+}
+```
+
+> ### rem
+`rem` 은 __상대적인 값__ 이다. 하지만 오직 `<html>` 태그의 `font-size`에만 영향을 받는다. 참고로 2rem은 <html> 태그의 font-size의 2배 크기이다
+  
+```html
+```
