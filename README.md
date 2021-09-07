@@ -5,7 +5,7 @@
 - 21.08.25 ~ 27 HTML/CSS 기초 (완)
 - 21.08.28 ~ HTML/CSS 핵심 (학습중)
 
-### 목차
+### 목차!
 
 ## HTML
 
@@ -45,6 +45,13 @@
   - [Pseudo-class (가상 클래스)](#가상-클래스)
     - [n번째 자식](#n번째-자식)
     - [마우스 오버(hover)](#마우스-오버)
+
+- 단위
+
+  - [px](#px)
+  - [rem](#rem)
+  - [em](#em)
+  - [%(퍼센트)](#퍼센트)
 
 <br />
 
@@ -274,7 +281,7 @@ CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻�
 <br />
 
 > ### inline
-`display` 속성이 `inline`으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치된다. 대표적인 `inline` 엘리먼트로 `<span>`이나 `<a>`, `<em>` 태그 등이 있다. 
+`display` 속성이 `inline`으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치된다. 대표적인 `inline` 엘리먼트로 `<span>`이나 `<a>`, `<b>`, `<i>`, `<img>`, `<em>` 태그 등이 있다. 
 
 <br />
 
@@ -314,7 +321,7 @@ span {
 <br />
 
 > ### block
-`display` 속성이 `block`으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지한다. 대표적인 `block` 엘리먼트로, `<div>`이나 `<p>`, `<h1>` 태그 등을 들 수 있다.
+`display` 속성이 `block`으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지한다. 대표적인 `block` 엘리먼트로, `<div>`이나 `<p>`, `<h1>`, `<nav>`, `<li>` 태그 등을 들 수 있다.
 
 <br />
 
@@ -650,6 +657,179 @@ h1 {
 /* 마우스가 <h1> 태그에 올라갔을 때 */
 h1:hover {
   color: green;
+}
+```
+
+<br />
+
+## 단위
+CSS에는 px, rem, em, % 등 여러 단위가 있다. 폰트 크기 뿐만 아니라 padding, margin, width 등 다양한 속성들에 이 단위들을 사용할 수 있다.
+
+> ### px
+`px`는 __절대적인 값__이다. 다른 요소의 값에 영향을 받지 않는다.
+
+```html
+/* html */
+
+<div class="container">
+  Codeit
+</div>
+```
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  padding-top: 40px;
+  background-color: lime;
+}
+```
+
+> ### rem
+`rem`은 __상대적인 값__ 이다. 하지만 오직 `<html>` 태그의 `font-size` 에만 영향을 받는다. 참고로, `2rem`은 `<html>` 태그의 `font-size`의 2배 크기이다.
+
+```html
+/* html */
+
+<div class="container">
+  Codeit
+</div>
+```
+
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  padding-top: 2rem; /* html의 font-size * 2 = 40px */
+  background-color: lime;
+}
+```
+
+> ### em
+`em`은 __상대적인 값__ 이다. `em`은 자기 자신의 `font-size`를 기준으로 한다. `2em`은 자기 자신의 `font-size`의 2배 크기이다. 자기 자신의 `font-size`를 따로 정해주지 않으 경우, 상위 요소에서 상속받은 값을 기준으로 한다.
+
+```html
+/* html */
+<div class="container">
+  Codeit
+</div>
+```
+
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  /* 자동으로 html의 font-size 20px을 상속받음 */
+  padding-top: 2em; /* 자신의 font-size * 2 = 40px */
+  background-color: lime;
+}
+```
+
+만약 자기 자신에게 정해진 `font-size`가 있다면 그 값을 기준으로 `em`이 결정된다.
+
+```html
+/* html */
+
+<div class="container">
+  Codeit
+</div>
+```
+
+```css
+/* css */
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  font-size: 40px;
+  padding-top: 2em; /* 자신의 font-size * 2 = 80px */
+  background-color: lime;
+}
+```
+
+> ### 퍼센트
+`%`는 __상대적인 값__ 이다. `%` 는 어느 항목에서 쓰이냐에 따라 다른 기준이 적용된다. 예를 들어, `font-size`에서 `%` 가 쓰일 경우, `font-size`에 곱해주는 방식으로 계산한다.
+
+```html
+/* html */
+
+<div class="container">
+  Codeit
+  <p class="text">Codeit</p>
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  font-size: 20px;
+  background-color: lime;
+}
+
+.text {
+  font-size: 180%; /* 상위 요소인 container의 font-size * 1.8 = 36px */
+  background-color: skyblue;
+  margin: 0;
+}
+```
+
+`%`가 `margin`이나 `padding`의 단위로 사용될 경우, 상위 요소의 `width`를 기준으로 계산된다.
+
+```html
+/* html */
+
+<div class="container">
+  <p class="text">Codeit</p>
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 200px;
+  background-color: lime;
+}
+
+.text {
+  padding-left: 30%; /* 상위 요소의 width * 0.3 = 60px */
+}
+```
+
+재미있는 점은 `margin-top` 이나 `padding-bottom` 등 세로(상하) 속성을 조절할 때에도 상위 요소의 `heigth`가 아닌 `width`를 기준으로 계산된다는 것 이다.
+
+```html
+/* html */
+
+<div class="container">
+  <p class="text">Codeit</p>
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 200px;
+  background-color: lime;
+}
+
+.text {
+  padding-top: 30%; /* 상위 요소의 width * 0.3 = 60px */
 }
 ```
 
