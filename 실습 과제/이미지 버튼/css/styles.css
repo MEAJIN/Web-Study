@@ -1,0 +1,32 @@
+body {
+  margin: 50px 0;
+}
+
+h1 {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 70px;
+}
+
+.logo-mg {
+  margin: 0 20px 0 20px;
+}
+
+/* #2 */
+
+/*.logo a:not(:last-child) {*/
+/*  margin-right: 20px;*/
+/*}*/
