@@ -134,7 +134,7 @@ __③ For us, 유지보수성(Mainrainability)__
 
 웹 사이트를 만들 때, 아래 좌측 이미지 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 우측 이미지와 같이 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
 
-![4](https://user-images.githubusercontent.com/75716255/132667316-8e6e980d-90fd-471b-b388-8f86a219e6b4.png)
+![2](https://user-images.githubusercontent.com/75716255/132667444-c224ae39-2be5-4f8a-80d5-43fb825d0ee9.png)
 
 <br />
 
