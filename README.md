@@ -141,7 +141,7 @@ __③ For us, 유지보수성(Mainrainability)__
 
 <br />
 　
-![3](https://user-images.githubusercontent.com/75716255/132669041-a2f975fd-6e41-4826-a8ba-f95945e6ec3c.png)
+![3](https://user-images.githubusercontent.com/75716255/132693017-4ac264b6-6bb7-4995-80c9-f8dba574b9e2.png)
 
 <br />
 
