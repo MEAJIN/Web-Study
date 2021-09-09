@@ -64,9 +64,9 @@
 
 <br />
 
-`HTML`
+# 📄 HTML 📄
 
-- Tag
+## Tag
 
 > ### Semantic Tags
 시맨틱(semantic) 태그란? __의미를 전달__ 할 수 있는 태그다. 예를 들어, 시맨틱 태그가 아닌 `<div>`, `<span>` 태그의 경우 그 이름만 들어서는 어떤 내용을 내포하고 있는지 알 수 없다. 그러나 시맨틱 태그인 `<header>`, `<nav>`, `<img>` 태그의 경우 이름만 들어도 `<header>=제목`, `<nav>=내비게이션`, `<img>=그림` 에 대한 내용을 내포 하고 있음을 짐작 할 수 있다. 이와 같이 사람들에게 의미를 전달 할 수 있는 태그를 `시맨틱(semantic) 태그` 라고 한다.
@@ -175,7 +175,7 @@ __③ For us, 유지보수성(Mainrainability)__
 
 <br />
 
-# `<CSS>`
+# 📑 CSS 📑
 
 ## 폰트
 
@@ -220,15 +220,13 @@ p {
 }
 ```
 
-<br />
-
 - #### @font-face, 이것 만은 알아두자!
   - `@font-face`를 사용함으로써 사이트에 추가적인 요청(HTTP)이 들어갈 수도 있음
   - 결과적으로 `'웹 사이트 속도가 느려짐'`
   
   - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set을 가볍게 해서 파일 크기를 줄여야 함
   
-- *character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 (http://hell0-world.com/etc/2020/05/09/ChracterSet.html)*
+    - *[character set](http://hell0-world.com/etc/2020/05/09/ChracterSet.html) : 정보를 표현하기 위한 글자들의 집합을 정의한 것 *
 
 <br />
 
