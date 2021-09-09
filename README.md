@@ -14,6 +14,7 @@
   - [Semantic Tags(or Semantic Markup)](#Semantic-Tags)
     - [Semantic Tags의 중요성 3대장](#Semantic-Tags가-중요한-이유-3가지)
   - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들)
+  - [태그 참고 사이트](#태그 참고 사이트)
 
 ## CSS
 
@@ -29,10 +30,11 @@
   - [inline](#inline)
   - [block](#block)
   - [inline-block](#inline-block)
+  - [display 참고 사이트](#display-참고-사이트)
   - [가운데 정렬](#가운데-정렬)
     - [가로 가운데 정렬](#가로-가운데-정렬)
-      - inline
-      - block
+      - [inline](#inline)
+      - [block](#block)
     - [세로 가운데 정렬](#세로-가운데-정렬)
       - [가짜 요소 더하기 (*vertical-align: middle;을 사용하면 될까?* 에 대한 고찰)](#가짜-요소-더하기)
       - [line-height 사용](#line-height)
@@ -69,7 +71,7 @@
 > ### Semantic Tags
 시맨틱(semantic) 태그란? __의미를 전달__ 할 수 있는 태그다. 예를 들어, 시맨틱 태그가 아닌 `<div>`, `<span>` 태그의 경우 그 이름만 들어서는 어떤 내용을 내포하고 있는지 알 수 없다. 그러나 시맨틱 태그인 `<header>`, `<nav>`, `<img>` 태그의 경우 이름만 들어도 `<header>=제목`, `<nav>=내비게이션`, `<img>=그림` 에 대한 내용을 내포 하고 있음을 짐작 할 수 있다. 이와 같이 사람들에게 의미를 전달 할 수 있는 태그를 `시맨틱(semantic) 태그` 라고 한다.
 
-- #### Semantic Tags가 중요한 이유 3가지
+ > #### Semantic Tags가 중요한 이유 3가지
 
   ① 검색 엔진 최적화(search engine optimization, SEO)
     - `SEO(검색 엔진 최적화)`는 __웹사이트가 검색 결과에 더 잘 보이도록 최적화하는 과정__ 이다. 검색 랭크 개선이라고도 한다.
@@ -124,15 +126,11 @@
 
 > ### 웹 사이트 구조를 이루는 태그들
 
-웹 사이트를 만들 때, 아래 그림 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
+웹 사이트를 만들 때, 아래 좌측 이미지 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 우측 이미지와 같이 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
 
-<img src="https://user-images.githubusercontent.com/75716255/131506537-5b763ff4-0a50-4c74-8c9e-9a6af5a4a066.png" width="70%" height="60%">
+![1](https://user-images.githubusercontent.com/75716255/132661385-4a2b116d-8dc8-41d1-914b-71e190c2a6c9.jpg)
 
 <br />
-
-그 방법은 아래와 같다.
-
-<img src="https://user-images.githubusercontent.com/75716255/131507581-2e37a1aa-895c-4b6a-ba41-fd8fe0ce7dd7.png" width="70%" height="60%">
 
 - `<header>`
   - 소개 및 탐색에 도움을 주는 콘텐츠를 나타낸다. 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함.
@@ -169,7 +167,7 @@
 
 <br />
 
-# `CSS`
+#                     `<CSS>`
 
 ## 폰트
 
