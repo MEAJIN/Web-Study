@@ -7,6 +7,8 @@
 
 ### 목차!
 
+## [🔗알아두면 유용한 WEB 기술 사이트🔗](#알아두면-유용한-WEB-기술-사이트)
+
 ## HTML
 
 - Tag
@@ -16,7 +18,7 @@
   - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들)
   - [태그 참고 사이트](#태그-참고-사이트)
 
-## [CSS](https://www.w3.org/TR/CSS22/)
+## CSS (https://www.w3.org/TR/CSS22/)
 
 - 폰트
 
@@ -67,6 +69,20 @@
   - [%(퍼센트)](#퍼센트)
 
 <br />
+
+# 알아두면 유용한 WEB 기술 사이트
+
+- 영문
+  - https://developer.mozilla.org/en-US/docs/Web (all)
+  - https://learn.shayhowe.com/html-css/ (html~css)
+  - https://www.w3schools.com/ (all)
+
+- 한글
+  - https://ofcourse.kr/
+  - https://www.daleseo.com/ (검색창에 메인키워드 검색 ex. html, css 등)
+  - https://ko.learnlayout.com/toc.html (css, 번역.ver)
+  - https://hianna.tistory.com/category/IT/HTML?page=3 (HTML)
+  - https://hianna.tistory.com/category/IT/Javascript (JS)
 
 # 📄 HTML 📄
 
