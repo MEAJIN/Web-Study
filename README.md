@@ -133,9 +133,9 @@ __③ For us, 유지보수성(Mainrainability)__
 > ### 웹 사이트 구조를 이루는 태그들
 
 웹 사이트를 만들 때, 아래 좌측 이미지 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 우측 이미지와 같이 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
-![1](https://user-images.githubusercontent.com/75716255/132668669-ccf207c7-e686-406d-8da7-6d8f58647e78.png)
 ![2](https://user-images.githubusercontent.com/75716255/132668820-06bee2b1-8d9a-4cf0-832c-ce30a367d381.png)
-![5](https://user-images.githubusercontent.com/75716255/132667704-4117678f-ce37-4098-89a6-d47ea9bec051.png)
+![3](https://user-images.githubusercontent.com/75716255/132669041-a2f975fd-6e41-4826-a8ba-f95945e6ec3c.png)
+
 
 <br />
 
