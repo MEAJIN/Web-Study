@@ -29,6 +29,13 @@
   - [inline](#inline)
   - [block](#block)
   - [inline-block](#inline-block)
+  - [가운데 정렬](#가운데-정렬)
+    - [가로 가운데 정렬](#가로-가운데-정렬)
+      - inline
+      - block
+    - [세로 가운데 정렬](#세로-가운데-정렬)
+      - [가짜 요소 더하기 (*vertical-align: middle;을 사용하면 될까?* 에 대한 고찰)](#가짜-요소-더하기)
+      - [line-height 사용](#line-height)
 
 - background
 
@@ -154,6 +161,8 @@
  
 - `<footer>`
   - 가장 가까운 구획 콘텐츠나 구획 루트의 푸터를 나타낸다. `<footer>`는 일반적으로 구획의 작성자, 저작권 정보, 관련 문서 등의 내용을 담는다.
+
+<br />
 
 > ### 태그 참고 사이트
 - https://developer.mozilla.org/ko/docs/Web/HTML/Element
@@ -405,6 +414,440 @@ span {
 
 <br />
 
+> ### 가운데 정렬
+
+#### 가로 가운데 정렬
+
+<br />
+
+- inline 요소
+`inline` 또는 `inline-block` 요소면 부모 태그에 `tect-align: center;`를 사용하면 된다.
+
+```html
+/* html */
+
+<div class="container">
+  텍스트 <img src="https://i.imgur.com/CDPKjZJ.jpg" height="50">
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  text-align: center;
+  background-color: lime;
+}
+```
+
+<br />
+
+- block 요소
+`block` 요소면 `margin-left auto;`, `margin-right: auto;`를 사용하면 된다.
+
+```html
+/* html */
+
+<div class="block-element"></div>
+```
+
+```css
+/* css */
+
+.block-element {
+  width: 100px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lime;
+}
+```
+
+<br />
+
+#### 세로 가운데 정렬
+CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없기 때문에, 다양한 지식을 섞어서 해야 한다.
+
+<br />
+
+> #### 가짜 요소 더하기
+*`vertical-align: middle;`을 하면 해결이 되는가?* 에 대한 고찰
+
+<br/ >
+
+우선 `vertical-align` 속성은 __인라인 또는 인라인 블록 요소에 적용__ 되기 때문에 `.info`를 인라인 블록으로 바꿔준다. 그리고 `vertical-align: middle;`을 설정해준다면?
+
+```html
+/* html */
+
+<div class="container">
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+#### 출력화면
+결과는 아래와 같다. `vertical-align: middle;`은 요소의 가운데(middle)를 부모 요소의 가운데와 맞추게 되어있다.
+
+![1](https://user-images.githubusercontent.com/75716255/132643907-67084689-4f9a-4c23-bd81-0967f8589cf4.png)
+
+<br />
+
+좀 더 이해가 쉽도록 부모 요소인 `<div class="container">`에 소문자 'x' 를 입력하여 거운데가 맞는지 확인해 보겠다.
+
+```html
+/* html */
+
+<div class="container">
+  x
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+#### 출력화면
+가운데가 맞다!
+
+![2](https://user-images.githubusercontent.com/75716255/132644548-7f10c18b-1062-4ee3-9fc0-b9251cee40ff.png)
+
+<br />
+
+다음으로, `.info` 요소를 완전 가운데로 오게 하려면 소문자 'x'가 가운데로 와야 한다. 이유는 위에서 말한 바와 같이 자식 요소는 부모 요소의 중앙 지점을 기준으로 가운데 정렬이 되기 때문이다. 따라서 세로 길이가 100%인 자식 요소를 하나 더 만들고, 그 요소에도 vertical-align: middle; 값을 주게 될 경우, 부모 요소의 중앙 지점을 기준으로 자신의 세로 길이 중 절반인 50%의 높이에 정렬이 된다. (아래 코드와 출력 화면 참고)
+
+```html
+/* html */
+
+  <div class="container">
+  x
+  
+  <div class="helper"></div>
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  
+  /* 설명 및 가시성을 위해 임의적으로 추가 */
+  width: 10px;
+  background-color: red;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+#### 출력 화면
+아래 보이는 빨간 박스가 새로 생성한 세로 길이 100%인 자식 요소 이다.
+![3](https://user-images.githubusercontent.com/75716255/132647430-449af534-cae5-43ef-b7ee-2a75ef0a9847.png)
+
+<br />
+
+이제 'x'를 지우고, `.helper` 요소의 가로 길이와 배경색을 없애주면 가로-세로 가운데 정렬이 완성된다.
+
+```html
+/* html */
+
+<div class="container">
+  
+  <div class="helper"></div>
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+#### 출력 화면
+![4](https://user-images.githubusercontent.com/75716255/132654490-e517be55-2611-4ca0-991d-4855117b468a.png)
+
+<br />
+
+#### 번외) 만약 `.info`의 가로 길이가 100% 라면?
+
+```html
+/* html */
+
+<div class="container">
+  
+  <div class="helper"></div>
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+```
+
+#### 출력 화면
+갑자기 이상한 곳에 위치된다. 
+![5](https://user-images.githubusercontent.com/75716255/132655018-83aa4774-4735-492c-a00b-c167b5ba2021.png)
+
+<br />
+
+그 이유는, `.helper` 와 `.info` 요소 사이에 띄어쓰기가 한 칸 있어서, 가로 길이 100%인 `.info` 요소는 자리 부족으로 다음 줄로 밀려나게 된 것 이다.
+
+이 문제를 해결하기 위한 두 가지 방법이 있다.
+
+#### ① 띄어쓰기 없애기
+
+```html
+/* html */
+
+<div class="container">
+  
+  <!-- 스페이스 없애기 -->
+  <div class="helper"></div><div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+```
+
+#### 출력 화면
+![6](https://user-images.githubusercontent.com/75716255/132656218-a4666e01-9f16-427e-845a-fbe0d41ab5a2.png)
+
+#### 다른 방법으로 띄어쓰기 없애는 방법
+- https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+ 
+<br />
+
+#### ② 띄어쓰기 공간 만큼의 마이너스 여백 주기
+
+```html
+/* html */
+
+<div class="container">
+
+  <div class="helper"></div>
+
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+
+  /* 이 경우 띄어쓰기는 5~7px 정도였다 */
+  margin-left: -6px;
+}
+```
+
+#### 출력 화면
+![7](https://user-images.githubusercontent.com/75716255/132656762-de9a1051-7018-48d1-a195-9e8d55a5a42d.png)
+
+#### 주의 사항
+어떤 요소에 `height: 100%;`를 설정하기 위해서는 부모의 `height`가 설정되어 있어야 한다. 위 경우에는 `.helper`의 부모인 `.container`에 height가 설정되어 있었기 때문에 가능했던 것이다.
+
+<br />
+
+> #### line-height
+`.info를` 인라인 블록으로 설정해주면, `line-height` 속성을 활용해볼 수도 있다. 부모인 `.container`에 `height`와 동일한 `line-height`를 줘보자.
+참고로 `line-height` 속성은 자식들에게 상속되기 때문에 `.info`에는 `line-height: normal;`을 꼭 써주어야 한다.
+
+```html
+/* html */
+
+<div class="container">
+  x
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+  line-height: 400px;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+}
+```
+
+#### 출력 화면
+![8](https://user-images.githubusercontent.com/75716255/132658132-a0cf79f5-47fa-4fc8-bf06-14a095b7c743.png)
+
+<br />
+
+#### 다른 방식
+포지셔닝을 이용할 수도 있고, [flexbox](https://www.w3schools.com/css/css3_flexbox.asp)를 이용할 수도 있다.
+
+<br />
+
 ## background
 
 > ### background-repeat
@@ -596,7 +1039,7 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 > ### 가상 클래스
 콜론(:)을 사용하면 몇 가지 '가상 클래스'를 선택할 수 있다.
 
-#### n번째 자식
+### n번째 자식
 
 ```html
 /* html */
@@ -641,7 +1084,7 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 <br />
 
-#### 마우스 오버
+### 마우스 오버
 
 ```html
 /* html */
@@ -665,6 +1108,8 @@ h1:hover {
 
 ## 단위
 CSS에는 px, rem, em, % 등 여러 단위가 있다. 폰트 크기 뿐만 아니라 padding, margin, width 등 다양한 속성들에 이 단위들을 사용할 수 있다.
+
+<br />
 
 > ### px
 `px`는 __절대적인 값__이다. 다른 요소의 값에 영향을 받지 않는다.
