@@ -38,6 +38,7 @@
     - [세로 가운데 정렬](#세로-가운데-정렬)
       - [가짜 요소 더하기 (*vertical-align: middle;을 사용하면 될까?* 에 대한 고찰)](#가짜-요소-더하기)
       - [line-height 사용](#line-height)
+      - [그 외 다른 방식](#그-외-다른-방식)
 
 - background
 
@@ -183,7 +184,7 @@ __③ For us, 유지보수성(Mainrainability)__
 
 # 📑 CSS 📑
 
-## 폰트
+## `폰트`
 
 > ### 기본 폰트
 
@@ -295,7 +296,7 @@ __결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다�
 
 <br />
 
-## display property
+## `display property`
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
 
 <br />
@@ -328,7 +329,9 @@ span {
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![inline](https://user-images.githubusercontent.com/75716255/131222899-03886dba-d14c-49c3-a316-62834b1b34f3.png)
 
 - #### `inline`, 이것 만은 알아두자!
@@ -349,6 +352,7 @@ span {
 
 ```html
 /* html */
+
 before
 <h1>H1</h1>
 <div>DIV</div>
@@ -367,7 +371,9 @@ div {
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![block](https://user-images.githubusercontent.com/75716255/131252531-91c5794b-cb61-4fdb-a310-cf2362949204.png)
 
 - #### `block`, 이것 만은 알아두자!
@@ -404,7 +410,9 @@ span {
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![inline-block](https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png)
 
 - #### `inline-block`, 이것 만은 알아두자!
@@ -426,12 +434,11 @@ span {
 
 > ### 가운데 정렬
 
-#### 가로 가운데 정렬
+> #### 가로 가운데 정렬
 
 <br />
 
-- inline 요소
-`inline` 또는 `inline-block` 요소면 부모 태그에 `tect-align: center;`를 사용하면 된다.
+- `inline` 또는 `inline-block` 요소면 부모 태그에 `tect-align: center;`를 사용하면 된다.
 
 ```html
 /* html */
@@ -452,8 +459,7 @@ span {
 
 <br />
 
-- block 요소
-`block` 요소면 `margin-left auto;`, `margin-right: auto;`를 사용하면 된다.
+- `block` 요소면 `margin-left auto;`, `margin-right: auto;`를 사용하면 된다.
 
 ```html
 /* html */
@@ -475,7 +481,7 @@ span {
 
 <br />
 
-#### 세로 가운데 정렬
+> #### 세로 가운데 정렬
 CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없기 때문에, 다양한 지식을 섞어서 해야 한다.
 
 <br />
@@ -483,7 +489,7 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 > #### 가짜 요소 더하기
 *`vertical-align: middle;`을 하면 해결이 되는가?* 에 대한 고찰
 
-<br/ >
+<br />
 
 우선 `vertical-align` 속성은 __인라인 또는 인라인 블록 요소에 적용__ 되기 때문에 `.info`를 인라인 블록으로 바꿔준다. 그리고 `vertical-align: middle;`을 설정해준다면?
 
@@ -517,7 +523,9 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력화면
+<br />
+
+#### `출력화면`
 결과는 아래와 같다. `vertical-align: middle;`은 요소의 가운데(middle)를 부모 요소의 가운데와 맞추게 되어있다.
 
 ![1](https://user-images.githubusercontent.com/75716255/132643907-67084689-4f9a-4c23-bd81-0967f8589cf4.png)
@@ -557,14 +565,18 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력화면
+<br />
+
+#### `출력화면`
 가운데가 맞다!
 
 ![2](https://user-images.githubusercontent.com/75716255/132644548-7f10c18b-1062-4ee3-9fc0-b9251cee40ff.png)
 
 <br />
 
-다음으로, `.info` 요소를 완전 가운데로 오게 하려면 소문자 'x'가 가운데로 와야 한다. 이유는 위에서 말한 바와 같이 자식 요소는 부모 요소의 중앙 지점을 기준으로 가운데 정렬이 되기 때문이다. 따라서 세로 길이가 100%인 자식 요소를 하나 더 만들고, 그 요소에도 vertical-align: middle; 값을 주게 될 경우, 부모 요소의 중앙 지점을 기준으로 자신의 세로 길이 중 절반인 50%의 높이에 정렬이 된다. (아래 코드와 출력 화면 참고)
+다음으로, `.info` 요소를 완전 가운데로 오게 하려면 소문자 'x'가 가운데로 와야 한다. __이유__ 는 위에서 말한 바와 같이 __자식 요소는 부모 요소의 중앙 지점을 기준으로 가운데 정렬이 되기 때문__ 이다. 
+
+따라서 세로 길이가 100%인 자식 요소를 하나 더 만들고, 그 요소에도 vertical-align: middle; 값을 주게 될 경우, 부모 요소의 중앙 지점을 기준으로 자신의 세로 길이 중 절반인 50%의 높이에 정렬이 된다. (아래 코드와 출력 화면 참고)
 
 ```html
 /* html */
@@ -609,7 +621,9 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 아래 보이는 빨간 박스가 새로 생성한 세로 길이 100%인 자식 요소 이다.
 ![3](https://user-images.githubusercontent.com/75716255/132647430-449af534-cae5-43ef-b7ee-2a75ef0a9847.png)
 
@@ -655,12 +669,14 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![4](https://user-images.githubusercontent.com/75716255/132654490-e517be55-2611-4ca0-991d-4855117b468a.png)
 
 <br />
 
-#### 번외) 만약 `.info`의 가로 길이가 100% 라면?
+#### *번외)* 만약 `.info`의 가로 길이가 100% 라면?
 
 ```html
 /* html */
@@ -701,8 +717,11 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력 화면
-갑자기 이상한 곳에 위치된다. 
+<br />
+
+#### `출력 화면`
+갑자기 이상한 곳에 배치된다. 
+
 ![5](https://user-images.githubusercontent.com/75716255/132655018-83aa4774-4735-492c-a00b-c167b5ba2021.png)
 
 <br />
@@ -751,7 +770,9 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![6](https://user-images.githubusercontent.com/75716255/132656218-a4666e01-9f16-427e-845a-fbe0d41ab5a2.png)
 
 #### 다른 방법으로 띄어쓰기 없애는 방법
@@ -803,16 +824,20 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![7](https://user-images.githubusercontent.com/75716255/132656762-de9a1051-7018-48d1-a195-9e8d55a5a42d.png)
 
-#### 주의 사항
+#### `주의 사항`
 어떤 요소에 `height: 100%;`를 설정하기 위해서는 부모의 `height`가 설정되어 있어야 한다. 위 경우에는 `.helper`의 부모인 `.container`에 height가 설정되어 있었기 때문에 가능했던 것이다.
 
 <br />
 
 > #### line-height
-`.info를` 인라인 블록으로 설정해주면, `line-height` 속성을 활용해볼 수도 있다. 부모인 `.container`에 `height`와 동일한 `line-height`를 줘보자.
+`.info를` 인라인 블록으로 설정해주면, `line-height` 속성을 활용해볼 수도 있다.
+
+부모인 `.container`에 `height`와 동일한 `line-height`를 줘보자.
 참고로 `line-height` 속성은 자식들에게 상속되기 때문에 `.info`에는 `line-height: normal;`을 꼭 써주어야 한다.
 
 ```html
@@ -848,17 +873,19 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![8](https://user-images.githubusercontent.com/75716255/132658132-a0cf79f5-47fa-4fc8-bf06-14a095b7c743.png)
 
 <br />
 
-#### 다른 방식
+> #### 그 외 다른 방식
 포지셔닝을 이용할 수도 있고, [flexbox](https://www.w3schools.com/css/css3_flexbox.asp)를 이용할 수도 있다.
 
 <br />
 
-## background
+## `background`
 
 > ### background-repeat
 background-repeat는 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성이다.
@@ -938,7 +965,7 @@ background-position: 100px 200px;
 
 <br />
 
-## Selector(선택자)
+## `Selector(선택자)`
 CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 <br />
@@ -1049,7 +1076,7 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 > ### 가상 클래스
 콜론(:)을 사용하면 몇 가지 '가상 클래스'를 선택할 수 있다.
 
-### n번째 자식
+> #### n번째 자식
 
 ```html
 /* html */
@@ -1094,7 +1121,7 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 <br />
 
-### 마우스 오버
+> #### 마우스 오버
 
 ```html
 /* html */
@@ -1116,7 +1143,7 @@ h1:hover {
 
 <br />
 
-## 단위
+## `단위`
 CSS에는 px, rem, em, % 등 여러 단위가 있다. 폰트 크기 뿐만 아니라 padding, margin, width 등 다양한 속성들에 이 단위들을 사용할 수 있다.
 
 <br />
@@ -1144,6 +1171,8 @@ html {
 }
 ```
 
+<br />
+
 > ### rem
 `rem`은 __상대적인 값__ 이다. 하지만 오직 `<html>` 태그의 `font-size` 에만 영향을 받는다. 참고로, `2rem`은 `<html>` 태그의 `font-size`의 2배 크기이다.
 
@@ -1167,6 +1196,8 @@ html {
   background-color: lime;
 }
 ```
+
+<br />
 
 > ### em
 `em`은 __상대적인 값__ 이다. `em`은 자기 자신의 `font-size`를 기준으로 한다. `2em`은 자기 자신의 `font-size`의 2배 크기이다. 자기 자신의 `font-size`를 따로 정해주지 않으 경우, 상위 요소에서 상속받은 값을 기준으로 한다.
@@ -1192,6 +1223,8 @@ html {
 }
 ```
 
+<br />
+
 만약 자기 자신에게 정해진 `font-size`가 있다면 그 값을 기준으로 `em`이 결정된다.
 
 ```html
@@ -1215,6 +1248,8 @@ html {
   background-color: lime;
 }
 ```
+
+<br />
 
 > ### 퍼센트
 `%`는 __상대적인 값__ 이다. `%` 는 어느 항목에서 쓰이냐에 따라 다른 기준이 적용된다. 예를 들어, `font-size`에서 `%` 가 쓰일 경우, `font-size`에 곱해주는 방식으로 계산한다.
@@ -1243,6 +1278,8 @@ html {
 }
 ```
 
+<br />
+
 `%`가 `margin`이나 `padding`의 단위로 사용될 경우, 상위 요소의 `width`를 기준으로 계산된다.
 
 ```html
@@ -1265,6 +1302,8 @@ html {
   padding-left: 30%; /* 상위 요소의 width * 0.3 = 60px */
 }
 ```
+
+<br />
 
 재미있는 점은 `margin-top` 이나 `padding-bottom` 등 세로(상하) 속성을 조절할 때에도 상위 요소의 `heigth`가 아닌 `width`를 기준으로 계산된다는 것 이다.
 
@@ -1290,3 +1329,4 @@ html {
 ```
 
 <br />
+
