@@ -155,7 +155,8 @@
 - `<footer>`
   - 가장 가까운 구획 콘텐츠나 구획 루트의 푸터를 나타낸다. `<footer>`는 일반적으로 구획의 작성자, 저작권 정보, 관련 문서 등의 내용을 담는다.
 
-#### *https://developer.mozilla.org/ko/docs/Web/HTML/Element (참고)*
+> ### 태그 참고 사이트
+- https://developer.mozilla.org/ko/docs/Web/HTML/Element
 
 <br />
 
