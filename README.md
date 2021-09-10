@@ -7,6 +7,10 @@
 
 ### 목차!
 
+## Web 관련 사이트
+
+- [🔗알아두면 유용한 WEB 기술 사이트🔗](#알아두면-유용한-WEB-기술-사이트)
+
 ## HTML
 
 - Tag
@@ -14,6 +18,7 @@
   - [Semantic Tags(or Semantic Markup)](#Semantic-Tags)
     - [Semantic Tags의 중요성 3대장](#Semantic-Tags가-중요한-이유-3가지)
   - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들)
+  - [태그 참고 사이트](#태그-참고-사이트)
 
 ## CSS
 
@@ -29,6 +34,18 @@
   - [inline](#inline)
   - [block](#block)
   - [inline-block](#inline-block)
+  - [display 참고 사이트](#display-참고-사이트)
+  - [가운데 정렬](#가운데-정렬)
+    - [가로 가운데 정렬](#가로-가운데-정렬)
+      - [inline](#inline)
+      - [block](#block)
+    - [세로 가운데 정렬](#세로-가운데-정렬)
+      - [가짜 요소 더하기 (*vertical-align: middle;을 사용하면 될까?* 에 대한 고찰)](#가짜-요소-더하기)
+        - [번외) 만약 자식 요소의 가로 길이가 100% 라면?](#번외)
+          - [띄어쓰기 없애기](#띄어쓰기-없애기)
+          - [띄어쓰기 공간 만큼의 마이너스 여백 주기](#띄어쓰기-공간-만큼의-마이너스-여백-주기)
+      - [line-height 사용](#line-height)
+      - [그 외 다른 방식](#그-외-다른-방식)
 
 - background
 
@@ -55,77 +72,103 @@
 
 <br />
 
-# `HTML`
+# 알아두면 유용한 WEB 기술 사이트
 
-## Tag
+- 영문
+  - https://developer.mozilla.org/en-US/docs/Web (all)
+  - https://learn.shayhowe.com/html-css/ (html~css)
+  - https://www.w3schools.com/ (all)
+
+- 한글
+  - https://ofcourse.kr/
+  - https://www.daleseo.com/ (검색창에 메인키워드 검색 ex. html, css 등)
+  - https://ko.learnlayout.com/toc.html (css, 번역.ver)
+  - https://hianna.tistory.com/category/IT/HTML?page=3 (HTML)
+  - https://hianna.tistory.com/category/IT/Javascript (JS)
+
+<br />
+
+# 📄 HTML 📄
+
+## `Tag`
 
 > ### Semantic Tags
 시맨틱(semantic) 태그란? __의미를 전달__ 할 수 있는 태그다. 예를 들어, 시맨틱 태그가 아닌 `<div>`, `<span>` 태그의 경우 그 이름만 들어서는 어떤 내용을 내포하고 있는지 알 수 없다. 그러나 시맨틱 태그인 `<header>`, `<nav>`, `<img>` 태그의 경우 이름만 들어도 `<header>=제목`, `<nav>=내비게이션`, `<img>=그림` 에 대한 내용을 내포 하고 있음을 짐작 할 수 있다. 이와 같이 사람들에게 의미를 전달 할 수 있는 태그를 `시맨틱(semantic) 태그` 라고 한다.
 
-- #### Semantic Tags가 중요한 이유 3가지
+<br />
 
-  ① 검색 엔진 최적화(search engine optimization, SEO)
-    - `SEO(검색 엔진 최적화)`는 __웹사이트가 검색 결과에 더 잘 보이도록 최적화하는 과정__ 이다. 검색 랭크 개선이라고도 한다.
-    - `SEO`는 소비자가 자신(회사)의 홈페이지 혹은 콘텐츠를 쉽게 발견할 수 있도록 하는 것이다. `SEO`의 구체적인 방법을 알아보기 전에 기본적으로 필요한 이해는 바로 검색엔진에 관한 것이다. 검색엔진은 인터넷에 산재한 다양한 정보를 미리 수집, 정리한 후 검색 유저가 관련 내용을 검색했을 때 수시로 찾을 수 있도록 해주는 데이터베이스 관리 시스템이다. 대표적으로 ‘네이버’, ‘구글’ 등이 검색 엔진을 가지고 있다. 검색엔진은 ‘크롤링(웹 크롤러로 웹사이트 관련 데이터를 가져오는 과정)’과 ‘인덱싱(크롤링을 통해 얻은 정보를 검색 색인에 저장하는 과정)’을 통해 정보를 카테고리화한다. *(https://www.bloter.net/newsView/blt201805130001 발췌)*
+> #### Semantic Tags가 중요한 이유 3가지
+ 
+__① 검색 엔진 최적화(search engine optimization, SEO)__
+  - `SEO(검색 엔진 최적화)`는 __웹사이트가 검색 결과에 더 잘 보이도록 최적화하는 과정__ 이다. 검색 랭크 개선이라고도 한다.
+  
+  - `SEO`는 소비자가 자신(회사)의 홈페이지 혹은 콘텐츠를 쉽게 발견할 수 있도록 하는 것이다. `SEO`의 구체적인 방법을 알아보기 전에 기본적으로 필요한 이해는 바로 검색엔진에 관한 것이다. 검색엔진은 인터넷에 산재한 다양한 정보를 미리 수집, 정리한 후 검색 유저가 관련 내용을 검색했을 때 수시로 찾을 수 있도록 해주는 데이터베이스 관리 시스템이다. 대표적으로 ‘네이버’, ‘구글’ 등이 검색 엔진을 가지고 있다. 검색엔진은 ‘크롤링(웹 크롤러로 웹사이트 관련 데이터를 가져오는 과정)’과 ‘인덱싱(크롤링을 통해 얻은 정보를 검색 색인에 저장하는 과정)’을 통해 정보를 카테고리화한다. *([발췌](https://www.bloter.net/newsView/blt201805130001))*
+
+<br />
    
-  ② 접근성(Accessibility)
-    - 사용자의 신체적 특성이나, 지역, 나이, 지식 수준, 기술, 체험과 같은 제한 사항을 고려하여 가능한 많은 사용자가 불편 없이 이용할 수 있도록 제품, 서비스를 만들어 제공하고 이를 평가 할 때 쓰이는 말이다.
-    
-    - `접근성`이 높다?
-      - 제한 사항을 가진 사용자도 불편 없이 사용할 수 있다는 것
-      
-    - `접근성`이 낮다?
-      - 어떠한 제한 때문에 사용하기 불편하거나 사용할 수 없다는 것
+__② 접근성(Accessibility)__
+  - 사용자의 신체적 특성이나, 지역, 나이, 지식 수준, 기술, 체험과 같은 제한 사항을 고려하여 가능한 많은 사용자가 불편 없이 이용할 수 있도록 제품, 서비스를 만들어 제공하고 이를 평가 할 때 쓰이는 말이다.
      
-    - 특히 웹 디자인 분야에서 월드 와이드 웹의 창시자인 팀 버너스 리는 "웹의 힘은 그 광범위함에 있다. 장애에 관계 없이 모든 사람이 접근할 수 있다는 것이 절대적인 장점이다."라고 말했다. 일부 사용자는 시각, 활동, 지각, 청각 등에 장애가 있으며 장애인들이 다른 사람들과 동등하게 웹 탐색을 하고 컴퓨터를 사용하여 여기서 얻을 수 있는 혜택을 고루 누릴 수 있도록 해야 한다. 그러기 위해서는 특수 마우스/키보드/스위치/조이스틱, 음성 인식, 눈동자 인식 등의 장치및 기술을 사용하기도 하며 글자 크기를 크게 하거나 명암 대비를 크게하는 등의 소프트웨어적 방법도 함께 사용한다. *(https://ko.wikipedia.org/wiki/%EC%A0%91%EA%B7%BC%EC%84%B1 발췌)*
-    
-  ③ For us, 유지보수성(Mainrainability)
-    - 장비 또는 시스템이 서비스가 가능한 상태로 작동이 유지되거나 복원될 수 있는 것
-    
-    - 핵심
-      1. __코드는 쉽게 읽여햐 한다.__
-          - 쉽게 읽히기 위해서 코드는 서술적으로 짜여져 있어야 한다. 예를 들어, 특정 함수에 이름을 정할 때 그 함수의 이름만 봐도 어떤 작업을 하는 지 알 수 있어야 한다는 것 이다. 이처럼 변수, 함수, 모듈, 패키지, 디렉토리 등등 다양한 수준에서의 좋은 이름은 코드를 쉽게 읽도록 도움을 줄 수 있다.
-       
-      2. __코드는 짧아야 한다.__
-          - 코드는 짧을 수록 이해하기 쉽다. 짧은 코드의 기준은 라인(line)수가 적은 것 이다. 라인수가 길어지면 하는 일도 많아지도 쉽게 복잡해지기 마련이다. 물론 전체적인 볼륨(Volume)으로 서의 라인수가 아닌, 프로그램을 구성하는 요소들의 라인수를 말하는 것 이다.
-        
-          - 함수의 라인수를 줄이면 함수 호출 횟수가 증가하여 성능에 악영향을 준다?
-            - 그럴 수 있다. 그러나, 함수의 라인수가 늘어난다는 것은 결국 많은 일을 하고 있다는 뜻 이며, 함수가 넘겨받는 인자나 내부의 지역변수의 수가 늘어난다는 뜻 이다. 즉, 변수들이 레지스터를 이용하는 것 보다 스택에 할당될 확률이 놓아서 메모리 접근 시간이 추가적으로 더 필요하며, 전역 변수를 쓴다면 함수의 최적화(메모리 접근도 증가함)도 문제가 될 수 있다. 또한, 함수 자체가 길이가 길기 때문에 코드의 중복이 발생할 가능성이 높고, 재활용이 안 되기에 컴파일 된 실행 파일의 크기를 증가시킬 가능성도 있다.
-         
-            - 따라서, 함수의 크기를 작게 만드는 것이 크게 만드는 것 보다 유리한 점이 더 많다. 컴파일러도 결국 사람이 만들기에 복잡한 함수를 최적화 하는데는 한계를 가지며, 함수의 호출 오버헤드도 최적화의 중요한 고려 요소이기에 많은 신경을 써서 만들어 졌다. 함수를 크게 만들어서 최적화를 한다고 이야기하는 것은 올바르지 않다. 물론, 루프와 같은 반복문에서 잦은 함수 호출은 문제를 유발 할 수 있다. 그런 경우엔 함수내로 루프를 이동시키면 된다.
+  - 접근성이 `높다`?
+    - 제한 사항을 가진 사용자도 불편 없이 사용할 수 있다는 것
       
-      3. __코드는 복제된 것이 없어야 한다.__
-          - 복제된 코드는 모든 오류의 원천과도 같다. 코드 자체의 복제도 있지만, 논리(Program Logic)의 복제도 포함해서 '복제'라고 생각할 수 있다. 복제를 없애는 것은 간단하지만, 생각외로 잘 고치지 않는 것이 일반적이다. 예를 들어, 새로운 모델을 만들기 위해 기존 모델의 코드와 비슷한 코드를 찾아 약간의 수정을 거친 후 사용 하는 것이 대표적이다. 이런 코드는 향후 수정이 어려우며 버그를 유발하는 경향으로 발전할 가능성이 높다. 그러므로 `DRY(Do not Repeat Yourself)` 원칙을 꾸준히 유지해야 할 것이다.
+  - 접근성이 `낮다`?
+    - 어떠한 제한 때문에 사용하기 불편하거나 사용할 수 없다는 것
+     
+  - 특히 웹 디자인 분야에서 월드 와이드 웹의 창시자인 팀 버너스 리는 "웹의 힘은 그 광범위함에 있다. 장애에 관계 없이 모든 사람이 접근할 수 있다는 것이 절대적인 장점이다."라고 말했다. 일부 사용자는 시각, 활동, 지각, 청각 등에 장애가 있으며 장애인들이 다른 사람들과 동등하게 웹 탐색을 하고 컴퓨터를 사용하여 여기서 얻을 수 있는 혜택을 고루 누릴 수 있도록 해야 한다. 그러기 위해서는 특수 마우스/키보드/스위치/조이스틱, 음성 인식, 눈동자 인식 등의 장치및 기술을 사용하기도 하며 글자 크기를 크게 하거나 명암 대비를 크게하는 등의 소프트웨어적 방법도 함께 사용한다. *([발췌](https://ko.wikipedia.org/wiki/%EC%A0%91%EA%B7%BC%EC%84%B1))*
+
+<br />
+    
+__③ For us, 유지보수성(Mainrainability)__
+- 장비 또는 시스템이 서비스가 가능한 상태로 작동이 유지되거나 복원될 수 있는 것
+    
+- 유지보수성 5원칙
+
+  __1. 코드는 쉽게 읽여햐 한다.__
+    - 쉽게 읽히기 위해서 코드는 서술적으로 짜여져 있어야 한다. 예를 들어, 특정 함수에 이름을 정할 때 그 함수의 이름만 봐도 어떤 작업을 하는 지 알 수 있어야 한다는 것 이다. 이처럼 변수, 함수, 모듈, 패키지, 디렉토리 등등 다양한 수준에서의 좋은 이름은 코드를 쉽게 읽도록 도움을 줄 수 있다.
+       
+  __2. 코드는 짧아야 한다.__
+    - 코드는 짧을 수록 이해하기 쉽다. 짧은 코드의 기준은 라인(line)수가 적은 것 이다. 라인수가 길어지면 하는 일도 많아지도 쉽게 복잡해지기 마련이다. 물론 전체적인 볼륨(Volume)으로 서의 라인수가 아닌, 프로그램을 구성하는 요소들의 라인수를 말하는 것 이다.
         
-          - 복제된 코드를 검증하기 위해서 `CPD(Copy Paste Detecor)`라는 툴을 사용 할 수 있다. 그러나 해당 툴은 권장하지 않는다. 이유는 간단하다. 복제된 코드는 없어야 하기 때문이다.
+      - 함수의 라인수를 줄이면 함수 호출 횟수가 증가하여 성능에 악영향을 준다?
         
-      4. __하나의 기능만 충실히 구현해야 한다.__
-          - 기능을 많이 구현하려는 욕심은 언제나 복잡한 코드로 이어진다. 다양한 기능으로 이루어진 코드는 한 가지 기능에 문제가 생기면 나머지 기능들도 제대로 동작하지 않을 가능성이 높다. 또한, 기능간에 연결고리를 만들어 의존성을 높이게 된다. 
+        - 그럴 수 있다. 그러나, 함수의 라인수가 늘어난다는 것은 결국 많은 일을 하고 있다는 뜻 이며, 함수가 넘겨받는 인자나 내부의 지역변수의 수가 늘어난다는 뜻 이다. 즉, 변수들이 레지스터를 이용하는 것 보다 스택에 할당될 확률이 놓아서 메모리 접근 시간이 추가적으로 더 필요하며, 전역 변수를 쓴다면 함수의 최적화(메모리 접근도 증가함)도 문제가 될 수 있다. 또한, 함수 자체가 길이가 길기 때문에 코드의 중복이 발생할 가능성이 높고, 재활용이 안 되기에 컴파일 된 실행 파일의 크기를 증가시킬 가능성도 있다.
+         
+        - 따라서, 함수의 크기를 작게 만드는 것이 크게 만드는 것 보다 유리한 점이 더 많다. 컴파일러도 결국 사람이 만들기에 복잡한 함수를 최적화 하는데는 한계를 가지며, 함수의 호출 오버헤드도 최적화의 중요한 고려 요소이기에 많은 신경을 써서 만들어 졌다. 함수를 크게 만들어서 최적화를 한다고 이야기하는 것은 올바르지 않다. 물론, 루프와 같은 반복문에서 잦은 함수 호출은 문제를 유발 할 수 있다. 그런 경우엔 함수내로 루프를 이동시키면 된다.
+      
+  __3. 코드는 복제된 것이 없어야 한다.__
+    - 복제된 코드는 모든 오류의 원천과도 같다. 코드 자체의 복제도 있지만, 논리(Program Logic)의 복제도 포함해서 '복제'라고 생각할 수 있다. 복제를 없애는 것은 간단하지만, 생각외로 잘 고치지 않는 것이 일반적이다. 예를 들어, 새로운 모델을 만들기 위해 기존 모델의 코드와 비슷한 코드를 찾아 약간의 수정을 거친 후 사용 하는 것이 대표적이다. 이런 코드는 향후 수정이 어려우며 버그를 유발하는 경향으로 발전할 가능성이 높다. 그러므로 `DRY(Do not Repeat Yourself)` 원칙을 꾸준히 유지해야 할 것이다.
         
-          - 위 같은 경우 차라리 인터페이스를 분리하고, 공용화 할 수 있는 부분을 뽑아내서 라이브러리 형태로 구축하는 것이 더 좋다.
-            - 그 예로 상태의 변경을 일으키는 것(Behaviour, 행동)과 상태를 묻는 것(Query)을 나누는 방법이 있다. 쉽게 말해 특정 상태를 얻어 오는 것과 상태 변경을 발생하는 것을 각각 나누어서 함수로 구현하는 것 이다. 물론, 상태 변경은 한 번에 한 가지만 하는 것이 좋다. 그래야 짧은 코드에 도움이 되며, 파마리터(매개변수)의 갯수나 테스트 케이스도 간단하게 만들어 주기 때문이다. 또한, 성능 향상도 기대 할 수 있다.
+      - 복제된 코드를 검증하기 위해서 `CPD(Copy Paste Detecor)`라는 툴을 사용 할 수 있다. 그러나 해당 툴은 권장하지 않는다. 이유는 간단하다. 복제된 코드는 없어야 하기 때문이다.
+       
+  __4. 하나의 기능만 충실히 구현해야 한다.__
+    - 기능을 많이 구현하려는 욕심은 언제나 복잡한 코드로 이어진다. 다양한 기능으로 이루어진 코드는 한 가지 기능에 문제가 생기면 나머지 기능들도 제대로 동작하지 않을 가능성이 높다. 또한, 기능간에 연결고리를 만들어 의존성을 높이게 된다. 
+        
+    - 위 같은 경우 차라리 인터페이스를 분리하고, 공용화 할 수 있는 부분을 뽑아내서 라이브러리 형태로 구축하는 것이 더 좋다.
+      
+      - 그 예로 상태의 변경을 일으키는 것(Behaviour, 행동)과 상태를 묻는 것(Query)을 나누는 방법이 있다. 쉽게 말해 특정 상태를 얻어 오는 것과 상태 변경을 발생하는 것을 각각 나누어서 함수로 구현하는 것 이다. 물론, 상태 변경은 한 번에 한 가지만 하는 것이 좋다. 그래야 짧은 코드에 도움이 되며, 파마리터(매개변수)의 갯수나 테스트 케이스도 간단하게 만들어 주기 때문이다. 또한, 성능 향상도 기대 할 수 있다.
           
-      5. __테스트에 대한 자동화가 되어있어야 한다.__
-          - 테스트는 자동화를 높여야 할 부분이다. 사람이 반복적으로 비슷한 일을 해야 할 경우라면 자동화가 가장 빠른 해결책이다. 물론 모든 테스트를 자동화 할 수는 없지만 단위 테스트나 통합 테스트, 시스템 테스트의 일부는 자동화가 가능하다. 자동화의 이점은 과제의 후반으로 갈수록 더 높아지지만, 문제는 테스트 케이스 작성을 쉽게 하기 위해선 위에서 언급한 네 가지 핵심 또한 잘 지켜져야 한다는 것 이다.
+  __5. 테스트에 대한 자동화가 되어있어야 한다.__
+    - 테스트는 자동화를 높여야 할 부분이다. 사람이 반복적으로 비슷한 일을 해야 할 경우라면 자동화가 가장 빠른 해결책이다. 물론 모든 테스트를 자동화 할 수는 없지만 단위 테스트나 통합 테스트, 시스템 테스트의 일부는 자동화가 가능하다. 자동화의 이점은 과제의 후반으로 갈수록 더 높아지지만, 문제는 테스트 케이스 작성을 쉽게 하기 위해선 위에서 언급한 네 가지 핵심 또한 잘 지켜져야 한다는 것 이다.
           
-          - 가독성이 떨어지며 하는 일이 많은 함수는 테스트 하기도 힘들다. 이는 테스트 케이스를 많이 만들어야 한다는 뜻이 되며, 테스트 되지 않는 코드가 많아질 가능성 또한 농후하다. 이는 코드간의 의존성이 높아서 테스트 자체보다는 부가적으로 구축해야 할 것들도 늘어나게 된다. 결국 생산성은 낮아지며 테스트 신뢰도 또한 같이 낮아지게 된다.
+    - 가독성이 떨어지며 하는 일이 많은 함수는 테스트 하기도 힘들다. 이는 테스트 케이스를 많이 만들어야 한다는 뜻이 되며, 테스트 되지 않는 코드가 많아질 가능성 또한 농후하다. 이는 코드간의 의존성이 높아서 테스트 자체보다는 부가적으로 구축해야 할 것들도 늘어나게 된다. 결국 생산성은 낮아지며 테스트 신뢰도 또한 같이 낮아지게 된다.
         
-          - 따라서, 앞에서 열거한 것들을 충실히 지키는 척도로서도 테스트 커버리지(Test Coverage)와 같은 부분을 점검 할 수 있을 것 이다.
-            - 테스트 커버리지(Test Coverage)? 테스트 대상의 전체 범위에서 테스트를 수행한 범위를 뜻 한다. 즉, 테스트 대상을 얼마만큼 테스트했나를 정의하는 것 으로, 테스트의 정확성을 판단하는 하나의 척도가 될 수 있다.
+    - 따라서, 앞에서 열거한 것들을 충실히 지키는 척도로서도 테스트 커버리지(Test Coverage)와 같은 부분을 점검 할 수 있을 것 이다.
+      
+      - 테스트 커버리지(Test Coverage)? 테스트 대상의 전체 범위에서 테스트를 수행한 범위를 뜻 한다. 즉, 테스트 대상을 얼마만큼 테스트했나를 정의하는 것 으로, 테스트의 정확성을 판단하는 하나의 척도가 될 수 있다.
 
 <br />
 
 > ### 웹 사이트 구조를 이루는 태그들
 
-웹 사이트를 만들 때, 아래 그림 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
-
-<img src="https://user-images.githubusercontent.com/75716255/131506537-5b763ff4-0a50-4c74-8c9e-9a6af5a4a066.png" width="70%" height="60%">
+웹 사이트를 만들 때, 아래 좌측 이미지 처럼 `<div>` 태그를 남발하는 경우가 있다. 이러한 방법 보단 우측 이미지와 같이 정해진 용도에 맞추어 의미 있는 태그를 사용 하는 것이 적절하다.
 
 <br />
 
-그 방법은 아래와 같다.
+![33](https://user-images.githubusercontent.com/75716255/132693160-c0264553-8a42-4172-ad28-2ce8a8827efe.png)
 
-<img src="https://user-images.githubusercontent.com/75716255/131507581-2e37a1aa-895c-4b6a-ba41-fd8fe0ce7dd7.png" width="70%" height="60%">
+
+<br />
 
 - `<header>`
   - 소개 및 탐색에 도움을 주는 콘텐츠를 나타낸다. 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함.
@@ -155,13 +198,16 @@
 - `<footer>`
   - 가장 가까운 구획 콘텐츠나 구획 루트의 푸터를 나타낸다. `<footer>`는 일반적으로 구획의 작성자, 저작권 정보, 관련 문서 등의 내용을 담는다.
 
-#### *https://developer.mozilla.org/ko/docs/Web/HTML/Element (참고)*
+<br />
+
+> ### 태그 참고 사이트
+- https://developer.mozilla.org/ko/docs/Web/HTML/Element
 
 <br />
 
-# `CSS`
+# 📑 CSS 📑
 
-## 폰트
+## `폰트`
 
 > ### 기본 폰트
 
@@ -204,15 +250,13 @@ p {
 }
 ```
 
-<br />
-
 - #### @font-face, 이것 만은 알아두자!
   - `@font-face`를 사용함으로써 사이트에 추가적인 요청(HTTP)이 들어갈 수도 있음
   - 결과적으로 `'웹 사이트 속도가 느려짐'`
   
   - 따라서 font-weight 또는 font-style 기능을 최대한 적게 사용하고, character set을 가볍게 해서 파일 크기를 줄여야 함
   
-- *character set : 정보를 표현하기 위한 글자들의 집합을 정의한 것 (http://hell0-world.com/etc/2020/05/09/ChracterSet.html)*
+    - *[character set](http://hell0-world.com/etc/2020/05/09/ChracterSet.html) : 정보를 표현하기 위한 글자들의 집합을 정의한 것 *
 
 <br />
 
@@ -275,7 +319,7 @@ __결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다�
 
 <br />
 
-## display property
+## `display property`
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
 
 <br />
@@ -308,7 +352,9 @@ span {
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![inline](https://user-images.githubusercontent.com/75716255/131222899-03886dba-d14c-49c3-a316-62834b1b34f3.png)
 
 - #### `inline`, 이것 만은 알아두자!
@@ -329,6 +375,7 @@ span {
 
 ```html
 /* html */
+
 before
 <h1>H1</h1>
 <div>DIV</div>
@@ -347,7 +394,9 @@ div {
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![block](https://user-images.githubusercontent.com/75716255/131252531-91c5794b-cb61-4fdb-a310-cf2362949204.png)
 
 - #### `block`, 이것 만은 알아두자!
@@ -384,7 +433,9 @@ span {
 }
 ```
 
-#### 출력 화면
+<br />
+
+#### `출력 화면`
 ![inline-block](https://user-images.githubusercontent.com/75716255/131252712-11105852-dd95-4cf1-902e-4ec2927b25c5.png)
 
 - #### `inline-block`, 이것 만은 알아두자!
@@ -404,7 +455,462 @@ span {
 
 <br />
 
-## background
+> ### 가운데 정렬
+
+<br />
+
+> #### 가로 가운데 정렬
+- `inline` 또는 `inline-block` 요소면 부모 태그에 `tect-align: center;`를 사용하면 된다.
+
+```html
+/* html */
+
+<div class="container">
+  텍스트 <img src="https://i.imgur.com/CDPKjZJ.jpg" height="50">
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  text-align: center;
+  background-color: lime;
+}
+```
+
+<br />
+
+- `block` 요소면 `margin-left auto;`, `margin-right: auto;`를 사용하면 된다.
+
+```html
+/* html */
+
+<div class="block-element"></div>
+```
+
+```css
+/* css */
+
+.block-element {
+  width: 100px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lime;
+}
+```
+
+<br />
+
+> #### 세로 가운데 정렬
+CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없기 때문에, 다양한 지식을 섞어서 해야 한다.
+
+<br />
+
+> #### 가짜 요소 더하기
+`vertical-align: middle;`을 하면 해결이 되는가?' 에 대한 고찰*
+
+<br />
+
+우선 `vertical-align` 속성은 __인라인 또는 인라인 블록 요소에 적용__ 되기 때문에 `.info`를 인라인 블록으로 바꿔준다. 그리고 `vertical-align: middle;`을 설정해준다면?
+
+```html
+/* html */
+
+<div class="container">
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+<br />
+
+#### `출력화면`
+결과는 아래와 같다. `vertical-align: middle;`은 요소의 가운데(middle)를 부모 요소의 가운데와 맞추게 되어있다.
+
+![1](https://user-images.githubusercontent.com/75716255/132643907-67084689-4f9a-4c23-bd81-0967f8589cf4.png)
+
+<br />
+
+좀 더 이해가 쉽도록 부모 요소인 `<div class="container">`에 소문자 'x' 를 입력하여 거운데가 맞는지 확인해 보겠다.
+
+```html
+/* html */
+
+<div class="container">
+  x
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+<br />
+
+#### `출력화면`
+가운데가 맞다!
+
+![2](https://user-images.githubusercontent.com/75716255/132644548-7f10c18b-1062-4ee3-9fc0-b9251cee40ff.png)
+
+<br />
+
+다음으로, `.info` 요소를 완전 가운데로 오게 하려면 소문자 'x'가 가운데로 와야 한다. __이유__ 는 위에서 말한 바와 같이 __자식 요소는 부모 요소의 중앙 지점을 기준으로 가운데 정렬이 되기 때문__ 이다. 
+
+따라서 세로 길이가 100%인 자식 요소를 하나 더 만들고, 그 요소에도 vertical-align: middle; 값을 주게 될 경우, 부모 요소의 중앙 지점을 기준으로 자신의 세로 길이 중 절반인 50%의 높이에 정렬이 된다. (아래 코드와 출력 화면 참고)
+
+```html
+/* html */
+
+  <div class="container">
+  x
+  
+  <div class="helper"></div>
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  
+  /* 설명 및 가시성을 위해 임의적으로 추가 */
+  width: 10px;
+  background-color: red;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+<br />
+
+#### `출력 화면`
+아래 보이는 빨간 박스가 새로 생성한 세로 길이 100%인 자식 요소 이다.
+![3](https://user-images.githubusercontent.com/75716255/132647430-449af534-cae5-43ef-b7ee-2a75ef0a9847.png)
+
+<br />
+
+이제 'x'를 지우고, `.helper` 요소의 가로 길이와 배경색을 없애주면 가로-세로 가운데 정렬이 완성된다.
+
+```html
+/* html */
+
+<div class="container">
+  
+  <div class="helper"></div>
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+<br />
+
+#### `출력 화면`
+![4](https://user-images.githubusercontent.com/75716255/132654490-e517be55-2611-4ca0-991d-4855117b468a.png)
+
+<br />
+
+> #### 번외
+만약 자식요소(.info) 의 가로 길이가 100% 라면?
+
+```html
+/* html */
+
+<div class="container">
+  
+  <div class="helper"></div>
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+```
+
+<br />
+
+#### `출력 화면`
+갑자기 이상한 곳에 배치된다. 
+
+![5](https://user-images.githubusercontent.com/75716255/132655018-83aa4774-4735-492c-a00b-c167b5ba2021.png)
+
+<br />
+
+그 이유는, `.helper` 와 `.info` 요소 사이에 띄어쓰기가 한 칸 있어서, 가로 길이 100%인 `.info` 요소는 자리 부족으로 다음 줄로 밀려나게 된 것 이다. 이 문제를 해결하기 위한 `두 가지 방법`이 있다.
+
+<br />
+
+> ##### 띄어쓰기 없애기
+
+```html
+/* html */
+
+<div class="container">
+  
+  <!-- 스페이스 없애기 -->
+  <div class="helper"></div><div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+```
+
+<br />
+
+#### `출력 화면`
+![6](https://user-images.githubusercontent.com/75716255/132656218-a4666e01-9f16-427e-845a-fbe0d41ab5a2.png)
+
+<br />
+
+- 다른 방법으로 띄어쓰기 없애는 방법
+  - https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+ 
+<br />
+
+> ##### 띄어쓰기 공간 만큼의 마이너스 여백 주기
+
+```html
+/* html */
+
+<div class="container">
+
+  <div class="helper"></div>
+
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+
+  /* 이 경우 띄어쓰기는 5~7px 정도였다 */
+  margin-left: -6px;
+}
+```
+
+<br />
+
+#### `출력 화면`
+![7](https://user-images.githubusercontent.com/75716255/132656762-de9a1051-7018-48d1-a195-9e8d55a5a42d.png)
+
+- 주의 사항
+  - 어떤 요소에 `height: 100%;`를 설정하기 위해서는 부모의 `height`가 설정되어 있어야 한다. 위 경우에는 `.helper`의 부모인 `.container`에 height가 설정되어 있었기 때문에 가능했던 것이다.
+
+<br />
+
+> #### line-height
+`.info를` 인라인 블록으로 설정해주면, `line-height` 속성을 활용해볼 수도 있다.
+
+부모인 `.container`에 `height`와 동일한 `line-height`를 줘보자.
+참고로 `line-height` 속성은 자식들에게 상속되기 때문에 `.info`에는 `line-height: normal;`을 꼭 써주어야 한다.
+
+```html
+/* html */
+
+<div class="container">
+  x
+  
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>My name is hyejin.</p>
+  </div>
+  
+</div>
+```
+
+```css
+/* css */
+
+.container {
+  width: 300px;
+  height: 400px;
+  background-color: gray;
+  text-align: center;
+  line-height: 400px;
+}
+
+.info {
+  background-color: lime;
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+}
+```
+
+<br />
+
+#### `출력 화면`
+![8](https://user-images.githubusercontent.com/75716255/132658132-a0cf79f5-47fa-4fc8-bf06-14a095b7c743.png)
+
+<br />
+
+> ### 그 외 다른 방식
+포지셔닝을 이용할 수도 있고, [flexbox](https://www.w3schools.com/css/css3_flexbox.asp)를 이용할 수도 있다.
+
+<br />
+
+## `background`
 
 > ### background-repeat
 background-repeat는 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성이다.
@@ -484,7 +990,7 @@ background-position: 100px 200px;
 
 <br />
 
-## Selector(선택자)
+## `Selector(선택자)`
 CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 <br />
@@ -595,7 +1101,9 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 > ### 가상 클래스
 콜론(:)을 사용하면 몇 가지 '가상 클래스'를 선택할 수 있다.
 
-#### n번째 자식
+<br />
+
+> #### n번째 자식
 
 ```html
 /* html */
@@ -640,7 +1148,7 @@ CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 <br />
 
-#### 마우스 오버
+> #### 마우스 오버
 
 ```html
 /* html */
@@ -662,8 +1170,10 @@ h1:hover {
 
 <br />
 
-## 단위
+## `단위`
 CSS에는 px, rem, em, % 등 여러 단위가 있다. 폰트 크기 뿐만 아니라 padding, margin, width 등 다양한 속성들에 이 단위들을 사용할 수 있다.
+
+<br />
 
 > ### px
 `px`는 __절대적인 값__이다. 다른 요소의 값에 영향을 받지 않는다.
@@ -687,6 +1197,8 @@ html {
   background-color: lime;
 }
 ```
+
+<br />
 
 > ### rem
 `rem`은 __상대적인 값__ 이다. 하지만 오직 `<html>` 태그의 `font-size` 에만 영향을 받는다. 참고로, `2rem`은 `<html>` 태그의 `font-size`의 2배 크기이다.
@@ -712,6 +1224,8 @@ html {
 }
 ```
 
+<br />
+
 > ### em
 `em`은 __상대적인 값__ 이다. `em`은 자기 자신의 `font-size`를 기준으로 한다. `2em`은 자기 자신의 `font-size`의 2배 크기이다. 자기 자신의 `font-size`를 따로 정해주지 않으 경우, 상위 요소에서 상속받은 값을 기준으로 한다.
 
@@ -736,6 +1250,8 @@ html {
 }
 ```
 
+<br />
+
 만약 자기 자신에게 정해진 `font-size`가 있다면 그 값을 기준으로 `em`이 결정된다.
 
 ```html
@@ -759,6 +1275,8 @@ html {
   background-color: lime;
 }
 ```
+
+<br />
 
 > ### 퍼센트
 `%`는 __상대적인 값__ 이다. `%` 는 어느 항목에서 쓰이냐에 따라 다른 기준이 적용된다. 예를 들어, `font-size`에서 `%` 가 쓰일 경우, `font-size`에 곱해주는 방식으로 계산한다.
@@ -787,6 +1305,8 @@ html {
 }
 ```
 
+<br />
+
 `%`가 `margin`이나 `padding`의 단위로 사용될 경우, 상위 요소의 `width`를 기준으로 계산된다.
 
 ```html
@@ -809,6 +1329,8 @@ html {
   padding-left: 30%; /* 상위 요소의 width * 0.3 = 60px */
 }
 ```
+
+<br />
 
 재미있는 점은 `margin-top` 이나 `padding-bottom` 등 세로(상하) 속성을 조절할 때에도 상위 요소의 `heigth`가 아닌 `width`를 기준으로 계산된다는 것 이다.
 
@@ -834,3 +1356,4 @@ html {
 ```
 
 <br />
+
