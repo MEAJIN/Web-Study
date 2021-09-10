@@ -1,0 +1,15 @@
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/*
+이곳에 몽숭이를 이동시키는 코드를 작성하세요.
+*/
+.mongsoong {
+  position: relative;
+  left: 200px;
+  bottom: 100px;
+}

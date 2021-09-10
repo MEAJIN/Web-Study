@@ -1,0 +1,43 @@
+.quote {
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-family: 'Nanum Pen Script', cursive;
+  margin-top: 75px;
+}
+
+.figure {
+  margin-top: 50px;
+}
+
+/* #1 */
+/*.pisition1, .pisition2 {*/
+/*  position: relative;*/
+/*  top: 20px;*/
+/*  font-size: 96px;*/
+/*}*/
+
+/*.pisition2 {*/
+/*  top: 80px;*/
+/*}*/
+
+/*.mg {*/
+/*  margin-left: 15px;*/
+/*  margin-right: 15px;*/
+/*}*/
+
+/*#2*/
+
+.qmark {
+  position: relative;
+  font-size: 300%;
+  margin: 0 15px;
+}
+
+.open-qmark {
+  top: 20px;
+}
+
+.close-qmark {
+  top: 80px;
+}

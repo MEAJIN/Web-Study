@@ -1,0 +1,26 @@
+.env-div {
+  width: 500px;
+  height: 232px;
+  
+  position: relative;
+}
+
+.address {
+  font-family: cursive;
+  
+  /*추가 코드*/
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+/*
+이곳에 코드를 작성하세요.
+*/
+
+.stamp > img {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
