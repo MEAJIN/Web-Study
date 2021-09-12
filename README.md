@@ -49,6 +49,13 @@
       - [line-height 사용](#line-height)
       - [그 외 다른 방식](#그-외-다른-방식)
 
+- positioning
+  
+  - [static](#static)
+  - [relative](#relative)
+  - [absolute](#absolute)
+  - [fixed](#fixed)
+
 - background
 
   - [배경 이미지 반복](#background-repeat)
@@ -912,6 +919,204 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 
 > ### 그 외 다른 방식
 포지셔닝을 이용할 수도 있고, [flexbox](https://www.w3schools.com/css/css3_flexbox.asp)를 이용할 수도 있다.
+
+<br />
+
+## `positioning`
+`positioning` 이란 이름처럼 태그들의 위치를 결정하는 CSS이다.
+
+> ### static
+모든 태그들은 처음에 `position: static` 상태이다. 즉, 기본적으로 static이라 따로 써주지 않아도 된다. 또한 정적 위치 요소는 top, bottom, left, right 속성의 영향을 받지 않는다.
+
+```html
+/* html */
+
+<span>span1</span>
+<span>span2</span>
+<span>span3</span>
+<div>div1</div>
+```
+
+```css
+/* css */
+
+span, div {
+  background: yellow;
+  border: 1px solid red;
+}
+```
+
+<br />
+
+#### `출력화면`
+차례대로 왼쪽에서 오른쪽, 위에서 아래로 쌓인다.
+![1](https://user-images.githubusercontent.com/75716255/132990945-b443dc5a-c3b0-4ee2-95d3-1c98c185a546.png)
+
+<br />
+
+> ### relative
+__태그의 위치를 살짝 변경__ 하고 싶을 때 `position: relative`를 사용한다. `relative`를 사용하면 top, right, bottom, lef 속성을 사용해 위치 조절이 가능하다.
+
+```html
+/* html */
+
+<span class="top">top</span>
+<span class="right">right</span>
+<span class="bottom">bottom</span>
+<div class="left">left</div>
+```
+
+```css
+/* css */
+
+span, div {
+  background: yellow;
+  border: 1px solid red;
+}
+
+.top {
+  position: relative;
+  top: 5px;
+  z-index: 1;
+}
+
+.right {
+  position: relative;
+  right: 5px;
+}
+
+.bottom {
+  position: relative;
+  bottom: 5px;
+}
+
+.left {
+  position: relative;
+  left: 5px;
+}
+```
+
+<br />
+
+#### 출력화면
+각각의 태그가 기존 static이었을 때의 위치를 기준으로 top, right, bottom, left 방향으로 주어진 픽셀만큼 이동했다.
+![2](https://user-images.githubusercontent.com/75716255/132991050-924a14c5-7451-43bc-b173-4109a6f9a723.png)
+
+#### 주목할 부분
+
+__Q. #top 태그에 top: 5px를 줬는데 왜 아래로 이동했을까?__
+A. `relative`는 각각의 방향을 기준으로 태그 안쪽 방향으로 이동한다. 바깥쪽으로 이동하게 하고 싶으면 5px 대신 음수 -5px를 주면 된다.
+
+__Q. 왜 #top이 #left보다 위에 있을까?__
+A. 보통 태그는 같은 `position`이면 나중에 나온 태그가 더 위에 배치된다. 하지만 `z-index`라는 속성을 #top 태그에 더 높게 주었기 때문에 #left태그보다 위로 올라간 것 이다.
+
+__etc.__ `z-index`는 태그들이 겹칠 때 누가 더 위로 올라가는지를 결정하는 속성으로, 기본값은 0 이다. #top에 1을 주었기 때문에 다른 태그들보다 높게 위치한 것 이다.
+
+<br />
+
+> ### absolute
+relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다면, `absolute`는 __position: static 속성을 가지고 있지 않은 부모를 기준__ 으로 움직인다. 만약 부모 중에 포지션이 `relative`, `absolute`, `fixed`인 태그가 없다면 가장 위의 태그(body)가 기준이 된다.
+
+```html
+/* html */
+
+<div>
+  <div id="absolute">absolute</div>
+</div>
+<div id="parent">
+  <div id="child">children</div>
+</div>
+```
+
+```css
+/* css */
+
+#absolute {
+  background: yellow;
+  position: absolute;
+  right: 0;
+}
+
+#parent {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: skyblue;
+}
+
+#child {
+  position: absolute;
+  right: 0;
+}
+```
+
+<br />
+
+#### 출력화면
+#absolute는 조상 태그 중 `postion: relative`인 것이 없기 때문에 body를 기준으로 가장 오른쪽으로 달라붙었다. 반면 #child는 조상 태그인 #parent가 `position: relative`이기 때문에 그것을 기준으로 가장 오른쪽으로 달라붙었다. 차이를 알겠는가? 참고로 `absolute`가 되면 div여도 더는 width: 100%가 아니다.
+![3](https://user-images.githubusercontent.com/75716255/132991418-bab28e91-e9ab-4dcd-a6bc-59f10f1d148c.png)
+
+<br />
+
+> ### fixed
+보통의 홈페이지를 보면 상단 로그인 메뉴와 좌측 내비게이션 메뉴는 항상 __특정 위치에 고정__ 되어 있다. 스크롤을 내려도 그 자리에 계속 있는 것 인데, 이는 바로 포지션이 `fixed`로 설정되어 있기 때문이다. `fixed`의 경우 top, right, bottom, left 속성은 요소의 위치를 지정하는 데 사용된다.
+
+```html
+/* html */
+
+<div>
+  <div id="fixed">fixed</div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+```
+
+```css
+/* css */
+
+#fixed {
+  background: yellow;
+  position: fixed;
+  right: 0;
+}
+```
+
+<br />
+
+#### 출력화면
+스크롤을 내려도 박스는 그 자리에 고정되어 있다. `fixed`도 `absolute`처럼 더는 div가 width: 100%가 아니다.
+![4](https://user-images.githubusercontent.com/75716255/132991562-a4c88a26-ec34-4ed9-977e-94d79d425968.png)
 
 <br />
 
