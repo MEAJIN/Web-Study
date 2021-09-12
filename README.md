@@ -950,6 +950,7 @@ span, div {
 
 #### `출력화면`
 차례대로 왼쪽에서 오른쪽, 위에서 아래로 쌓인다.
+
 ![1](https://user-images.githubusercontent.com/75716255/132990945-b443dc5a-c3b0-4ee2-95d3-1c98c185a546.png)
 
 <br />
@@ -1000,6 +1001,7 @@ span, div {
 
 #### 출력화면
 각각의 태그가 기존 static이었을 때의 위치를 기준으로 top, right, bottom, left 방향으로 주어진 픽셀만큼 이동했다.
+
 ![2](https://user-images.githubusercontent.com/75716255/132991050-924a14c5-7451-43bc-b173-4109a6f9a723.png)
 
 #### 주목할 부분
@@ -1054,6 +1056,7 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 
 #### 출력화면
 #absolute는 조상 태그 중 `postion: relative`인 것이 없기 때문에 body를 기준으로 가장 오른쪽으로 달라붙었다. 반면 #child는 조상 태그인 #parent가 `position: relative`이기 때문에 그것을 기준으로 가장 오른쪽으로 달라붙었다. 차이를 알겠는가? 참고로 `absolute`가 되면 div여도 더는 width: 100%가 아니다.
+
 ![3](https://user-images.githubusercontent.com/75716255/132991418-bab28e91-e9ab-4dcd-a6bc-59f10f1d148c.png)
 
 <br />
@@ -1116,6 +1119,7 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 
 #### 출력화면
 스크롤을 내려도 박스는 그 자리에 고정되어 있다. `fixed`도 `absolute`처럼 더는 div가 width: 100%가 아니다.
+
 ![4](https://user-images.githubusercontent.com/75716255/132991562-a4c88a26-ec34-4ed9-977e-94d79d425968.png)
 
 <br />
