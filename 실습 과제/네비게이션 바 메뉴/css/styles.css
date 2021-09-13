@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#navbar {
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.50);
+  height: 60px;
+}
+
+/*추가 부분*/
+#nav-vertical-align {
+  float: right;
+  line-height: 60px;
+}
+
+/*추가 부분*/
+#nav-vertical-align ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*추가 부분*/
+#nav-vertical-align li {
+  float: left;
+}
+
+/*추가 부분*/
+#nav-vertical-align li a {
+  display: block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+/*추가 부분*/
+#nav-vertical-align li a:hover {
+  background-color: #eeeeee;
+}
+
+#logo {
+  font-family: serif;
+  float: left;
+  height: 25px;
+  
+  /*추가 부분*/
+  line-height: 60px;
+}
+
+/*추가 부분*/
+#logo img {
+  vertical-align: middle;
+}
+
+.hero-header {
+  background-image: url("../images/hero_image.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 670px;
+  text-align: center;
+  
+  /*추가 부분*/
+  line-height: 670px;
+}
+
+.hero-header .info {
+  /*추가 부분*/
+  line-height: normal;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hero-header .info h1 {
+  font-size: 36px;
+  margin: 0;
+  margin-bottom: 13px;
+  color: white;
+  font-weight: 400;
+}
+
+.hero-header .info h2 {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 60px;
+  color: white;
+  font-weight: 400;
+}
+
+.hero-header .info a {
+  font-size: 14px;
+  background-color: white;
+  color: #464273;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
