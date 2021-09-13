@@ -472,7 +472,7 @@ span {
 <br />
 
 > #### 가로 가운데 정렬
-- `inline` 또는 `inline-block` 요소면 부모 태그에 `tect-align: center;`를 사용하면 된다.
+- `inline` 또는 `inline-block` 요소면 부모 태그에 `text-align: center;`를 사용하면 된다.
 
 ```html
 /* html */
