@@ -96,7 +96,7 @@
   - https://ko.learnlayout.com/toc.html (css, 번역.ver)
   - https://hianna.tistory.com/category/IT/HTML?page=3 (HTML)
   - https://hianna.tistory.com/category/IT/Javascript (JS)
-  - http://tcpschool.com/ (
+  - http://tcpschool.com/ (all)
 
 <br />
 
