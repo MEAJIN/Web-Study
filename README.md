@@ -1151,9 +1151,9 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 /* css */
 
 img {
-			float: left;
-			margin-right: 20px;
-		}
+  float: left;
+  margin-right: 20px;
+}
 ```
 
 #### `출력화면`
