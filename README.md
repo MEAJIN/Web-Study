@@ -56,6 +56,14 @@
   - [absolute](#absolute)
   - [fixed](#fixed)
 
+- float
+
+  - [float](#float)
+  - [clear](#clear)
+  - [overflow](#overflow)
+    - [overflow-x](#overflow-x)
+    - [overflow-y](#overflow-y)
+
 - background
 
   - [배경 이미지 반복](#background-repeat)
@@ -1123,6 +1131,34 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 스크롤을 내려도 박스는 그 자리에 고정되어 있다. `fixed`도 `absolute`처럼 더는 div가 width: 100%가 아니다.
 
 ![4](https://user-images.githubusercontent.com/75716255/132991562-a4c88a26-ec34-4ed9-977e-94d79d425968.png)
+
+<br />
+
+## `float`
+
+> ### float
+`float` 라는 단어는 원래 ‘뜨다’ 라는 의미이며, 원래 웹페이지에서 이미지를 어떻게 띄워서 텍스트와 함께 배치할 것인가에 대한 속성이다. 즉, HTML 요소가 주변의 다른 요소들과 자연스럽게 어울리도록 만들어 준다. 현재는 웹 페이지의 레이아웃(layout)을 작성할 때 자주 사용한다.
+
+```html
+/* html */
+
+<h1>float 속성을 이용한 위치 설정</h1>
+<p><img src="/examples/images/img_flower.png" alt="flower" width="245" height="185">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare sapien suscipit tincidunt ullamcorper. Cras ac sem sed mauris maximus rhoncus vel in metus. Nam pharetra arcu sit amet dolor interdum, eget scelerisque libero finibus. Phasellus quis vulputate ante. Fusce sit amet viverra justo. Donec id elementum mauris. Nam id porttitor nisl, et suscipit nunc. Vestibulum sit amet volutpat quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis placerat sem eu facilisis ultricies. </p>
+```
+
+```css
+/* css */
+
+img {
+			float: left;
+			margin-right: 20px;
+		}
+```
+
+#### `출력화면`
+![1](https://user-images.githubusercontent.com/75716255/133276016-70cb8dd8-61bc-4ac0-8b89-dc9b4b01b9f6.png)
+
 
 <br />
 
