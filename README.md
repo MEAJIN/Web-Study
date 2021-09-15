@@ -188,7 +188,6 @@ __③ For us, 유지보수성(Mainrainability)__
 
 ![33](https://user-images.githubusercontent.com/75716255/132693160-c0264553-8a42-4172-ad28-2ce8a8827efe.png)
 
-
 <br />
 
 - `<header>`
@@ -1157,8 +1156,12 @@ img {
 }
 ```
 
+<br />
+
 #### `출력화면`
 ![1](https://user-images.githubusercontent.com/75716255/133276016-70cb8dd8-61bc-4ac0-8b89-dc9b4b01b9f6.png)
+
+<br />
 
 > ### clear
 `clear` 속성은 `float` 속성이 적용된 이후 나타나는 요소들의 동작을 조절해 준다. 
@@ -1192,6 +1195,8 @@ img {
    float: right;
 }
 ```
+
+<br />
 
 #### `출력화면`
 ![image](https://user-images.githubusercontent.com/75716255/133433366-fa0443f0-45f1-44a8-b91c-c64690f0ce73.png)
@@ -1228,8 +1233,12 @@ img {
 }
 ```
 
+<br />
+
 #### `출력화면`
 ![image](https://user-images.githubusercontent.com/75716255/133433902-25de0260-e814-47b3-a77d-9d762d4e9892.png)
+
+<br />
 
 > ### overflow
 `float` 속성이 적용된 HTML 요소가 자신을 감싸고 있는 컨테이너 요소보다 크면, 해당 요소의 일부가 밖으로 흘러넘치게 된다. 이때 `overflow` 속성값을 `auto`로 설정하면, 컨테이너 요소의 크기가 자동으로 내부의 요소를 감쌀 수 있을 만큼 커지게 된다. `scroll` 을 사용하는 방법도 있다.
@@ -1268,14 +1277,21 @@ img {
 }
 ```
 
+<br />
+
 #### `출력화면`
 ![image](https://user-images.githubusercontent.com/75716255/133434806-cd1a7940-dbd7-4b06-8b8c-9418504b556d.png)
+
+<br />
 
 > ### overflow-x
 내용(content)의 크기가 해당 요소의 수평 방향 박스(box)를 넘어갈 때 어떻게 처리할지를 설정함.
 
+<br />
+
 > ### overflow-y
 내용(content)의 크기가 해당 요소의 수직 방향 박스(box)를 넘어갈 때 어떻게 처리할지를 설정함.
+
 <br />
 
 > ### float 한 눈에 보기
@@ -1340,6 +1356,8 @@ footer{
   border: 3px solid #00FA9A;
 }
 ```
+
+<br />
 
 #### `출력화면`
 ![image](https://user-images.githubusercontent.com/75716255/133435694-097582d2-e504-4324-81b0-984af6435ed9.png)
