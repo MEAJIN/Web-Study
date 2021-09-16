@@ -56,6 +56,15 @@
   - [absolute](#absolute)
   - [fixed](#fixed)
 
+- float
+
+  - [float](#float)
+  - [clear](#clear)
+  - [overflow](#overflow)
+    - [overflow-x](#overflow-x)
+    - [overflow-y](#overflow-y)
+  - [float 한 눈에 보기](#float-한-눈에-보기)
+
 - background
 
   - [배경 이미지 반복](#background-repeat)
@@ -178,7 +187,6 @@ __③ For us, 유지보수성(Mainrainability)__
 <br />
 
 ![33](https://user-images.githubusercontent.com/75716255/132693160-c0264553-8a42-4172-ad28-2ce8a8827efe.png)
-
 
 <br />
 
@@ -1123,6 +1131,238 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 스크롤을 내려도 박스는 그 자리에 고정되어 있다. `fixed`도 `absolute`처럼 더는 div가 width: 100%가 아니다.
 
 ![4](https://user-images.githubusercontent.com/75716255/132991562-a4c88a26-ec34-4ed9-977e-94d79d425968.png)
+
+<br />
+
+## `float`
+
+> ### float
+`float` 라는 단어는 원래 ‘뜨다’ 라는 의미이며, 원래 웹페이지에서 이미지를 어떻게 띄워서 텍스트와 함께 배치할 것인가에 대한 속성이다. 즉, HTML 요소가 주변의 다른 요소들과 자연스럽게 어울리도록 만들어 준다. 현재는 웹 페이지의 레이아웃(layout)을 작성할 때 자주 사용한다.
+
+```html
+/* html */
+
+<h1>float 속성을 이용한 위치 설정</h1>
+<p><img src="/examples/images/img_flower.png" alt="flower" width="245" height="185">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare sapien suscipit tincidunt ullamcorper. Cras ac sem sed mauris maximus rhoncus vel in metus. Nam pharetra arcu sit amet dolor interdum, eget scelerisque libero finibus. Phasellus quis vulputate ante. Fusce sit amet viverra justo. Donec id elementum mauris. Nam id porttitor nisl, et suscipit nunc. Vestibulum sit amet volutpat quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis placerat sem eu facilisis ultricies. </p>
+```
+
+```css
+/* css */
+
+img {
+  float: left;
+  margin-right: 20px;
+}
+```
+
+<br />
+
+#### `출력화면`
+![1](https://user-images.githubusercontent.com/75716255/133276016-70cb8dd8-61bc-4ac0-8b89-dc9b4b01b9f6.png)
+
+<br />
+
+> ### clear
+`clear` 속성은 `float` 속성이 적용된 이후 나타나는 요소들의 동작을 조절해 준다. 
+
+<br />
+
+아래 예제를 보자. 컨테이너 요소에 `float` 속성이 적용되면 그 이후에 등장하는 모든 요소들은 정확한 위치를 설정하기가 매우 힘들어진다.
+
+```html
+/* html */
+
+<h1>clear 속성을 이용한 위치 조정</h1>
+<div>
+  <div class="left">왼쪽 끝에 위치하고 싶은 요소</div>
+  <div class="right">오른쪽 끝에 위치하고 싶은 요소</div>
+</div>
+<p>이 글자를 아래쪽에 제대로 출력하고 싶어요!</p>
+```
+
+```css
+/* css */
+
+.left {
+   background-color: #FF8C00;
+   width: 150px;
+   height: 50px; 
+   float: left;
+}
+.right {
+   background-color: #9932CC;
+   width: 150px;
+   height: 50px; 
+   float: right;
+}
+```
+
+<br />
+
+#### `출력화면`
+![image](https://user-images.githubusercontent.com/75716255/133433366-fa0443f0-45f1-44a8-b91c-c64690f0ce73.png)
+
+<br />
+
+따라서 `float` 속성을 적용하고자 하는 요소가 모두 등장한 이후에는 `clear` 속성을 사용하여, 이후에 동작하는 요소들이 더는 `float` 속성에 영향을 받지 않도록 설정해주어야 한다.
+
+```html
+/* html */
+
+<h1>clear 속성을 이용한 위치 조정</h1>
+<div>
+  <div class="left">왼쪽 끝에 위치하고 싶은 요소</div>
+  <div class="right">오른쪽 끝에 위치하고 싶은 요소</div>
+</div>
+<p>이 글자를 아래쪽에 제대로 출력하고 싶어요!</p>
+```
+
+```css
+/* css */
+.left {
+   background-color: #FF8C00;
+   width: 150px;
+   height: 50px; 
+   float: left;
+}
+
+.right {
+   background-color: #9932CC;
+   width: 150px;
+   height: 50px; 
+   float: right;
+}
+```
+
+<br />
+
+#### `출력화면`
+![image](https://user-images.githubusercontent.com/75716255/133433902-25de0260-e814-47b3-a77d-9d762d4e9892.png)
+
+<br />
+
+> ### overflow
+`float` 속성이 적용된 HTML 요소가 자신을 감싸고 있는 컨테이너 요소보다 크면, 해당 요소의 일부가 밖으로 흘러넘치게 된다. 이때 `overflow` 속성값을 `auto`로 설정하면, 컨테이너 요소의 크기가 자동으로 내부의 요소를 감쌀 수 있을 만큼 커지게 된다. `scroll` 을 사용하는 방법도 있다.
+
+```html
+/* html */
+
+<h1>overflow 속성을 이용한 크기 조정</h1>
+<div>이미지와 함께 하고 싶은 내용
+  <img src="/examples/images/img_flower.png" alt="flower" width="245" height="185">
+</div>
+<p id="second"><br>overflow 속성값을 auto로 주면 자동으로 컨테이너 요소의 크기도 함께 늘어납니다!</p>
+<div class="good">이미지와 함께 하고 싶은 내용
+  <img src="/examples/images/img_flower.png" alt="flower" width="245" height="185">
+</div>
+```
+
+```css
+/* css */
+
+div {
+  border: 3px solid #73AD21;
+  padding: 5px;
+}
+
+img { 
+  float: left; 
+}
+
+#second {
+  clear: left;
+}
+
+.good {
+  overflow: auto;
+}
+```
+
+<br />
+
+#### `출력화면`
+![image](https://user-images.githubusercontent.com/75716255/133434806-cd1a7940-dbd7-4b06-8b8c-9418504b556d.png)
+
+<br />
+
+> ### overflow-x
+내용(content)의 크기가 해당 요소의 수평 방향 박스(box)를 넘어갈 때 어떻게 처리할지를 설정함.
+
+<br />
+
+> ### overflow-y
+내용(content)의 크기가 해당 요소의 수직 방향 박스(box)를 넘어갈 때 어떻게 처리할지를 설정함.
+
+<br />
+
+> ### float 한 눈에 보기
+
+```html
+/* html */
+
+<h1>float 속성을 이용한 레이아웃</h1>
+<div class="page">
+		
+<header>
+  <h2>header 영역</h2>
+</header>
+	
+<nav>
+  <h2>nav 영역</h2>
+  <p>여기에는 보통 메뉴가 들어갑니다.</p>
+</nav>
+	
+<section>
+  <h2>section 영역</h2>
+  <p>여기에는 페이지에 해당하는 내용이 들어갑니다.<br>
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare sapien suscipit tincidunt ullamcorper. Cras ac sem sed mauris maximus rhoncus vel in metus. Nam pharetra arcu sit amet dolor interdum, eget scelerisque libero finibus. Phasellus quis vulputate ante. Fusce sit amet viverra justo. Donec id elementum mauris. Nam id porttitor nisl, et suscipit nunc. Vestibulum sit amet volutpat quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis placerat sem eu facilisis ultricies.
+  </p>
+</section>
+	
+<footer>
+  <h2>footer 영역</h2>
+</footer>
+	
+</div>
+```
+
+```css
+/* css */
+
+div.page {
+  border: 3px solid #CD5C5C;
+  overflow: auto;
+}
+
+h2 { 
+  text-align: center;
+}
+
+header{ 
+  border: 3px solid #FFD700;
+}
+
+nav {
+  border: 3px solid #FF1493;
+  width: 150px;
+  float: left;
+}
+
+section {
+  border: 3px solid #00BFFF;
+  margin-left: 156px;
+}
+
+footer{ 
+  border: 3px solid #00FA9A;
+}
+```
+
+<br />
+
+#### `출력화면`
+![image](https://user-images.githubusercontent.com/75716255/133435694-097582d2-e504-4324-81b0-984af6435ed9.png)
 
 <br />
 
