@@ -345,7 +345,7 @@ __결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다�
 
 <br />
 
-## `display property`
+## display property
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
 
 <br />
