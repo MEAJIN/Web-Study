@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+}
+
+/* 최대 가로 길이는 767px 까지*/
+@media ( max-width: 767px) {
+  #div1 {
+    background-color: #FF0000;
+    height: 60px;
+  }
+  
+  #div2 {
+    background-color: #ffa500;
+    height: 60px;
+  }
+  
+  #div3 {
+    background-color: #ffff00;
+    height: 320px;
+  }
+  
+  #div4 {
+    background-color: #008000;
+    height: 385px;
+  }
+  
+  #div5 {
+    background-color: #0000ff;
+    height: 200px;
+  }
+  
+  #div6 {
+    background-color: #4b0082;
+    height: 200px;
+  }
+}
+
+/* 가로 길이 768px 부터 991px 까지 */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+  #div1 {
+    background-color: #FF0000;
+    height: 60px;
+  }
+  
+  #div2 {
+    background-color: #ffa500;
+    height: 562px;
+    width: 100%;
+  }
+  
+  #div3 {
+    background-color: #ffff00;
+    height: 282px;
+    width: 100%;
+  }
+  
+  #div4 {
+    background-color: #008000;
+    height: 360px;
+    width: 50%;
+    float:left;
+  }
+  
+  #div5 {
+    background-color: #0000ff;
+    height: 180px;
+    width: 50%;
+    float: left;
+  }
+  
+  #div6 {
+    background-color: #4b0082;
+    height: 180px;
+    width: 50%;
+    float: left;
+  }
+}
+
+/* 가로길이 992px 이상 부터  */
+@media (min-width: 992px) {
+  
+    #div1 {
+    background-color: #FF0000;
+    height: 60px;
+  }
+  
+  #div2 {
+    background-color: #ffa500;
+    height: 700px;
+    width: 50%;
+    float: left;
+  }
+  
+  #div3 {
+    background-color: #ffff00;
+    height: 350px;
+    width: 50%;
+    float: left;
+  }
+  
+  #div4 {
+    background-color: #008000;
+    height: 350px;
+    width: 25%;
+    float:left;
+  }
+  
+  #div5 {
+    background-color: #0000ff;
+    height: 175px;
+    width: 25%;
+    float: left;
+  }
+  
+  #div6 {
+    background-color: #4b0082;
+    height: 175px;
+    width: 25%;
+    float: left;
+  }
+}
