@@ -3,13 +3,15 @@
 
 ### 학습 기간
 - 21.08.25 ~ 27 HTML/CSS 기초 (완)
-- 21.08.28 ~ HTML/CSS 핵심 (학습중)
+- 21.08.28 ~ 09.16 HTML/CSS 핵심 개념 (완)
+- 21.09.17 ~ HTML/CSS 반응형 웹 퍼블리싱 (공부중)
 
-### 목차!
+### 목차
 
 ## Web 관련 사이트
 
 - 알아두면 유용한 WEB 기술 사이트
+
   - [영문](#영문)
   - [한글](#한글)
 
@@ -88,11 +90,15 @@
   - [em](#em)
   - [%(퍼센트)](#퍼센트)
 
+- 반응형
+
+  - [@media](#@midia) 
+
 <br />
 
 # 🔗 Web 관련 사이트 🔗
 
-## `알아두면 유용한 WEB 기술 사이트`
+## 알아두면 유용한 WEB 기술 사이트
 
 > ### 영문
   - https://developer.mozilla.org/en-US/docs/Web (all)
@@ -111,7 +117,7 @@
 
 # 📄 HTML 📄
 
-## `Tag`
+## Tag
 
 > ### Semantic Tags
 시맨틱(semantic) 태그란? __의미를 전달__ 할 수 있는 태그다. 예를 들어, 시맨틱 태그가 아닌 `<div>`, `<span>` 태그의 경우 그 이름만 들어서는 어떤 내용을 내포하고 있는지 알 수 없다. 그러나 시맨틱 태그인 `<header>`, `<nav>`, `<img>` 태그의 경우 이름만 들어도 `<header>=제목`, `<nav>=내비게이션`, `<img>=그림` 에 대한 내용을 내포 하고 있음을 짐작 할 수 있다. 이와 같이 사람들에게 의미를 전달 할 수 있는 태그를 `시맨틱(semantic) 태그` 라고 한다.
@@ -225,9 +231,9 @@ __③ For us, 유지보수성(Mainrainability)__
 
 <br />
 
-# 📑 CSS 📑
+# ✨ CSS ✨
 
-## `폰트`
+## 폰트
 
 > ### 기본 폰트
 
@@ -339,7 +345,7 @@ __결론 : 로딩 문제나 edge 브라우저 버그 문제 등을 고려한다�
 
 <br />
 
-## `display property`
+## display property
 CSS에서 `display` 속성은 웹 페이지 상에서 엘리먼트들이 어떻게 보여지고 다른 엘리먼트와 어떻게 상호 배치되는지를 결정한다.
 
 <br />
@@ -930,7 +936,7 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 
 <br />
 
-## `positioning`
+## positioning
 `positioning` 이란 이름처럼 태그들의 위치를 결정하는 CSS이다.
 
 > ### static
@@ -1366,7 +1372,7 @@ footer{
 
 <br />
 
-## `background`
+## background
 
 > ### background-repeat
 background-repeat는 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성이다.
@@ -1446,7 +1452,7 @@ background-position: 100px 200px;
 
 <br />
 
-## `Selector(선택자)`
+## Selector(선택자)
 CSS에서 스타일링 해줄 요소는 '선택자'로 결정한다.
 
 <br />
@@ -1626,7 +1632,7 @@ h1:hover {
 
 <br />
 
-## `단위`
+## 단위
 CSS에는 px, rem, em, % 등 여러 단위가 있다. 폰트 크기 뿐만 아니라 padding, margin, width 등 다양한 속성들에 이 단위들을 사용할 수 있다.
 
 <br />
