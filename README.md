@@ -1821,5 +1821,43 @@ html {
 
 ## 반응형
 
-> ### @media
-미디어 쿼리는 화면(screen), 티비(tv), 프린터(print)와 같은 미디어 타입(media type)과 적어도 하나 이상의 표현식(expression)으로 구성된다. 표현식은 `width`, `height`, `color`와 같은 미디어 특성(media feature)들을 이용하여 그 특성들의 상태에 따라 다른 스타일 시트를 적용할 수 있다. 미디어 쿼리는 CSS3에 포함되어 있으며, 컨텐츠의 변경없이 주로 화면의 크기에 따라 스타일 시트를 달리하여 적절한 모양을 보여줄 수 있다.
+> ### @media query
+`@media query`는 화면(screen), 티비(tv), 프린터(print)와 같은 미디어 타입(media type)과 적어도 하나 이상의 표현식(expression)으로 구성된다. 표현식은 `width`, `height`, `color`와 같은 미디어 특성(media feature)들을 이용하여 그 특성들의 상태에 따라 다른 스타일 시트를 적용할 수 있다. 미디어 쿼리는 CSS3에 포함되어 있으며, 컨텐츠의 변경없이 주로 화면의 크기에 따라 스타일 시트를 달리하여 적절한 모양을 보여줄 수 있다. `@media query`는 `<link>` 요소로 사용하는 방법과, 스타일 시트 내에서 `@media`로 사용하는 방법이 있다.
+
+<br />
+
+우선 `<link>` 사용의 경우, 특성 조건이 맞을 때 css 파일을 불러오게 하는 방식이다. 아래 코드의 의미는 미디어 타입이 스크린이고, 화면의 최대 너비를 768px로 지정하라는 의미이다. 즉, 화면의 너비가 768px 이하 일때가 적용 된다는 뜻 이다.
+```html
+/* html */
+/* <link> 요소 사용 */
+
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="mystyle.css" />
+```
+
+<br />
+
+다음으로 스타일 시트 내에서 `@midia`를 사용하는 방법이다. 결과는 위의 코드와 동일하며, 조건이 맞을 시 {....} 안의 스타일이 적용되는 방식이다.
+```css
+/* css */
+/* @media 사용 */
+
+@media screen and (max-width: 768px) { 
+    body { 
+       background-color: lightgreen; 
+       } 
+}
+```
+
+<br />
+
+- `@media (max-width: 768px) {...}` 처럼 미디어 타입을 생략하면 all 이 기본값이 되어 모든 미디어 타입에 적용 된다. 미디어 타입에 사용되는 값은 여러종류가 있지만 웹 사이트를 만드는데는 screen을 사용하거나 all 을 사용하는것이 일반적이다.
+	- 미디어 타입
+		- all : 모든 장치
+		- print : 프린터 미리보기 모드 일 때, 화면에서 볼 수 있는 [페이징](https://developer.mozilla.org/en-US/docs/Web/CSS/Paged_Media) 된 자료 및 문서에 사용
+		- screen : 컴퓨터 화면
+		- speach : 음성 합성기
+- 미디어 특성에서 `max-width` 와 `min-width` 가 가장 일반적으로 쓰인다.. 그외 `height`, `color`, `orientation(화면의  가로 세로 방향)` 등이 있다.
+- 반응형 웹을 만들때 스타일을 작성하는 기준으로 모바일을 우선할것인지, 데스크탑을 우선할 것인지가 먼저 고려되어지는 편이다.
+- `and`, `or`, `not` 과 같은 연산자 사용 가능
+
+<br />
