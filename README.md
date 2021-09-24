@@ -4,7 +4,7 @@
 ### 학습 기간
 - 21.08.25 ~ 27 HTML/CSS 기초 (완)
 - 21.08.28 ~ 09.16 HTML/CSS 핵심 개념 (완)
-- 21.09.17 ~ HTML/CSS 반응형 웹 퍼블리싱 (공부중)
+- 21.09.17 ~ 09.22 HTML/CSS 반응형 웹 퍼블리싱 (완)
 
 ### 목차
 
@@ -93,6 +93,13 @@
 - 반응형
 
   - [@media](#반응형)
+
+## Bootstrap
+
+- 그리드
+
+  - [그리드](#그리드)
+  - [반응형 그리드](#반응형-그리드)
 
 <br />
 
@@ -1867,4 +1874,205 @@ html {
 
 <br />
 
+# 🟪 Bootstrap 🟪
+
+## 그리드
+
+> ### 그리드
+
 <br />
+
+> #### 기본 구성원
+부트스트랩(bootstrap) 그리드 시스템에는 `컨테이너 (container)`, `행 (row)`, `열 (column)` 이렇게 총 세 가지 구성원이 있다.
+
+> #### 기본 규칙
+- 행(`div class="row">`)은 꼭 컨테이너(`div class="container">`) 안에 넣어주자.
+- 열(`div class="col">`)은 꼭 행(`div class="row">`)안에 넣어주자. 오직 열만 행의 직속 자식이 될 수 있다.
+- 콘텐츠(그리드에 넣고 싶은 내용)는 꼭 열(`div class="col">`)안에 넣어주자.
+
+> #### 기본 사용법
+부트스트랩 그리드에는 한 줄에 기본적으로 12칸의 열(column)이 있다고 생각하시면 편하다.
+	
+예를 들어서 한 줄을 정확히 3등분하고 싶으면 네 칸을 차지하는 열 세 개를 쓰면 되는 것 이다. 아래 예제에서 네 칸을 사용하는 열은 `<div class="col-4">`이다.
+
+```html
+/* html */
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 정확히 3등분 -->
+      <div class="col-4 first">first</div>
+      <div class="col-4 second">second</div>
+      <div class="col-4 third">third</div>
+    </div>
+
+    <div class="row">
+      <!-- 정확히 2등분 -->
+      <div class="col-6 first">first</div>
+      <div class="col-6 second">second</div>
+    </div>
+
+    <div class="row">
+      <!-- 1대 5 비율 -->
+      <div class="col-2 first">first</div>
+      <div class="col-10 second">second</div>
+    </div>
+
+    <div class="row">
+      <!-- 1대 2대 1 비율 -->
+      <div class="col-3 first">first</div>
+      <div class="col-6 second">second</div>
+      <div class="col-3 third">third</div>
+    </div>
+  </div>
+</body>
+```
+```css
+/* css */
+
+<style>
+  .container {
+  text-align: center;
+}
+
+.first {
+  background-color: yellow;
+}
+
+.second {
+  background-color: lime;
+}
+
+.third {
+  background-color: orange;
+}
+</style>
+```
+
+<br />
+
+#### `출력화면`
+![image](https://user-images.githubusercontent.com/75716255/134696874-219a6e33-875f-42dd-8310-13f9c6ccd94a.png)
+
+> #### 만약 한 행이 12칸을 넘어간다면?
+새로운 줄로 넘어가게 된다.
+
+```html
+/* html */
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 first">first</div>
+      <div class="col-6 second">second</div>
+      <div class="col-4 third">third</div>
+      <div class="col-7 fourth">fourth</div>
+    </div>
+  </div>
+</body>
+```
+
+```css
+/* css */
+
+.container {
+  text-align: center;
+}
+
+.first {
+  background-color: yellow;
+}
+
+.second {
+  background-color: lime;
+}
+
+.third {
+  background-color: orange;
+}
+
+.fourth {
+  background-color: blue;
+}
+```
+
+<br />
+
+#### `출력화면`
+![image](https://user-images.githubusercontent.com/75716255/134697170-075b0477-cf44-475c-bf38-ee870ce421be.png)
+
+> #### 왜 12칸 일까?
+12는 상당히 많은 숫자들(1, 2, 3, 4, 6, 12)로 나누어지기 때문에 굉장히 유연하다. 예를 들어서 8칸으로 나누고 싶더라도 12라는 숫자의 유연함 덕분에 쉽게 할 수 있다. col-6를 두 개 쓰면 2등분 할 수 있고, 그 안에서 또 col-3로 4등분을 하면 8칸이 생긴다. 이런식으로 열을 또 여러 열로 나누는 것을 `중첩(nesting)`한다고 부른다. 중첩을 하기 위해서는 우선 열(`<div class="col-6">`) 안에 새로운 행(`<div class="row">`)을 써야 한다. 아래 예제를 보자.
+
+```html
+/* html */
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="row"> <!-- 중첩을 위한 새로운 행 -->
+          <div class="col-3 first">1</div>
+          <div class="col-3 second">2</div>
+          <div class="col-3 third">3</div>
+          <div class="col-3 fourth">4</div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="row"> <!-- 중첩을 위한 새로운 행 -->
+          <div class="col-3 first">5</div>
+          <div class="col-3 second">6</div>
+          <div class="col-3 third">7</div>
+          <div class="col-3 fourth">8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+```
+
+```css
+/* css */
+
+.container {
+  text-align: center;
+}
+
+.first {
+  background-color: yellow;
+}
+
+.second {
+  background-color: lime;
+}
+
+.third {
+  background-color: orange;
+}
+
+.fourth {
+  background-color: blue;
+}
+```
+
+<br />
+
+#### `출력화면`
+![image](https://user-images.githubusercontent.com/75716255/134697842-ff9fcdce-512a-4387-bd48-bd0e6eae37ea.png)
+
+> ### 참고 사이트
+- [bootstrap-css-grid](http://bootstrapk.com/css/#grid)
