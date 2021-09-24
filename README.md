@@ -2170,9 +2170,9 @@ html {
 - `.container-fluid` : 그리드는 항상 width: 100%; 이다.
 - `.container-{breakpoint}` : 지정 된 중단점 까지의 width: 100%; 이다.
 
-<
+<br />
 
-- #### `.container`, 기본 컨테이너
+▫ #### `.container`, 기본 컨테이너
 기본 `.container` 클래스는 반응형 고정 너비 컨테이너로, 각 중단점에서 최대폭이 변한다. 
 
 만약 구간별로 그리드에 고정된 가로값을 설정해주고 싶으면 `.container` 클래스를 사용하면 된다. 구간별로 그리드가 고정되어 있으면 레이아웃 예측이 더욱 쉬워진다.
@@ -2229,7 +2229,7 @@ html {
 
 <br />
 
-- #### `.container-fluid`, 유체 컨테이너
+▫ #### `.container-fluid`, 유체 컨테이너
 `.container-fluid`는 뷰포트의 전체 너비에 걸쳐있는 전체 너비 컨테이너에 사용한다. 이는 엽개 없이 100% 꽉 찬 레이아웃을 만들 때 사용한다.
 
 `.container-fluid` 클래스를 사용하면 아래의 CSS 코드가 적용된다.
@@ -2248,7 +2248,7 @@ html {
 
 <br />
 
-- #### `.container-{breakpoint}`, 반응형 컨테이너
+▫ #### `.container-{breakpoint}`, 반응형 컨테이너
 `.container-{breakpoint}`인 반응형 컨테이너를 사용하면 지정된 중단점에 도달할 때까지 100% 너비의 클래스를 지정할 수 있으며, 그 후에는 각 상위 중단점에 최대 너비를 적용할 수 있다.
 
 ```html
