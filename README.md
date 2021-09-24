@@ -2172,7 +2172,7 @@ html {
 
 <br />
 
-__◽ `.container`, 기본 컨테이너__
+__🔸 `.container`, 기본 컨테이너__
 
 기본 `.container` 클래스는 반응형 고정 너비 컨테이너로, 각 중단점에서 최대폭이 변한다. 
 
@@ -2230,7 +2230,7 @@ __◽ `.container`, 기본 컨테이너__
 
 <br />
 
-__◽ `.container-fluid`, 유체 컨테이너__
+__🔸 `.container-fluid`, 유체 컨테이너__
 
 `.container-fluid`는 뷰포트의 전체 너비에 걸쳐있는 전체 너비 컨테이너에 사용한다. 이는 엽개 없이 100% 꽉 찬 레이아웃을 만들 때 사용한다.
 
@@ -2250,7 +2250,7 @@ __◽ `.container-fluid`, 유체 컨테이너__
 
 <br />
 
-__◽ `.container-{breakpoint}`, 반응형 컨테이너__
+__🔸 `.container-{breakpoint}`, 반응형 컨테이너__
 
 `.container-{breakpoint}`인 반응형 컨테이너를 사용하면 지정된 중단점에 도달할 때까지 100% 너비의 클래스를 지정할 수 있으며, 그 후에는 각 상위 중단점에 최대 너비를 적용할 수 있다.
 
