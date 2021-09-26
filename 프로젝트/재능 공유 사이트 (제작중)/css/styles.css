@@ -1,0 +1,9 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn {
+  position: relative;
+  right: 70px;
+  padding: .3rem .75rem;
+}
