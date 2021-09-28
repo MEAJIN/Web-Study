@@ -24,6 +24,7 @@ body {
 }
 
 .carousel-item.item3 {
+  background-image: url('../images/cooking.jpg');
   background-position: center center;
 }
 
