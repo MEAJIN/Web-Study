@@ -1,0 +1,111 @@
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize; /* 단어의 첫 번째 글자는 대문자 */
+}
+
+*::selection {
+  background: #424242;
+  color: white;
+}
+
+body {
+
+}
+
+/* 네비게이션 */
+.logo {
+  padding: 0 12px;
+  font-family: 'Ephesis', cursive;
+  font-size: 35px;
+  font-weight: bold;
+  color: black;
+}
+
+/* 캐러셀 */
+.carousel-item {
+  height: 900px;
+  background-size: cover;
+  text-align: center;
+
+}
+
+.carousel-item.item1 {
+  background-image: url('img/carousel1.jpg');
+  background-position: left center;
+}
+
+.carousel-item.item2 {
+  background-image: url('img/carousel2.jpg');
+  background-position: center bottom;
+}
+
+.carousel-item.item3 {
+  background-image: url('img/carousel3.jpg');
+  background-position: center center;
+}
+
+.carousel-item.item4 {
+  background-image: url('img/carousel4.jpg');
+  background-position: top center;
+}
+
+.carousel-item.item5 {
+  background-image: url('img/carousel5.jpg');
+  background-position: top center;
+}
+
+.carousel-item.item6 {
+  background-image: url('img/carousel6.jpg');
+  background-position: center center;
+}
+
+.carousel-item.item7 {
+  background-image: url('img/carousel7.jpg');
+  background-position: left center;
+}
+
+.carousel-item.item8 {
+  background-image: url('img/carousel8.jpg');
+  background-position: bottom center;
+}
+
+.carousel-item.item9 {
+  background-image: url('img/carousel9.jpg');
+  background-position: bottom center;
+}
+
+.carousel-helper {
+  display: inline-block;
+  vertical-align: middle;
+  /* height: 100%; 로 하면 수직 가운데 정렬 */
+  /* position: relative; 로 상하좌우 값 줘도 됨 */
+  height: 170%;
+}
+
+.carousel-intro {
+  display: inline-block;
+  text-align: left;
+}
+
+.carousel-intro h2 {
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px gray;
+}
+
+.carousel-intro p {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+
+  clear: left;
+  margin: 0;
+  text-shadow: 1px 1px 2px gray;
+}
