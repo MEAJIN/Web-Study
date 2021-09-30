@@ -1,0 +1,154 @@
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none!important;
+  text-transform: capitalize; /* 단어의 첫 번째 글자는 대문자 */
+}
+
+*::selection {
+  background: #454545;
+  color: #ffffff;
+}
+
+html {
+  font-size: 18px;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* tag : a 의 움직임이 부드러워 짐 */
+  scroll-snap-type: both mandatory;
+  scroll-snap-align: center;
+  scroll-padding-top: 6rem; /* font-size *2 */
+}
+
+body {
+  background: #f7f7f7;
+}
+
+/* 네비게이션 */
+
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* flex 일 때, 수직 정렬 */
+  justify-content: space-between; /* flex 일 떄, item 들의 사이에 균일한 간격을 만들어줌 */
+  background: #ffffff;
+  padding: 5px 9%;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo {
+  font-family: 'Ephesis', cursive;
+  font-size: 35px;
+  font-weight: bold;
+  color: #000000;
+}
+
+header .logo:hover {
+  color: #000000;
+}
+
+header .navbar a {
+  font-size: 18px;
+  margin-left: 15px;
+  color: #808080;
+}
+
+header .navbar a:hover {
+  color: #000000;
+}
+
+header .navbar-sign a{
+  font-size: 18px;
+  margin-left: 15px;
+  color: #808080;
+}
+
+header .navbar-sign a:hover {
+  color: #000000;
+}
+
+/* 캐러셀 */
+.carousel-item {
+  height: 900px;
+  background-size: cover;
+  text-align: center;
+}
+
+.carousel-item.item1 {
+  background-image: url('../img/carousel1.jpg');
+  background-position: left center;
+}
+
+.carousel-item.item2 {
+  background-image: url('../img/carousel2.jpg');
+  background-position: center bottom;
+}
+
+.carousel-item.item3 {
+  background-image: url('../img/carousel3.jpg');
+  background-position: bottom center;
+}
+
+.carousel-item.item4 {
+  background-image: url('../img/carousel4.jpg');
+  background-position: top center;
+}
+
+.carousel-item.item5 {
+  background-image: url('../img/carousel5.jpg');
+  background-position: top center;
+}
+
+.carousel-item.item6 {
+  background-image: url('../img/carousel6.jpg');
+  background-position: center center;
+}
+
+.carousel-item.item7 {
+  background-image: url('../img/carousel7.jpg');
+  background-position: left center;
+}
+
+.carousel-item.item8 {
+  background-image: url('../img/carousel8.jpg');
+  background-position: bottom center;
+}
+
+.carousel-item.item9 {
+  background-image: url('../img/carousel9.jpg');
+  background-position: center center;
+}
+
+.carousel-helper {
+  display: inline-block;
+  vertical-align: middle;
+  /* height: 100%; 로 하면 수직 가운데 정렬 */
+  /* position: relative; 로 상하좌우 값 줘도 됨 */
+  height: 170%;
+  width: 0;
+}
+
+.carousel-intro {
+  display: inline-block;
+  text-align: left;
+}
+
+.carousel-intro h2 {
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px gray;
+}
+
+.carousel-intro p {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  clear: left;
+  margin: 0;
+  text-shadow: 1px 1px 2px gray;
+}
