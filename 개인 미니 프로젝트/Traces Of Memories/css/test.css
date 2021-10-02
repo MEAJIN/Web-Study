@@ -67,8 +67,7 @@ header .navbar2 .nav-icon {
 }
 
 header .navbar2 img:hover {
-  width: 40px;
-  height: 40px;
+  transform: scale(1.4);
 }
 
 header .navbar2 #search,
@@ -79,7 +78,7 @@ header .navbar2 #sign-in {
 /* 캐러셀 */
 
 .carousel-inner {
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 .carousel-item {
@@ -166,16 +165,117 @@ header .navbar2 #sign-in {
 
 /* our */
 
-.heading,
-.heading span {
-  font-family: 'Bebas Neue', cursive;
+.heading {
+  font-family: 'Ephesis', cursive;
   font-size: 35px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
-  padding-bottom: 15px;
+  margin: 0;
+  padding-bottom: 50px;
   color: #000000;
 }
 
-.heading span {
-  color: #000000;
+.container {
+  min-height: 100vh;
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  /* background-color: #dcdcdc; */
+}
+
+.container .card-m {
+  margin: 10px 10px;
+}
+
+.container .card-bg,
+.card-bg2, .card-bg3, .card-bg4,
+.card-bg5, .card-bg6, .card-bg7,
+.card-bg8, .card-bg9 {
+  height: 400px;
+  width: 300px;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
+}
+
+.container .card-bg {
+  background-image: url('../img/profile-bg.jpg');
+}
+
+.container .card-bg2 {
+  background-image: url('../img/profile-bg2.jpg');%;
+}
+
+.container .card-bg3 {
+  background-image: url('../img/profile-bg3.png');
+}
+
+.container .card-bg4 {
+  background-image: url('../img/profile-bg4.jpg');
+}
+
+.container .card-bg5 {
+  background-image: url('../img/profile-bg5.png');
+}
+
+.container .card-bg6 {
+  background-image: url('../img/profile-bg6.jpg');
+}
+
+.container .card-bg7 {
+  background-image: url('../img/profile-bg7.jpg');
+}
+
+.container .card-bg8 {
+  background-image: url('../img/profile-bg8.jpg');
+}
+
+.container .card-bg9 {
+  background-image: url('../img/profile-bg9.jpg');
+}
+
+.container .card {
+  height: 400px;
+  width: 300px;
+  text-align: center;
+  padding: 15px;
+  background: rgba(0,0,0,.7); /* 카드 투명도 색상 */
+  background-filter: blur(10px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.5);
+  border-radius: 5%;
+}
+
+.container .card .profile-img {
+  margin: 0 auto;
+  height: 120px;
+  width: 120px;
+  margin-top: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 10px rgba(255,255,255,.2),
+              0 15px 100px rgba(0,0,0,.1);
+}
+
+.container .card h3 {
+  margin-top: 5px;
+  font-size: 30px;
+  color: white;
+}
+
+.container .card span,p {
+  font-size: 15px;
+  color: #fffafa;
+  margin: 0;
+}
+
+.container .card p {
+  margin-top: 20px;
+}
+
+.container .sns-icon {
+  margin-top: 30px;
 }
