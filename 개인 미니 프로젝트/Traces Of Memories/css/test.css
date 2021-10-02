@@ -35,7 +35,7 @@ header {
   align-items: center; /* flex 일 때, 수직 정렬 */
   justify-content: space-between; /* flex 일 떄, item 들의 사이에 균일한 간격을 만들어줌 */
   background: #ffffff;
-  padding: 5px 9%;
+  padding: 5px 7%;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
@@ -60,17 +60,28 @@ header .navbar a:hover {
   color: #000000;
 }
 
-header .navbar-sign a{
-  font-size: 18px;
-  margin-left: 15px;
-  color: #808080;
+header .navbar2 .nav-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
 }
 
-header .navbar-sign a:hover {
-  color: #000000;
+header .navbar2 img:hover {
+  width: 40px;
+  height: 40px;
+}
+
+header .navbar2 #search,
+header .navbar2 #sign-in {
+  margin-right: 10px;
 }
 
 /* 캐러셀 */
+
+.carousel-inner {
+  margin-bottom: 60px;
+}
+
 .carousel-item {
   height: 900px;
   background-size: cover;
@@ -109,7 +120,7 @@ header .navbar-sign a:hover {
 
 .carousel-item.item7 {
   background-image: url('../img/carousel7.jpg');
-  background-position: left center;
+  background-position: center center;
 }
 
 .carousel-item.item8 {
@@ -151,4 +162,20 @@ header .navbar-sign a:hover {
   clear: left;
   margin: 0;
   text-shadow: 1px 1px 2px gray;
+}
+
+/* our */
+
+.heading,
+.heading span {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 15px;
+  color: #000000;
+}
+
+.heading span {
+  color: #000000;
 }
