@@ -16,7 +16,7 @@ html {
   font-size: 18px;
   overflow-x: hidden;
   scroll-behavior: smooth; /* tag : a 의 움직임이 부드러워 짐 */
-  scroll-snap-type: both mandatory;
+  scroll-snap-type: both;
   scroll-snap-align: center;
   scroll-padding-top: 6rem; /* font-size *2 */
 }
@@ -52,7 +52,7 @@ header .logo:hover {
 
 header .navbar a {
   font-size: 18px;
-  margin-left: 15px;
+  margin-left: 30px;
   color: #808080;
 }
 
@@ -82,7 +82,8 @@ header .navbar2 #sign-in {
 }
 
 .carousel-item {
-  height: 900px;
+  height: 100vh;
+  width: 100%;
   background-size: cover;
   text-align: center;
 }
@@ -138,7 +139,6 @@ header .navbar2 #sign-in {
   /* height: 100%; 로 하면 수직 가운데 정렬 */
   /* position: relative; 로 상하좌우 값 줘도 됨 */
   height: 170%;
-  width: 0;
 }
 
 .carousel-intro {
@@ -171,17 +171,19 @@ header .navbar2 #sign-in {
   font-weight: 600;
   text-align: center;
   margin: 0;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   color: #000000;
 }
 
 .container {
-  min-height: 100vh;
-  width: 50vw;
+  /* height: 80vh; */
+  width: 100%;
+  margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
+  align-content: center; /* 아이템을 가운데로 정렬 */
   /* background-color: #dcdcdc; */
 }
 
@@ -202,54 +204,100 @@ header .navbar2 #sign-in {
   border-radius: 5%;
 }
 
-.container .card-bg {
-  background-image: url('../img/profile-bg.jpg');
-}
-
-.container .card-bg2 {
-  background-image: url('../img/profile-bg2.jpg');%;
-}
-
-.container .card-bg3 {
-  background-image: url('../img/profile-bg3.png');
-}
-
-.container .card-bg4 {
-  background-image: url('../img/profile-bg4.jpg');
-}
-
-.container .card-bg5 {
-  background-image: url('../img/profile-bg5.png');
-}
-
-.container .card-bg6 {
-  background-image: url('../img/profile-bg6.jpg');
-}
-
-.container .card-bg7 {
-  background-image: url('../img/profile-bg7.jpg');
-}
-
-.container .card-bg8 {
-  background-image: url('../img/profile-bg8.jpg');
-}
-
-.container .card-bg9 {
-  background-image: url('../img/profile-bg9.jpg');
-}
-
 .container .card {
   height: 400px;
   width: 300px;
   text-align: center;
-  padding: 15px;
+  border-radius: 5%;
+}
+
+.container .card .profile-img {
+
+  margin: 0 auto;
+  height: 400px;
+  width: 300px;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.container .card h3 {
+  overflow: hidden;
+  margin-top: 5px;
+  font-size: 30px;
+  color: white;
+}
+
+.container .card span,p {
+  overflow: hidden;
+  font-size: 15px;
+  color: #fffafa;
+  margin: 0;
+}
+
+.container .card p {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.container .sns-icon {
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.container .sns-icon .blog{
+  overflow: hidden;
+  padding : 0 10px;
+}
+
+/*  our-hover */
+
+.container .card-bg:hover {
+  background-image: url('../img/profile-bg.jpg');
+}
+
+.container .card-bg2:hover {
+  background-image: url('../img/profile-bg2.jpg');
+}
+
+.container .card-bg3:hover {
+  background-image: url('../img/profile-bg3.png');
+}
+
+.container .card-bg4:hover {
+  background-image: url('../img/profile-bg4.jpg');
+}
+
+.container .card-bg5:hover {
+  background-image: url('../img/profile-bg5.png');
+}
+
+.container .card-bg6:hover {
+  background-image: url('../img/profile-bg6.jpg');
+}
+
+.container .card-bg7:hover {
+  background-image: url('../img/profile-bg7.jpg');
+}
+
+.container .card-bg8:hover {
+  background-image: url('../img/profile-bg8.jpg');
+}
+
+.container .card-bg9:hover {
+  background-image: url('../img/profile-bg9.jpg');
+}
+
+.container .card:hover {
+  height: 400px;
+  width: 300px;
+  text-align: center;
   background: rgba(0,0,0,.7); /* 카드 투명도 색상 */
   background-filter: blur(10px);
   box-shadow: 0 5px 10px rgba(0,0,0,.5);
   border-radius: 5%;
 }
 
-.container .card .profile-img {
+.container .card:hover .profile-img {
   margin: 0 auto;
   height: 120px;
   width: 120px;
@@ -260,22 +308,82 @@ header .navbar2 #sign-in {
               0 15px 100px rgba(0,0,0,.1);
 }
 
-.container .card h3 {
+.container .card:hover p {
+  font-size: 15px;
+  color: #fffafa;
+  margin-top: 30px;
+}
+
+.container .card:hover h3 {
   margin-top: 5px;
+  padding-bottom: 3px;
   font-size: 30px;
   color: white;
 }
 
-.container .card span,p {
+.container .card:hover span {
   font-size: 15px;
   color: #fffafa;
   margin: 0;
 }
 
-.container .card p {
-  margin-top: 20px;
+.container .sns-icon:hover {
+  margin-top: 30px;
 }
 
-.container .sns-icon {
-  margin-top: 30px;
+.container .sns-icon:hover .blog {
+  padding : 0 10px;
+}
+
+/* Memories */
+/* heading 값은 our와 돵일*/
+
+.container-m {
+  /* height: 80vh; */
+  width: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap; /* 자동 줄바꿈 (너비기준) */
+  align-items: center; /* 수직 */
+  justify-content: center; /* 수평 */
+  align-content: center; /* 아이템을 가운데로 정렬 */
+  flex: 1 1 50%;
+
+}
+
+.container-m .postbox {
+  height: 200px;
+  width: 100%;
+  text-align: center;
+}
+
+.container-m .post-img {
+  height: 200px;
+  width: 200px;
+  background-image: url('../img/carousel1.jpg');
+  background-position: left center;
+  background-size: cover;
+  float: left;
+}
+
+.container-m .post-info-box {
+  height: 150px;
+  width: 70%;
+  float: left;
+}
+
+.container-m .post-info-box h2{
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap; /* 텍스트가 길어져도 줄바꿈 되지 않고 한 줄에 입력 */
+  text-overflow: ellipsis; /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
+  font-weight: bold;
+}
+
+.container-m .post-info-box span{
+  display: block;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
+  font-weight: bold;
 }
