@@ -212,7 +212,6 @@ header .navbar2 #sign-in {
 }
 
 .container .card .profile-img {
-
   margin: 0 auto;
   height: 400px;
   width: 300px;
@@ -338,49 +337,64 @@ header .navbar2 #sign-in {
 /* Memories */
 /* heading 값은 our와 돵일*/
 
-.container-m {
-  /* height: 80vh; */
-  width: 100%;
-  margin-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap; /* 자동 줄바꿈 (너비기준) */
-  align-items: center; /* 수직 */
-  justify-content: center; /* 수평 */
-  align-content: center; /* 아이템을 가운데로 정렬 */
-  flex: 1 1 50%;
-
+.container .post-m {
+  margin-bottom: 30px;
 }
 
-.container-m .postbox {
-  height: 200px;
-  width: 100%;
-  text-align: center;
+.container .post-box {
+  box-shadow: 0 5px 5px rgba(0,0,0,.1);
 }
 
-.container-m .post-img {
+.container .post-box a {
+  color: #454545;
+}
+
+.container .post-hover:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 5px rgba(0,0,0,.3);
+}
+
+.container .post-box .post-img-hw {
   height: 200px;
-  width: 200px;
+  width: 1260px;
+  background-size: cover;
+}
+
+.container .post-box .post-img1 {
   background-image: url('../img/carousel1.jpg');
   background-position: left center;
-  background-size: cover;
-  float: left;
 }
 
-.container-m .post-info-box {
-  height: 150px;
-  width: 70%;
-  float: left;
+.container .post-box .post-img2 {
+  background-image: url('../img/carousel2.jpg');
+  background-position: bottom center;
 }
 
-.container-m .post-info-box h2{
-  font-size: 18px;
+.container .post-box .post-img3 {
+  background-image: url('../img/carousel3.jpg');
+  background-position: center center;
+}
+
+.container .post-box .post-img4 {
+  background-image: url('../img/carousel4.jpg');
+  background-position: center center;
+}
+
+.container .post-box .post-info-box {
+  height: 50%;
+  width: 1260px;
+  padding: 15px;
+}
+
+.container .post-box .post-info-box h2{
+  font-size: 20px;
   overflow: hidden;
   white-space: nowrap; /* 텍스트가 길어져도 줄바꿈 되지 않고 한 줄에 입력 */
   text-overflow: ellipsis; /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
   font-weight: bold;
 }
 
-.container-m .post-info-box span{
+.container .post-box .post-info-box span{
   display: block;
   font-size: 15px;
   overflow: hidden;
