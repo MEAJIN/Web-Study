@@ -16,7 +16,7 @@ html {
   font-size: 18px;
   overflow-x: hidden;
   scroll-behavior: smooth; /* tag : a 의 움직임이 부드러워 짐 */
-  scroll-snap-type: both;
+  /* scroll-snap-type: both; */
   scroll-snap-align: center;
   scroll-padding-top: 6rem; /* font-size *2 */
 }
@@ -335,7 +335,7 @@ header .navbar2 #sign-in {
 }
 
 /* Memories */
-/* heading 값은 our와 돵일*/
+/* heading 값 및 container는 our와 동일*/
 
 .container .post-m {
   margin-bottom: 30px;
@@ -356,7 +356,7 @@ header .navbar2 #sign-in {
 
 .container .post-box .post-img-hw {
   height: 200px;
-  width: 1260px;
+  width: 100%;
   background-size: cover;
 }
 
@@ -392,12 +392,142 @@ header .navbar2 #sign-in {
   white-space: nowrap; /* 텍스트가 길어져도 줄바꿈 되지 않고 한 줄에 입력 */
   text-overflow: ellipsis; /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
   font-weight: bold;
+  margin: 0;
 }
 
 .container .post-box .post-info-box span{
-  display: block;
   font-size: 15px;
   overflow: hidden;
   text-overflow: ellipsis; /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
   font-weight: bold;
+}
+
+.container .post-box .post-img-hw .user {
+  display: inline-block;
+  background-color: #000000;
+    background-color: rgba(0,0,0,.7);
+  padding: 3px 8px 5px 8px;
+  border-radius: 16px;
+  margin: 7px 5px;
+  float: right;
+  /* opacity: 0.5; 배경 및 글자까지 반투명*/
+}
+
+.container .post-box .post-img-hw .user img, .user-name {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: lighter;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.container .more-box {
+  width: 1260px;
+  text-align: right;
+  animation: horizontal 0.7s ease-in-out infinite;
+}
+
+.container .more-box:hover  {
+  font-style: italic;
+}
+
+.container .more-box a{
+  color: #454545;
+}
+
+.container .more-box .arrow-right {
+  vertical-align: middle;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px;
+  border-color: transparent transparent transparent black;
+}
+
+@keyframes horizontal {
+  0% {
+    margin-left: 1px;
+  }
+  50% {
+    margin-left: 3px;
+  }
+  100% {
+    margin-left: 1px;
+  }
+}
+
+/* @media */
+
+@media (min-width: 200px) {
+  .container .post-box .post-img-hw {
+    width: 100%;
+  }
+  .container .post-box .post-info-box {
+    width: 320px;
+  }
+  .container .more-box {
+    width: 320px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container .post-box .post-img-hw {
+    width: 100%;
+  }
+  .container .post-box .post-info-box {
+    width: 540px;
+  }
+  .container .more-box {
+    width: 540px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .container .post-box .post-img-hw {
+    width: 100%;
+  }
+  .container .post-box .post-info-box {
+    width: 720px;
+  }
+  .container .more-box {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container .post-box .post-img-hw {
+    width: 100%;
+  }
+  .container .post-box .post-info-box {
+    width: 960px;
+  }
+  .container .more-box {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container .post-box .post-img-hw {
+    width: 100%;
+  }
+  .container .post-box .post-info-box {
+    width: 1140px;
+  }
+  .container .more-box {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container .post-box .post-img-hw {
+    width: 100%;
+  }
+  .container .post-box .post-info-box {
+    width: 1260px;
+  }
+  .container .more-box {
+    width: 1260px;
+  }
 }
