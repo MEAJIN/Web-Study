@@ -15,10 +15,11 @@
 
   <!-- animate on scroll library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
+
   <!-- custom css file link -->
   <link rel="stylesheet" href="css/test.css">
   <link rel="stylesheet" href="font/font.css">
+
 </head>
 
 <body>
@@ -38,7 +39,11 @@
     <!-- <div>아이콘 제작자 <a href="" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div> -->
     <!-- <div>아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div> -->
     <!-- <div>아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div> -->
-    <nav class="navbar2">
+    <div class="navbar2">
+      <a href="#menu">
+        <img class="nav-icon" id="menu" src="icon/menu.png" alt="menu" title="menu">
+      </a>
+
       <a href="#search">
         <img class="nav-icon" id="search" src="icon/search.png" alt="search" title="search">
       </a>
@@ -50,7 +55,21 @@
       <!-- <a href="#sign-up">
         <img class="nav-icon" src="icon/sign-up.png" alt="sign-up" title="sign-up">
       </a> -->
-    </nav>
+    </div>
+
+    <form action="" class="search-form">
+      <input type="search" id="search-box" placeholder="이곳에 검색어를 입력해 주세요!">
+      <label for="search-box" class="search-button"></label>
+    </form>
+
+    <form action="" class="login-form">
+      <h3>our memories login</h3>
+      <input type="email" placeholder="email" class="login-box">
+      <input type="password" placeholder="password" class="login-box">
+      <input type="submit" value="login" class="btn">
+      <P class="click-m">forget your password <a href="#">click here</a></P>
+      <P>don't have an account <a href="#">create now</a></P>
+    </form>
 
   </header>
   <!-- header end -->
@@ -493,6 +512,9 @@
   </main>
   <!-- main end-->
 
+  <!-- custom js file link -->
+  <script src="js/script.js"></script>
+
   <!-- JavaScript for using bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
@@ -504,14 +526,15 @@
     integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
   </script>
 
-<!-- animate on scroll library -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init({
-    delay:200,
-    duration:400
-  });
-</script>
+  <!-- animate on scroll library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      delay: 150,
+      duration: 400
+    });
+  </script>
 
 </body>
+
 </html>

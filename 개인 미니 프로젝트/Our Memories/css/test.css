@@ -75,13 +75,143 @@ header .navbar2 .nav-icon {
   object-fit: cover;
 }
 
-header .navbar2 img:hover {
+header .navbar2 #search:hover,
+header .navbar2 #sign-in:hover {
   transform: scale(1.4);
 }
 
+header .navbar2 #menu,
 header .navbar2 #search,
 header .navbar2 #sign-in {
   margin-right: 10px;
+}
+
+header .navbar2 #menu {
+  display: none;
+}
+
+header .search-form {
+  position: absolute;
+  top: 110%;
+  right: -110%;
+  width: 500px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: .5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+  border-radius: 5px;
+}
+
+header .search-form.active {
+  right: 10px;
+  transition: .2s linear;
+}
+
+header .search-form input {
+  height: 100%;
+  width: 100%;
+  background: none;
+  text-transform: none;
+  font-size: 15px;
+  color: #000000;
+  padding: 0 15px;
+}
+
+header .search-form label {
+  font-size: 20px;
+  padding-right: 35px;
+  cursor: pointer;
+  background: #ffffff url("../icon/search10.png") 0 0 no-repeat;
+  height: 24px;
+  width: 24px;
+}
+
+header .search-form label:hover {
+  background: #ffffff url("../icon/search10-g.png") 0 0 no-repeat;
+  height: 24px;
+  width: 24px;
+}
+
+header .login-form .login-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  margin: 10px 0;
+}
+
+header .login-form.active {
+  right: 10px;
+  transition: .2s linear;
+}
+
+header .login-form {
+  position: absolute;
+  top: 110%;
+  right: -110%;
+  width: 400px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+  padding:20px;
+  border-radius: 5px;
+  background: #ffffff;
+  text-align: center;
+}
+
+header .login-form h3 {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  text-transform: uppercase;
+  padding: 10px 10px;
+}
+
+header .login-form .login-box {
+  margin: 10px 0;
+  background: #eee;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  color: #000000;
+  text-transform: none;
+  width: 100%;
+  margin: 5px 0;
+}
+
+header .login-form .btn {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 3px solid #000000;
+  color: #000000;
+  cursor: pointer;
+  background: none;
+  width: 100%;
+  font-weight: bold;
+}
+
+header .login-form .btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+header .login-form p {
+  font-size: 15px;
+  color: #454545;
+}
+
+header .login-form .click-m {
+  margin-top: 15px;
+  padding-bottom: 3px;
+}
+
+header .login-form p a{
+  color: #039;
+  text-decoration: underline;
 }
 
 /* 캐러셀 */
@@ -541,7 +671,7 @@ p {
 
 /* @media */
 
-@media (min-width: 200px) {
+@media (max-width: 200px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
@@ -555,7 +685,7 @@ p {
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
@@ -570,7 +700,44 @@ p {
 }
 
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+
+  header .navbar2 #menu {
+    display: inline-block;
+  }
+
+  header .search-form{
+    width: 97.5%;
+  }
+
+  header .login-form {
+    width: 97.5%;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 97.5%;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    background: #ffffff;
+    display: block;
+  }
+
+  header .navbar.active{
+    right: 10px;
+    transition: .2s linear;
+  }
+
+  header .navbar a{  
+    margin: 5px 10px;
+    font-size: 25px;
+    display: block;
+  }
+  
+  
+
   .container .post-box .post-img-hw {
     width: 100%;
   }
@@ -584,7 +751,17 @@ p {
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
+
+  html {
+    font-size: 10px;
+  }
+
+  header .navbar a{  
+    margin: 5px 10px;
+    font-size: 15px;
+  }
+
   .container .post-box .post-img-hw {
     width: 100%;
   }
@@ -598,7 +775,7 @@ p {
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
@@ -612,7 +789,7 @@ p {
   }
 }
 
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
