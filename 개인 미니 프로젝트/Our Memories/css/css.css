@@ -154,7 +154,7 @@ header .login-form {
   right: -110%;
   width: 400px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
-  padding:20px;
+  padding: 20px;
   border-radius: 5px;
   background: #ffffff;
   text-align: center;
@@ -209,7 +209,7 @@ header .login-form .click-m {
   padding-bottom: 3px;
 }
 
-header .login-form p a{
+header .login-form p a {
   color: #039;
   text-decoration: underline;
 }
@@ -438,8 +438,7 @@ p {
   text-align: center;
   /* 카드 투명도 색상 */
   background: rgba(0, 0, 0, .7);
-
-  background-filter: blur(10px);
+  /* backdrop-filter: blur(0.2px); */
   box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
   border-radius: 5%;
 }
@@ -537,8 +536,10 @@ p {
 .container .post-box .post-info-box h2 {
   font-size: 20px;
   overflow: hidden;
+
   /* 텍스트가 길어져도 줄바꿈 되지 않고 한 줄에 입력 */
   white-space: nowrap;
+
   /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
   text-overflow: ellipsis;
 
@@ -549,8 +550,10 @@ p {
 .container .post-box .post-info-box span {
   font-size: 15px;
   overflow: hidden;
+  
   /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
   text-overflow: ellipsis;
+
   font-weight: bold;
 }
 
@@ -671,34 +674,57 @@ p {
 
 /* @media */
 
-@media (max-width: 200px) {
+@media (max-width: 1400px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
 
   .container .post-box .post-info-box {
-    width: 320px;
+    width: 1140px;
   }
 
   .container .more-box {
-    width: 320px;
+    width: 1140px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1200px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
 
   .container .post-box .post-info-box {
-    width: 540px;
+    width: 980px;
   }
 
   .container .more-box {
-    width: 540px;
+    width: 980px;
   }
 }
 
+@media (max-width: 992px) {
+
+  html {
+    font-size: 10px;
+  }
+
+  header .navbar a {
+    margin: 5px 10px;
+    font-size: 15px;
+  }
+
+  .container .post-box .post-img-hw {
+    width: 100%;
+  }
+
+  .container .post-box .post-info-box {
+    width: 760px;
+  }
+
+  .container .more-box {
+    width: 760px;
+  }
+}
 
 @media (max-width: 768px) {
 
@@ -706,7 +732,7 @@ p {
     display: inline-block;
   }
 
-  header .search-form{
+  header .search-form {
     width: 97.5%;
   }
 
@@ -725,80 +751,54 @@ p {
     display: block;
   }
 
-  header .navbar.active{
+  header .navbar.active {
     right: 10px;
     transition: .2s linear;
   }
 
-  header .navbar a{  
+  header .navbar a {
     margin: 5px 10px;
     font-size: 25px;
     display: block;
   }
-  
-  
 
   .container .post-box .post-img-hw {
     width: 100%;
   }
 
   .container .post-box .post-info-box {
-    width: 720px;
+    width: 580px;
   }
 
   .container .more-box {
-    width: 720px;
+    width: 580px;
   }
 }
 
-@media (max-width: 992px) {
-
-  html {
-    font-size: 10px;
-  }
-
-  header .navbar a{  
-    margin: 5px 10px;
-    font-size: 15px;
-  }
-
+@media (max-width: 576px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
 
   .container .post-box .post-info-box {
-    width: 960px;
+    width: 440px;
   }
 
   .container .more-box {
-    width: 960px;
+    width: 440px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 200px) {
   .container .post-box .post-img-hw {
     width: 100%;
   }
 
   .container .post-box .post-info-box {
-    width: 1140px;
-  }
-
-  .container .more-box {
-    width: 1140px;
-  }
-}
-
-@media (max-width: 1400px) {
-  .container .post-box .post-img-hw {
     width: 100%;
   }
 
-  .container .post-box .post-info-box {
-    width: 1260px;
-  }
-
   .container .more-box {
-    width: 1260px;
+    width: 100%;
   }
 }
