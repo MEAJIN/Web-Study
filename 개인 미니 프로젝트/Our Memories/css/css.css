@@ -21,7 +21,7 @@ html {
   overflow-x: hidden;
   /* tag : a 의 움직임이 부드러워 짐 */
   scroll-behavior: smooth;
-  /* scroll-snap-type: both; */
+  scroll-snap-type: x proximity;
   scroll-snap-align: center;
   scroll-padding-top: 6rem;
   /* font-size *2 */
@@ -222,7 +222,7 @@ header .login-form p a {
 
 .carousel-item {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-size: cover;
   text-align: center;
 }
@@ -297,7 +297,6 @@ header .login-form p a {
   font-size: 20px;
   font-weight: 400;
   color: white;
-  clear: left;
   margin: 0;
   text-shadow: 1px 1px 2px gray;
 }
@@ -490,6 +489,8 @@ p {
 
 .container .post-box {
   box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+  flex-flow: column wrap;
+  width: 100%;
 }
 
 .container .post-box a {
@@ -529,8 +530,9 @@ p {
 
 .container .post-box .post-info-box {
   height: 50%;
-  width: 1260px;
+  width: 100%;
   padding: 15px;
+  background: #f9f9f9;
 }
 
 .container .post-box .post-info-box h2 {
@@ -550,7 +552,7 @@ p {
 .container .post-box .post-info-box span {
   font-size: 15px;
   overflow: hidden;
-  
+
   /* 일정 범위 밖으로 나가면 잘린 텍스트는 ... 으로 표시 */
   text-overflow: ellipsis;
 
@@ -564,7 +566,6 @@ p {
   padding: 3px 8px 5px 8px;
   border-radius: 16px;
   margin: 7px 5px;
-  float: right;
   /* opacity: 0.5; 배경 및 글자까지 반투명*/
 }
 
@@ -581,10 +582,6 @@ p {
   width: 1260px;
   text-align: right;
   animation: horizontal 0.7s ease-in-out infinite;
-}
-
-.container .more-box:hover {
-  font-style: italic;
 }
 
 .container .more-box a {
@@ -615,6 +612,32 @@ p {
   }
 }
 
+/* about */
+
+.post-record-box input, textarea {
+  width: 100%;
+  margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* footer */
 
 .footer {
@@ -623,10 +646,13 @@ p {
 
 .footer .box-container {
   display: grid;
+
   /* 그리드 크기 지정 : 반복값 자동 처리(남는 공간 자동으로 채움, 최소최댓값 지정(최소, 최대(자동))*/
   grid-template-columns: repeat(auto-fit, minmax(10px, auto));
+
   /* 그리드 간격 */
   gap: 10px;
+
   align-items: center;
   justify-items: center;
 }
@@ -700,10 +726,17 @@ p {
   .container .more-box {
     width: 980px;
   }
+
+  .carousel-intro h2 {
+    font-size: 35px;
+  }
+
+  .carousel-intro p {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 992px) {
-
   html {
     font-size: 10px;
   }
@@ -723,6 +756,14 @@ p {
 
   .container .more-box {
     width: 760px;
+  }
+
+  .carousel-intro h2 {
+    font-size: 25px;
+  }
+
+  .carousel-intro p {
+    font-size: 20px;
   }
 }
 
@@ -752,13 +793,13 @@ p {
   }
 
   header .navbar.active {
-    right: 10px;
+    right: 7px;
     transition: .2s linear;
   }
 
   header .navbar a {
     margin: 5px 10px;
-    font-size: 25px;
+    font-size: 20px;
     display: block;
   }
 
@@ -772,6 +813,14 @@ p {
 
   .container .more-box {
     width: 580px;
+  }
+
+  .carousel-intro h2 {
+    font-size: 20px;
+  }
+
+  .carousel-intro p {
+    font-size: 15px;
   }
 }
 
@@ -787,6 +836,15 @@ p {
   .container .more-box {
     width: 440px;
   }
+
+  
+  .carousel-intro h2 {
+    font-size: 18px;
+  }
+
+  .carousel-intro p {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 200px) {
@@ -801,4 +859,17 @@ p {
   .container .more-box {
     width: 100%;
   }
+
+  .carousel-intro {
+    width: 100%;
+  }
+
+  .carousel-intro h2 {
+    font-size: 18px;
+  }
+
+  .carousel-intro p {
+    font-size: 15px;
+  }
+
 }
