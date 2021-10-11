@@ -455,21 +455,26 @@
       <!-- Memories end-->
 
       <!-- Record start -->
-      <section class="Record" id="Record">
+      <section class="record" id="record">
 
         <h1 class="heading">Record</h1>
 
         <div class="container">
 
-            <form action="" class="post-record-box"> 
-              <input type="text" placeholder="제목" required class="post-record-title">
-              <input type="text" placeholder="부제목" required class="post-record-subtitle">
-              <textarea cols="100" rows="10" placeholder="내용" required class="post-record-contents"></textarea>
-              <input type="file" id="myFile" name="filename">
-              <input type="reset" placeholder="reset" value="초기화" class="post-record-reset-btn">
-              <input type="submit" placeholder="submit" value="등록" onclick="alert('게시글이 등록 되었습니다.')" class="post-record-submit-btn">
-            </form>
-          </div>
+          <form action="" class="post-record-box">
+            <input type="text" placeholder="제목" required class="post-record-title border">
+            <input type="text" placeholder="부제목" required class="post-record-subtitle border">
+            <textarea cols="100" rows="10" placeholder="내용을 입력해주세요." required class="post-record-contents border"></textarea>
+            <div class="post-record-file-box border">
+              <input type="file" id="myFile" name="filename" class="post-record-file">
+            </div>
+            <div class="test">
+              <input type="reset" placeholder="reset" value="초기화" class="post-record-reset-btn btn hred">
+              <input type="submit" placeholder="submit" value="등록" onclick="alert('게시글이 등록 되었습니다.')"
+                class="post-record-submit-btn btn">
+            </div>
+          </form>
+        </div>
 
       </section>
 

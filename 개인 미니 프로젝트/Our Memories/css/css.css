@@ -186,7 +186,7 @@ header .login-form .btn {
   padding: 5px 10px;
   font-size: 20px;
   border-radius: 5px;
-  border: 3px solid #000000;
+  border: 3px solid #454545;
   color: #000000;
   cursor: pointer;
   background: none;
@@ -195,13 +195,13 @@ header .login-form .btn {
 }
 
 header .login-form .btn:hover {
-  background: #000000;
+  background: #454545;
   color: #ffffff;
 }
 
 header .login-form p {
   font-size: 15px;
-  color: #454545;
+  color: #000000;
 }
 
 header .login-form .click-m {
@@ -532,7 +532,7 @@ p {
   height: 50%;
   width: 100%;
   padding: 15px;
-  background: #f9f9f9;
+  background: #FAFAFA;
 }
 
 .container .post-box .post-info-box h2 {
@@ -560,12 +560,13 @@ p {
 }
 
 .container .post-box .post-img-hw .user {
-  display: inline-block;
+  display: block;
   background-color: #000000;
   background-color: rgba(0, 0, 0, .7);
   padding: 3px 8px 5px 8px;
   border-radius: 16px;
   margin: 7px 5px;
+  float: right;
   /* opacity: 0.5; 배경 및 글자까지 반투명*/
 }
 
@@ -613,30 +614,69 @@ p {
 }
 
 /* about */
+.post-record-box .border {
+  border-radius: 5px;
+}
 
-.post-record-box input, textarea {
+.post-record-box input,
+textarea {
   width: 100%;
   margin: 5px 0;
 }
 
+.post-record-box .post-record-title {
+  height: 50px;
+  padding: 0 10px;
+  font-size: 20px;
+}
 
+.post-record-box .post-record-subtitle {
+  height: 35px;
+  padding: 0 10px;
+  font-size: 17px;
+}
 
+.post-record-box .post-record-contents {
+  overflow: scroll;
+  font-size: 15px;
+  padding: 5px 10px;
+}
 
+.post-record-box .post-record-file-box {
+  height: 50px;
+  background: #ffffff;
+  padding: 0 10px;
+  display: grid;
+  align-items: center;
+}
 
+.post-record-box .post-record-file {
+  margin: 0;
+}
 
+.post-record-box .test {
+  display: grid;
 
+  /* 그리드 크기 지정 : 반복값 자동 처리(남는 공간 자동으로 채움, 최소최댓값 지정(최소, 최대(자동))*/
+  grid-template-columns: repeat(auto-fit, minmax(40px, 100px));
 
+  gap: 5px;
+  place-content: center end;
+}
 
+.post-record-box .btn {
+  margin-top: 15px;
+  background: #454545;
+  color: #ffffff;
+}
 
+.post-record-box .btn:hover {
+  background: #04B486;
+}
 
-
-
-
-
-
-
-
-
+.post-record-box .hred:hover {
+  background: #DF0101;
+}
 
 /* footer */
 
@@ -837,7 +877,7 @@ p {
     width: 440px;
   }
 
-  
+
   .carousel-intro h2 {
     font-size: 18px;
   }
