@@ -61,7 +61,7 @@ header .logo:hover {
 
 header .navbar a {
   font-size: 18px;
-  margin-left: 30px;
+  margin-left: 50px;
   color: #808080;
 }
 
@@ -83,7 +83,7 @@ header .navbar2 #sign-in:hover {
 header .navbar2 #menu,
 header .navbar2 #search,
 header .navbar2 #sign-in {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 header .navbar2 #menu {

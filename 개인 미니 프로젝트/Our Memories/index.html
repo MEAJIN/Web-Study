@@ -34,7 +34,7 @@
       <a href="#our">our</a> <!-- 우리애들 프로필 -->
       <a href="#Memories">Memories</a><!-- 게시글 리스트 -->
       <a href="#record">record</a> <!-- 게시글 작성 -->
-      <a href="#about">about</a> <!-- 홈페이지 제작 이유에 대하여-->
+      <!-- <a href="#about">about</a> 홈페이지 제작 이유에 대하여 -->
     </nav>
     <!-- <div>아이콘 제작자 <a href="" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div> -->
     <!-- <div>아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div> -->
@@ -461,12 +461,12 @@
 
         <div class="container">
 
-          <form action="" class="post-record-box">
+          <form action="" class="post-record-box" data-aos="fade-down">
             <input type="text" placeholder="제목" required class="post-record-title border">
             <input type="text" placeholder="부제목" required class="post-record-subtitle border">
             <textarea cols="100" rows="10" placeholder="내용을 입력해주세요." required class="post-record-contents border"></textarea>
             <div class="post-record-file-box border">
-              <input type="file" id="myFile" name="filename" class="post-record-file">
+              <input type="file" multiple="multiple" name="filename[]"  id="myFile"class="post-record-file">
             </div>
             <div class="test">
               <input type="reset" placeholder="reset" value="초기화" class="post-record-reset-btn btn hred">
