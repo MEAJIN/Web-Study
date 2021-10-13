@@ -35,9 +35,6 @@ html {
 body {
   background: #f7f7f7;
   padding-top: 60px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* 네비게이션 */
