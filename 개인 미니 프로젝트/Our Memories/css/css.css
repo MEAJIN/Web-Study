@@ -19,16 +19,25 @@
 html {
   font-size: 18px;
   overflow-x: hidden;
+
   /* tag : a 의 움직임이 부드러워 짐 */
   scroll-behavior: smooth;
+  
   scroll-snap-type: x proximity;
   scroll-snap-align: center;
+
+   /* font-size *2 */
+  
   scroll-padding-top: 6rem;
-  /* font-size *2 */
+ 
 }
 
 body {
   background: #f7f7f7;
+  padding-top: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* 네비게이션 */
@@ -39,6 +48,7 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
+
   display: flex;
   align-items: center;
   /* flex 일 떄, item 들의 사이에 균일한 간격을 만들어줌 */
@@ -47,6 +57,7 @@ header {
   padding: 5px 7%;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
+
 
 header .logo {
   font-family: 'Ephesis', cursive;
@@ -215,6 +226,7 @@ header .login-form p a {
 }
 
 /* 캐러셀 */
+
 
 .carousel-inner {
   margin-bottom: 100px;
