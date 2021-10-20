@@ -86,12 +86,18 @@
     - [n번째 자식](#n번째-자식)
     - [마우스 오버(hover)](#마우스-오버)
 
+- Scroll
+
+  - [scroll-behavior](#scroll-behavior)
+  - [scroll-snap-type](#scroll-snap-type)
+
 - 단위
 
   - [px](#px)
   - [rem](#rem)
   - [em](#em)
   - [%(퍼센트)](#퍼센트)
+  - [vw, vh](#vw,-vh)
 
 - 반응형
 
@@ -126,6 +132,7 @@
   - https://developer.mozilla.org/en-US/docs/Web (all)
   - https://learn.shayhowe.com/html-css/ (html~css)
   - https://www.w3schools.com/ (all)
+  - https://css-tricks.com/ (css)
 
 > ### 한글
   - https://ofcourse.kr/
@@ -1665,6 +1672,24 @@ h1:hover {
 
 <br />
 
+## Scroll
+
+<br />
+
+> ### scroll-behavior
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior)
+- [CSS Tricks](https://css-tricks.com/almanac/properties/s/scroll-behavior/)
+
+<br />
+
+> ### scroll-snap-type
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type)
+- [CSS Tricks](https://css-tricks.com/almanac/properties/s/scroll-snap-type/)
+
+<br />
+
 ## 단위
 CSS에는 px, rem, em, % 등 여러 단위가 있다. 폰트 크기 뿐만 아니라 padding, margin, width 등 다양한 속성들에 이 단위들을 사용할 수 있다.
 
@@ -1849,6 +1874,13 @@ html {
   padding-top: 30%; /* 상위 요소의 width * 0.3 = 60px */
 }
 ```
+
+<br />
+
+> ### vw, vh
+
+- [vw, vh 정리 블로그](https://nykim.work/85)
+
 
 <br />
 
