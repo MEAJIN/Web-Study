@@ -52,12 +52,14 @@
       - [line-height 사용](#line-height)
       - [그 외 다른 방식](#그-외-다른-방식)
 
-- positioning
+- position
   
   - [static](#static)
   - [relative](#relative)
   - [absolute](#absolute)
   - [fixed](#fixed)
+  - [flex](#flex)
+  - [grid](#grid)
 
 - float
 
@@ -957,8 +959,8 @@ CSS에서 모든 걸 한 번에 딱 가운데 정렬을 시키는 방법이 없�
 
 <br />
 
-## positioning
-`positioning` 이란 이름처럼 태그들의 위치를 결정하는 CSS이다.
+## position
+`position` 이란 이름처럼 태그들의 위치를 결정하는 CSS이다.
 
 > ### static
 모든 태그들은 처음에 `position: static` 상태이다. 즉, 기본적으로 static이라 따로 써주지 않아도 된다. 또한 정적 위치 요소는 top, bottom, left, right 속성의 영향을 받지 않는다.
@@ -1158,6 +1160,22 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 스크롤을 내려도 박스는 그 자리에 고정되어 있다. `fixed`도 `absolute`처럼 더는 div가 width: 100%가 아니다.
 
 ![4](https://user-images.githubusercontent.com/75716255/132991562-a4c88a26-ec34-4ed9-977e-94d79d425968.png)
+
+<br />
+
+## flex
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/meajin/embed/PoKzrQB?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/meajin/pen/PoKzrQB">
+  Untitled</a> by 메진 (<a href="https://codepen.io/meajin">@meajin</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+<br />
+
+<br />
+
+<br />
 
 <br />
 
