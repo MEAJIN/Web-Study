@@ -1164,18 +1164,12 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 <br />
 
 ## flex
-
-<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/meajin/embed/PoKzrQB?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/meajin/pen/PoKzrQB">
-  Untitled</a> by 메진 (<a href="https://codepen.io/meajin">@meajin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+[flex 완벽 정리 블로그](https://studiomeal.com/archives/197)
 
 <br />
 
-<br />
-
-<br />
+## grid
+[grid 완벽 정리 블로그](https://studiomeal.com/archives/533)
 
 <br />
 
