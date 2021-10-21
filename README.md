@@ -1171,12 +1171,18 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 <br />
 
 ## flex
-[flex 완벽 정리 블로그](https://studiomeal.com/archives/197)
+- [flex 완벽 정리 블로그](https://studiomeal.com/archives/197)
+
+- 콘텐츠가 레이아웃을 형성하게 할 경우 사용
+  -[8:59 부터 시청](https://www.youtube.com/watch?v=18VLSXfsj94&t=523s)
 
 <br />
 
 ## grid
-[grid 완벽 정리 블로그](https://studiomeal.com/archives/533)
+- [grid 완벽 정리 블로그](https://studiomeal.com/archives/533)
+
+- 레이아웃이 콘텐츠를 형성하게 할 경우 사용
+  -[10:22 부터 시청](https://www.youtube.com/watch?v=18VLSXfsj94&t=523s)
 
 <br />
 
@@ -2167,6 +2173,7 @@ html {
 - [bootstrap grid system(v5.0)](https://getbootstrap.com/docs/5.0/layout/grid/)
 - [Bootstrap grid examples](https://getbootstrap.com/docs/5.0/examples/grid/#containers)
 - [부트스트랩 그리드 정리 블로그](https://min-blog.tistory.com/entry/%EB%B6%80%ED%8A%B8%EC%8A%A4%ED%8A%B8%EB%9E%A9-%EA%B7%B8%EB%A6%AC%EB%93%9C?category=600307)
+- 
 <br />
 
 > ## 반응형 그리드
