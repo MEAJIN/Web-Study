@@ -6,7 +6,8 @@
 - 21.08.28 ~ 09.16 HTML/CSS 핵심 개념 (완)
 - 21.09.17 ~ 09.22 HTML/CSS 반응형 웹 퍼블리싱 (완)
 - 21.09.30 ~ 10.12 HTML/CSS 복습을 위한 개인 미니 프로젝트 (완) ([바로가기](https://github.com/MEAJIN/Our-Memories))
-- 21.10.23 ~ JS 시작
+- 21.10.23 ~ 10.27 JS 기초 (완)
+- 21.10.28 ~ JS 핵심 개념 (진행중)
 
 ### 목차
 
@@ -124,6 +125,11 @@
     - [반응형 그리드 참고 사이트](#반응형-그리드-참고-사이트)
 
 ## JS
+
+- 기초
+
+  - [추상화](#추상화)
+  - [작명](#작명)
 
 <br />
 
@@ -2380,3 +2386,74 @@ __🔸 `.container-{breakpoint}`, 반응형 컨테이너__
 > ### 반응형 그리드 참고 사이트
 - [부트스트랩 컨테이너 정리 블로그](https://min-blog.tistory.com/entry/%EB%B6%80%ED%8A%B8%EC%8A%A4%ED%8A%B8%EB%9E%A9-5-%EC%8B%9C%EC%9E%91)
 - [bootstrap containers](https://getbootstrap.com/docs/5.0/layout/containers/)
+
+# ⚙ JS ⚙
+
+## 기초
+
+> ### 추상화
+`추상화(abstraction)`는 복잡한 것들을 목적에 맞게 단순화하는 것이다. 예를 들면 영화 줄거리, 책 줄거리 등이 있다.
+
+<br />
+
+> #### 추상화 3원칙
+
+- 목적을 명확히
+- 불필요한 것들은 숨기기
+- 핵심만 드러내기
+
+<br />
+
+> ### 작명
+변수를 만들 때 이름을 아무렇게나 지으면 안 된디. 이름을 지을 때는 아래와 같이 몇 가지 룰을 따라주면 좋다.
+
+<br />
+
+> #### 꼭 지켜야 하는 룰 (지키지 않으면 오류)
+
+- JavaScript 식별자는 '문자(a-z, A-Z)', '밑줄( _ )', '달러 기호($)'로 시작해야 한다. 두 번째 글자부터는 '숫자(0-9)'도 가능하다.
+- '대문자'와 '소문자'는 구별해야한다. myname과 myName은 다른 이름이다.
+- '예약어(JavaScript가 찜해놓은 단어)'는 사용하면 안 된다. 예를 들어 if, for, let 같은 것들이 있다.
+
+<br />
+
+> #### 지키면 좋은 룰 (더 좋은 스타일을 위해)
+
+__1. 의미 없는 이름은 좋지 않다.__
+향후 복잡한 프로그램을 짜게 되면 변수와 함수를 여기저기서 적절히 활용해야 하는데, 이름이 a, b, c, d처럼 의미 없이 설정되어 있으면 어떤 값을 저장해뒀는지 찾기도 어렵고 활용하기도 어렵다. 또한 프로그램의 가독성이 떨어져서 나중에 스스로 프로그램을 살펴볼 때, 그리고 공동 작업을 할 때 매우 불편한 상황이 발생한다. 그래서 프로그래밍 초반부터 적절한 이름을 짓는 습관을 들이는 것이 좋다!
+
+```js
+
+let a, b, c, d;
+```
+
+__2. 너무 추상적인 이름은 좋지 않다.__
+상황에 따라 그냥 name이라는 변수명이 적합한 상황도 있을 수 있겠지만, 긴 프로그램을 쓰다 보면 다양한 '이름'들이 있기 때문에 name은 너무 추상적일 수 있다. 그럴 때는 조금 더 구체적인 이름으로 이해하기 쉽게 만들어주자!
+
+```js
+
+let name; // 너무 추상적인 이름
+```
+
+__3. 모든 변수 이름은 'camelCase'로 쓰는 것이 좋다.__
+변수명에는 띄어쓰기가 불가능하기 때문에, 띄어쓰기 역할을 대신 할 무언가가 필요하다. 그중 하나가 `camelCase`라는 것인데, __첫 번째 글자는 소문자로 하고 띄어쓰기가 있는 각 단어의 첫 문자를 대문자로 표기하는 방식__ 이다. 중간중간의 대문자가 낙타(camel)의 혹처럼 생겨서 camelCase라고 부른다.
+
+```js
+
+let bad_variable_name; // 비추천 방식
+let goodVariableName; // 추천 방식
+```
+
+<br />
+
+> ### 코딩 컨벤션(스타일 가이드) 참고 사이트
+
+- [Airbnb의 자바스크립트 스타일 가이드](https://github.com/ParkSB/javascript-style-guide)
+- [Google의 자바스크립트 스타일 가이드](https://google.github.io/styleguide/jsguide.html)
+- [w3schools.com 스타일 가이드](https://www.w3schools.com/js/js_conventions.asp)
+- [StandardJS](https://standardjs.com/rules-kokr.html)
+- [Idiomatic.JS](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ko_KR)
+
+<br />
+
+
