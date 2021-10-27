@@ -1,5 +1,5 @@
 // search
-let searchForm = document.querySelector('.search-form');
+const searchForm = document.querySelector('.search-form');
 
 document.querySelector('#search').onclick = () => {
     searchForm.classList.toggle('active');
@@ -8,7 +8,7 @@ document.querySelector('#search').onclick = () => {
 }
 
 //login
-let loginForm = document.querySelector('.login-form');
+const loginForm = document.querySelector('.login-form');
 
 document.querySelector('#sign-in').onclick = () => {
     loginForm.classList.toggle('active');
@@ -17,7 +17,7 @@ document.querySelector('#sign-in').onclick = () => {
 }
 
 //menu-btn
-let navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu').onclick = () => {
     navbar.classList.toggle('active');
@@ -26,7 +26,7 @@ document.querySelector('#menu').onclick = () => {
 }
 
 //remove
-window.onscroll = () => {
+window.click = () => {
     searchForm.classList.remove('active');
     loginForm.classList.remove('active');
     navbar.classList.remove('active');
