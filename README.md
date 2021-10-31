@@ -2455,5 +2455,5 @@ let goodVariableName; // 추천 방식
 - [Idiomatic.JS](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ko_KR)
 
 <br />
-
+<br />
 
