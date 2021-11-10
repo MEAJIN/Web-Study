@@ -136,8 +136,13 @@
   - 자바스크립트의 목적과 셀렉터(Selector)
     - [목적](#목적)
       - 조작과 변경
-    - [셀렉터(Selector)](#셀렉터)
+      - 응용
+    - [셀렉터, Selector](#셀렉터,-Selector)
 
+  - onclick
+    - [버튼 기능](#버튼-기능)
+    - [Alert 박스 만들기](#Alert-박스-만들기)
+      - 응용
 <br />
 
 # 🔗 Web 관련 사이트 🔗
@@ -2467,7 +2472,7 @@ let goodVariableName; // 추천 방식
 
 ## LV.1
 
-#### 자바스크립트의 목적과 셀렉터 (Selector)
+## 자바스크립트의 목적과 셀렉터 (Selector)
 
 > ### 목적
 자바스크립트 문법의 존재 목적은 __HTML 조작과 변경__ 이다. 이를 통해 웹상에 있는 모든 UI 기능들을 HTML 조작으로 구현이 가능하기 때문이다.
@@ -2525,7 +2530,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-> ### 셀렉터
+> ### 셀렉터, Selector
 
 `셀렉터(Selector)`는 HTML __요소를 찾기 위해 사용__ 된다.
 
@@ -2537,3 +2542,81 @@ document.getElementById('hello').style.color = 'red';
 
 그렇기 때문에 필요할 때마다 구글에 검색해서 찾아쓰는게 초보의 올바른 자바스크립트 활용법이다.
 
+<br />
+
+## onclick
+`onclick`은 클릭시 발생하는 이벤트 또는 클릭시 자바스크립트를 수행해주는 속성이다.
+
+> ### 버튼 기능
+자바스크립트를 사용하면 버튼을 눌렀을 때 UI 같은게 동작하도록 할 수 있다. 바로 HTML 속성을 하나만 추가해주면 된다.
+
+<br />
+
+모튼 HTML 태그 내에 `onclick` 이라는 속성을 넣을 수 있는데, 이걸 넣을경우 해당 HTML을 눌렀을 때 `onclick` 내부의 자바스크립트를 실행하게 된다.
+
+```html
+
+<button onclick="여기에 자바스크립트 작성"> 버튼 </button>
+```
+
+<br />
+
+> ### Alert 박스 만들기
+자바스크립트를 이용하면 특정 HTML을 사라지거나 보이게 만들 수 있다. [조작과 변경](#조작과-변경)에서 사용했었던 "document ~~ "로 시작하는 코드를 사용하면 된다.
+참고로 HTML을 뭔가 변경할땐 항상 "document ~~ "로 시작하는 코드를 사용한다. 그렇다면 "alert 창을 보여주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+
+```html, js
+
+<div class="alert-box" id="alert-box-appear">Alert 박스</div>
+<button onclick = "document.getElementById('alert-box-appear').style.display = 'block' ;">버튼</button>
+```
+
+```css
+
+.alert-box {
+  background: rgb(2, 2, 126);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+```
+
+<br />
+
+#### `출력화면`
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141121998-50783837-6e45-4d7f-b0a3-736ff4adf338.gif"></p>
+
+<br />
+
+> #### 응용
+ "alert 창을 닫아주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+
+```html, js
+
+<div class="alert-box" id="alert-box-appear">Alert 박스
+  <button onclick = "document.getElementById('alert-box-appear').style.display = 'none' ;">닫기</button>
+</div>
+
+<button onclick = "document.getElementById('alert-box-appear').style.display = 'block' ;">버튼</button>
+```
+
+```css
+
+.alert-box {
+  background: rgb(2, 2, 126);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+```
+
+<br />
+
+#### `출력화면`
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141122070-c5035f12-bde9-4c85-907d-5cbd49357cc1.gif"></p>
+
+<br />
