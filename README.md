@@ -136,7 +136,7 @@
   - 자바스크립트의 목적과 셀렉터(Selector)
     - [목적](#목적)
       - 조작과 변경
-    - [셀렉터(Selector)](#셀렉터(Selector))
+    - [셀렉터(Selector)](#셀렉터)
 
 <br />
 
@@ -2509,7 +2509,7 @@ document.getElementById('hello').innerHTML = '바보';
 
 <br />
 
-#### 응용
+> #### 응용
 
 위의 `<h3>` 내부의 글자를 빨간색으로 바꾸고 싶다면 어떻게 하는가?
 
@@ -2525,7 +2525,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-> ### 셀렉터(Selector)
+> ### 셀렉터
 
 `셀렉터(Selector)`는 HTML __요소를 찾기 위해 사용__ 된다.
 
