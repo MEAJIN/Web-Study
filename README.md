@@ -2547,6 +2547,8 @@ document.getElementById('hello').style.color = 'red';
 ## onclick
 `onclick`은 클릭시 발생하는 이벤트 또는 클릭시 자바스크립트를 수행해주는 속성이다.
 
+<br />
+
 > ### 버튼 기능
 자바스크립트를 사용하면 버튼을 눌렀을 때 UI 같은게 동작하도록 할 수 있다. 바로 HTML 속성을 하나만 추가해주면 된다.
 
@@ -2562,8 +2564,12 @@ document.getElementById('hello').style.color = 'red';
 <br />
 
 > ### Alert 박스 만들기
-자바스크립트를 이용하면 특정 HTML을 사라지거나 보이게 만들 수 있다. [조작과 변경](#조작과-변경)에서 사용했었던 "document ~~ "로 시작하는 코드를 사용하면 된다.
-참고로 HTML을 뭔가 변경할땐 항상 "document ~~ "로 시작하는 코드를 사용한다. 그렇다면 "alert 창을 보여주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+자바스크립트를 이용하면 특정 HTML을 사라지거나 보이게 만들 수 있다. [조작과 변경](#조작과-변경)에서 사용했었던 "document~"로 시작하는 코드를 사용하면 된다.
+참고로 HTML을 뭔가 변경할땐 항상 "document~"로 시작하는 코드를 사용한다. 그렇다면 "alert 창을 보여주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+
+<br />
+
+`display = 'block';` 값을 주면 된다.
 
 ```html, js
 
@@ -2584,7 +2590,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-#### `출력화면`
+#### `출력화면` <br />
 
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141121998-50783837-6e45-4d7f-b0a3-736ff4adf338.gif"></p>
 
@@ -2592,6 +2598,10 @@ document.getElementById('hello').style.color = 'red';
 
 > #### 응용
  "alert 창을 닫아주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+ 
+ <br />
+ 
+`display = 'none';` 값을 주면 된다.
 
 ```html, js
 
@@ -2615,7 +2625,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-#### `출력화면`
+#### `출력화면` <br />
 
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141122070-c5035f12-bde9-4c85-907d-5cbd49357cc1.gif"></p>
 
