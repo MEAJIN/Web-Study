@@ -2590,7 +2590,9 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-#### `출력화면` <br />
+#### `출력화면` 
+
+<br />
 
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141121998-50783837-6e45-4d7f-b0a3-736ff4adf338.gif"></p>
 
@@ -2625,7 +2627,9 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-#### `출력화면` <br />
+#### `출력화면`
+
+<br />
 
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141122070-c5035f12-bde9-4c85-907d-5cbd49357cc1.gif"></p>
 
