@@ -7,7 +7,7 @@
 - 21.09.17 ~ 09.22 HTML/CSS 반응형 웹 퍼블리싱 (완)
 - 21.09.30 ~ 10.12 HTML/CSS 복습을 위한 토이 프로젝트 (완) ([바로가기](https://github.com/MEAJIN/Our-Memories))
 - 21.10.23 ~ 10.27 JS 기초 (완)
-- 21.10.28 ~ JS 핵심 개념 (진행중)
+- 21.11.10 ~ JavaScript / jQuery 입문과 웹 UI개발 (진행중)
 
 ### 목차
 
@@ -124,13 +124,25 @@
     - [열(column)](#Column)
     - [반응형 그리드 참고 사이트](#반응형-그리드-참고-사이트)
 
-## JS
+## JavaScript / jQuery
 
-- 기초
+- 기본
 
   - [추상화](#추상화)
   - [작명](#작명)
 
+- LV.1
+
+  - 자바스크립트의 목적과 셀렉터(Selector)
+    - [목적](#목적)
+      - 조작과 변경
+      - 응용
+    - [셀렉터, Selector](#셀렉터,-Selector)
+
+  - onclick
+    - [버튼 기능](#버튼-기능)
+    - [Alert 박스 만들기](#Alert-박스-만들기)
+      - 응용
 <br />
 
 # 🔗 Web 관련 사이트 🔗
@@ -2387,9 +2399,11 @@ __🔸 `.container-{breakpoint}`, 반응형 컨테이너__
 - [부트스트랩 컨테이너 정리 블로그](https://min-blog.tistory.com/entry/%EB%B6%80%ED%8A%B8%EC%8A%A4%ED%8A%B8%EB%9E%A9-5-%EC%8B%9C%EC%9E%91)
 - [bootstrap containers](https://getbootstrap.com/docs/5.0/layout/containers/)
 
-# ⚙ JS ⚙
+<br />
 
-## 기초
+# ⚙ JavaScript / jQuery ⚙
+
+## 기본
 
 > ### 추상화
 `추상화(abstraction)`는 복잡한 것들을 목적에 맞게 단순화하는 것이다. 예를 들면 영화 줄거리, 책 줄거리 등이 있다.
@@ -2455,5 +2469,168 @@ let goodVariableName; // 추천 방식
 - [Idiomatic.JS](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ko_KR)
 
 <br />
+
+## LV.1
+
+## 자바스크립트의 목적과 셀렉터 (Selector)
+
+> ### 목적
+자바스크립트 문법의 존재 목적은 __HTML 조작과 변경__ 이다. 이를 통해 웹상에 있는 모든 UI 기능들을 HTML 조작으로 구현이 가능하기 때문이다.
+
 <br />
 
+> #### 조작과 변경
+특정 HTML을 원하는대로 변경 하려면 아래 문법을 사용하면 된다.
+
+<br />
+
+아래 예시와 같은 코드를 작성하게 되면 `<h3>` 태그의 내부 글자가 __바보__ 로 바뀌게 된다. 즉, HTML을 변경하고 싶을 때 아래 코드를 응용하여 사용하면 된다.
+
+```html
+
+<h3 id="hello">안녕하세요</h3>
+```
+
+```js
+
+document.getElementById('hello').innerHTML = '바보';
+```
+
+<br />
+
+#### `js 해석`
+
+- document : 그냥 웹문서 (HTML문서)를 뜻한다.
+
+- 마침표(.) : ~의 
+
+- getElementById('어쩌구') : 아이디가 '어쩌구'인 요소를 찾으셈 
+
+- innerHTML : 내부의 HTML
+
+- = : 등호는 오른쪽걸 왼쪽에 대입하라는 뜻.
+
+- '바보' : 바보라는 글자. 모든 글자는 따옴표 안에 담는다. (큰따옴표, 작은따옴표 둘다 가능)
+
+<br />
+
+> #### 응용
+
+위의 `<h3>` 내부의 글자를 빨간색으로 바꾸고 싶다면 어떻게 하는가?
+
+```js
+
+document.getElementById('hello').style.color = 'red';
+```
+
+<br />
+
+`<h3>` 내부의 글자를 다른 단어로 바꾸는 방법은 쉽지만, 위 응용처럼 `style.color`를 붙여야되는걸 도대체 어떻게 알까?
+아래 `셀렉터(Selector)`를 참고하자.
+
+<br />
+
+> ### 셀렉터, Selector
+
+`셀렉터(Selector)`는 HTML __요소를 찾기 위해 사용__ 된다.
+
+`innerHTML.style.color`는 메소드(또는 함수)라고 부르는데, 이는 HTML __요소의 어떤 속성을 변경할지 결정하기 위해 사용__ 한다.
+
+그런데 HTML요소의 변경가능한 속성들은 무궁무진하게 많다. `src`, `href`, `font-size` 등 수없이 많다는 것이다.
+
+그 속성들을 바꾸려면 셀렉터 뒤에 정확한 메소드이름을 붙여주어야 하는데, 메소드는 종류가 수백개이기 때문에 전부 외워서 사용할 수 없다.
+
+그렇기 때문에 필요할 때마다 구글에 검색해서 찾아쓰는게 초보의 올바른 자바스크립트 활용법이다.
+
+<br />
+
+## onclick
+`onclick`은 클릭시 발생하는 이벤트 또는 클릭시 자바스크립트를 수행해주는 속성이다.
+
+<br />
+
+> ### 버튼 기능
+자바스크립트를 사용하면 버튼을 눌렀을 때 UI 같은게 동작하도록 할 수 있다. 바로 HTML 속성을 하나만 추가해주면 된다.
+
+<br />
+
+모튼 HTML 태그 내에 `onclick` 이라는 속성을 넣을 수 있는데, 이걸 넣을경우 해당 HTML을 눌렀을 때 `onclick` 내부의 자바스크립트를 실행하게 된다.
+
+```html
+
+<button onclick="여기에 자바스크립트 작성"> 버튼 </button>
+```
+
+<br />
+
+> ### Alert 박스 만들기
+자바스크립트를 이용하면 특정 HTML을 사라지거나 보이게 만들 수 있다. [조작과 변경](#조작과-변경)에서 사용했었던 "document~"로 시작하는 코드를 사용하면 된다.
+참고로 HTML을 뭔가 변경할땐 항상 "document~"로 시작하는 코드를 사용한다. 그렇다면 "alert 창을 보여주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+
+<br />
+
+`display = 'block';` 값을 주면 된다.
+
+```html, js
+
+<div class="alert-box" id="alert-box-appear">Alert 박스</div>
+<button onclick = "document.getElementById('alert-box-appear').style.display = 'block' ;">버튼</button>
+```
+
+```css
+
+.alert-box {
+  background: rgb(2, 2, 126);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+```
+
+<br />
+
+#### `출력화면` 
+
+<br />
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141121998-50783837-6e45-4d7f-b0a3-736ff4adf338.gif"></p>
+
+<br />
+
+> #### 응용
+ "alert 창을 닫아주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+ 
+ <br />
+ 
+`display = 'none';` 값을 주면 된다.
+
+```html, js
+
+<div class="alert-box" id="alert-box-appear">Alert 박스
+  <button onclick = "document.getElementById('alert-box-appear').style.display = 'none' ;">닫기</button>
+</div>
+
+<button onclick = "document.getElementById('alert-box-appear').style.display = 'block' ;">버튼</button>
+```
+
+```css
+
+.alert-box {
+  background: rgb(2, 2, 126);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+```
+
+<br />
+
+#### `출력화면`
+
+<br />
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141122070-c5035f12-bde9-4c85-907d-5cbd49357cc1.gif"></p>
+
+<br />
