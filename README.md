@@ -143,6 +143,11 @@
     - [버튼 기능](#버튼-기능)
     - [Alert 박스 만들기](#Alert-박스-만들기)
       - 응용
+
+  - function
+    - [사용법](#사용법)
+    - [에러 체크](#에러-체크)
+    
 <br />
 
 # 🔗 Web 관련 사이트 🔗
@@ -2564,8 +2569,13 @@ document.getElementById('hello').style.color = 'red';
 <br />
 
 > ### Alert 박스 만들기
-자바스크립트를 이용하면 특정 HTML을 사라지거나 보이게 만들 수 있다. [조작과 변경](#조작과-변경)에서 사용했었던 "document~"로 시작하는 코드를 사용하면 된다.
-참고로 HTML을 뭔가 변경할땐 항상 "document~"로 시작하는 코드를 사용한다. 그렇다면 "alert 창을 보여주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+자바스크립트를 이용하면 특정 HTML을 사라지거나 보이게 만들 수 있다.
+
+[조작과 변경](#조작과-변경)에서 사용했었던 "document~"로 시작하는 코드를 사용하면 된다.
+
+참고로 HTML을 뭔가 변경할땐 항상 "document~"로 시작하는 코드를 사용한다. 
+
+그렇다면 버튼을 눌렀을 때 "alert 창을 보여주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
 
 <br />
 
@@ -2599,7 +2609,7 @@ document.getElementById('hello').style.color = 'red';
 <br />
 
 > #### 응용
- "alert 창을 닫아주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
+ 닫기 버튼을 눌렀을 때 "alert 창을 닫아주세요!" 라는 코드를 작성하려면 어떻게 해야할까?
  
  <br />
  
@@ -2634,3 +2644,93 @@ document.getElementById('hello').style.color = 'red';
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141122070-c5035f12-bde9-4c85-907d-5cbd49357cc1.gif"></p>
 
 <br />
+
+## function
+`function`은 함수라는 문법이다. 함수라는건 여러가지 용도가 있지만 우선 가장 기본적인 __긴 코드 하나로 묶기__ 에 대해 알아보려 한다.
+
+<br />
+
+> ### 사용법
+긴 코드를 하나로 묶는 다는 것은 쉽게 말해 __긴 코드를 한 단어로 축약__ 한다는 것 이다. 사용법은 아래와 같다.
+
+<br />
+
+- `function` 이라는 키워드를 사용하여 함수를 만들 수 있다.
+- `function` 오른쪽엔 함수의 이름을 작명해주면 된다. (직관적이게)
+- {} 중괄호 안에는 축약하고 싶은 코드를 넣으면 된다.
+
+```js
+
+function alertOpen(){
+  document.getElementById('alert-box-appear').style.display = 'block';
+}
+
+function alertClose(){
+  document.getElementById('alert-box-appear').style.display = 'none';
+}
+```
+
+<br />
+
+이제 위에서 만들어둔 함수의 이름을 아래처험 사용하면 [Alert 박스 만들기](#Alert-박스-만들기) 에서 사용했던 방법보다 훨씬 간편하고 깔끔한 코딩을 할 수 있게된다.
+
+<br />
+
+```html
+
+<div class="alert-box" id="alert-box-appear">Alert 박스
+    <button onclick = "alertClose()">닫기</button>
+  </div>
+  <button onclick = "alertOpen()">버튼</button>
+```
+
+
+> ### 에러 체크
+가장 흔한 에러들
+
+<br />
+
+1. cannot read property '어쩌구' of null <br />
+: 'innerHTML을 쩜찍어서 붙이고 싶은데 null입니다' 라는 뜻인데 셀렉터가 제대로 요소를 못찾고 있다는 에러이다.
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141297488-c4115eab-2869-43bf-b6ff-417b65667e11.png"></p>
+
+<br />
+
+2. 어쩌구 is not a function <br />
+: 셀렉터, 메소드, 함수의 이름이 잘못된거다.
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141297506-d99a0e82-0949-497f-85ea-60447813794e.png"></p>
+
+<br />
+
+3. 함수 이름을 잘못 썼을 경우 <br />
+: 예를 들면 getElementById 인데 getElementByid 라고 작성했을 경우 에러가 난다.
+
+```js
+document.getElementByid();
+```
+
+<br />
+
+4. 따옴표를 안붙인 경우 <br />
+: 아래처럼 작성하는경우가 흔하다. 문자를 집어넣을 땐 항상 따옴표를 붙여야한다.
+
+```js
+document.getElementById(alert);
+document.getElementById(alert).style.display = block;
+```
+
+<br />
+
+5. 세미콜론이나 마침표를 빼먹은 경우 <br />
+: 찾기도 힘들다. 빼먹지 말자. 
+
+<br />
+
+6. 셀렉터를 찾으려는 HTML요소보다 위에 작성한 경우 <br />
+: 셀렉터는 찾으려는 HTML 요소보다 밑에다가 script 태그 열고 작성해야 정상적으로 요소를 찾을 수 있다. <br />
+: 안그러면 요소를 못찾겠다고 null 어쩌구라고 에러를 띄운다.
+
+<br />
+
