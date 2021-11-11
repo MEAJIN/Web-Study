@@ -2729,7 +2729,7 @@ document.getElementById(alert).style.display = block;
 <br />
 
 6. 셀렉터를 찾으려는 HTML요소보다 위에 작성한 경우 <br />
-: 셀렉터는 찾으려는 HTML 요소보다 밑에다가 script 태그 열고 작성해야 정상적으로 요소를 찾을 수 있다.
+: 셀렉터는 찾으려는 HTML 요소보다 밑에다가 script 태그 열고 작성해야 정상적으로 요소를 찾을 수 있다. <br />
 : 안그러면 요소를 못찾겠다고 null 어쩌구라고 에러를 띄운다.
 
 <br />
