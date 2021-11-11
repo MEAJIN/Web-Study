@@ -2682,7 +2682,7 @@ function alertClose(){
     <button onclick = "alertClose()">닫기</button>
   </div>
   <button onclick = "alertOpen()">버튼</button>
-``
+```
 
 
 > ### 에러 체크
