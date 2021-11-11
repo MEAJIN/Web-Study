@@ -2690,21 +2690,21 @@ function alertClose(){
 
 <br />
 
-1. cannot read property '어쩌구' of null
+1. cannot read property '어쩌구' of null <br />
 : 'innerHTML을 쩜찍어서 붙이고 싶은데 null입니다' 라는 뜻인데 셀렉터가 제대로 요소를 못찾고 있다는 에러이다.
 
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141297488-c4115eab-2869-43bf-b6ff-417b65667e11.png"></p>
 
 <br />
 
-2. 어쩌구 is not a function 
-: 셀렉터, 메소드, 함수의 이름이 잘못되었습니다. 
+2. 어쩌구 is not a function <br />
+: 셀렉터, 메소드, 함수의 이름이 잘못된거다.
 
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141297506-d99a0e82-0949-497f-85ea-60447813794e.png"></p>
 
 <br />
 
-3. 함수 이름을 잘못 썼을 경우
+3. 함수 이름을 잘못 썼을 경우 <br />
 : 예를 들면 getElementById 인데 getElementByid 라고 작성했을 경우 에러가 난다.
 
 ```js
@@ -2713,7 +2713,7 @@ document.getElementByid();
 
 <br />
 
-4. 따옴표를 안붙인 경우 
+4. 따옴표를 안붙인 경우 <br />
 : 아래처럼 작성하는경우가 흔하다. 문자를 집어넣을 땐 항상 따옴표를 붙여야한다.
 
 ```js
@@ -2723,12 +2723,12 @@ document.getElementById(alert).style.display = block;
 
 <br />
 
-5. 세미콜론이나 마침표를 빼먹은 경우
+5. 세미콜론이나 마침표를 빼먹은 경우 <br />
 : 찾기도 힘들다. 빼먹지 말자. 
 
 <br />
 
-6. 셀렉터를 찾으려는 HTML요소보다 위에 작성한 경우
+6. 셀렉터를 찾으려는 HTML요소보다 위에 작성한 경우 <br />
 : 셀렉터는 찾으려는 HTML 요소보다 밑에다가 script 태그 열고 작성해야 정상적으로 요소를 찾을 수 있다.
 : 안그러면 요소를 못찾겠다고 null 어쩌구라고 에러를 띄운다.
 
