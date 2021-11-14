@@ -1,7 +1,8 @@
-function alertOpen(){
-  document.getElementById('alert-box-appear').style.display = 'block';
+function alertOpen(text){
+  document.getElementById('title').innerHTML = text;
+  document.getElementById('alert').style.display = 'block';
 }
 
-function alertClose(){
-  document.getElementById('alert-box-appear').style.display = 'none';
+function alertClose(close){
+  document.getElementsByClassName('alert-box')[0].style.display = close;
 }
