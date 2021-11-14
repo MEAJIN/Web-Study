@@ -1,3 +1,8 @@
+## README 바로가기
+
+- [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
+- [JS](https://github.com/MEAJIN/Web-Study/blob/main/README/JS.md)
+
 ## HTML
 
 - Tag
@@ -6,9 +11,6 @@
     - [Semantic Tags의 중요성 3대장](#Semantic-Tags가-중요한-이유-3가지)
   - [웹 사이트 구조를 이루는 태그들(Box Tag)](#웹-사이트-구조를-이루는-태그들)
   - [태그 참고 사이트](#태그-참고-사이트)
-
-<br />
-<br />
 
 # 📄 HTML 📄
 
