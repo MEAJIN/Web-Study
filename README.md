@@ -147,6 +147,9 @@
   - function
     - [사용법](#사용법)
     - [에러 체크](#에러-체크)
+    - [파라미터와 인자](#파라미터와-인자)
+      - 사용 이유
+      - 응용
     
 <br />
 
@@ -2503,7 +2506,7 @@ document.getElementById('hello').innerHTML = '바보';
 
 <br />
 
-#### `js 해석`
+#### `코드 해석`
 
 - document : 그냥 웹문서 (HTML문서)를 뜻한다.
 
@@ -2684,6 +2687,7 @@ function alertClose(){
   <button onclick = "alertOpen()">버튼</button>
 ```
 
+<br />
 
 > ### 에러 체크
 가장 흔한 에러들
@@ -2731,6 +2735,114 @@ document.getElementById(alert).style.display = block;
 6. 셀렉터를 찾으려는 HTML요소보다 위에 작성한 경우 <br />
 : 셀렉터는 찾으려는 HTML 요소보다 밑에다가 script 태그 열고 작성해야 정상적으로 요소를 찾을 수 있다. <br />
 : 안그러면 요소를 못찾겠다고 null 어쩌구라고 에러를 띄운다.
+
+<br />
+
+> ### 파라미터와 인자
+
+- 함수 선언에서 활용하기 위하여 사용하는 변수를 __파라미터(parameter, 매개변수)__ 라고 부른다.
+- 함수를 호출할 때 매개 역할을 한다.
+
+- 함수를 호출할 때 사용하는 것을 __인자(argument)__ 라고 부른다.
+- 즉, '전달인자'를 뜻한다.
+
+<br />
+
+```js
+function 함수이름(매개변수1, 매개변수2, ...) {
+    실행문;
+}
+ 
+함수이름(인자1, 인자2, ...);
+```
+
+<br />
+
+> #### 사용 이유
+
+- 함수 재사용 가능
+  - 코드 단축 가능
+
+- 함수 내부에 하나의 기능이 아닌, 다양한 기능을 넣어 수행하게 만들 수 있다
+
+<br />
+
+> #### 응용
+버튼1과 버튼2를 누르면 각각 다른 이름의 alert 창이 나오도록 하자.
+
+<br />
+
+`조건`
+- 버튼1을 누르면 '아이디를 입력하세요' 라는 alert 창이 등장
+- 버튼2를 누르면 '비밀번호를 입력하세요' 라는 alert 창이 등장
+
+<br />
+
+```html
+<div class="alert-box" id="alert">
+  <p id="title">Alert 박스</p>
+  <button onclick = "alertclose('none')"> 닫기</button>
+</div>
+<button onclick = "alertopen('아이디를 입력하세요')">버튼1</button>
+<button onclick = "alertopen('비밀번호를 입력하세요')">버튼2</button>
+```
+
+```js
+function alertopen(text){
+  document.getElementById('title').innerHTML = text;
+  document.getElementById('alert').style.display = 'block';
+}
+
+function alertclose(close){
+  document.getElementsByClassName('alert-box')[0].style.display = close;
+}
+```
+
+<br />
+
+- `getElementsByClassName`의 경우 해당 클래스 전체 값을 찾기 때문에 배열로 몇번째 값을 찾을지 지정해줘야 함
+- 
+  - 있길래 그냥 써본거임
+
+<br />
+
+#### `출력화면`
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141685122-f54e5955-31c1-4aba-ba62-ddc8b114bc76.gif"></p>
+
+<br />
+
+> #### 웃픈SULL
+
+- 버튼1,2를 눌렀을 때 닫기 버튼이 계속 안보여서 대체 왜 그런건지 삽질 시작
+
+- 알고보니 `alertopen 함수`가 문제였다.
+
+  - alert 창 내용을 바꿀 때 `class="alert-box"`의 모든 내용을 '아이디/비번을 입력하세요'로 바뀌게 해놔서 그런거였음
+  - 즉, 버튼이 텍스트로 덮어씌워진거임 ㅋㅋ
+  
+- 아래 코드 참고
+
+<br />
+
+```html
+<div class="alert-box" id="alert-box">Alert 박스
+  <button onclick = "alertClose('none')">닫기</button>
+</div>
+<button onclick = "alertOpen('아이디를 입력하세요')">버튼1</button>
+<button onclick = "alertOpen('비밀번호를 입력하세요')">버튼2</button>
+```
+
+```js
+function alertOpen(text){
+  document.getElementsByClassName('alert-box')[0].style.display = 'block';
+  document.getElementsByClassName('alert-box')[0].innerHTML = text;
+}
+
+function alertClose(close){
+  document.getElementById('alert-box').style.display = close;
+}
+```
 
 <br />
 
