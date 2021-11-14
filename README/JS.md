@@ -29,7 +29,9 @@
     - [파라미터와 인자](#파라미터와-인자)
       - 사용 이유
       - 응용
-    
+    - [addEventListener](#addEventListener)
+      - 응용
+      - 참고 
 
 # ⚙ JavaScript / jQuery ⚙
 
@@ -468,3 +470,88 @@ function alertClose(close){
 
 <br />
 
+> ### addEventListener
+이벤트가 발생했을 시, 특정 함수를 실행할 수 있게 해주는 기능
+
+<br />
+
+- `onclick`은 늙은이만 쓰는거래요
+-  HTML이 깔끔해 진대요
+
+<br />
+
+```js
+document.getElementById('어쩌구').addEventListener('발생이벤트', function(){
+    //실행할 코드 
+});
+```
+
+<br />
+
+> #### 응용
+alert 박스에 addEventListener 넣어보기
+
+<br />
+
+```html
+<div class="alert-box" id="alert">
+   <p id="title">Alert 박스</p>
+   <button id="close"> X </button>
+</div>
+<button onclick = "alertOpen('아이디를 입력하세요')">버튼1</button>
+<button onclick = "alertOpen('비밀번호를 입력하세요')">버튼2</button>
+```
+
+```js
+function alertOpen(text){
+  document.getElementById('title').innerHTML = text;
+  document.getElementById('alert').style.display = 'block';
+}
+
+
+document.getElementById('close').addEventListener('click', function(){
+  document.getElementById('alert').style.display = 'none'
+});
+```
+
+<br />
+
+> #### 다른 이벤트
+
+- 셀렉터로찾은요소에 마우스를 스윽 갖다대면 특정 코드를 실행
+```js
+셀렉터로찾은요소.addEventListener('mouseover', function(){ 
+  실행할코드
+});
+```
+
+<br />
+
+- 셀렉터로찾은요소가 스크롤되면 특정 코드를 실행 (당연히 그 요소에 스크롤바가 있어야됨)
+```js
+셀렉터로찾은요소.addEventListener('scroll', function(){ 
+  실행할코드
+});
+```
+
+<br />
+
+- 셀렉터로찾은요소에 키보드로 글자를 입력하면 특정 코드를 실행 (그 요소가 글자를 입력할 수 있는 input 이런거여야 함)
+```js
+셀렉터로찾은요소.addEventListener('keydown', function(){ 
+  실행할코드
+});
+```
+
+<br />
+
+> ### 참고 사이트
+
+- https://developer.mozilla.org/en-US/docs/Web/Events (모든 브라우저내의 이벤트 리스트)
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
