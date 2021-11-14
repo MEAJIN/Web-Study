@@ -2801,19 +2801,48 @@ function alertclose(close){
 <br />
 
 - `getElementsByClassName`의 경우 해당 클래스 전체 값을 찾기 때문에 배열로 몇번째 값을 찾을지 지정해줘야 함
+- 
   - 있길래 그냥 써본거임
 
 <br />
 
 #### `출력화면`
 
-<br />
-
 <p align='center'><img src="https://user-images.githubusercontent.com/75716255/141685122-f54e5955-31c1-4aba-ba62-ddc8b114bc76.gif"></p>
 
+<br />
+
+> #### 웃픈SULL
+
+- 버튼1,2를 눌렀을 때 닫기 버튼이 계속 안보여서 대체 왜 그런건지 삽질 시작
+
+- 알고보니 `alertopen 함수`가 문제였다.
+
+  - alert 창 내용을 바꿀 때 `class="alert-box"`의 모든 내용을 '아이디/비번을 입력하세요'로 바뀌게 해놔서 그런거였음
+  - 즉, 덮어씌워진거임 ㅋㅋ
+  
+- 아래 코드 참고
 
 <br />
 
+```html
+<div class="alert-box" id="alert-box-appear">Alert 박스
+  <button onclick = "alertClose('none')">닫기</button>
+</div>
+<button onclick = "alertOpen('block', '아이디를 입력하세요')">버튼1</button>
+<button onclick = "alertOpen('block', '비밀번호를 입력하세요')">버튼2</button>
+```
+
+```js
+function alertOpen(text){
+  document.getElementsByClassName('alert-box')[0].style.display = 'block';
+  document.getElementsByClassName('alert-box')[0].innerHTML = text;
+}
+
+function alertClose(close){
+  document.getElementById('alert-box').style.display = close;
+}
+```
 
 <br />
 
