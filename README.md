@@ -147,6 +147,9 @@
   - function
     - [사용법](#사용법)
     - [에러 체크](#에러-체크)
+    - [파라미터와 인자](#파라미터와-인자)
+      - 사용 이유
+      - 응용
     
 <br />
 
@@ -2503,7 +2506,7 @@ document.getElementById('hello').innerHTML = '바보';
 
 <br />
 
-#### `js 해석`
+#### `코드 해석`
 
 - document : 그냥 웹문서 (HTML문서)를 뜻한다.
 
@@ -2684,6 +2687,7 @@ function alertClose(){
   <button onclick = "alertOpen()">버튼</button>
 ```
 
+<br />
 
 > ### 에러 체크
 가장 흔한 에러들
@@ -2731,6 +2735,66 @@ document.getElementById(alert).style.display = block;
 6. 셀렉터를 찾으려는 HTML요소보다 위에 작성한 경우 <br />
 : 셀렉터는 찾으려는 HTML 요소보다 밑에다가 script 태그 열고 작성해야 정상적으로 요소를 찾을 수 있다. <br />
 : 안그러면 요소를 못찾겠다고 null 어쩌구라고 에러를 띄운다.
+
+<br />
+
+> ### 파라미터와 인자
+
+- 함수 선언에서 활용하기 위하여 사용하는 변수를 __파라미터(parameter, 매개변수)__ 라고 부른다.
+- 함수를 호출할 때 매개 역할을 한다.
+
+- 함수를 호출할 때 사용하는 것을 __인자(argument)__ 라고 부른다.
+- 즉, '전달인자'를 뜻한다.
+
+
+```js
+function 함수이름(매개변수1, 매개변수2, ...) {
+    실행문;
+}
+ 
+함수이름(인자1, 인자2, ...);
+```
+
+<br />
+
+> #### 사용 이유
+
+- 함수 재사용 가능
+  - 코드 단축 가능
+
+- 함수 내부에 하나의 기능이 아닌, 다양한 기능을 넣어 수행하게 만들 수 있다
+
+<br />
+
+> #### 응용
+버튼1과 버튼2를 누르면 각각 다른 이름의 alert 창이 나오도록 하자.
+
+<br />
+
+`조건`
+- 버튼1을 누르면 '아이디를 입력하세요' 라는 alert 창이 등장
+- 버튼2를 누르면 '비밀번호를 입력하세요' 라는 alert 창이 등장
+
+```html
+<div class="alert-box" id="alert-box-appear">Alert 박스
+  <button onclick = "alertActivate('none')">닫기</button>
+</div>
+<button onclick = "alertActivate('block', '아이디를 입력하세요')">버튼1</button>
+<button onclick = "alertActivate('block', '비밀번호를 입력하세요')">버튼2</button>
+```
+
+```js
+function alertActivate(open, text){
+  document.getElementById('alert-box-appear').style.display = open;
+  document.getElementById('alert-box-appear').innerHTML = text;
+}
+```
+
+<br />
+
+
+<br />
+
 
 <br />
 
