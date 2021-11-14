@@ -2801,7 +2801,7 @@ function alertclose(close){
 <br />
 
 - `getElementsByClassName`의 경우 해당 클래스 전체 값을 찾기 때문에 배열로 몇번째 값을 찾을지 지정해줘야 함
-- 
+ 
   - 있길래 그냥 써본거임
 
 <br />
