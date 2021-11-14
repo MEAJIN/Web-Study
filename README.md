@@ -2746,6 +2746,7 @@ document.getElementById(alert).style.display = block;
 - 함수를 호출할 때 사용하는 것을 __인자(argument)__ 라고 부른다.
 - 즉, '전달인자'를 뜻한다.
 
+<br />
 
 ```js
 function 함수이름(매개변수1, 매개변수2, ...) {
@@ -2775,22 +2776,40 @@ function 함수이름(매개변수1, 매개변수2, ...) {
 - 버튼1을 누르면 '아이디를 입력하세요' 라는 alert 창이 등장
 - 버튼2를 누르면 '비밀번호를 입력하세요' 라는 alert 창이 등장
 
+<br />
+
 ```html
-<div class="alert-box" id="alert-box-appear">Alert 박스
-  <button onclick = "alertActivate('none')">닫기</button>
+<div class="alert-box" id="alert">
+  <p id="title">Alert 박스</p>
+  <button onclick = "alertclose('none')"> 닫기</button>
 </div>
-<button onclick = "alertActivate('block', '아이디를 입력하세요')">버튼1</button>
-<button onclick = "alertActivate('block', '비밀번호를 입력하세요')">버튼2</button>
+<button onclick = "alertopen('아이디를 입력하세요')">버튼1</button>
+<button onclick = "alertopen('비밀번호를 입력하세요')">버튼2</button>
 ```
 
 ```js
-function alertActivate(open, text){
-  document.getElementById('alert-box-appear').style.display = open;
-  document.getElementById('alert-box-appear').innerHTML = text;
+function alertopen(text){
+  document.getElementById('title').innerHTML = text;
+  document.getElementById('alert').style.display = 'block';
+}
+
+function alertclose(close){
+  document.getElementsByClassName('alert-box')[0].style.display = close;
 }
 ```
 
 <br />
+
+- `getElementsByClassName`의 경우 해당 클래스 전체 값을 찾기 때문에 배열로 몇번째 값을 찾을지 지정해줘야 함
+  - 있길래 그냥 써본거임
+
+<br />
+
+#### `출력화면`
+
+<br />
+
+<p align='center'><img src="https://user-images.githubusercontent.com/75716255/141685122-f54e5955-31c1-4aba-ba62-ddc8b114bc76.gif"></p>
 
 
 <br />
