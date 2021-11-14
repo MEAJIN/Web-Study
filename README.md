@@ -2819,18 +2819,18 @@ function alertclose(close){
 - 알고보니 `alertopen 함수`가 문제였다.
 
   - alert 창 내용을 바꿀 때 `class="alert-box"`의 모든 내용을 '아이디/비번을 입력하세요'로 바뀌게 해놔서 그런거였음
-  - 즉, 덮어씌워진거임 ㅋㅋ
+  - 즉, 버튼이 텍스트로 덮어씌워진거임 ㅋㅋ
   
 - 아래 코드 참고
 
 <br />
 
 ```html
-<div class="alert-box" id="alert-box-appear">Alert 박스
+<div class="alert-box" id="alert-box">Alert 박스
   <button onclick = "alertClose('none')">닫기</button>
 </div>
-<button onclick = "alertOpen('block', '아이디를 입력하세요')">버튼1</button>
-<button onclick = "alertOpen('block', '비밀번호를 입력하세요')">버튼2</button>
+<button onclick = "alertOpen('아이디를 입력하세요')">버튼1</button>
+<button onclick = "alertOpen('비밀번호를 입력하세요')">버튼2</button>
 ```
 
 ```js
