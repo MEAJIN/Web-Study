@@ -15,10 +15,6 @@
 - [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
 - [JS](https://github.com/MEAJIN/Web-Study/blob/main/README/JS.md)
 
-<br />
-
-# 🔗 Web 관련 사이트 🔗
-
 ## 알아두면 유용한 WEB 기술 사이트
 
 > ### 영문
