@@ -9,7 +9,7 @@
 - 21.10.23 ~ 10.27 JS 기초 (완)
 - 21.11.10 ~ JavaScript / jQuery 입문과 웹 UI개발 (진행중)
 
-### README 바로가기
+## README 바로가기
 
 - [HTML](https://github.com/MEAJIN/Web-Study/blob/main/README/HTML.md)
 - [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
