@@ -30,8 +30,6 @@
       - 사용 이유
       - 응용
     
-<br />
-<br />
 
 # ⚙ JavaScript / jQuery ⚙
 
