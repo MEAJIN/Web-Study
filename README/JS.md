@@ -31,7 +31,13 @@
       - 응용
     - [addEventListener](#addEventListener)
       - 응용
-      - 참고 
+      - 참고
+
+  - jQuery
+    - [설치 방법](#설치-방법)
+    - [기본 문법](#기본-문법)
+    - [셀렉터](#셀렉터)
+    - [힘수/메소드](#함수/메소드)
 
 # ⚙ JavaScript / jQuery ⚙
 
@@ -550,8 +556,114 @@ document.getElementById('close').addEventListener('click', function(){
 - https://developer.mozilla.org/en-US/docs/Web/Events (모든 브라우저내의 이벤트 리스트)
 
 <br />
+
+## jQuery
+2006년에 어떤혼모노가 JS로 개발을 하다가 "아 코드 개길어서 귀찮네"라는 생각을 했다. (실화)
+
+그래서 JS 코드를 짧고 쉽게 쓸 수 있는 코드를 발명해내는데, 그 코드 덩어리를 jQuery라고 이름짓고 웹에 공개해버렸다고 한다. 
+
+그래서 이 코드 덩어리만 있으면 JS 쉽고 짧게 작성가능하다. 참고로 남이 개발해놓은 이런 코드 덩어리들을 전문용어로 __라이브러리__ 라고 부른다. 
+
 <br />
+
+> ### 설치 방법
+
+> #### 1. CDN 사이트를 이용해서 첨부하기
+Query 파일을 호스팅 해주는 CDN 사이트들이 있다. 거기서 jQuery 파일을 따면 쉽게 설치가 가능하다.
+
+거기서 나에게 맞는 jQuery 버전을 선택하면 이상한 script 태그를 줄 텐데 이걸 HTML 파일에 그대로 복붙하면 설치가 끝난다.
+
+보통 3.X 버전을 설치하면 되고, 인터넷 익스플로러 8이하 호환성을 잡는 사이트를 만들고 있다면 1.X 버전을 설치하면 된다.
+
+(CDN은 content delivery network의 약자로, 자주 사용하는 css, js 라이브러리 파일들을 호스팅해주는 사이트를 뜻함)
+
 <br />
+
+```js
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+```
+
+<br />
+
+> #### 2. 직접 다운받아서 첨부하기 
+
+위에서 첨부한 스크립트 태그를 잘보면 src 속성 내에 무슨 사이트 주소가 하나 있다 .
+
+예를 들어 https://code.jquery.com/jquery-3.4.1.js 이런건데 이 사이트로 접속하시면 js 파일이 하나 열린다. 
+
+이걸 우클릭 > 자신의 작업폴더에 다른이름으로 저장한다음 아래 스크립트를 적어주면 된다.
+
+<br />
+
+```js
+<script src="아까 다운받은 그 파일 경로"></script>
+```
+
+<br />
+
+> ### 기본 문법
+jQuery는 자바스크립트랑 다른건 아니다. 그저 HTML 변경에 있어 코드를 더 짧게 작성할 수 있을 뿐 이다. 특히 셀렉터가 조금 더 쓰기 쉽게 되어있다.
+
+<br />
+
+```js, jquery
+// js
+document.getElementById('title').innerHTML = '바보';
+
+// jquery
+$('#title').html('바보');
+```
+
+<br />
+
+> ### 셀렉터
+jQuery는 HTML찾는 셀렉터를 $() 를 이용해 사용한다. 그리고 따옴표 안에 CSS 스타일의 셀렉터를 적어주면 된다.
+
+예를 들면 CSS에서 ID로 뭔가를 선택할 때 #기호를 붙이는 것 처럼 jQuery도 #title이라고 적어주면 된다.
+
+그렇다면 클래스명이 box인 요소를 찾으려면 어떻게 할까? $('.box')라고 쓰면 된다.
+
+<br />
+
+```jquery
+$('#title'); 
+$('.box') 
+```
+
+<br />
+
+> ### 함수/메소드
+내가 원하는 세부 속성을 바꿀 때 자바스크립트처럼 메소드를 뒤에 붙여주면 된다. 하지만 자바스크립트와 이름이 약간 다르다.
+
+- .text 는 안에있는 모든 텍스트를 변경하라
+
+- .html 은 안에있는 모든 내용을 변경하라 (HTML 태그 포함)
+
+- .css 는 스타일속성을 변경하라 
+
+라는 뜻이다.
+
+<br />
+
+```jquery
+$('#title').text('바보'); 
+$('#title').html('<p>바보</p>'); 
+$('#title').css('color', 'red');  
+```
+
+<br />
+
+참고로,
+
+자바스크립트로 찾은 HTML요소는 자바스크립트 함수/메소드를 뒤에 붙여야하며
+
+jQuery 셀렉터로 찾은 HTML요소는 jQuery 함수/메소드를 붙여야한다. 
+
+나머지 메소드들은 필요할 때 구글에서 찾아써도 무방하다. 
+
 <br />
 <br />
 <br />
