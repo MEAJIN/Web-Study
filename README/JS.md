@@ -34,7 +34,8 @@
       - 참고
 
   - jQuery
-    - [설치 방법](#설치-방법)
+    - [왜 씀?](#왜-씀?)
+    - [설치 방법](#설치-방법)    
     - [기본 문법](#기본-문법)
     - [셀렉터](#셀렉터)
     - [힘수/메소드](#함수/메소드)
@@ -563,6 +564,78 @@ document.getElementById('close').addEventListener('click', function(){
 그래서 JS 코드를 짧고 쉽게 쓸 수 있는 코드를 발명해내는데, 그 코드 덩어리를 jQuery라고 이름짓고 웹에 공개해버렸다고 한다. 
 
 그래서 이 코드 덩어리만 있으면 JS 쉽고 짧게 작성가능하다. 참고로 남이 개발해놓은 이런 코드 덩어리들을 전문용어로 __라이브러리__ 라고 부른다. 
+
+<br />
+
+> ### 왜 씀?
+
+1. 코드가 매우 짧아진다.
+
+2. 여러개의 요소를 한번에 싸잡아서 바꿀 수 있다.
+
+<br />
+
+`<p>` 태그가 3개 있다고 가정해보자.
+
+```html
+<p class="greeting">안녕하세요</p>
+<p class="greeting">안녕하세요</p>
+<p class="greeting">안녕하세요</p>
+```
+
+<br />
+
+자바스크립트의 경우 3줄의 코드를 입력해야 하며, 몇번째 자료를 바꿀건지 각각 지정해 주어야 한다는 불편함이 있다.
+
+```js
+document.getElementsByClassName('greeting')[0].innerHTML = '안녕';
+document.getElementsByClassName('greeting')[1].innerHTML = '안녕';
+document.getElementsByClassName('greeting')[2].innerHTML = '안녕';
+```
+
+<br />
+
+반면 jQuery를 쓴다면 셀렉터 하나로 한번에 처리가 가능하다. 즉, 요소가 여러개 있어도 그냥 한번에 다 바꿔준다는 것!
+참고로, jQuery로 찾은 여러 요소 중 맨 위의 것만 바꾸고 싶은 경우 $('.greeting').eq(0) 이렇게 하면 된다. 
+
+```jQuery
+$('.greeting').html('안녕')
+```
+
+<br />
+
+버튼이 여러개 있어도 이벤트리스너를 여러개 한번에 부착해버릴 수 있다.
+
+```html
+<button class="btn">버튼btn</button>
+<button class="btn">버튼btn</button>
+<button class="btn">버튼btn</button>
+```
+
+```jQuery
+<script>
+  $('.btn').on('click', function(){ 버튼누르면 실행할 코드~~ } );
+</script>
+```
+
+<br />
+
+3. 애니메이션을 쉽게 부착할 수 있다.
+요소를 사라지기 / fade out / 접어올리기 이런 간단한 애니메이션을 주고 싶을 때,
+쌩자바스크립트로 구현하려면 CSS를 잘 하던가 JS로 코드를 5줄 정도 짜야하는데 jQuery를 사용하면 한줄 컷이다.
+
+<br />
+
+```jQuery
+$('.greeting').hide()
+$('.greeting').fadeOut()
+$('.greeting').slideUp()
+```
+
+<br />
+
+각각 요소를 사라지게 / fade out 처리 / 접어올리기 해주는 코드이다.
+위 애니메이션을 반대로 주고 싶다면 각각 show() fadeIn() slideDown() 값을 주면 된다.
 
 <br />
 
