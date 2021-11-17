@@ -888,6 +888,7 @@ $('form').on('submit',function(e){
   if ($('#pw').val() == '') {
       e.preventDefault();
       $('#pw-alert').show();
+  }
 });
 ```
 
