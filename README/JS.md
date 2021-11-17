@@ -40,6 +40,11 @@
     - [셀렉터](#셀렉터)
     - [힘수/메소드](#함수/메소드)
     - [addEventListener](#addEventListener)
+    - [toggle 함수](#toggle-함수)
+    
+    
+<br />
+
 # ⚙ JavaScript / jQuery ⚙
 
 ## 기본
@@ -781,7 +786,7 @@ $('서브메뉴').toggle();
 
 <br />
 
-쌩 자바스크립트로 구현하시려면 곧 배울 if 조건문으로 구현하면 된다.
+쌩 자바스크립트로 구현하려면 곧 배울 if 조건문으로 구현하면 된다.
 
 <br />
 
