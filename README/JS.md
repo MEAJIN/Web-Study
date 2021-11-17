@@ -42,7 +42,11 @@
     - [addEventListener](#addEventListener)
     - [toggle 함수](#toggle-함수)
     
-    
+  - 조건문
+    - 응용
+      - [if](#if)
+      - [else-if](#else-if) 
+
 <br />
 
 # ⚙ JavaScript / jQuery ⚙
@@ -790,18 +794,103 @@ $('서브메뉴').toggle();
 
 <br />
 
+> ## 조건문
+
+> #### 응용
+
+> ### if
+
+- 이메일 input이 공백이면 폼을 전송하지 않는다.
+
+- 이메일 input이 공백이 아니면 폼을 전송해야한다.
+
+- 전송이 되는지 여부는 새로고침/페이지 이동 여부로 알 수 있다. 
 
 <br />
 
+```html
+<div class="modal-box">
+    <div class="modal-alert">
+      <p>로그인 하세요</p>
+
+      <form action="login.php">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" id="email">
+          <p id="email-alert">이메일란이 빈칸입니다.</p>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" id="pw">
+          <p id="pw-alert">비밀번호란이 빈칸입니다.</p>
+        </div>
+        <button type="submit" class="btn btn-primary">전송</button>
+      </form>
+
+      <button id="close"> 닫기 </button>
+    </div>
+</div>
+```
+
+```jquery
+$('form').on('submit',function(e){ 
+  if ($('#email').val() == ''){
+    e.preventDefault(); // 폼 전송을 막아주는 코드
+    $('#email-alert').show(); // 이벤트 발생 시, input 밑에 안내문을 보여줌 (없어도 되는 코드임)
+  } 
+});
+```
 
 <br />
 
+> ### else-if
+email 입력란 뿐만 아니라 password 입력란도 동시에 공백인지 검사하고 싶다면?
 
 <br />
 
+```jquery
+$('form').on('submit',function(e){ 
+  if ($('#email').val() == ''){
+    e.preventDefault();
+    $('#email-alert').show();
+  }
+  
+  if ($('#pw').val() == '') {
+      e.preventDefault();
+      $('#pw-alert').show();
+});
+```
 
 <br />
 
+- if 두개를 따로 쓰면 if문이 각각 독립적으로 동작
+
+- else if로 if문을 두개 붙여쓰면 둘 중 하나만 동작 (또는 조건식이 둘다 틀리면 둘다 실행 안할 수도 있음)
+
+<br />
+
+> ### input 이벤트
+이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다. 
+
+<br />
+
+```jquery
+$('#email').on('input', function(e){ 
+  실행할 코드
+});
+```
+
+<br />
+
+> ### change 이벤트
+마찬가지로 이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다.
+하지만 change 이벤트는 $('#email') 요소에 __포커스를 잃었을 때 (커서가 다른곳에 찍힐 때)__ 실행된다.
+
+<br />
+
+```jquery
+$('#email').on('change', function(e){ 
+  실행할 코드
+});
+```
 
 <br />
 
