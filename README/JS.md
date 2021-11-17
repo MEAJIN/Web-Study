@@ -40,12 +40,15 @@
     - [셀렉터](#셀렉터)
     - [힘수/메소드](#함수/메소드)
     - [addEventListener](#addEventListener)
+      - [input 이벤트](#input-이벤트)
+      - [change 이벤트](#change-이벤트)
     - [toggle 함수](#toggle-함수)
     
   - 조건문
     - 응용
       - [if](#if)
-      - [else-if](#else-if) 
+      - [else-if](#else-if)
+
 
 <br />
 
@@ -763,6 +766,33 @@ $('어쩌구').on('click', function(){
 
 <br />
 
+> ### input 이벤트
+이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다. 
+
+<br />
+
+```jquery
+$('#email').on('input', function(e){ 
+  실행할 코드
+});
+```
+
+<br />
+
+> ### change 이벤트
+마찬가지로 이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다.
+하지만 change 이벤트는 $('#email') 요소에 __포커스를 잃었을 때 (커서가 다른곳에 찍힐 때)__ 실행된다.
+
+<br />
+
+```jquery
+$('#email').on('change', function(e){ 
+  실행할 코드
+});
+```
+
+<br />
+
 > ### toggle 함수
 toggle 이라는 이름이 붙은 함수들은 '토글' 기능을 쉽게 개발할 수있게 도와준다. 
 
@@ -864,36 +894,6 @@ $('form').on('submit',function(e){
 - if 두개를 따로 쓰면 if문이 각각 독립적으로 동작
 
 - else if로 if문을 두개 붙여쓰면 둘 중 하나만 동작 (또는 조건식이 둘다 틀리면 둘다 실행 안할 수도 있음)
-
-<br />
-
-> ### input 이벤트
-이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다. 
-
-<br />
-
-```jquery
-$('#email').on('input', function(e){ 
-  실행할 코드
-});
-```
-
-<br />
-
-> ### change 이벤트
-마찬가지로 이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다.
-하지만 change 이벤트는 $('#email') 요소에 __포커스를 잃었을 때 (커서가 다른곳에 찍힐 때)__ 실행된다.
-
-<br />
-
-```jquery
-$('#email').on('change', function(e){ 
-  실행할 코드
-});
-```
-
-<br />
-
 
 <br />
 
