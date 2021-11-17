@@ -39,7 +39,7 @@
     - [기본 문법](#기본-문법)
     - [셀렉터](#셀렉터)
     - [힘수/메소드](#함수/메소드)
-
+    - [addEventListener](#addEventListener)
 # ⚙ JavaScript / jQuery ⚙
 
 ## 기본
@@ -629,16 +629,13 @@ __3. 애니메이션을 쉽게 부착할 수 있다.__
 <br />
 
 ```jQuery
-$('.greeting').hide()
-$('.greeting').fadeOut()
-$('.greeting').slideUp()
+$('어쩌구').hide(); 
+$('어쩌구').show(); 
+$('어쩌구').slideUp(); 
+$('어쩌구').slideDown(); 
+$('어쩌구').fadeOut(); 
+$('어쩌구').fadeIn(); 
 ```
-
-<br />
-
-각각 요소를 사라지게 / fade out 처리 / 접어올리기 해주는 코드이다.
-
-위 애니메이션을 반대로 주고 싶다면 각각 show() fadeIn() slideDown() 값을 주면 된다.
 
 <br />
 
@@ -741,5 +738,82 @@ jQuery 셀렉터로 찾은 HTML요소는 jQuery 함수/메소드를 붙여야한
 나머지 메소드들은 필요할 때 구글에서 찾아써도 무방하다. 
 
 <br />
+
+> ### addEventListener
+
+아래 두개 코드는 같은 기능을 하는 코드이다.
+```jQuery
+$('어쩌구').click(function(){
+  //어쩌구를 클릭시 실행할 코드
+});
+
+$('어쩌구').on('click', function(){
+  //어쩌구를 클릭시 실행할 코드
+});
+```
+
 <br />
+
+> ### toggle 함수
+toggle 이라는 이름이 붙은 함수들은 '토글' 기능을 쉽게 개발할 수있게 도와준다. 
+
+<br />
+
+이걸 사용하면 버튼을 누를 때마다 한번씩 slideUp과 slideDown을 번갈아가며 적용시켜준다.
+
+```jquery
+$('버튼').click(function(){
+  $('서브메뉴').slideToggle();
+});
+```
+
+<br />
+
+toggle 기능을 제공하는 함수는 아래와 같은 것들이 있다.
+
+버튼을 누를 때마다 보임/안보임을 '토글' 해야하는 버튼을 만들고 싶을 때 이걸 적용해주면 개발이 매우 편리해진다.
+
+```jquery
+$('서브메뉴').slideToggle(); 
+$('서브메뉴').fadeToggle(); 
+$('서브메뉴').toggle(); 
+```
+
+<br />
+
+쌩 자바스크립트로 구현하시려면 곧 배울 if 조건문으로 구현하면 된다.
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
 <br />
