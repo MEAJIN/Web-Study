@@ -31,7 +31,26 @@
       - 응용
     - [addEventListener](#addEventListener)
       - 응용
-      - 참고 
+      - 참고
+
+  - jQuery
+    - [쓰는 이유](#쓰는-이유)
+    - [설치 방법](#설치-방법)    
+    - [기본 문법](#기본-문법)
+    - [셀렉터](#셀렉터)
+    - [힘수/메소드](#함수/메소드)
+    - [addEventListener](#addEventListener)
+      - [input 이벤트](#input-이벤트)
+      - [change 이벤트](#change-이벤트)
+    - [toggle 함수](#toggle-함수)
+    
+  - 조건문
+    - 응용
+      - [if](#if)
+      - [else-if](#else-if)
+
+
+<br />
 
 # ⚙ JavaScript / jQuery ⚙
 
@@ -550,8 +569,348 @@ document.getElementById('close').addEventListener('click', function(){
 - https://developer.mozilla.org/en-US/docs/Web/Events (모든 브라우저내의 이벤트 리스트)
 
 <br />
+
+## jQuery
+2006년에 어떤혼모노가 JS로 개발을 하다가 "아 코드 개길어서 귀찮네"라는 생각을 했다. (실화)
+
+그래서 JS 코드를 짧고 쉽게 쓸 수 있는 코드를 발명해내는데, 그 코드 덩어리를 jQuery라고 이름짓고 웹에 공개해버렸다고 한다. 
+
+그래서 이 코드 덩어리만 있으면 JS 쉽고 짧게 작성가능하다. 참고로 남이 개발해놓은 이런 코드 덩어리들을 전문용어로 __라이브러리__ 라고 부른다. 
+
 <br />
+
+> ### 쓰는 이유
+
+__1. 코드가 매우 짧아진다.__
+
+__2. 여러개의 요소를 한번에 싸잡아서 바꿀 수 있다.__
+
 <br />
+
+`<p>` 태그가 3개 있다고 가정해보자.
+
+```html
+<p class="greeting">안녕하세요</p>
+<p class="greeting">안녕하세요</p>
+<p class="greeting">안녕하세요</p>
+```
+
 <br />
+
+자바스크립트의 경우 3줄의 코드를 입력해야 하며, 몇번째 자료를 바꿀건지 각각 지정해 주어야 한다는 불편함이 있다.
+
+```js
+document.getElementsByClassName('greeting')[0].innerHTML = '안녕';
+document.getElementsByClassName('greeting')[1].innerHTML = '안녕';
+document.getElementsByClassName('greeting')[2].innerHTML = '안녕';
+```
+
 <br />
+
+반면 jQuery를 쓴다면 셀렉터 하나로 한번에 처리가 가능하다. 즉, 요소가 여러개 있어도 그냥 한번에 다 바꿔준다는 것!
+참고로, jQuery로 찾은 여러 요소 중 맨 위의 것만 바꾸고 싶은 경우 $('.greeting').eq(0) 이렇게 하면 된다. 
+
+```jQuery
+$('.greeting').html('안녕')
+```
+
+<br />
+
+버튼이 여러개 있어도 이벤트리스너를 여러개 한번에 부착해버릴 수 있다.
+
+```html
+<button class="btn">버튼btn</button>
+<button class="btn">버튼btn</button>
+<button class="btn">버튼btn</button>
+```
+
+```jQuery
+<script>
+  $('.btn').on('click', function(){ 버튼누르면 실행할 코드~~ } );
+</script>
+```
+
+<br />
+
+__3. 애니메이션을 쉽게 부착할 수 있다.__
+
+요소를 사라지기 / fade out / 접어올리기 이런 간단한 애니메이션을 주고 싶을 때
+
+쌩자바스크립트로 구현하려면 CSS를 잘 하던가 JS로 코드를 5줄 정도 짜야하는데, jQuery를 사용하면 한줄 컷이다.
+
+<br />
+
+```jQuery
+$('어쩌구').hide(); 
+$('어쩌구').show(); 
+$('어쩌구').slideUp(); 
+$('어쩌구').slideDown(); 
+$('어쩌구').fadeOut(); 
+$('어쩌구').fadeIn(); 
+```
+
+<br />
+
+> ### 설치 방법
+
+> #### 1. CDN 사이트를 이용해서 첨부하기
+Query 파일을 호스팅 해주는 CDN 사이트들이 있다. 거기서 jQuery 파일을 따면 쉽게 설치가 가능하다.
+
+거기서 나에게 맞는 jQuery 버전을 선택하면 이상한 script 태그를 줄 텐데 이걸 HTML 파일에 그대로 복붙하면 설치가 끝난다.
+
+보통 3.X 버전을 설치하면 되고, 인터넷 익스플로러 8이하 호환성을 잡는 사이트를 만들고 있다면 1.X 버전을 설치하면 된다.
+
+(CDN은 content delivery network의 약자로, 자주 사용하는 css, js 라이브러리 파일들을 호스팅해주는 사이트를 뜻함)
+
+<br />
+
+```js
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+```
+
+<br />
+
+> #### 2. 직접 다운받아서 첨부하기 
+
+위에서 첨부한 스크립트 태그를 잘보면 src 속성 내에 무슨 사이트 주소가 하나 있다 .
+
+예를 들어 https://code.jquery.com/jquery-3.4.1.js 이런건데 이 사이트로 접속하시면 js 파일이 하나 열린다. 
+
+이걸 우클릭 > 자신의 작업폴더에 다른이름으로 저장한다음 아래 스크립트를 적어주면 된다.
+
+<br />
+
+```js
+<script src="아까 다운받은 그 파일 경로"></script>
+```
+
+<br />
+
+> ### 기본 문법
+jQuery는 자바스크립트랑 다른건 아니다. 그저 HTML 변경에 있어 코드를 더 짧게 작성할 수 있을 뿐 이다. 특히 셀렉터가 조금 더 쓰기 쉽게 되어있다.
+
+<br />
+
+```js, jquery
+// js
+document.getElementById('title').innerHTML = '바보';
+
+// jquery
+$('#title').html('바보');
+```
+
+<br />
+
+> ### 셀렉터
+jQuery는 HTML찾는 셀렉터를 $() 를 이용해 사용한다. 그리고 따옴표 안에 CSS 스타일의 셀렉터를 적어주면 된다.
+
+예를 들면 CSS에서 ID로 뭔가를 선택할 때 #기호를 붙이는 것 처럼 jQuery도 #title이라고 적어주면 된다.
+
+그렇다면 클래스명이 box인 요소를 찾으려면 어떻게 할까? $('.box')라고 쓰면 된다.
+
+<br />
+
+```jquery
+$('#title'); 
+$('.box') 
+```
+
+<br />
+
+> ### 함수/메소드
+내가 원하는 세부 속성을 바꿀 때 자바스크립트처럼 메소드를 뒤에 붙여주면 된다. 하지만 자바스크립트와 이름이 약간 다르다.
+
+- .text 는 안에있는 모든 텍스트를 변경하라
+
+- .html 은 안에있는 모든 내용을 변경하라 (HTML 태그 포함)
+
+- .css 는 스타일속성을 변경하라 
+
+라는 뜻이다.
+
+<br />
+
+```jquery
+$('#title').text('바보'); 
+$('#title').html('<p>바보</p>'); 
+$('#title').css('color', 'red');  
+```
+
+<br />
+
+참고로,
+
+자바스크립트로 찾은 HTML요소는 자바스크립트 함수/메소드를 뒤에 붙여야하며
+
+jQuery 셀렉터로 찾은 HTML요소는 jQuery 함수/메소드를 붙여야한다. 
+
+나머지 메소드들은 필요할 때 구글에서 찾아써도 무방하다. 
+
+<br />
+
+> ### addEventListener
+
+아래 두개 코드는 같은 기능을 하는 코드이다.
+```jQuery
+$('어쩌구').click(function(){
+  //어쩌구를 클릭시 실행할 코드
+});
+
+$('어쩌구').on('click', function(){
+  //어쩌구를 클릭시 실행할 코드
+});
+```
+
+<br />
+
+> ### input 이벤트
+이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다. 
+
+<br />
+
+```jquery
+$('#email').on('input', function(e){ 
+  실행할 코드
+});
+```
+
+<br />
+
+> ### change 이벤트
+
+마찬가지로 이벤트리스너 왼쪽에 있는 $('#email') 요소 내부에 입력된 값이 바뀔 때마다 내부 코드를 실행해준다.
+
+하지만 change 이벤트는 $('#email') 요소에 __포커스를 잃었을 때 (커서가 다른곳에 찍힐 때)__ 실행된다.
+
+<br />
+
+```jquery
+$('#email').on('change', function(e){ 
+  실행할 코드
+});
+```
+
+<br />
+
+> ### toggle 함수
+toggle 이라는 이름이 붙은 함수들은 '토글' 기능을 쉽게 개발할 수있게 도와준다. 
+
+<br />
+
+이걸 사용하면 버튼을 누를 때마다 한번씩 slideUp과 slideDown을 번갈아가며 적용시켜준다.
+
+```jquery
+$('버튼').click(function(){
+  $('서브메뉴').slideToggle();
+});
+```
+
+<br />
+
+toggle 기능을 제공하는 함수는 아래와 같은 것들이 있다.
+
+버튼을 누를 때마다 보임/안보임을 '토글' 해야하는 버튼을 만들고 싶을 때 이걸 적용해주면 개발이 매우 편리해진다.
+
+```jquery
+$('서브메뉴').slideToggle(); 
+$('서브메뉴').fadeToggle(); 
+$('서브메뉴').toggle(); 
+```
+
+<br />
+
+쌩 자바스크립트로 구현하려면 곧 배울 if 조건문으로 구현하면 된다.
+
+<br />
+
+> ## 조건문
+
+> #### 응용
+
+> ### if
+
+- 이메일 input이 공백이면 폼을 전송하지 않는다.
+
+- 이메일 input이 공백이 아니면 폼을 전송해야한다.
+
+- 전송이 되는지 여부는 새로고침/페이지 이동 여부로 알 수 있다. 
+
+<br />
+
+```html
+<div class="modal-box">
+    <div class="modal-alert">
+      <p>로그인 하세요</p>
+
+      <form action="login.php">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" id="email">
+          <p id="email-alert">이메일란이 빈칸입니다.</p>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" id="pw">
+          <p id="pw-alert">비밀번호란이 빈칸입니다.</p>
+        </div>
+        <button type="submit" class="btn btn-primary">전송</button>
+      </form>
+
+      <button id="close"> 닫기 </button>
+    </div>
+</div>
+```
+
+```jquery
+$('form').on('submit',function(e){ 
+  if ($('#email').val() == ''){
+    e.preventDefault(); // 폼 전송을 막아주는 코드
+    $('#email-alert').show(); // 이벤트 발생 시, input 밑에 안내문을 보여줌 (없어도 되는 코드임)
+  } 
+});
+```
+
+<br />
+
+> ### else-if
+email 입력란 뿐만 아니라 password 입력란도 동시에 공백인지 검사하고 싶다면?
+
+<br />
+
+```jquery
+$('form').on('submit',function(e){ 
+  if ($('#email').val() == ''){
+    e.preventDefault();
+    $('#email-alert').show();
+  }
+  
+  if ($('#pw').val() == '') {
+      e.preventDefault();
+      $('#pw-alert').show();
+  }
+});
+```
+
+<br />
+
+- if 두개를 따로 쓰면 if문이 각각 독립적으로 동작
+
+- else if로 if문을 두개 붙여쓰면 둘 중 하나만 동작 (또는 조건식이 둘다 틀리면 둘다 실행 안할 수도 있음)
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
 <br />
