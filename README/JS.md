@@ -1072,7 +1072,7 @@ ES6문법에서는 var 뿐만 아니라 let과 const라는 키워드로도 변�
 
 <br />
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/142596012-d3a28169-fb5d-4fbd-86c7-c3da1db5f939.png" width="80%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/142599143-9d7b68a3-c8d6-4fa3-a8f0-c4c9952bd842.png" width="70%"></p>
 
 <br />
 
