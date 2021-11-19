@@ -52,6 +52,11 @@
 - LV.2
 
   - 변수
+    - [변수의 쓰임새](#변수의-쓰임새)
+    - [선언과 할당](#선언과-할당)
+    - [변수의 범위](#변수의-범위)
+    - [let과 const 변수](#let과-const-변수)
+    - [변수의 Hoisting](#변수의-Hoisting)
 
 <br />
 
@@ -1067,7 +1072,7 @@ ES6문법에서는 var 뿐만 아니라 let과 const라는 키워드로도 변�
 
 <br />
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/142596012-d3a28169-fb5d-4fbd-86c7-c3da1db5f939.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/142596012-d3a28169-fb5d-4fbd-86c7-c3da1db5f939.png" width="80%"></p>
 
 <br />
 
