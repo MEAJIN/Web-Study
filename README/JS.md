@@ -1106,11 +1106,11 @@ ES6문법에서는 var 뿐만 아니라 let과 const라는 키워드로도 변�
 ## jQuery Animate 함수
 
 > ### Animate
-animate는 특정 CSS 속성을 변경하기 위해서 사용하는 함수이다. 단, 변경을 아주 천천히 서서히 시켜주고 싶을 때 사용한다.
+`animate`는 특정 CSS 속성을 변경하기 위해서 사용하는 함수이다. 단, 변경을 아주 천천히 서서히 시켜주고 싶을 때 사용한다.
 
 <br />
 
-예를 들어, .box라는 요소에 margin-left를 100px 만큼 주고 싶을 땐 아래와 같이 사용한다.
+예를 들어, `.box`라는 요소에 `margin-left`를 100px 만큼 주고 싶을 땐 아래와 같이 사용한다.
 
 하지만 서서히 1초에 걸쳐서 동작된다.
 
@@ -1128,11 +1128,9 @@ $('.box').animate({ marginLeft : '100px' });
 $('.box').animate({ marginLeft : '100px', marginTop : '90px' }, 1000); 
 ```
 
-<br />
+- `animate`함수의 첫번째 파라미터엔 {} 중괄호를 집어넣고, 중괄호 안에는 애니메이션을 줄 CSS 속성들을 나열하면 된다.
 
-- animate함수의 첫번째 파라미터엔 {} 중괄호를 집어넣고, 중괄호 안에는 애니메이션을 줄 CSS 속성들을 나열하면 된다.
-
-- margin-left 같은 이름은 중간에 '-' 기호가 있는데 이걸 자바스크립트 상에선 쓸 수 없다.
+- `margin-left` 같은 이름은 중간에 '-' 기호가 있는데 이걸 자바스크립트 상에선 쓸 수 없다.
 
   - '-' 기호를 없애고 대문자로 모든 단어들을 붙여서 적어주어야 한다. (카멜표기법)
 
@@ -1145,15 +1143,15 @@ $('.box').animate({ marginLeft : '100px', marginTop : '90px' }, 1000);
 
   - 1000이라고 작성하면 1000ms (1초) 동안 애니메이션을 동작시키라는 의미이다.
 
+
 (참고로 { 어쩌구 : 저쩌구 } 이렇게 생긴걸 object 자료형이라고 한다)
 
 <br />
 
 > #### Query 함수를 순서대로 동작시키고 싶은 경우
 
-코드를 두줄 나란히 쓴다고 해서 윗 코드가 먼저 실행된다는 보장이 없다.
-
-왜 그런지는 자바스크립트의 Event queue, Event loop, stack 이라는 개념을 찾아보자~
+아래처럼 코드를 두줄 나란히 쓴다고 해서 윗 코드가 먼저 실행된다는 보장이 없다.
+왜 그런지는 자바스크립트의 `Event queue`, `Event loop`, `stack` 이라는 개념을 찾아보기!
 
 ```jquery
 $('.black-background').show(); 
@@ -1164,7 +1162,6 @@ $('.black-background').animate({ marginTop : '0px' });
 
 그래서 jQuery에서 어떤 함수들을 꼭 차례차례 실행시키고 싶은 경우엔 여러가지 방법이 있는데, 가장 쉬운 방법은 아래와 같다.
 
-<br />
 
 ```jquery
 $('.black-background').show().animate({ marginTop : '0px' });
@@ -1172,7 +1169,7 @@ $('.black-background').show().animate({ marginTop : '0px' });
 
 <br />
 
-이렇게 쓰면 show()를 먼저 해주고 animate()를 그 다음에 실행해준다.
+이렇게 쓰면 `show()`를 먼저 해주고 `animate()`를 그 다음에 실행해준다.
 
 그런데 같은 요소가 아니라
 
@@ -1182,9 +1179,9 @@ $('.black-background').show().animate({ marginTop : '0px' });
 
 <br />
 
-만약, 각각 다른 요소를 차례로 animate 해주고 싶다면 아래와 같이 사용할 수 있다.
+만약, 각각 다른 요소를 차례로 `animate` 해주고 싶다면 아래와 같이 사용할 수 있다.
 
-<br />
+animate 함수의 세번째 파라미터로 function(){} 를 집어넣은 다음, 중괄호 안에 첫 animate가 끝났을 때 실행할 코드를 적어주면 된다.
 
 ```jquery
 $('이 요소').animate({ width: '250px'}, 1000, function() {
@@ -1194,16 +1191,12 @@ $('이 요소').animate({ width: '250px'}, 1000, function() {
 
 <br />
 
-animate 함수의 세번째 파라미터로 function(){} 를 집어넣은 다음
-
-중괄호 안에 첫 animate가 끝났을 때 실행할 코드를 적어주면 된다.
+> ### 애니메이션을 프로처럼 개발 하기 💻
 
 <br />
 
-> ### 애니메이션을 프로처럼 개발 하기 💻
-
 > ### 1. animate() 말고 CSS transition 쓰기 💻
-transition 속성은 class안에 transition 속성을 넣어주면 된다.
+`transition` 속성은 class안에 transition 속성을 넣어주면 된다.
 
 <br />
 
@@ -1218,11 +1211,11 @@ transition 속성은 class안에 transition 속성을 넣어주면 된다.
 
 <br />
 
-> #### transition 사용 이유
+> ### transition 사용 이유
 
 <br />
 
-__1. transition은 자바스크립트와 독립적으로 동작한다.__
+? #### 1. transition은 자바스크립트와 독립적으로 동작한다.
 
 jQuery로 애니메이션을 주게 되면 매우 느리고 천천히 동작한다.
 
@@ -1238,7 +1231,7 @@ jQuery로 애니메이션을 주게 되면 매우 느리고 천천히 동작한�
 
 <br />
 
-__2. transition 쓰는게 훨씬 더 쉽다.__
+> #### 2. transition 쓰는게 훨씬 더 쉽다.
 
 한줄만 추가하면 애니메이션이 완성되는데 animate() 어쩌구보다는 훨씬 쉽다.
 
@@ -1249,18 +1242,19 @@ __2. transition 쓰는게 훨씬 더 쉽다.__
 <br />
 
 > ### 2. margin 말고 transform 속성 쓰기 💻
-margin, width, height, top, left, bottom, right 이런 CSS 속성들은 페이지 레이아웃을 변경하는 속성이다.
+`margin`, `width`, `height`, `top`, `left`, `bottom`, `right` 이런 CSS 속성들은 페이지 레이아웃을 변경하는 속성이다.
+
 브라우저는 레이아웃을 변경하면 렌더링시간이 매우 오래걸린다.
 
 <br />
 
-transform, opacity 이런 CSS 속성들은 페이지 레이아웃과 상관없는 쩌리 속성들이다.
+`transform`, `opacity` 이런 CSS 속성들은 페이지 레이아웃과 상관없는 쩌리 속성들이다.
 
 브라우저는 쩌리 속성을 변경하는건 일도 아니다. 매우 빠르게 처리해준다.
 
 (왜 속도가 빠른지 궁금하면 '브라우저의 css 렌더링 단계'라는걸 공부해보자)
 
-그래서 스무스하게 동작하는 애니메이션을 만들고 싶다면 margin 이런거 쓰지 말고 transform을 쓰는게 좋다.
+그래서 스무스하게 동작하는 애니메이션을 만들고 싶다면 `margin` 이런거 쓰지 말고 `transform`을 쓰는게 좋다.
 
 여러가지 세부속성들 덕분에 이동도 가능하고 회전도 가능하고 사이즈 조절도 가능하다.
 
@@ -1280,6 +1274,6 @@ transform : scale(2)
 
 그러니 애니메이션 같은 거 개발할 땐 장기적으로 안쓰는게 좋을 것 같다.
 
-addClass() removeClass() 함수를 이용해서 미리 만들어놓은 CSS 클래스명을 붙여서 최종화면으로 변하게 만들도록 하자.
+`addClass()`, `removeClass()` 함수를 이용해서 미리 만들어놓은 CSS 클래스명을 붙여서 최종화면으로 변하게 만들도록 하자.
 
 클래스로 짜놓으면 깔끔하고 수정도 쉽고 나중에 비슷한 애니메이션으로 재활용도 쉬워진다.
