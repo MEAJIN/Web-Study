@@ -149,12 +149,10 @@ let goodVariableName; // 추천 방식
 아래 예시와 같은 코드를 작성하게 되면 `<h3>` 태그의 내부 글자가 __바보__ 로 바뀌게 된다. 즉, HTML을 변경하고 싶을 때 아래 코드를 응용하여 사용하면 된다.
 
 ```html
-
 <h3 id="hello">안녕하세요</h3>
 ```
 
 ```js
-
 document.getElementById('hello').innerHTML = '바보';
 ```
 
@@ -181,7 +179,6 @@ document.getElementById('hello').innerHTML = '바보';
 위의 `<h3>` 내부의 글자를 빨간색으로 바꾸고 싶다면 어떻게 하는가?
 
 ```js
-
 document.getElementById('hello').style.color = 'red';
 ```
 
@@ -219,7 +216,6 @@ document.getElementById('hello').style.color = 'red';
 모튼 HTML 태그 내에 `onclick` 이라는 속성을 넣을 수 있는데, 이걸 넣을경우 해당 HTML을 눌렀을 때 `onclick` 내부의 자바스크립트를 실행하게 된다.
 
 ```html
-
 <button onclick="여기에 자바스크립트 작성"> 버튼 </button>
 ```
 
@@ -239,7 +235,6 @@ document.getElementById('hello').style.color = 'red';
 `display = 'block';` 값을 주면 된다.
 
 ```html, js
-
 <div class="alert-box" id="alert-box-appear">Alert 박스</div>
 <button onclick = "document.getElementById('alert-box-appear').style.display = 'block' ;">버튼</button>
 ```
@@ -273,7 +268,6 @@ document.getElementById('hello').style.color = 'red';
 `display = 'none';` 값을 주면 된다.
 
 ```html, js
-
 <div class="alert-box" id="alert-box-appear">Alert 박스
   <button onclick = "document.getElementById('alert-box-appear').style.display = 'none' ;">닫기</button>
 </div>
@@ -282,7 +276,6 @@ document.getElementById('hello').style.color = 'red';
 ```
 
 ```css
-
 .alert-box {
   background: rgb(2, 2, 126);
   color: white;
@@ -317,7 +310,6 @@ document.getElementById('hello').style.color = 'red';
 - {} 중괄호 안에는 축약하고 싶은 코드를 넣으면 된다.
 
 ```js
-
 function alertOpen(){
   document.getElementById('alert-box-appear').style.display = 'block';
 }
@@ -334,7 +326,6 @@ function alertClose(){
 <br />
 
 ```html
-
 <div class="alert-box" id="alert-box-appear">Alert 박스
     <button onclick = "alertClose()">닫기</button>
   </div>
@@ -724,7 +715,7 @@ jQuery는 HTML찾는 셀렉터를 $() 를 이용해 사용한다. 그리고 따�
 
 <br />
 
-```jquery
+```jQuery
 $('#title'); 
 $('.box') 
 ```
