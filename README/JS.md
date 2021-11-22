@@ -33,7 +33,7 @@
       - 응용
       - 참고
 
-  - jQuery
+  - jQuery 기초
     - [쓰는 이유](#쓰는-이유)
     - [설치 방법](#설치-방법)    
     - [기본 문법](#기본-문법)
@@ -57,6 +57,12 @@
     - [변수의 범위](#변수의-범위)
     - [let과 const 변수](#let과-const-변수)
     - [변수의 Hoisting](#변수의-Hoisting)
+
+  - jQuery Animate 함수
+    - [Animate](#Animate)
+      - Animate 함수 사용법
+    - [Query 함수를 순서대로 동작시키고 싶은 경우](#Query-함수를-순서대로-동작시키고-싶은-경우)
+    - [애니메이션을 프로처럼 개발 하기](#애니메이션을-프로처럼-개발-하기)
 
 <br />
 
@@ -146,12 +152,10 @@ let goodVariableName; // 추천 방식
 아래 예시와 같은 코드를 작성하게 되면 `<h3>` 태그의 내부 글자가 __바보__ 로 바뀌게 된다. 즉, HTML을 변경하고 싶을 때 아래 코드를 응용하여 사용하면 된다.
 
 ```html
-
 <h3 id="hello">안녕하세요</h3>
 ```
 
 ```js
-
 document.getElementById('hello').innerHTML = '바보';
 ```
 
@@ -178,7 +182,6 @@ document.getElementById('hello').innerHTML = '바보';
 위의 `<h3>` 내부의 글자를 빨간색으로 바꾸고 싶다면 어떻게 하는가?
 
 ```js
-
 document.getElementById('hello').style.color = 'red';
 ```
 
@@ -216,7 +219,6 @@ document.getElementById('hello').style.color = 'red';
 모튼 HTML 태그 내에 `onclick` 이라는 속성을 넣을 수 있는데, 이걸 넣을경우 해당 HTML을 눌렀을 때 `onclick` 내부의 자바스크립트를 실행하게 된다.
 
 ```html
-
 <button onclick="여기에 자바스크립트 작성"> 버튼 </button>
 ```
 
@@ -236,7 +238,6 @@ document.getElementById('hello').style.color = 'red';
 `display = 'block';` 값을 주면 된다.
 
 ```html, js
-
 <div class="alert-box" id="alert-box-appear">Alert 박스</div>
 <button onclick = "document.getElementById('alert-box-appear').style.display = 'block' ;">버튼</button>
 ```
@@ -270,7 +271,6 @@ document.getElementById('hello').style.color = 'red';
 `display = 'none';` 값을 주면 된다.
 
 ```html, js
-
 <div class="alert-box" id="alert-box-appear">Alert 박스
   <button onclick = "document.getElementById('alert-box-appear').style.display = 'none' ;">닫기</button>
 </div>
@@ -279,7 +279,6 @@ document.getElementById('hello').style.color = 'red';
 ```
 
 ```css
-
 .alert-box {
   background: rgb(2, 2, 126);
   color: white;
@@ -314,7 +313,6 @@ document.getElementById('hello').style.color = 'red';
 - {} 중괄호 안에는 축약하고 싶은 코드를 넣으면 된다.
 
 ```js
-
 function alertOpen(){
   document.getElementById('alert-box-appear').style.display = 'block';
 }
@@ -331,7 +329,6 @@ function alertClose(){
 <br />
 
 ```html
-
 <div class="alert-box" id="alert-box-appear">Alert 박스
     <button onclick = "alertClose()">닫기</button>
   </div>
@@ -618,7 +615,7 @@ document.getElementsByClassName('greeting')[2].innerHTML = '안녕';
 반면 jQuery를 쓴다면 셀렉터 하나로 한번에 처리가 가능하다. 즉, 요소가 여러개 있어도 그냥 한번에 다 바꿔준다는 것!
 참고로, jQuery로 찾은 여러 요소 중 맨 위의 것만 바꾸고 싶은 경우 $('.greeting').eq(0) 이렇게 하면 된다. 
 
-```jQuery
+```js
 $('.greeting').html('안녕')
 ```
 
@@ -632,7 +629,7 @@ $('.greeting').html('안녕')
 <button class="btn">버튼btn</button>
 ```
 
-```jQuery
+```js
 <script>
   $('.btn').on('click', function(){ 버튼누르면 실행할 코드~~ } );
 </script>
@@ -648,7 +645,7 @@ __3. 애니메이션을 쉽게 부착할 수 있다.__
 
 <br />
 
-```jQuery
+```js
 $('어쩌구').hide(); 
 $('어쩌구').show(); 
 $('어쩌구').slideUp(); 
@@ -721,7 +718,7 @@ jQuery는 HTML찾는 셀렉터를 $() 를 이용해 사용한다. 그리고 따�
 
 <br />
 
-```jquery
+```js
 $('#title'); 
 $('.box') 
 ```
@@ -741,7 +738,7 @@ $('.box')
 
 <br />
 
-```jquery
+```js
 $('#title').text('바보'); 
 $('#title').html('<p>바보</p>'); 
 $('#title').css('color', 'red');  
@@ -762,7 +759,8 @@ jQuery 셀렉터로 찾은 HTML요소는 jQuery 함수/메소드를 붙여야한
 > ### addEventListener
 
 아래 두개 코드는 같은 기능을 하는 코드이다.
-```jQuery
+
+```js
 $('어쩌구').click(function(){
   //어쩌구를 클릭시 실행할 코드
 });
@@ -779,7 +777,7 @@ $('어쩌구').on('click', function(){
 
 <br />
 
-```jquery
+```js
 $('#email').on('input', function(e){ 
   실행할 코드
 });
@@ -795,7 +793,7 @@ $('#email').on('input', function(e){
 
 <br />
 
-```jquery
+```js
 $('#email').on('change', function(e){ 
   실행할 코드
 });
@@ -810,7 +808,7 @@ toggle 이라는 이름이 붙은 함수들은 '토글' 기능을 쉽게 개발�
 
 이걸 사용하면 버튼을 누를 때마다 한번씩 slideUp과 slideDown을 번갈아가며 적용시켜준다.
 
-```jquery
+```js
 $('버튼').click(function(){
   $('서브메뉴').slideToggle();
 });
@@ -822,7 +820,7 @@ toggle 기능을 제공하는 함수는 아래와 같은 것들이 있다.
 
 버튼을 누를 때마다 보임/안보임을 '토글' 해야하는 버튼을 만들고 싶을 때 이걸 적용해주면 개발이 매우 편리해진다.
 
-```jquery
+```js
 $('서브메뉴').slideToggle(); 
 $('서브메뉴').fadeToggle(); 
 $('서브메뉴').toggle(); 
@@ -870,7 +868,7 @@ $('서브메뉴').toggle();
 </div>
 ```
 
-```jquery
+```js
 $('form').on('submit',function(e){ 
   if ($('#email').val() == ''){
     e.preventDefault(); // 폼 전송을 막아주는 코드
@@ -886,7 +884,7 @@ email 입력란 뿐만 아니라 password 입력란도 동시에 공백인지 �
 
 <br />
 
-```jquery
+```js
 $('form').on('submit',function(e){ 
   if ($('#email').val() == ''){
     e.preventDefault();
@@ -1100,23 +1098,177 @@ ES6문법에서는 var 뿐만 아니라 let과 const라는 키워드로도 변�
 
 <br />
 
+## jQuery Animate 함수
+
+> ### Animate
+`animate`는 특정 CSS 속성을 변경하기 위해서 사용하는 함수이다. 단, 변경을 아주 천천히 서서히 시켜주고 싶을 때 사용한다.
 
 <br />
 
+예를 들어, `.box`라는 요소에 `margin-left`를 100px 만큼 주고 싶을 땐 아래와 같이 사용한다.
+
+하지만 서서히 1초에 걸쳐서 동작된다.
+
+```js
+$('.box').animate({ marginLeft : '100px' }); 
+```
 
 <br />
 
+> ####  Animate 함수 사용법
 
 <br />
 
+```js
+$('.box').animate({ marginLeft : '100px', marginTop : '90px' }, 1000); 
+```
+
+- `animate` 함수의 첫번째 파라미터엔 {} 중괄호를 집어넣고, 중괄호 안에는 애니메이션을 줄 CSS 속성들을 나열하면 된다.
+
+- `margin-left` 같은 이름은 중간에 '-' 기호가 있는데 이걸 자바스크립트 상에선 쓸 수 없다.
+
+  - '-' 기호를 없애고 대문자로 모든 단어들을 붙여서 적어주어야 한다. (카멜표기법)
+
+- 우측엔 문자형태로 '100px' 이런 값을 입력하면 된다. 
+
+- 콤마로 여러개의 속성들을 집어넣을 수 있다. 
+
+ 
+- 번째 파라미터엔 1000 이렇게 ms 단위의 시간을 집어넣을 수 있는데 , 애니메이션 동작 속도를 의미한다. 
+
+  - 1000이라고 작성하면 1000ms (1초) 동안 애니메이션을 동작시키라는 의미이다.
+
+
+(참고로 { 어쩌구 : 저쩌구 } 이렇게 생긴걸 object 자료형이라고 한다)
 
 <br />
 
+> #### Query 함수를 순서대로 동작시키고 싶은 경우
+
+아래처럼 코드를 두줄 나란히 쓴다고 해서 윗 코드가 먼저 실행된다는 보장이 없다.
+왜 그런지는 자바스크립트의 `Event queue`, `Event loop`, `stack` 이라는 개념을 찾아보기!
+
+```js
+$('.black-background').show(); 
+$('.black-background').animate({ marginTop : '0px' }); 
+```
 
 <br />
 
+그래서 jQuery에서 어떤 함수들을 꼭 차례차례 실행시키고 싶은 경우엔 여러가지 방법이 있는데, 가장 쉬운 방법은 아래와 같다.
+
+
+```js
+$('.black-background').show().animate({ marginTop : '0px' });
+```
 
 <br />
 
+이렇게 쓰면 `show()`를 먼저 해주고 `animate()`를 그 다음에 실행해준다.
+
+그런데 같은 요소가 아니라
+
+1. 이 요소를 animate 해준 다음에
+
+2. 저 요소를 animate 해줘 라는 뜻이 된다.
 
 <br />
+
+만약, 각각 다른 요소를 차례로 `animate` 해주고 싶다면 아래와 같이 사용할 수 있다.
+
+animate 함수의 세번째 파라미터로 function(){} 를 집어넣은 다음, 중괄호 안에 첫 animate가 끝났을 때 실행할 코드를 적어주면 된다.
+
+```js
+$('이 요소').animate({ width: '250px'}, 1000, function() {
+  $('저 요소').animate({ height : '500px'}  });
+});
+```
+
+<br />
+
+> ### 애니메이션을 프로처럼 개발 하기 💻
+
+<br />
+
+> ### 1. animate() 말고 CSS transition 쓰기 💻
+`transition` 속성은 class안에 transition 속성을 넣어주면 된다.
+
+<br />
+
+그러면 .box라는 요소가 모든 CSS속성(all)이 변할 때 1초에 걸쳐서 스무스하게 변경해준다.
+
+```css
+.box {
+  margin-top : 100px;
+  transition : all 1s;
+}
+```
+
+<br />
+
+> ### transition 사용 이유
+
+<br />
+
+> #### 1. transition은 자바스크립트와 독립적으로 동작한다.
+
+jQuery로 애니메이션을 주게 되면 매우 느리고 천천히 동작한다.
+
+컴퓨터가 좋아서 빠르게 동작하는 것 같아 보이는 것이지 애니메이션이 조금만 복잡하거나 많으면 금방 버벅인다.
+
+특히 브라우저에서 자바스크립트로 힘든 일을 시키고 있는데 여기다가 또 애니메이션까지 돌리라고 명령을 주면 100% 확률로 프레임 저하가 일어난다.
+
+특히 자바스크립트로 많은 일을 해야하는 SPA 같은 사이트를 만든다면 애니메이션을 자바스크립트로 넣으면 안된다.
+
+그러니 자바스크립트가 할 일이 많아도 빠르게 동작하는 transition을 사용하는게 좋다.
+
+(혹은 애니메이션 전용 라이브러리 velocity.js 등을 따로 설치해서 쓰면 실행 속도 걱정이 해결된다.)
+
+<br />
+
+> #### 2. transition 쓰는게 훨씬 더 쉽다.
+
+한줄만 추가하면 애니메이션이 완성되는데 animate() 어쩌구보다는 훨씬 쉽다.
+
+그리고 커스터마이징도 쉽다.
+
+애니메이션 동작 속도같은걸 선형이아니라 커브를 주고 싶으면 관련된 CSS 속성만 찾아넣으면 된다.
+
+<br />
+
+> ### 2. margin 말고 transform 속성 쓰기 💻
+`margin`, `width`, `height`, `top`, `left`, `bottom`, `right` 이런 CSS 속성들은 페이지 레이아웃을 변경하는 속성이다.
+
+브라우저는 레이아웃을 변경하면 렌더링시간이 매우 오래걸린다.
+
+<br />
+
+`transform`, `opacity` 이런 CSS 속성들은 페이지 레이아웃과 상관없는 쩌리 속성들이다.
+
+브라우저는 쩌리 속성을 변경하는건 일도 아니다. 매우 빠르게 처리해준다.
+
+(왜 속도가 빠른지 궁금하면 '브라우저의 css 렌더링 단계'라는걸 공부해보자)
+
+그래서 스무스하게 동작하는 애니메이션을 만들고 싶다면 `margin` 이런거 쓰지 말고 `transform`을 쓰는게 좋다.
+
+여러가지 세부속성들 덕분에 이동도 가능하고 회전도 가능하고 사이즈 조절도 가능하다.
+
+<br />
+
+```css
+transform : translateX(100px);
+transform : rotate(30deg);
+transform : scale(2)
+```
+
+<br />
+
+> ### 3. 최종화면으로 변하는건 class를 붙이는 방식으로 개발하자
+
+간단한 속성 하나 바꿀 땐 매우 유용하지만 여러개 CSS 바꾸고 싶으면 코드가 길어져서 보기 싫지 않을까?
+
+그러니 애니메이션 같은 거 개발할 땐 장기적으로 안쓰는게 좋을 것 같다.
+
+`addClass()`, `removeClass()` 함수를 이용해서 미리 만들어놓은 CSS 클래스명을 붙여서 최종화면으로 변하게 만들도록 하자.
+
+클래스로 짜놓으면 깔끔하고 수정도 쉽고 나중에 비슷한 애니메이션으로 재활용도 쉬워진다.
