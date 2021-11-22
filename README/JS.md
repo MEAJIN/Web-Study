@@ -765,7 +765,8 @@ jQuery 셀렉터로 찾은 HTML요소는 jQuery 함수/메소드를 붙여야한
 > ### addEventListener
 
 아래 두개 코드는 같은 기능을 하는 코드이다.
-```jQuery
+
+```js
 $('어쩌구').click(function(){
   //어쩌구를 클릭시 실행할 코드
 });
@@ -782,7 +783,7 @@ $('어쩌구').on('click', function(){
 
 <br />
 
-```jquery
+```js
 $('#email').on('input', function(e){ 
   실행할 코드
 });
