@@ -1,0 +1,121 @@
+.jumbotron {
+  background: lightslategray;
+  color: aliceblue;
+  padding: 20px;
+}
+
+.modal-box {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: all 1s;
+  transform: translateY(-1500px);
+}
+
+.modal-alert {
+  background: white;
+  width: 80%;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modal-alert p {
+  display: inline-block;
+}
+
+.modal-alert #pw {
+  margin-top: 10px;
+}
+
+.form-group p {
+  display: none;
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+#menu-close {
+  border-radius: 5px;
+  background: black;
+  color: white;
+  border: 1px;
+  margin-left: 230px;
+  font-size: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-menu h4 {
+  margin: 0;
+}
+
+.nav-sub {
+  display: none;
+}
+
+#test-input {
+  margin: 10px;
+}
+
+.left-menu {
+  width: 300px;
+  height: 100%;
+  background: black;
+  color: white;
+  position: fixed;
+  margin-left: -300px;
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.left-menu p {
+  margin-top: 10px;
+}
+
+.slide-container {
+  width: 300vw;
+  transition: transform 1s;
+}
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+
+.slide-box img {
+  width: 100%;
+}
+
+.slide-btn {
+  margin: 0 15px;
+  color: black;
+  font-size: 25px;
+  border: 1px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slide-right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.slide-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
