@@ -33,4 +33,22 @@
   - [margin 상쇄에 대하여](https://velog.io/@raram2/CSS-%EB%A7%88%EC%A7%84-%EC%83%81%EC%87%84Margin-collapsing-%EC%9B%90%EB%A6%AC-%EC%99%84%EB%B2%BD-%EC%9D%B4%ED%95%B4)
   - https://dinfree.com/ (all) (css 기초로 들어가면 부트스트랩도 있음)
   - http://www.codejs.co.kr/%EC%A0%95%EA%B7%9C%EC%8B%9D-regular-expression/ (정규식)
+
+> ### JS 라이브러리
+  - 슬라이드되는 이미지 (일명 Carousel)
+    - [Slick](https://kenwheeler.github.io/slick/)
+  
+  - HTML Chart 
+    - [chart.js](https://www.chartjs.org/docs/latest/getting-started/)
+
+  - Navbar 메뉴
+    - [navnav](navnav.co)
+
+  - Scroll Reveal
+    - [Scroll Reveal](https://scrollrevealjs.org/)
+    - [Animate On Scroll](https://michalsnik.github.io/aos/)
+
+  - FullPage 전체화면 스크롤 사이트
+    - [FullPage.js](https://github.com/alvarotrigo/fullpage.js)
+    
 <br />
