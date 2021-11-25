@@ -42,7 +42,7 @@
     - [chart.js](https://www.chartjs.org/docs/latest/getting-started/)
 
   - Navbar 메뉴
-    - [navnav](navnav.co)
+    - [navnav](https://navnav.co/)
 
   - Scroll Reveal
     - [Scroll Reveal](https://scrollrevealjs.org/)
