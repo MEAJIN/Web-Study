@@ -5,14 +5,12 @@
 }
 
 .modal-box {
-  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 5;
   width: 100%;
   height: 100%;
   display: block;
   transition: all 1s;
-  transform: translateY(-1500px);
 }
 
 .modal-alert {
@@ -25,50 +23,4 @@
 
 .modal-alert p {
   display: inline-block;
-}
-
-#menu-close {
-  border-radius: 5px;
-  background: black;
-  color: white;
-  border: 1px;
-  margin-left: 230px;
-  font-size: 20px;
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  align-items: center;
-  cursor: pointer;
-}
-
-.nav-menu h4 {
-  margin: 0;
-}
-
-.nav-sub {
-  display: none;
-}
-
-#test-input {
-  margin: 10px;
-}
-
-.left-menu {
-  width: 300px;
-  height: 100%;
-  background: black;
-  color: white;
-  position: fixed;
-  margin-left: -300px;
-  text-align: center;
-  padding: 10px;
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.left-menu p {
-  margin-top: 10px;
 }
