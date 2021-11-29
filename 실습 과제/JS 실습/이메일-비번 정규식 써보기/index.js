@@ -1,41 +1,8 @@
-// 모달창 열기1
-// document.getElementById('jumbotron-btn').addEventListener('click', function(){
-//   document.getElementsByClassName('modal-box')[0].style.display = 'block'
-// });
-
-// 모달창 열기2
-// $('#jumbotron-btn').on('click', function(){
-//   $('.modal-box').show()
-// });
-
-// 모달창 열기3
-// $('#jumbotron-btn').on('click', function () {
-//   $('.modal-box').fadeIn()
-// });
-
-// 모달창 열기4
-// $('#jumbotron-btn').on('click', function(){
-//   $('.modal-box').fadeIn()
-// });
-
-// 모달창 닫기
-// $('#close').on('click', function () {
-//   $('.modal-box').css('display', 'none')
-// });
-
-// 모달창 애니메이션으로 열기
-// $('#jumbotron-btn').click(function(){
-//   $('.modal-box').show().animate({ marginTop : '0px'}, 500);
-// });
-
-// 모달창 애니메이션으로 닫기
-// $ ('#close').click(function(){
-//   $('.modal-box').animate({ marginTop : '-1500px'}, 500).hide();
-// });
-
 // css를 활용한 모달창 애니메이션으로 열기
 $('#jumbotron-btn').click(function(){
   $('.modal-box').css('transform', 'translateY(0px)');
+  $('.modal-box').css('background', 'rgba(0, 0, 0, 0.5)');
+  $('.none-display').css('display', 'none');
 });
 
 // css를 활용한  모달창 애니메이션으로 닫기
@@ -43,32 +10,6 @@ $ ('#close').click(function(){
   $('.modal-box').css('transform', 'translateY(-1500px)');
   $('.modal-box').css('background', 'rgba(213, 213, 11, 0.5)');
 });
-
-
-// input 안의 값이 안녕 일때 모달창 활성
-// $('#jumbotron-btn').on('click', function () {
-//   if ($('#test-input').val() == '안녕') {
-//     $('.modal-box').fadeIn()
-//   }
-// });
-
-// nav-서브메뉴 열기/닫기
-$('#slidedown').click(function () {
-  $('.nav-sub').slideToggle()
-});
-
-// 폼을 전송할 때 이메일 input안의 값이 공백인 경우, 전송을 막는 기능을 추가
-// $('form').on('submit', function (e) {
-//   if ($('#email').val() == '') {
-//     e.preventDefault();
-//     $('#email-alert').show();
-//   }
-
-//   if ($('#pw').val() == '') {
-//     e.preventDefault();
-//     $('#pw-alert').show();
-//   }
-// });
 
 // 입력값이 정규식에 맞지 않으면 전송 막음
 
@@ -89,6 +30,7 @@ var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z]
 var regpw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
 
 $('form').on('submit', function (e) {
+  
   if(regEmail.test($('#email').val()) == false ) {
     e.preventDefault();
     $('#email-alert').show();
@@ -99,15 +41,8 @@ $('form').on('submit', function (e) {
   if(regpw.test($('#pw').val()) == false) {
     e.preventDefault();
     $('#pw-alert').show();
+  } else {
+    $('#pw-alert').hide();
   }
-});
 
-// 사이드 메뉴 열기
-$('#show-Menu').click(function(){
-  $('.left-menu').animate({ marginLeft : '0px'}, 500);
-});
-
-// 사이드 메뉴 닫기
-$('#menu-close').click(function(){
-  $('.left-menu').animate({ marginLeft : '-300'}, 500);
 });
