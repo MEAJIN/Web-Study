@@ -2,6 +2,7 @@
 
 - [HTML](https://github.com/MEAJIN/Web-Study/blob/main/README/HTML.md)
 - [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
+- [삽질](https://github.com/MEAJIN/Web-Study/blob/main/README/%EC%82%BD%EC%A7%88.md)
 
 ## JavaScript / jQuery
 
