@@ -14,6 +14,7 @@
 - [HTML](https://github.com/MEAJIN/Web-Study/blob/main/README/HTML.md)
 - [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
 - [JS](https://github.com/MEAJIN/Web-Study/blob/main/README/JS.md)
+- [삽질](https://github.com/MEAJIN/Web-Study/blob/main/README/%EC%82%BD%EC%A7%88.md)
 
 ## 알아두면 유용한 WEB 기술 사이트
 
