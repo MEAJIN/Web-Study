@@ -17,7 +17,7 @@
     - [목적](#목적)
       - 조작과 변경
       - 응용
-    - [셀렉터, Selector](#셀렉터,-Selector)
+    - [Selector](#Selector)
 
   - onclick
     - [버튼 기능](#버튼-기능)
@@ -197,7 +197,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-> ### 셀렉터, Selector
+> ### Selector
 
 `셀렉터(Selector)`는 HTML __요소를 찾기 위해 사용__ 된다.
 
