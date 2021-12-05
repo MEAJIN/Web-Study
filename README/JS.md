@@ -618,6 +618,7 @@ document.getElementsByClassName('greeting')[2].innerHTML = '안녕';
 <br />
 
 반면 jQuery를 쓴다면 셀렉터 하나로 한번에 처리가 가능하다. 즉, 요소가 여러개 있어도 그냥 한번에 다 바꿔준다는 것!
+
 참고로, jQuery로 찾은 여러 요소 중 맨 위의 것만 바꾸고 싶은 경우 $('.greeting').eq(0) 이렇게 하면 된다. 
 
 ```js
