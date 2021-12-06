@@ -2,6 +2,7 @@
 
 - [HTML](https://github.com/MEAJIN/Web-Study/blob/main/README/HTML.md)
 - [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
+- [삽질](https://github.com/MEAJIN/Web-Study/blob/main/README/%EC%82%BD%EC%A7%88.md)
 
 ## JavaScript / jQuery
 
@@ -16,7 +17,7 @@
     - [목적](#목적)
       - 조작과 변경
       - 응용
-    - [셀렉터, Selector](#셀렉터,-Selector)
+    - [Selector](#Selector)
 
   - onclick
     - [버튼 기능](#버튼-기능)
@@ -196,7 +197,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-> ### 셀렉터, Selector
+> ### Selector
 
 `셀렉터(Selector)`는 HTML __요소를 찾기 위해 사용__ 된다.
 
@@ -617,6 +618,7 @@ document.getElementsByClassName('greeting')[2].innerHTML = '안녕';
 <br />
 
 반면 jQuery를 쓴다면 셀렉터 하나로 한번에 처리가 가능하다. 즉, 요소가 여러개 있어도 그냥 한번에 다 바꿔준다는 것!
+
 참고로, jQuery로 찾은 여러 요소 중 맨 위의 것만 바꾸고 싶은 경우 $('.greeting').eq(0) 이렇게 하면 된다. 
 
 ```js

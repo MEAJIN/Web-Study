@@ -14,6 +14,7 @@
 - [HTML](https://github.com/MEAJIN/Web-Study/blob/main/README/HTML.md)
 - [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
 - [JS](https://github.com/MEAJIN/Web-Study/blob/main/README/JS.md)
+- [삽질](https://github.com/MEAJIN/Web-Study/blob/main/README/%EC%82%BD%EC%A7%88.md)
 
 ## 알아두면 유용한 WEB 기술 사이트
 
@@ -35,6 +36,7 @@
   - [margin 상쇄에 대하여](https://velog.io/@raram2/CSS-%EB%A7%88%EC%A7%84-%EC%83%81%EC%87%84Margin-collapsing-%EC%9B%90%EB%A6%AC-%EC%99%84%EB%B2%BD-%EC%9D%B4%ED%95%B4)
   - https://dinfree.com/ (all) (css 기초로 들어가면 부트스트랩도 있음)
   - http://www.codejs.co.kr/%EC%A0%95%EA%B7%9C%EC%8B%9D-regular-expression/ (정규식)
+  - https://ko.javascript.info/ (JS)
 
 <br />
 
