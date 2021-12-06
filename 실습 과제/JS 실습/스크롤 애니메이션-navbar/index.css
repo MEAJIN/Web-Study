@@ -1,0 +1,26 @@
+body {
+  height: 3000px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  cursor: pointer;
+  /* background-color: transparent; */
+  background-color: black;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  color: white;
+}
+
+.nav-menu h4 {
+  margin: 0;
+}
+
+.nav-black {
+  background: rgb(112, 233, 197);
+  color: white;
+}
