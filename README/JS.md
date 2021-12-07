@@ -33,6 +33,7 @@
     - [addEventListener](#addEventListener)
       - 응용
       - 참고
+    - [scroll addEventListener 주의 사항](#scroll-addEventListener-주의-사항)
 
   - jQuery 기초
     - [쓰는 이유](#쓰는-이유)
@@ -774,6 +775,24 @@ $('어쩌구').click(function(){
 $('어쩌구').on('click', function(){
   //어쩌구를 클릭시 실행할 코드
 });
+```
+
+<br />
+
+> ### scroll addEventListener 주의 사항
+
+스크롤 이벤트 리스너는 왼쪽에 오는 요소가 스크롤이 될 때마다 내부 코드를 실행해주는 함수이다.
+
+1초에 최대 60번 실행시키기 때문에 실행횟수가 많아 브라우저가 간혹 부담을 느끼곤 한다.
+
+스크롤 이벤트리스너가 많으면 스크롤 할 때마다 코드를 120개 360개 이렇게 실행해야해서 사이트가 느려질 수 있기 때문에 
+
+scroll 이벤트 리스너와 내부의 코드는 최대한 줄여서 사용하는게 좋다.
+
+scroll 이벤트 리스너는 하나면 충분하니 하나만 쓰자!
+
+```js
+$('어쩌구').on('scroll', function(){})
 ```
 
 <br />
