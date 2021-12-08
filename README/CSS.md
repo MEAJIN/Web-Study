@@ -102,7 +102,7 @@
     - [반응형 그리드 참고 사이트](#반응형-그리드-참고-사이트)
 
   - ::before & ::after
-    - [Pseudo Element](#Pseudo Element)
+    - [Pseudo Element](#Pseudo-Element)
     - [::before & ::after](#::before-&-::after)
 
 <br />
@@ -2263,7 +2263,7 @@ div:before {
 
 <br />
 
-> ### ::before-&-::after
+> ### ::before & ::after
 
 우선 아래 코드와 결과 화면을 보자.
 
