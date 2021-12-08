@@ -17,6 +17,7 @@
       - 조작과 변경
       - 응용
     - [Selector](#Selector)
+      - [종류](#종류)
 
   - onclick
     - [버튼 기능](#버튼-기능)
@@ -209,7 +210,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-> ### Selector
+## Selector
 
 `셀렉터(Selector)`는 HTML __요소를 찾기 위해 사용__ 된다.
 
@@ -220,6 +221,84 @@ document.getElementById('hello').style.color = 'red';
 그 속성들을 바꾸려면 셀렉터 뒤에 정확한 메소드이름을 붙여주어야 하는데, 메소드는 종류가 수백개이기 때문에 전부 외워서 사용할 수 없다.
 
 그렇기 때문에 필요할 때마다 구글에 검색해서 찾아쓰는게 초보의 올바른 자바스크립트 활용법이다.
+
+<br />
+
+> ### 종류
+
+- document.getElementsByClassName()
+  - class selector 
+  - 몇번째 클래스인지 선택해주어야 함
+
+```js
+document.getElementsByClassName('hello')[2].style.color = "red";
+```
+
+<br />
+
+- document.getElementsByTagName()
+  - tag selector
+  - class selector랑 다를거 없음
+  - 몇번째 태그인지 선택해주어야 함
+
+```js
+document.getElementsByTagName('p')[5].style.color = "red";
+```
+
+<br />
+
+- document.getElementsById()
+  - id selector
+  - id는 특성상 재사용을 하면 안된다.
+  - 따라서, `getElements`가 아닌 `getElement`를 사용
+  - 태그 선택 필요 없음 (고유한 값 이기 때문)
+
+```js
+document.getElementById('hello').style.color = "red";
+```
+
+<br />
+
+- document.querySelector()
+  - query selector
+  - 클래스는 앞에 `.`
+  - 아이디는 앞에 `#`
+  - 첫 번째 요소를 반환
+  - 요소 선택 안 됨
+
+```js
+document.querySelector('.hello').style.color = "blue";
+document.querySelector('p').style.color = "red";
+document.querySelector('#hello').style.color = "yellow";
+```
+
+<br />
+
+- document.querySelectorAll()
+  - query selectorall
+  - 클래스는 앞에 `.`
+  - 아이디는 앞에 `#`
+  - 모든 요소를 반환
+  - 요소 선택 됨 (반환 된 요소를 골라서 값 주기 가능)
+
+```html
+<p>Hello World</p>
+<p class="hello">Hello World</p>
+<p class="hello">Hello World</p>
+<p id="hello">Hello World</p>
+<p>Hello World</p>
+<p>Hello World</p>
+<p>Hello World</p>
+<p>Hello World</p>
+```
+
+```js
+document.querySelectorAll('.hello')[0].style.color = "blue";
+document.querySelectorAll('.hello')[1].style.color = "blue";
+document.querySelector('#hello').style.color = "yellow";
+document.querySelectorAll('p')[4].style.color = "red";
+document.querySelectorAll('p')[5].style.color = "red";
+```
 
 <br />
 
