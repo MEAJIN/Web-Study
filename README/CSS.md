@@ -103,7 +103,7 @@
 
   - ::before & ::after
     - [Pseudo Element](#Pseudo-Element)
-    - [::before & ::after](# before-&-after)
+    - [::before & ::after](#before-&-after)
 
 <br />
 <br />
