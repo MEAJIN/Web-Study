@@ -101,6 +101,10 @@
     - [열(column)](#Column)
     - [반응형 그리드 참고 사이트](#반응형-그리드-참고-사이트)
 
+  - ::before & ::after
+    - [Pseudo Element](#Pseudo Element)
+    - [::before & ::after](#::before-&-::after)
+
 <br />
 <br />
 
@@ -2220,3 +2224,133 @@ __🔸 `.container-{breakpoint}`, 반응형 컨테이너__
 > ### 반응형 그리드 참고 사이트
 - [부트스트랩 컨테이너 정리 블로그](https://min-blog.tistory.com/entry/%EB%B6%80%ED%8A%B8%EC%8A%A4%ED%8A%B8%EB%9E%A9-5-%EC%8B%9C%EC%9E%91)
 - [bootstrap containers](https://getbootstrap.com/docs/5.0/layout/containers/)
+
+<br />
+
+## ::before & ::after
+
+> ### Pseudo Element
+
+`::before`과 `::after`는 CSS에서 소위 pseudo element라고 한다.
+
+일반적인 CSS 선택자(selector)로는 지정할 수 없는 미세한 영역을 선택하기 위해서 사용된다.
+
+CSS에는 `::before`과 `::after`뿐만 아니라 `::first-letter`, `::first-line`, `::selection`, `::marker` 등 다양한 [pseudo element](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)가 있다.
+
+<br />
+
+pseudo element는 선택자 뒤에 붙여주는데,
+
+CSS3 문법 상 `:` 기호를 사용하는 pseudo class와 구분해주기 위해서
+
+원칙적으로는 `::` 기호를 사용해야 하지만
+
+`:` 기호를 사용하더라도 대부분 브라우저에서 문제없이 작동을 한다.
+
+예를 들어, `::before` pseudo element는 다음과 같이 두가지 문법을 모두 사용할 수 있다.
+
+```css
+div::before {
+  content: "before";
+}
+```
+
+```css
+div:before {
+  content: "before";
+}
+```
+
+<br />
+
+> ### ::before-&-::after
+
+우선 아래 코드와 결과 화면을 보자.
+
+```html
+<ul>
+  <li>HTML</li>
+  <li class="heart">CSS</li>
+  <li class="star">JavaScript</li>
+  <li>NodeJS</li>
+  <li class="heart">ReactJS</li>
+  <li class="star">GraphQL</li>
+</ul>
+```
+
+```css
+HTML CSSResult Skip Results Iframe
+EDIT ON
+.star::before {
+  content: "⭐";
+}
+
+.heart::after {
+  content: "❤️";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+```
+
+<br />
+
+> #### `출력화면`
+
+목록에서 star 클래스가 적용된 항목은 앞에 별 아이콘이 붙어있고,
+
+heart 클래스가 적용된 항목은 뒤에 하트 아이콘이 붙어 있는 것을 볼 수 있다.
+
+<p align="center"><img href="https://user-images.githubusercontent.com/75716255/145275444-7868e32d-9ecc-4060-ae64-1801824610ce.png"></p>
+
+<br />
+
+CSS 코드를 보면 `star` 클래스에는 `::before`를
+
+`heart` 클래스에는 `::after`를 사용하여
+
+content 속성에 해당 아이콘을 명시해준 것을 볼 수 있다.
+
+또한,
+
+`::before` 또는 `::after`를 사용해서 `content`속성값이 선택된 엘리먼트의 앞 또는 뒤에 삽압되는 것을 알 수 있다.
+
+```css
+.star::before {
+  content: "⭐";
+}
+
+.heart::after {
+  content: "❤️";
+}
+```
+
+<br />
+
+브라우저 개발자 도구로 좀 더 자세히 해당 엘리먼트를 살펴보면,
+
+`::before`/`::after`라는 placeholder가 엘리먼트 안에 삽입된 것을 볼 수 있다.
+
+```html
+<li class="heart">
+  "CSS"
+  ::after
+</li>
+<li class="star">
+  ::before
+  JavaScript
+</li>
+```
+
+<br />
+
+여기서 알 수 있는 `::before`/`::after` 사용 시 주의점이 바로
+
+해당 엘리먼트 앞뒤로 새로운 엘리먼트가 삽입되는 것이 아닌,
+
+해당 엘리먼트 내부의 맨 앞 또는 맨 뒤에 컨텐츠가 삽인 된다는 것 이다.
+
+참고로, `content` 속성에는 단순 텍스트 뿐만 아니라 이미지도 사용할 수 있다.
