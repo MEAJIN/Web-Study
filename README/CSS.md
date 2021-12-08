@@ -103,7 +103,7 @@
 
   - ::before & ::after
     - [Pseudo Element](#Pseudo-Element)
-    - [::before & ::after](#before,after)
+    - [::before & ::after](#before-와-after)
 
 <br />
 <br />
@@ -2263,7 +2263,7 @@ div:before {
 
 <br />
 
-> ### before,after
+> ### before 와 after
 
 우선 아래 코드와 결과 화면을 보자.
 
