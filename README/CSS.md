@@ -103,7 +103,7 @@
 
   - ::before & ::after
     - [Pseudo Element](#Pseudo-Element)
-    - [::before & ::after](#::before-&-::after)
+    - [::before & ::after](# before-&-after)
 
 <br />
 <br />
@@ -2227,7 +2227,7 @@ __🔸 `.container-{breakpoint}`, 반응형 컨테이너__
 
 <br />
 
-## ::before & ::after
+## before & after
 
 > ### Pseudo Element
 
