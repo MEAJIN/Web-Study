@@ -278,8 +278,8 @@ document.querySelector('#hello').style.color = "yellow";
   - query selectorall
   - 클래스는 앞에 `.`
   - 아이디는 앞에 `#`
-  - 모든 요소를 반환
-  - 요소 선택 됨 (반환 된 요소를 골라서 값 주기 가능)
+  - 모든 요소를 반환 (단, 배열 형태로 반환 == nodelist)
+  - 요소 선택 됨 (index를 이용하여 특정 요소를 선택)
 
 ```html
 <p>Hello World</p>
