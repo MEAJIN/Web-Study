@@ -7,7 +7,6 @@
 ## JavaScript / jQuery
 
 - 기본
-
   - [추상화](#추상화)
   - [작명](#작명)
 
@@ -18,6 +17,7 @@
       - 조작과 변경
       - 응용
     - [Selector](#Selector)
+      - [종류](#종류)
 
   - onclick
     - [버튼 기능](#버튼-기능)
@@ -34,6 +34,7 @@
       - 응용
       - 참고
     - [scroll addEventListener 주의 사항](#scroll-addEventListener-주의-사항)
+    - [이벤트 함수](#이벤트-함수)
 
   - jQuery 기초
     - [쓰는 이유](#쓰는-이유)
@@ -70,6 +71,17 @@
     - [정규식 사용법](#정규식-사용법)
     - [정규식 문법](#정규식-문법)
     - [자주 쓰이는 정규식 유형](#자주-쓰이는-정규식-유형)
+
+  - 이벤트 버블링
+    - [버블링이란?](#버블링)
+
+  - dataset
+    - [HTML 문법](#HTML-문법)
+    - [JS에서 접근하기](#JS에서-접근하기) 
+    - [CSS에서 접근하기](#CSS에서-접근하기) 
+    - [문제점](#문제점)
+    - [jQuery 스타일로 dataset 사용하는 법](#jQuery-스타일로-dataset-사용하는-법)
+
 <br />
 
 # ⚙ JavaScript / jQuery ⚙
@@ -198,7 +210,7 @@ document.getElementById('hello').style.color = 'red';
 
 <br />
 
-> ### Selector
+## Selector
 
 `셀렉터(Selector)`는 HTML __요소를 찾기 위해 사용__ 된다.
 
@@ -209,6 +221,84 @@ document.getElementById('hello').style.color = 'red';
 그 속성들을 바꾸려면 셀렉터 뒤에 정확한 메소드이름을 붙여주어야 하는데, 메소드는 종류가 수백개이기 때문에 전부 외워서 사용할 수 없다.
 
 그렇기 때문에 필요할 때마다 구글에 검색해서 찾아쓰는게 초보의 올바른 자바스크립트 활용법이다.
+
+<br />
+
+> ### 종류
+
+- document.getElementsByClassName()
+  - class selector 
+  - 몇번째 클래스인지 선택해주어야 함
+
+```js
+document.getElementsByClassName('hello')[2].style.color = "red";
+```
+
+<br />
+
+- document.getElementsByTagName()
+  - tag selector
+  - class selector랑 다를거 없음
+  - 몇번째 태그인지 선택해주어야 함
+
+```js
+document.getElementsByTagName('p')[5].style.color = "red";
+```
+
+<br />
+
+- document.getElementsById()
+  - id selector
+  - id는 특성상 재사용을 하면 안된다.
+  - 따라서, `getElements`가 아닌 `getElement`를 사용
+  - 태그 선택 필요 없음 (고유한 값 이기 때문)
+
+```js
+document.getElementById('hello').style.color = "red";
+```
+
+<br />
+
+- document.querySelector()
+  - query selector
+  - 클래스는 앞에 `.`
+  - 아이디는 앞에 `#`
+  - 첫 번째 요소를 반환
+  - 요소 선택 안 됨
+
+```js
+document.querySelector('.hello').style.color = "blue";
+document.querySelector('p').style.color = "red";
+document.querySelector('#hello').style.color = "yellow";
+```
+
+<br />
+
+- document.querySelectorAll()
+  - query selectorall
+  - 클래스는 앞에 `.`
+  - 아이디는 앞에 `#`
+  - 모든 요소를 반환 (단, 배열 형태로 반환 == nodelist)
+  - 요소 선택 됨 (index를 이용하여 특정 요소를 선택)
+
+```html
+<p>Hello World</p>
+<p class="hello">Hello World</p>
+<p class="hello">Hello World</p>
+<p id="hello">Hello World</p>
+<p>Hello World</p>
+<p>Hello World</p>
+<p>Hello World</p>
+<p>Hello World</p>
+```
+
+```js
+document.querySelectorAll('.hello')[0].style.color = "blue";
+document.querySelectorAll('.hello')[1].style.color = "blue";
+document.querySelector('#hello').style.color = "yellow";
+document.querySelectorAll('p')[4].style.color = "red";
+document.querySelectorAll('p')[5].style.color = "red";
+```
 
 <br />
 
@@ -794,6 +884,25 @@ scroll 이벤트 리스너는 하나면 충분하니 하나만 쓰자!
 ```js
 $('어쩌구').on('scroll', function(){})
 ```
+
+<br />
+
+> ### 이벤트 함수
+이벤트리스너 콜백 함수 내부에 파라미터를 추가하면 이벤트관련 함수들을 쓸 수 있다.
+
+<br />
+
+- 파라미터 이름은 아무렇게나 작명 한다. (보통 e 혹은 event라고 작명)
+
+- `e.target`은 지금 실제 클릭한 요소
+
+- `e.currentTarget`은 지금 이벤트리스너가 달린 곳 (참고로 `this`라고 써도 같은 의미)
+
+- `e.preventDefault()`는 기본 동작을 막을 때 쓰고 
+
+- `e.stopPropagation()`은 내 상위요소로의 이벤트 버블링을 중단할 때 쓴다.
+
+참고로 위 이벤트 함수는 쌩js이다. jquery랑 병합해서 못 쓴다.
 
 <br />
 
@@ -1522,15 +1631,140 @@ or를 나타냄
 
 <br />
 
+## 이벤트 버블링
 
+> ### 버블링
+`버블링`이란 어떤 HTML 태그에 이벤트가 발생하면 그의 모든 상위요소까지 이벤트가 실행되는 현상이다. 
 
 <br />
 
+예를 들어,
 
+아래 코드에서 `<p>` 태그를 클릭하면 브라우저는 사용자가 총 3번 클릭했다고 인식한다.
+
+`<p>`, `<div>`, `<div>` 이렇게 말이다.
+
+```html
+<div>
+  <div>
+    <p>안녕</p>
+  </div>
+</div>
+```
 
 <br />
 
+위와 같은 걸 이벤트 버블링 이라고 하는데,
 
+브라우저는 이벤트 버블링이 항상 일어나도록 코드가 짜여져 있다. (기본값이 라는 것임)
+
+<br />
+
+## dataset
+
+> ### HTML 문법
+
+어느 엘리멘트에나 `data-`로 시작하는 속성은 무엇이든 사용할 수 있다.
+
+화면에 안 보이게 글이나 추가 정보를 엘리멘트에 담아 놓는 용도로 사용한다. (개발자만 보임)
+
+문법 및 사용법은 아래와 같다.
+
+```html
+// 문법
+data-작명="값"
+
+// 사용법1
+<li class="tab-button" data-아무렇게나 작명하기="0">Products</li>
+
+// 사용법2
+<article
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">
+</article>
+```
+
+<br />
+
+> ### JS에서 접근하기
+값을 읽으려면 js로 요소를 찾고, `.dataset.id`만 붙여주면 된다.
+
+```js
+// 사용법2에 따른 접근법
+var article = document.getElementById('electriccars');
+
+article.dataset.columns // "3"
+article.dataset.indexNumber // "12314"
+article.dataset.parent // "cars
+```
+
+<br />
+
+> ### CSS에서 접근하기
+dataset은 순수 HTML이기 때문에 CSS에서도 접근이 가능하다.
+
+<br />
+
+예를 들어,
+
+부모 데이터를 `article`에서 보여주려면 [`attr` 함수](https://developer.mozilla.org/en-US/docs/Web/CSS/attr())를 사용하면 된다.
+
+```css
+article::before {
+  content: attr(data-parent);
+}
+```
+
+<br />
+
+CSS의 [속성 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) 또한
+
+데이터에 따라 스타일을 바꾸는데 사용할 수 있다.
+
+```css
+article[data-columns='3'] {
+  width: 400px;
+}
+article[data-columns='4'] {
+  width: 600px;
+}
+```
+
+<br />
+
+> ### 문제점
+`dataset`의 경우 IE 11+ 에서 이용이 가능하나,
+
+이전 버전들은 `dataset`을 지원하지 않는다.
+
+IE 10 이하에서는 `dataset`대신 [` getAttribute()`](https://developer.mozilla.org/ko/docs/Web/API/Element/getAttribute)를 사용해야한다.
+
+아니면 호환성이 좋은 jquery 버전으로 사용해야 한다.
+
+또한,
+
+웹 상에서 노출이 되어야 하고, 접근이 가능해야 하는 내용은
+
+`dataset`을 적용하면 안 된다.
+
+`dataset`이 적용된 요소에 접근 할 수 없을 뿐 더러,
+
+검색 크롤러가 `dataset`의 값을 찾지 못 하기 때문이다.
+
+<br />
+
+> ### jQuery 스타일로 dataset 사용하는 법
+
+아래 처럼 코드를 짜면 `name`이라는 이름으로 `kim`이라는 자료를 저장할 수 있다.
+
+이걸 꺼내서 출력하거나 어딘가에 사용하고 싶으면 `.data('자료이름')` 을 쓰면 된다.
+
+```js
+$(HTML요소).data('name', 'kim')
+$(HTML요소).data('name')
+```
 
 <br />
 
