@@ -684,11 +684,11 @@ document.getElementById('close').addEventListener('click', function(){
 > ### oninput 이벤트
 요소에 내용을 입력할 때 발생 (값이 변경될 때 마다)
 
-<br />
-
 - 요소 값 변경 직후에 이벤트 발생
 - `<select>` 요소에서는 작동 하지 않는다.
 - IE9 이상 주요 최신 브라우저 지원
+
+<br />
 
 > ### 구문
 
@@ -722,16 +722,12 @@ function homzzang(val) {
 }
 ```
 
-<br />
-
 #### [`결과 보러 가기`](https://codepen.io/sinbi/pen/GRKyVbP)
 
 <br />
 
 > ### onchange 이벤트
 요소의 값이 변경될 때 발생
-
-<br />
 
 - 요소 값 변경 후 요소가 포커스를 잃으면 발생
 - `<select>` 요소에서도 작동 한다.
@@ -753,11 +749,10 @@ function abc() {
 }
 ```
 
-<br />
-
 #### [`결과 보러 가기`](https://codepen.io/sinbi/pen/OBoOyp)
 
 <br />
+
 > #### 예제2
 JS 구문 안 (입력 내용을 대문자로 변환)
 
@@ -773,8 +768,6 @@ function abc() {
   x.value = x.value.toUpperCase();
 }
 ```
-
-<br />
 
 #### [`결과 보러 가기`](https://codepen.io/sinbi/pen/pxOdbK)
 
@@ -792,8 +785,6 @@ function hz(val) {
   alert("입력내용 변경됨 : " + val);
 }
 ```
-
-<br />
 
 #### [`결과 보러 가기`](https://codepen.io/sinbi/pen/qBdVBON)
 
