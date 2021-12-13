@@ -12,7 +12,7 @@
 // });
 
 // js
-document.getElementById('option1').addEventListener('click', function () {
+document.getElementById('option1').onchange = function () {
 
   let userChoose = document.getElementById('option1').value;
   let element = document.getElementById('size-select');
@@ -23,4 +23,4 @@ document.getElementById('option1').addEventListener('click', function () {
     element.style.display = 'none';
   }
 
-});
+};
