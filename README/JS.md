@@ -30,8 +30,11 @@
     - [파라미터와 인자](#파라미터와-인자)
       - 사용 이유
       - 응용
-    - [addEventListener](#addEventListener)
+    - [JS addEventListener](#JS-addEventListener)
       - 응용
+      - 참고
+      - [oninput 이벤트](#oninput-이벤트)
+      - [onchange 이벤트](#onchange-이벤트)
       - 참고
     - [scroll addEventListener 주의 사항](#scroll-addEventListener-주의-사항)
     - [이벤트 함수](#이벤트-함수)
@@ -42,7 +45,7 @@
     - [기본 문법](#기본-문법)
     - [셀렉터](#셀렉터)
     - [힘수/메소드](#함수/메소드)
-    - [addEventListener](#addEventListener)
+    - [jQuery addEventListener](#jQuery-addEventListener)
       - [input 이벤트](#input-이벤트)
       - [change 이벤트](#change-이벤트)
     - [toggle 함수](#toggle-함수)
@@ -597,7 +600,7 @@ function alertClose(close){
 
 <br />
 
-> ### addEventListener
+> ### JS addEventListener
 이벤트가 발생했을 시, 특정 함수를 실행할 수 있게 해주는 기능
 
 <br />
@@ -675,6 +678,122 @@ document.getElementById('close').addEventListener('click', function(){
 > ### 참고 사이트
 
 - https://developer.mozilla.org/en-US/docs/Web/Events (모든 브라우저내의 이벤트 리스트)
+
+<br />
+
+> ### oninput 이벤트
+요소에 내용을 입력할 때 발생 (값이 변경될 때 마다)
+
+- 요소 값 변경 직후에 이벤트 발생
+- `<select>` 요소에서는 작동 하지 않는다.
+- IE9 이상 주요 최신 브라우저 지원
+
+<br />
+
+> ### 구문
+
+```html, js 
+// abc : 실행 함수명
+// addEventLister() 방식 주의사항 2가지 : 이벤트명에 on 안 붙임. / 실행함수명 뒤에 소괄호 안 붙임
+
+// HTML 속성 방식
+<element oninput="abc()"> 
+  
+// JS 속성 방식
+object.oninput = function(){abc()};
+
+//JS 메서드 방식
+object.addEventListener("input", abc);
+```
+
+<br />
+
+> #### 예제
+지정 범위 중 선택 값 표시
+
+```html
+<input type="range" oninput="homzzang(this.value)">                             
+<p id="demo"></p>
+```
+
+```js
+function homzzang(val) {
+  document.getElementById("demo").innerHTML = val; 
+}
+```
+
+#### [`결과 보러 가기`](https://codepen.io/sinbi/pen/GRKyVbP)
+
+<br />
+
+> ### onchange 이벤트
+요소의 값이 변경될 때 발생
+
+- 요소 값 변경 후 요소가 포커스를 잃으면 발생
+- `<select>` 요소에서도 작동 한다.
+- 모든 브라우저 지원
+
+<br />
+
+> #### 예제1
+HTML 구문 안 (입력 내용을 대문자로 변환)
+
+```html
+<input type="text" id="hz" onchange="abc()">
+```
+
+```js
+function abc() {
+  var x = document.getElementById("hz");
+  x.value = x.value.toUpperCase();
+}
+```
+
+#### [`결과 보러 가기`](https://codepen.io/sinbi/pen/OBoOyp)
+
+<br />
+
+> #### 예제2
+JS 구문 안 (입력 내용을 대문자로 변환)
+
+```html
+아이디 입력: <input type="text" id="hz">
+```
+
+```js
+document.getElementById("hz").onchange = function() {abc()};
+
+function abc() {
+  var x = document.getElementById("hz");
+  x.value = x.value.toUpperCase();
+}
+```
+
+#### [`결과 보러 가기`](https://codepen.io/sinbi/pen/pxOdbK)
+
+<br />
+
+> #### 예제3
+input 입력 내용 변경 감지
+
+```html
+<input type="text" name="hz" value="abc" onchange="hz(this.value)">
+```
+
+```js
+function hz(val) {
+  alert("입력내용 변경됨 : " + val);
+}
+```
+
+#### [`결과 보러 가기`](https://codepen.io/sinbi/pen/qBdVBON)
+
+<br />
+
+> ### 참고 사이트
+
+- https://homzzang.com/b/js-1338
+- https://homzzang.com/b/js-1316
 
 <br />
 
@@ -860,7 +979,7 @@ jQuery 셀렉터로 찾은 HTML요소는 jQuery 함수/메소드를 붙여야한
 
 <br />
 
-> ### addEventListener
+> ### jQuery addEventListener
 
 아래 두개 코드는 같은 기능을 하는 코드이다.
 
