@@ -77,6 +77,14 @@ document.getElementById('option1').onchange = function () {
       $option2.appendChild($fragment);
     });
   } else {
-    clearing;
+    remove(x)
   }
 };
+
+// $option2의 자식 노드를 전부 삭제
+function remove(x) {
+  while (x.hasChildNodes()) {
+    x.removeChild(cell.firstChild);
+  }
+}
+
