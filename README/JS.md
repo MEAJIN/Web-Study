@@ -30,7 +30,7 @@
     - [파라미터와 인자](#파라미터와-인자)
       - 사용 이유
       - 응용
-    - [JS addEventListener](#JS-addEventListener)
+    - [Dom addEventListener](#JS-addEventListener)
       - 응용
       - 참고
       - [oninput 이벤트](#oninput-이벤트)
