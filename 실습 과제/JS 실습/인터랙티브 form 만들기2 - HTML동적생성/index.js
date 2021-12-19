@@ -1,3 +1,7 @@
+// 정적 : 이미 생성 되어 있는 것 (고정적, 불변)
+// 동적 : 그때 그때 생성하는 것 (유동적, 변경가능)
+// 동적 예) 어떤 행위를 했을 때 그 행위에 따라 a를 생성할 수 도, b를 생성할 수 도 있음
+
 // jq
 // $('#option1').on('change', function(){
 
@@ -64,6 +68,7 @@ document.getElementById('option1').onchange = function () {
 
     clearing;
 
+    // text는 배열 안에 있는 하나의 데이터들
     ['26', '27', '28'].forEach(text => {
 
       let $option = document.createElement('option');
@@ -87,4 +92,3 @@ function remove(x) {
     x.removeChild(cell.firstChild);
   }
 }
-
