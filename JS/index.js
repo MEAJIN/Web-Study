@@ -84,11 +84,11 @@ fiveBtn.addEventListener('click', function () {
 
 
 
-// function get() {
-//   for (i = 0; i < fiveWonDown.length; i++) {
-//     $tilte[i].innerHTML = fiveWonDown[i].title;
-//     $price[i].innerHTML = '가격 : ' + fiveWonDown[i].price;
-//   };
-// }
+function get() {
+  for (i = 0; i < fiveWonDown.length; i++) {
+    $tilte[i].innerHTML = fiveWonDown[i].title;
+    $price[i].innerHTML = '가격 : ' + fiveWonDown[i].price;
+  };
+}
 
-// get()
+get()
