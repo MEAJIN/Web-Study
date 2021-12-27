@@ -1,0 +1,11 @@
+.off {
+  display: none;
+}
+
+.on {
+  display: block;
+}
+
+.btn-m {
+  margin: 15px;
+}
