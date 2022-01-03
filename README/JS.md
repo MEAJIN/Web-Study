@@ -2083,7 +2083,7 @@ var 오브젝트1 = {
 
 <p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973301-e4633e8b-2608-42cb-bac6-379b52c21af1.png" width="40%"></p>
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973288-1c9746da-ebf2-44aa-83b3-9774e300b744.png" width="40%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147980572-e490fba1-27d5-41ce-868e-17e1d3174503.png" width="40%"></p>
 
 <br />
 
