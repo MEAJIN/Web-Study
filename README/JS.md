@@ -2238,7 +2238,7 @@ var 오브젝트1 = {
 
 <br />
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973320-2502b814-fde9-49ec-ba53-d118df0f796f.png" width="50%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973320-2502b814-fde9-49ec-ba53-d118df0f796f.png" width="30%"></p>
 
 <br />
 
@@ -2267,7 +2267,7 @@ var 오브젝트1 = {
 
 <br />
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973340-0af2c932-7b46-44d7-85ce-b4e2568cae65.png" width="50%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973340-0af2c932-7b46-44d7-85ce-b4e2568cae65.png" width="30%"></p>
 
 <br />
 
