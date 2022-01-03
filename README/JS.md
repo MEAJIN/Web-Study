@@ -2236,6 +2236,12 @@ var 오브젝트1 = {
 
 > ### 단방향 데이터 바인딩
 
+<br />
+
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973320-2502b814-fde9-49ec-ba53-d118df0f796f.png" width="50%"></p>
+
+<br />
+
 - `Data`와 `Template`을 결합해 `View`를 생성하는 것
   - `JS` -> `HTML`만 가능 
 
@@ -2258,6 +2264,12 @@ var 오브젝트1 = {
 <br />
 
 > ### 양방향 데이터 바인딩
+
+<br />
+
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973340-0af2c932-7b46-44d7-85ce-b4e2568cae65.png" width="50%"></p>
+
+<br />
 
 - 프론트/백앤드의 양쪽 `Data`가 모두 일치하여 `View`에서 같게 보이는 것
   - `JS` <-> `HTML` 가능 
