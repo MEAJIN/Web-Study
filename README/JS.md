@@ -2079,9 +2079,11 @@ var 오브젝트1 = {
 4. Controller(Updates) : `Model`이 반환한 결과를 `View`에 반영한다.
 5. View(Sees) : 반영된 데이터를 화면으로 보여준다.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973301-e4633e8b-2608-42cb-bac6-379b52c21af1.png" width="50%"></p>
+<br />
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973288-1c9746da-ebf2-44aa-83b3-9774e300b744.png" width="50%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973301-e4633e8b-2608-42cb-bac6-379b52c21af1.png" width="40%"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973288-1c9746da-ebf2-44aa-83b3-9774e300b744.png" width="40%"></p>
 
 <br />
 
