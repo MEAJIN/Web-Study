@@ -96,6 +96,16 @@
   - 콜백함수
     - [Arrow Function](#Arrow-Function) 
 
+  - MVC 패턴
+    - [MVC 구조](#MVC-구조)
+    - [Model](#Model)
+    - [View](#View)
+    - [Controller](#Controller)
+    - [MVC 패턴 흐름](#MVC-패턴-흐름)
+    - [Controller ㅡ Model](#Controller-ㅡ-Model)
+    - [Controller ㅡ View](#Controller-ㅡ-View)
+    
+  - 
 <br />
 
 # ⚙ JavaScript / jQuery ⚙
@@ -2069,9 +2079,9 @@ var 오브젝트1 = {
 4. Controller(Updates) : `Model`이 반환한 결과를 `View`에 반영한다.
 5. View(Sees) : 반영된 데이터를 화면으로 보여준다.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973301-e4633e8b-2608-42cb-bac6-379b52c21af1.png" width="70%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973301-e4633e8b-2608-42cb-bac6-379b52c21af1.png" width="50%"></p>
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973288-1c9746da-ebf2-44aa-83b3-9774e300b744.png" width="70%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147973288-1c9746da-ebf2-44aa-83b3-9774e300b744.png" width="50%"></p>
 
 <br />
 
@@ -2116,7 +2126,7 @@ var 오브젝트1 = {
 
 <br />
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147976207-beffc2c4-e330-4e23-9559-db57c37c6c52.png" width="70%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/147976207-beffc2c4-e330-4e23-9559-db57c37c6c52.png" width="50%"></p>
 
 <br />
 
@@ -2128,11 +2138,12 @@ var 오브젝트1 = {
 - 도메인들 객체들의 조합을 통해 프로그램의 작동 순서나 방식을 제어한다.
 
 - `Model`과 `View`가 각각 어떤 역할과 책임이 있는지 알고 있어야 한다.
-  - 사용자가 접근하려는 URL에 따른 요청사항을 파악 후, 그 요청에 맞는 `Model`의 데이터를 의뢰하고 데이터를 `View`에 반영해서 사용자에게 알려야 한다.
-  - 예시를 들어보자면, <br />
-    사용자가 네이버에 접속을 하고, 화면에 보이는 사이트는 `View`에 의해 다루어진다. <br />
-    사용자는 사이트를 통해 쇼핑을 하려고 하는데, 쇼핑과 관련 된 데이터는 `Model`로 부터 불러와야 한다. <br />
-    이렇게 `View`와 `Model` 사이에서 사용자의 요청을 분석하고 이에 맞는 데이터를 불러오는 요소이다.
+  - 사용자가 접근하려는 URL에 따른 요청사항을 파악 후, <br />
+    그 요청에 맞는 `Model`의 데이터를 의뢰하고 데이터를 `View`에 반영해서 사용자에게 알려야 한다. 
+    - 예시를 들어보자면, <br />
+      사용자가 네이버에 접속을 하고, 화면에 보이는 사이트는 `View`에 의해 다루어진다. <br />
+      사용자는 사이트를 통해 쇼핑을 하려고 하는데, 쇼핑과 관련 된 데이터는 `Model`로 부터 불러와야 한다. <br />
+      이렇게 `View`와 `Model` 사이에서 사용자의 요청을 분석하고 이에 맞는 데이터를 불러오는 요소이다.
 
 - `Model`과 `View`에게 직접 지시가 가능하다.
 
@@ -2189,14 +2200,15 @@ var 오브젝트1 = {
   - `View`는 `Controller`에게 매번 물어보고, 컨트롤러는 모델에서 데이터를 가지고 와서 표시한다.
   - 이것은 `delegate`와 다른종류의 프로토콜이다.
   - `should`, `will`, `did` 대신 다른 프로토콜의 메시지를 받는다.
-  - `View`는 이곳에 있는 데이터를 달라고하거나, 데이터의 개수가 몇개인지 물어봐서 무슨 일이 생기고 있는지 알게되고, 그걸 화면에 보여준다.
+  - `View`는 이곳에 있는 데이터를 달라고하거나, 데이터의 개수와 현상태를 파악 후, 그걸 화면에 보여준다.
   - 이것 또한 델리게이션 과정으로 이루어지는데 여기서 쓰이는 `delegate`가 바로 데이터소스다.
 
 <br />
+
 > ### 출처
 
-- [1](https://newindow.tistory.com/66)
-- [2](https://velog.io/@hayeon/MVC-%EA%B5%AC%EC%A1%B0%EC%97%90-%EB%8C%80%ED%95%B4-%EA%B0%81-%EC%97%AD%ED%95%A0%EA%B3%BC-%ED%9D%90%EB%A6%84%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%98%EC%8B%9C%EC%98%A4)
+- [🎀](https://newindow.tistory.com/66)
+- [🎁](https://velog.io/@hayeon/MVC-%EA%B5%AC%EC%A1%B0%EC%97%90-%EB%8C%80%ED%95%B4-%EA%B0%81-%EC%97%AD%ED%95%A0%EA%B3%BC-%ED%9D%90%EB%A6%84%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%98%EC%8B%9C%EC%98%A4)
 
 <br />
 
