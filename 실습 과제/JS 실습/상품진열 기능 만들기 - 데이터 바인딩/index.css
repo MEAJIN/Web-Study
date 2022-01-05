@@ -1,0 +1,12 @@
+.on {
+  display: block;
+}
+
+.off {
+  display: none;
+}
+
+.center {
+  text-align: center;
+  margin: 20px;
+}
