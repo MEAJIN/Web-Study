@@ -116,6 +116,14 @@
     - [결론](#결론)
 
   - DOM
+    - [DOM이 뭔데](#DOM이-뭔데)
+      - 문서객체
+      - 모델
+    - [DOM 구조](#DOM-구조)
+      - 노드
+    - [JS로 문서객체를 생성한다는 것의 의미가 뭔데](#JS로-문서객체를-생성한다는-것의-의미가-뭔데)
+    - [DOM은 어떻게 사용하는데](#DOM은-어떻게-사용하는데)
+    - [DOM 특징](#DOM-특징)
 <br />
 
 # ⚙ JavaScript / jQuery ⚙
@@ -2387,7 +2395,7 @@ var 오브젝트1 = {
 
 <br />
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/148561320-03ceb61a-2e56-4d17-8416-21a49c430dc0.png" width="60%"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/148561320-03ceb61a-2e56-4d17-8416-21a49c430dc0.png" width=""></p>
 
 <br />
 
