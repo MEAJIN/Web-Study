@@ -30,7 +30,7 @@
     - [파라미터와 인자](#파라미터와-인자)
       - 사용 이유
       - 응용
-    - [Dom addEventListener](#JS-addEventListener)
+    - [JS addEventListener](#JS-addEventListener)
       - 응용
       - 참고
       - [oninput 이벤트](#oninput-이벤트)
@@ -2373,41 +2373,136 @@ var 오브젝트1 = {
 
 > ### DOM 구조
 
-<p align="center"><img src="https://user-images.githubusercontent.com/75716255/148561320-03ceb61a-2e56-4d17-8416-21a49c430dc0.png" width="30%"></p>
+`DOM`은 트리(tree)구조로 형성되어 있다.
 
+위쪽의 노드를 부모(parent), 아랫쪽 노드를 자식(child)이라고 한다.
 
-<br />
+(자식이 없는 노드는 잎(leaf)이라고 함)
 
+루트(root)노드는 가장 위에서(document 제외) 시작되는 노드이기 때문에 부모 노드가 없는 노드가 된다.
 
+이처럼 트리구조로 형성 되어있는 `DOM`을 통해
 
-
-<br />
-
-
-
-
-<br />
-
-
-
+필요한 노드에 접근이 필요할 시, 키워드를 통해 접근하여 작업을 할 수 있다.
 
 <br />
 
-
-
-
-<br />
-
-
-
+<p align="center"><img src="https://user-images.githubusercontent.com/75716255/148561320-03ceb61a-2e56-4d17-8416-21a49c430dc0.png" width="60%"></p>
 
 <br />
 
-
-
+> #### 노드
+>> 트리구조에서 루트노드를 포함한 모든 개개체를 노드(node)라고 한다.
+>> `head`, `body`, `title`, `script` 등의 태그뿐 아니라 태그 안의 텍스트나 속성 등도 모두 노드에 속한다.
 
 <br />
 
+> ### JS로 문서객체를 생성한다는 것의 의미가 뭔데
+
+문서 객체가 생성되는 방식은 두 가지로 나누어 볼 수 있다. 
+
+#### 1.
+
+우선 웹 브라우저가 HTML 페이지에 적혀 있는 태그를 읽으면 생성하는 것 인데,
+
+이런 과정을 __정적으로 문서 객체를 생성한다__ 고 말한다.
+
+단순히 적혀져 있는 그대로 문서객체가 생성되는 것을 표현한 것 이다. 
+
+#### 2.
+
+반대로 원래 HTML 페이지에 없던 문서객체를 JavaScript를 이용해서 생성할 수 있다.
+
+이런 과정을 동적으로 문서객체를 생성한다고 하며, 
+
+HTML 페이지에 없던 문서객체를 동적으로 생성하는 것 이다. 
+
+<br />
+
+> ### DOM은 어떻게 사용하는데
+
+아래 코드는 JS를 사용해서 동적으로 문서객체를 생성하는 예이다.
+
+<br />
+
+우선, 몇가지 요소를 사용해 간단한 웹을 짜주고
+
+```html
+<h1 id ="header_1" name= "" >HEADER-1 </h1 >
+
+<div >
+   <h1 id = "header_2">HEADER-2</h1 >
+</div >
+
+<h1 id = "clock"></h1>
+```
+
+<br />
+
+이제 JS를 사용해 동적으로 문서객체를 만들어 보겠다.
+
+<br />
+
+우선 `document` 객체에 접근해 `<h2>` 태그를 생성한다.
+
+```js
+var header = document.createElement('h2'); 
+```
+
+<br />
+
+다음으로 `document`객체에 접근해 `TextNode`를 생성하여 `Hello DOM`이라는 스트링을 넣어준다.
+
+```js
+var textNode = document.createTextNode('Hello DOM');
+```
+
+<br />
+
+위에서 생성한 `<h2>` 태그에 자식노드를 추가한다.
+
+```js
+header.appendChild(textNode);
+```
+
+<br />
+
+마지막으로 `document`객체를 통해서 `body` 객체에 접근하여 `body`객체에 자식노드를 추가한다.
+
+```js
+document.body.appendChild(header);
+```
+
+<br />
+
+JS 코드를 합쳐서 보면 아래와 같다.
+
+```js
+//1. 문서 객체 생성
+var header = document.createElement('h2'); //h2 태그를 생성해주는 것
+var textNode = document.createTextNode('Hello DOM');
+
+//2. 노드(요소/텍스트)를 연결.
+header.appendChild(textNode);
+
+//3. body 문서 객체에 header 문서 객체를 추가.
+document.body.appendChild(header);
+```
+
+<br />
+
+> ### DOM 특징
+
+- 브라우저는 `HTML` 문서를 읽을 때 `DOM`을 만든다.
+  - 그래야 `JS`로 `HTML` 조작이 가능 
+
+- `JS`에서 수정될 수 있는 동적 모델이어야 한다.
+
+- 가상 요소를 포함하지 않는다. (ex. ::after)
+
+- 보이지 않는 요소를 포함한다. (ex. display:none)
+
+<br />
 
 
 
