@@ -127,9 +127,16 @@
 
   - Ajax
     - [Ajax가 뭔데](#Ajax가-뭔데)
+      - [서버](#서버)
+      - [요청](#요청) 
     - [Ajax 장점](#Ajax-장점)
     - [Ajax 한계](#Ajax의-한계)
     - [Ajax 프레임워크](#Ajax-프레임워크)
+  
+  - JSON
+    - [JSON 변환](#JSON-변환)
+
+
 <br />
 
 # ⚙ JavaScript / jQuery ⚙
@@ -2519,7 +2526,7 @@ document.body.appendChild(header);
 
 <br />
 
-## Ajax
+## [Ajax](https://araikuma.tistory.com/640)
 
 > ### Ajax가 뭔데
 
@@ -2540,6 +2547,33 @@ document.body.appendChild(header);
  - HTML
 
  - 텍스트 파일 등
+
+<br />
+
+```
+'서버'란?
+클라이언트에게 네트워크를 통해 정보나 서비스를 제공하는 컴퓨터 시스템으로 컴퓨터 프로그램 또는 장치를 의미한다.
+즉, 요청을 하면 데이터를 가져다 주는 기계.
+```
+
+```
+'요청'이란?
+1. GET 요청 : URL을 입력해서 서버가 주는 데이터를 받아올 수 있다. 
+
+- 보통 웹페이지를 읽거나 데이터를 받아올 때 많이 사용한다.  
+
+- URL에 여러가지 정보를 추가해서 서버로 원하는 데이터를 전송할 수도 있다.
+
+- 우리가 브라우저 주소창에 naver.com 이렇게 때려박는게 바로 GET 요청 방법 중의 하나이다. 
+
+<br />
+
+2. POST 요청 : 원하는 데이터를 서버로 전송할 수 있다. 
+
+- 로그인하거나 블로그 글발행처럼 정보를 전송할 때 많이 사용한다. 
+
+- GET요청처럼 URL에 정보를 추가하지않고 정보를 다른 곳에 숨겨서 전달다.
+```
 
 <br />
 
@@ -2593,3 +2627,15 @@ document.body.appendChild(header);
  - jQuery
 
 <br />
+
+## JSON
+
+> ### JSON 변환
+
+```js
+//  따옴표가 제거된 object가 생성
+var 오브젝트 = JSON.parse(제이슨데이터)
+
+// object 자료형에 따옴표를 예쁘게 쳐서 JSON을 만들어 줌
+var 제이슨 = JSON.stringify(여러분의 오브젝트데이터)
+```
