@@ -2433,7 +2433,7 @@ SASS 파일에선 이런 어려운 값들을 예쁜 한글로 치환해서 사�
 
 ```css
 (test.scss)
-// 변수는 '$' 뒤에 선언
+/* 변수는 '$' 뒤에 선언 */
 $메인색상 : #2a4c6e;
 $서브색상 : #333333;
 
@@ -2540,14 +2540,14 @@ case B 처럼 쓰면 .navbar : hover를 잡게 된다.
 또한, case B 처럼 &기호를 붙여주면 셀렉터를 스페이스바 없이 붙일 수 있다.
 
 ```css
-// case A
+/* case A */
 .navbar {
   :hover {
     color : blue;
   }
 }
 
-// case B
+/* case B */
 .navbar {
   &:hover {
     color : blue;
