@@ -2573,7 +2573,7 @@ case B 처럼 쓰면 .navbar : hover를 잡게 된다.
 CSS파일에서 클래스로 컴파일하지 않고 싶을 때 쓰는 기호이다.
 
 ```css
-.btn {
+%btn {
   font-size : 16px;
   padding : 10px;
   background : grey;
@@ -2583,4 +2583,83 @@ CSS파일에서 클래스로 컴파일하지 않고 싶을 때 쓰는 기호이�
   @extend .btn;
   background : green;
 }
+```
+
+<br />
+
+> ### 문법 4
+>> ## 코드를 한단어로 축약하는 @mixin
+
+`@mixin`은 스타일 여러줄을 한 단어로 치환해서 사용가능하다.
+
+1. `@mixin`이라고 쓰고,
+
+2. 이름을 하나 지어준 다음 ( ){ } 붙이고,
+
+3. 한 단어로 치환할 값들을 중괄호 안에 쭉 나열하면 된다.
+
+그럼 이제 밑에서 자유롭게 `@include` + `mixin이름` 으로 사용하면 `@mixin` 안에 있던 코드가 그 자리에 복붙된다.
+
+아무튼 여러줄을 한 단어로 치환해서 쓰고싶을 때 쓰는 문법이 바로 `@mixin` 이다.
+
+```css
+@mixin 버튼기본디자인() {
+  font-size : 16px;
+  padding : 10px;
+}
+
+.btn-green {
+  @include 버튼기본디자인();
+  background : green;
+}
+```
+
+<br />
+
+얼핏 보면 `mixin`과 `extend` 문법은 유사하지만
+
+`extend`가 약간 더 쓰기 편하긴 하다.
+
+근데 `mixin`만의 장점이 하나 있는데, 바로 내부에 묶어둔 속성들에 구멍을 뿅 뚫어줄 수 있다는 것 이다.
+
+```css
+@mixin 버튼기본디자인($구멍) {
+  font-size : 16px;
+  padding : 10px;
+  background : $구멍;
+}
+
+.btn-green {
+  @include 버튼기본디자인(#229f72);
+}
+```
+
+<br />
+
+> ### 문법 5
+>> ## @use와 언더바 파일
+
+scss파일 상단에 아래와 같이 작성해주면 
+
+`reset.scss`파일을 해당 scss 파일에 전분 복붙할 수 있다.
+
+```css
+/* 컴파일 됨 */
+@use 'reset.scss';
+
+/* 컴파일 안 됨 */
+@use '_reset.scss';
+```
+
+<br />
+
+`@use` 해온 다른 파일에 있던 `$변수`와 `@mixin`을 가져다 쓸 수도 있다.
+
+이 경우엔 그냥 쓰는게 아니라 꼭 파일명을 앞에 붙여야다.
+
+```css
+@use '_reset.scss';
+
+reset.$변수명;  /* 다른 파일의 변수쓰는법 */
+@include reset.mixin이름();  /* 다른 파일의 mixin쓰는법 */
 ```
