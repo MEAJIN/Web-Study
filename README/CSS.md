@@ -2572,6 +2572,8 @@ case B 처럼 쓰면 .navbar : hover를 잡게 된다.
 
 CSS파일에서 클래스로 컴파일하지 않고 싶을 때 쓰는 기호이다.
 
+그냥 `.` 으로 써도 된다. 
+
 ```css
 %btn {
   font-size : 16px;
@@ -2580,7 +2582,7 @@ CSS파일에서 클래스로 컴파일하지 않고 싶을 때 쓰는 기호이�
 }
 
 .btn-green {
-  @extend .btn;
+  @extend %btn;
   background : green;
 }
 ```
