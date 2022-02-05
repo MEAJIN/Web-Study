@@ -2539,9 +2539,9 @@ div.container {
 
 :hover 같은 경우
 
-case A 처럼 쓰면 .navbar : hover를 잡게 되고
+case A 처럼 쓰면 .navbar :hover를 잡게 되고
 
-case B 처럼 쓰면 .navbar : hover를 잡게 된다.
+case B 처럼 쓰면 .navbar:hover를 잡게 된다.
 
 또한, case B 처럼 &기호를 붙여주면 셀렉터를 스페이스바 없이 붙일 수 있다.
 
