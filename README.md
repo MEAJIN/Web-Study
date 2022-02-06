@@ -7,7 +7,7 @@
 - 21.09.17 ~ 09.22 HTML/CSS 반응형 웹 퍼블리싱 (완)
 - 21.09.30 ~ 10.12 HTML/CSS 복습을 위한 토이 프로젝트 (완) ([바로가기](https://github.com/MEAJIN/Our-Memories))
 - 21.10.23 ~ 10.27 JS 기초 (완)
-- 21.11.10 ~ JavaScript / jQuery 입문과 웹 UI개발 (진행중)
+- 21.11.10 ~ 22.01.24 JavaScript / jQuery 입문과 웹 UI개발 (완)
 
 ## README 바로가기
 
