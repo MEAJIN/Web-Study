@@ -1,0 +1,95 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none !important;
+  text-transform: capitalize;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+header .h-align {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #0f0f0f;
+}
+header .h-align .logo-icon {
+  height: 40px;
+  width: 40px;
+}
+header .h-align span {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.603);
+}
+header ul {
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+header ul li {
+  display: inline-block;
+  vertical-align: middle;
+  list-style: none;
+  padding: 0 20px;
+  font-weight: bold;
+}
+header a {
+  color: #8f8f8f;
+}
+header a span {
+  vertical-align: middle;
+}
+header .nav-hover:hover {
+  color: white;
+  font-weight: unset;
+}
+header input {
+  background-color: white;
+  font-size: 15px;
+  font-weight: bold;
+  color: #0f0f0f;
+  border-radius: 3px;
+  padding: 5px 20px;
+}
+header input:hover {
+  background-color: #1a70f1;
+  color: white;
+}
+
+main article {
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(212, 209, 209, 0.644);
+  width: 90vw;
+  max-width: 100vw;
+}
+main input {
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 10px;
+  width: 80vw;
+  height: 40px;
+  border-radius: 3px;
+}
+main section .container .first {
+  text-align: left;
+  padding-left: 20px;
+}
+main section .container .col-8, main section .container .col-4 {
+  font-size: 30px;
+  font-weight: bold;
+}/*# sourceMappingURL=index.css.map */
