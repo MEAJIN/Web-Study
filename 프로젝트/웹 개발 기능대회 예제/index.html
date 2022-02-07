@@ -14,6 +14,8 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- css  -->
   <link href="index.css" rel="stylesheet">
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
   <title>내 집 꾸미기</title>
 </head>
 
@@ -22,14 +24,14 @@
   <!-- header start -->
   <header>
     <div class="h-align">
+
       <!-- logo -->
-      <a href="#menu">
-        <img class="logo-icon" src="resources1/pr0.png" alt="내집꾸미기" title="logo-icon">
-        <span>내집꾸미기</span>
+      <a href="#" class="test">
+        <img class="logo-icon" src="resources1/logo.png" alt="내집꾸미기" title="logo-icon">
       </a>
 
       <!-- nav -->
-      <nav class="nav">
+      <nav>
         <ul>
           <li><a class="nav-hover" href="#">온라인집들이</a></li>
           <li><a class="nav-hover" href="#">홈</a></li>
@@ -40,7 +42,7 @@
       </nav>
 
       <!-- sing-in -->
-      <div class="sing-in">
+      <div>
         <input type="button" value="로그인" class="">
         <input type="button" value="회원가입" class="">
       </div>
@@ -50,32 +52,46 @@
 
   <!-- main start -->
   <main>
-    <article class="a">
-
-      <!-- search -->
-      <input type="search" placeholder="검색어를 입력해주세요.">
-
-      <!-- product list -->
+    <article>
       <section>
-        <div class="container">
-          <div class="row first">
-            <div class="col-8">모든 상품 리스트</div>
-            <div class="col-4">장바구니</div>
-          </div>
-      
-          <div class="row">
-            <div class="col-2">first</div>
-            <div class="col-2">first</div>
-            <div class="col-2">first</div>
-            <div class="col-2">first</div>
-            <div class="col-4">first</div>
+        <div class="container-xl">
+          <!-- search -->
+          <input id="search" type="search" placeholder="검색어를 입력해주세요.">
+          <!-- product list -->
+          <div class="row mt40">
+            <div class="col-8">
+              <h2 class="list-title display-5 mb-5">모든 상품 리스트</h2>
+              <div class="card-deck" id="product-list">
+              </div>
+              <!-- <div id="msg-empty">일치하는 상품이 없습니다.</div> -->
+            </div>
+            <div class="col-4 ">
+              <h2 class="list-title display-5 mb-5">장바구니</h2>
+              <div id="basket">
+                <div class="col-12">
+                  <div id="drop-area">이곳에 상품을 놓아주세요.</div>
+                  <div id="basket-list">
+                  </div>
+                  <div class="text-right mb-3">
+                    총 합계 <span id="total-sum">0</span>원
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="openBuyPopup()">구매하기</button>
+              </div>
+            </div>
           </div>
       </section>
-
     </article>
   </main>
   <!-- main end -->
 
+  <!-- footer start -->
+  <footer>
+    <div class="footer">
+      Copyright(c) 2022 내집꾸미기 & 김혜진 콜라보레이션또띠아. All rights reserved.
+    </div>
+  </footer>
+  <!-- footer end -->
 
 
 
