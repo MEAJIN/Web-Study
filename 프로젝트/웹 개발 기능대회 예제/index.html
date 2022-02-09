@@ -58,8 +58,8 @@
 
           <!-- search -->
           <form action="" class="search" name="formname">
-            <button class="btn btn-primary btn-lg btn-block" type="submit" name="click" value="">🔍</button>
-            <input class="keyword" id="keyword" type="text" name="search" autocomplete="off" placeholder="검색어를 입력해주세요.">
+            <input class="keyword" id="keyword" type="text" name="search" autocomplete="off" placeholder="검색어를 입력해주세요." onkeyup="onSearch(this.value)">
+            <button class="btn btn-primary btn-lg btn-block s-btn" type="submit" name="click" value="">🔍</button>
           </form>
           
 
@@ -67,8 +67,7 @@
           <div class="row mt40">
             <div class="col-8">
               <h2 class="list-title display-5 mb-5">모든 상품 리스트</h2>
-              <div class="card-deck" id="product-list">
-              </div>
+              <div class="card-deck" id="product-list"></div>
               <!-- <div id="msg-empty">일치하는 상품이 없습니다.</div> -->
             </div>
             <div class="col-4 ">

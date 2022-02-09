@@ -45,16 +45,17 @@ function appendProduct(product, index) {
 </div>`)
 
   $('#product-list').append(newItem);
-};
+}
 
 ///////////////
 // 검색 기능 //
+// text() 메서드 - DOM 객체의 textContent 속성을 참조하며 단순 텍스트 요소만을 리턴한다.
+// html() 메서드 - DOM 객체의 innerHTML 속성을 참조하며 텍스트를 포함한 태그까지도 리턴한다.
 //////////////
 
 // 각 클래스를 변수에 저장
 function search() {
   this.keyword = document.querySelector('input[name = "search"]');
-  this.button = document.querySelector('.btn');
   this.form = document.querySelector('.search');
   engine();
 }
@@ -64,17 +65,43 @@ function engine() {
   this.form.addEventListener('submit', e => {
     e.preventDefault(); // form태그 기본 작동 제한 (서버로데이터전송)
     let keyword = this.keyword.value;
-    console.log(keyword);
-  })
+    onSearch(keyword);
+  });
 }
 
+// 
+function onSearch(keyword) {
+  var resultCount = 0;
 
-// 검색창에 마우스 올리면 테투리 생성
-$(".keyword").mouseenter(function () {
-  $('.keyword').css('box-shadow', '0 0 3px 3px rgb(143, 188, 255)');
-});
+  $('#product-list > div').each(function () {
+    var productName = $(this).find('.product-name');
+    var brandName = $(this).find('.brand-name');
 
-// 마우스가 검색창을 벗어나면 테투리 없앰
-$(".keyword").mouseleave(function () {
-  $('.keyword').css('box-shadow', 'none');
-});
+    if (keyword === '') {
+      $(this).show();
+      $(this).css('display', 'block');
+      return;
+    } else {
+      $(this).hide();
+    }
+
+    if (productName.text().indexOf(keyword) !== -1) {
+      $(this).css('display', 'block');
+    }
+  
+    if (brandName.text().indexOf(keyword) !== -1) {
+      $(this).css('display', 'block');
+    }
+  });
+
+
+  // 검색창에 마우스 올리면 테투리 생성
+  $(".keyword").mouseenter(function () {
+    $('.keyword').css('box-shadow', '0 0 3px 3px rgb(143, 188, 255)');
+  });
+
+  // 마우스가 검색창을 벗어나면 테투리 없앰
+  $(".keyword").mouseleave(function () {
+    $('.keyword').css('box-shadow', 'none');
+  });
+}

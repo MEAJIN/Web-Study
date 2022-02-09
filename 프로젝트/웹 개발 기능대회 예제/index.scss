@@ -92,21 +92,32 @@ main {
     padding: 15px;
   }
 
+  form {
+    display: flex;
+
+  }
+
+  .s-btn {
+    width: 10%!important;
+    margin: 50px 0px 0 10px!important;
+    height: 45px!important;
+  }
+
   input {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 10px;
+    height: 100%;
     width: 100%;
+    margin: 50px 0;
+    padding: 10px;
     border: 1px solid $rg;
     border-radius: 3px;
     background-clip: padding-box;
   }
 
   .list-title {
-    font-size: 45px;
-    margin-bottom: 20px!important;
+    font-size: 25px;
+    margin-bottom: 30px !important;
     text-align: left;
-    font-family: 'Black Han Sans', sans-serif;
+    font-weight: bolder;
   }
 
   .card-deck {
@@ -121,23 +132,49 @@ main {
       margin-right: 15px;
       margin-bottom: 0;
       margin-left: 15px;
-      
+      overflow: hidden;
     }
-    
-    .product-name {
-      font-size: 20px;
 
+    .card-body {
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 15px 5px;
+    }
+
+    .card-img-top {
+      height: 100px;
+    }
+
+    .card-title {
+      line-height: 16px;
+      height: 32px;
+      margin: 0;
+    }
+
+    .product-name {
+      font-size: 12px;
       font-weight: bold;
+      overflow: hidden;
+      word-break: break-all;
+      text-overflow: ellipsis
     }
 
     .brand-name {
-      font-size: 15px;
+      font-size: 12px;
+    }
 
+    .card-footer {
+      display: flex;
+      align-items: center;
+      padding: 5px 15px;
+      height: 40px;
     }
 
     .price {
-      font-size: 15px;
-      font-weight: bold;
+      position: relative;
+      font-size: 13px;
+      vertical-align: middle;
     }
   }
 
@@ -165,6 +202,7 @@ main {
     width: 95%;
     text-align: right;
   }
+
   .btn {
     @extend %flex-all;
     width: 90%;
