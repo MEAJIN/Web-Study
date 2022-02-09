@@ -78,7 +78,7 @@ header {
     }
 
     input:hover {
-      background-color: rgb(26, 112, 241);
+      background-color: #0d6efd;
       color: $tw;
     }
   }
@@ -103,7 +103,8 @@ main {
   }
 
   .list-title {
-    margin-bottom: 20px;
+    font-size: 45px;
+    margin-bottom: 20px!important;
     text-align: left;
     font-family: 'Black Han Sans', sans-serif;
   }

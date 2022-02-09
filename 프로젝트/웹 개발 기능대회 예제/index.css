@@ -62,7 +62,7 @@ header .h-align input {
   padding: 5px 20px;
 }
 header .h-align input:hover {
-  background-color: #1a70f1;
+  background-color: #8bb6f8;
   color: white;
 }
 
@@ -83,7 +83,8 @@ main input {
   background-clip: padding-box;
 }
 main .list-title {
-  margin-bottom: 20px;
+  font-size: 45px;
+  margin-bottom: 20px !important;
   text-align: left;
   font-family: "Black Han Sans", sans-serif;
 }

@@ -55,8 +55,14 @@
     <article>
       <section>
         <div class="container-xl">
+
           <!-- search -->
-          <input id="search" type="search" placeholder="검색어를 입력해주세요.">
+          <form action="" class="search" name="formname">
+            <button class="btn btn-primary btn-lg btn-block" type="submit" name="click" value="">🔍</button>
+            <input class="keyword" id="keyword" type="text" name="search" autocomplete="off" placeholder="검색어를 입력해주세요.">
+          </form>
+          
+
           <!-- product list -->
           <div class="row mt40">
             <div class="col-8">
@@ -76,7 +82,13 @@
                     총 합계 <span id="total-sum">0</span>원
                   </div>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="openBuyPopup()">구매하기</button>
+
+
+
+
+
+
+                <button type="button" class="btn btn-primary btn-lg btn-block">구매하기</button>
               </div>
             </div>
           </div>
