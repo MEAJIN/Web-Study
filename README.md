@@ -9,7 +9,7 @@
 - 21.10.23 ~ 10.27 JS 기초 (완)
 - 21.11.10 ~ 22.01.24 JavaScript / jQuery 입문과 웹 UI개발 (완)
 
-## README 바로가기
+## README 바로가기 
 
 - [HTML](https://github.com/MEAJIN/Web-Study/blob/main/README/HTML.md)
 - [CSS](https://github.com/MEAJIN/Web-Study/blob/main/README/CSS.md)
@@ -60,6 +60,5 @@
   - 터치
     - [Hammer.js](https://hammerjs.github.io/) 
     
-<br />
 <br />
 
