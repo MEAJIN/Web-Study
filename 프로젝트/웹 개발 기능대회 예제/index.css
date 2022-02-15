@@ -11,9 +11,13 @@
   text-transform: capitalize;
 }
 
-main {
-  display: flex;
-  justify-content: center;
+/* 공통 사용 클래스 */
+.mt100 {
+  margin-top: 100px;
+}
+
+.mt40 {
+  margin-top: 40px;
 }
 
 .footer, main .btn, main #drop-area {
@@ -67,6 +71,8 @@ header .h-align input:hover {
 }
 
 main {
+  max-width: 1140px;
+  margin: 0 auto;
   /* 장바구니 영역 */
 }
 main article {
@@ -98,17 +104,19 @@ main .list-title {
 }
 main .card-deck {
   display: flex;
+  justify-content: space-between;
   flex-flow: row wrap;
   margin-right: -15px;
   margin-left: -15px;
   text-align: left;
 }
 main .card-deck .card {
-  flex: 1 1 0%;
-  margin-right: 15px;
+  flex-basis: 160px;
+  margin-right: 10px;
   margin-bottom: 0;
-  margin-left: 15px;
+  margin-left: 10px;
   overflow: hidden;
+  flex-direction: column;
 }
 main .card-deck .card-body {
   flex: 1 1 auto;

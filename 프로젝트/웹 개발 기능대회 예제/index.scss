@@ -10,6 +10,15 @@
   text-transform: capitalize;
 }
 
+/* 공통 사용 클래스 */
+.mt100 {
+  margin-top: 100px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
 %flex {
   display: flex;
   justify-content: center;
@@ -85,7 +94,8 @@ header {
 }
 
 main {
-  @extend %flex;
+  max-width: 1140px;
+  margin: 0 auto;
 
   article {
     text-align: center;
@@ -98,9 +108,9 @@ main {
   }
 
   .s-btn {
-    width: 10%!important;
-    margin: 50px 0px 0 10px!important;
-    height: 45px!important;
+    width: 10% !important;
+    margin: 50px 0px 0 10px !important;
+    height: 45px !important;
   }
 
   input {
@@ -113,6 +123,7 @@ main {
     background-clip: padding-box;
   }
 
+
   .list-title {
     font-size: 25px;
     margin-bottom: 30px !important;
@@ -122,17 +133,19 @@ main {
 
   .card-deck {
     display: flex;
+    justify-content: space-between;
     flex-flow: row wrap;
     margin-right: -15px;
     margin-left: -15px;
     text-align: left;
 
     .card {
-      flex: 1 1 0%;
-      margin-right: 15px;
+      flex-basis: 160px;
+      margin-right: 10px;
       margin-bottom: 0;
-      margin-left: 15px;
+      margin-left: 10px;
       overflow: hidden;
+      flex-direction: column;
     }
 
     .card-body {
