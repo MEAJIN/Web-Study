@@ -60,7 +60,7 @@ function search() {
   engine();
 }
 
-//
+// 검색창에 입력 받은 값 저장
 function engine() {
   this.form.addEventListener('submit', e => {
     e.preventDefault(); // form태그 기본 작동 제한 (서버로데이터전송)
@@ -71,7 +71,6 @@ function engine() {
 
 // 
 function onSearch(keyword) {
-  var resultCount = 0;
 
   $('#product-list > div').each(function () {
     var productName = $(this).find('.product-name');
@@ -79,7 +78,6 @@ function onSearch(keyword) {
 
     if (keyword === '') {
       $(this).show();
-      $(this).css('display', 'block');
       return;
     } else {
       $(this).hide();
@@ -105,3 +103,4 @@ function onSearch(keyword) {
     $('.keyword').css('box-shadow', 'none');
   });
 }
+
