@@ -73,7 +73,6 @@ header .h-align input:hover {
 main {
   max-width: 1140px;
   margin: 0 auto;
-  /* 장바구니 영역 */
 }
 main article {
   text-align: center;
@@ -95,6 +94,11 @@ main input {
   border: 1px solid #e0e0e0;
   border-radius: 3px;
   background-clip: padding-box;
+}
+main .highlight {
+  background-color: yellow;
+  font-size: 12px;
+  font-weight: bold;
 }
 main .list-title {
   font-size: 25px;
@@ -124,7 +128,7 @@ main .card-deck .card-body {
   padding: 15px 5px;
 }
 main .card-deck .card-img-top {
-  height: 100px;
+  height: 210px;
 }
 main .card-deck .card-title {
   line-height: 16px;

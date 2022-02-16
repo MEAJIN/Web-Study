@@ -73,8 +73,8 @@ function engine() {
 function onSearch(keyword) {
 
   $('#product-list > div').each(function () {
-    var productName = $(this).find('.product-name');
-    var brandName = $(this).find('.brand-name');
+    const productName = $(this).find('.product-name');
+    const brandName = $(this).find('.brand-name');
 
     if (keyword === '') {
       $(this).show();
@@ -84,6 +84,8 @@ function onSearch(keyword) {
     }
 
     if (productName.text().indexOf(keyword) !== -1) {
+      const kwHighlight = productName.text().replace(keyword, `<span class="highlight">${keyword}</span>`);
+      productName.html(kwHighlight);
       $(this).css('display', 'block');
     }
   

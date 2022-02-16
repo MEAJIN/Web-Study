@@ -102,9 +102,9 @@ main {
     padding: 15px;
   }
 
+  // 검색 영역
   form {
     display: flex;
-
   }
 
   .s-btn {
@@ -123,7 +123,13 @@ main {
     background-clip: padding-box;
   }
 
+  .highlight {
+    background-color: yellow;
+    font-size: 12px;
+    font-weight: bold;
+  }
 
+  // 상품 영역
   .list-title {
     font-size: 25px;
     margin-bottom: 30px !important;
@@ -156,7 +162,7 @@ main {
     }
 
     .card-img-top {
-      height: 100px;
+      height: 210px;
     }
 
     .card-title {
@@ -191,7 +197,7 @@ main {
     }
   }
 
-  /* 장바구니 영역 */
+  // 장바구니 영역
   #basket {
     border: 1px solid #999;
     border-radius: 4px;
@@ -224,7 +230,7 @@ main {
   }
 }
 
-// footer
+// footer 영역
 .footer {
   @extend %flex-all;
   background-color: $bb;
