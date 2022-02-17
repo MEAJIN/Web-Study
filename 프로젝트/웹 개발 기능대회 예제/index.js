@@ -87,10 +87,16 @@ function onSearch(keyword) {
       const kwHighlight = productName.text().replace(keyword, `<span class="highlight">${keyword}</span>`);
       productName.html(kwHighlight);
       $(this).css('display', 'block');
+    } else {
+
     }
   
     if (brandName.text().indexOf(keyword) !== -1) {
+      const kwHighlight = brandName.text().replace(keyword, `<span class="highlight">${keyword}</span>`);
+      brandName.html(kwHighlight);
       $(this).css('display', 'block');
+    } else {
+      
     }
   });
 
