@@ -62,4 +62,3 @@
     - [Hammer.js](https://hammerjs.github.io/) 
     
 <br />
-
